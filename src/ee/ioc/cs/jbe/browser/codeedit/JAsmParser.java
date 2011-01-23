@@ -164,8 +164,20 @@ public class JAsmParser {
 					instructionHandleList.add(ih);
 					labels++;
 				} else if (instrName.equals("invokeinterface")) {
+                    //0 = instr name
+                    //1 = method call
+                    //2 = number of arguments
+                    System.out.println(instrElems[1]);
+                    if(instrElems[1].contains(".")){
+                        instrElems[1].replace('.', '/');
+                        instrElems[1] += "()";
+                    }
 					int index = getMethodConstRef(instrElems, cpg, labels);
-					int arg2 = Integer.parseInt(instrElems[2]);
+					int nargs = getMethodArguments(instrElems, cpg, labels).length;
+                    System.out.println(instrElems);
+                    System.out.println(index);
+                    System.out.println(getMethodArguments(instrElems, cpg, labels));
+                    System.out.println(nargs);
 					ih = instructions.append(new INVOKEINTERFACE(index, nargs));
 					instructionHandleList.add(ih);
 					labels++;
@@ -1448,7 +1460,6 @@ public class JAsmParser {
 			String methodN = getMethodFromFullMethod(instrElems[1]);
 			String descr = getDescrFromFullMethod(instrElems[1]);
 			arg = cpg.addMethodref(classN, methodN, descr);
-
 		}
 		return arg;
 	}
@@ -1457,6 +1468,18 @@ public class JAsmParser {
 		String classAndMeth = fullMethod.substring(0, fullMethod.indexOf('('));
 		String className = getClassFromFieldName(classAndMeth);
 		return className;
+	}
+    private String[] getMethodArguments(String[] instrElems, ConstantPoolGen cpg, int line) {
+		if (instrElems.length < 2) {
+			parseException.addError(JAsmParseException.MISSING_ARGUMENTS,
+					instrElems[0], line);
+			return null;
+		}
+		return getArgumentsFromFullMethod(instrElems[1]);
+	}
+    public String[] getArgumentsFromFullMethod(String fullMethod) {
+		String args = fullMethod.substring(fullMethod.indexOf('('), fullMethod.indexOf(')'));
+		return args.split(";");
 	}
 
 	public String getMethodFromFullMethod(String fullMethod) {

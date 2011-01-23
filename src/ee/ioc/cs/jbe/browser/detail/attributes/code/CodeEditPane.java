@@ -92,8 +92,16 @@ public class CodeEditPane extends AbstractDetailPane implements FocusListener {
 		CodeGenerator cg = new CodeGenerator();
 		for (int i = 0; i < methods.length; i++) {
 			String methodIndex = Integer.toString(i);
-			byte[] code = ((CodeAttribute) methods[i].getAttributes()[0])
-					.getCode();
+            byte[] code = null;
+            try {
+			    code = ((CodeAttribute) methods[i].getAttributes()[0]).getCode();
+            } catch (Exception e) {
+                    if(methods[i].getAttributes().length > 1){
+                        code = ((CodeAttribute) methods[i].getAttributes()[1]).getCode();
+                    } else {
+                        System.out.println("Couldn't locate code attribute for method");
+                    }
+            }
 			if (editPanes.get(methodIndex) == null ) {
 				addEditPane(methodIndex, code, classFile);
 			}
