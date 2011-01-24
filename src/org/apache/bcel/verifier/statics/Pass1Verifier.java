@@ -120,7 +120,7 @@ public final class Pass1Verifier extends PassVerifier {
      * <LI>The constant pool must not contain any superficially unrecognizable information.
      * </UL>
      * A more in-depth documentation of what pass one should do was written by
-     * <A HREF=mailto:pwfong@cs.sfu.ca>Philip W. L. Fong</A>:
+     * <A HREF=mailto:pwfong@contra.sfu.ca>Philip W. L. Fong</A>:
      * <UL>
      * <LI> the file should not be truncated.
      * <LI> the file should not have extra bytes at the end.
@@ -152,7 +152,7 @@ public final class Pass1Verifier extends PassVerifier {
      * <LI> the name and signature of fields and methods are verified to be of legal format.
      * </UL>
      * </UL>
-     * (From the Paper <A HREF=http://www.cs.sfu.ca/people/GradStudents/pwfong/personal/JVM/pass1/>The Mysterious Pass One, first draft, September 2, 1997</A>.)
+     * (From the Paper <A HREF=http://www.contra.sfu.ca/people/GradStudents/pwfong/personal/JVM/pass1/>The Mysterious Pass One, first draft, September 2, 1997</A>.)
      * </BR>
      * However, most of this is done by parsing a class file or generating a class file into BCEL's internal data structure.
      * <B>Therefore, all that is really done here is look up the class file from BCEL's repository.</B>

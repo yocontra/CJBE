@@ -224,7 +224,7 @@ public abstract class ReferenceType extends Type {
         * "null" is not referring to an instance of java.lang.Object :)
         */
 
-        /* This code is from a bug report by Konstantin Shagin <konst@cs.technion.ac.il> */
+        /* This code is from a bug report by Konstantin Shagin <konst@contra.technion.ac.il> */
 
         if ((this instanceof ArrayType) && (t instanceof ArrayType)) {
             ArrayType arrType1 = (ArrayType) this;
