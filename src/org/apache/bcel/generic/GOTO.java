@@ -53,75 +53,80 @@ package org.apache.bcel.generic;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
-import java.io.*;
 
-/** 
- * GOTO - Branch always (to relative offset, not absolute address)
- *
- * @version $Id: GOTO.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
- */
-public class GOTO extends GotoInstruction implements VariableLengthInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 6106731367505145625L;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 /**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  GOTO() {}
+ * GOTO - Branch always (to relative offset, not absolute address)
+ *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
+ * @version $Id: GOTO.java,v 1.2 2006/08/23 13:48:30 andos Exp $
+ */
+public class GOTO extends GotoInstruction implements VariableLengthInstruction {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 6106731367505145625L;
 
-  public GOTO(InstructionHandle target) {
-    super(org.apache.bcel.Constants.GOTO, target);
-  }
-
-  /**
-   * Dump instruction as byte code to stream out.
-   * @param out Output stream
-   */
-  public void dump(DataOutputStream out) throws IOException {
-    index = getTargetOffset();
-    if(opcode == org.apache.bcel.Constants.GOTO)
-      super.dump(out);
-    else { // GOTO_W
-      index = getTargetOffset();
-      out.writeByte(opcode);
-      out.writeInt(index);
-    }
-  }
-
-  /** Called in pass 2 of InstructionList.setPositions() in order to update
-   * the branch target, that may shift due to variable length instructions.
-   */
-  protected int updatePosition(int offset, int max_offset) {
-    int i = getTargetOffset(); // Depending on old position value
-
-    position += offset; // Position may be shifted by preceding expansions
-
-    if(Math.abs(i) >= (32767 - max_offset)) { // to large for short (estimate)
-      opcode = org.apache.bcel.Constants.GOTO_W;
-      length = 5;
-      return 2; // 5 - 3
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    GOTO() {
     }
 
-    return 0;
-  }
+    public GOTO(InstructionHandle target) {
+        super(org.apache.bcel.Constants.GOTO, target);
+    }
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitVariableLengthInstruction(this);
-    v.visitUnconditionalBranch(this);
-    v.visitBranchInstruction(this);
-    v.visitGotoInstruction(this);
-    v.visitGOTO(this);
-  }
+    /**
+     * Dump instruction as byte code to stream out.
+     *
+     * @param out Output stream
+     */
+    public void dump(DataOutputStream out) throws IOException {
+        index = getTargetOffset();
+        if (opcode == org.apache.bcel.Constants.GOTO)
+            super.dump(out);
+        else { // GOTO_W
+            index = getTargetOffset();
+            out.writeByte(opcode);
+            out.writeInt(index);
+        }
+    }
+
+    /**
+     * Called in pass 2 of InstructionList.setPositions() in order to update
+     * the branch target, that may shift due to variable length instructions.
+     */
+    protected int updatePosition(int offset, int max_offset) {
+        int i = getTargetOffset(); // Depending on old position value
+
+        position += offset; // Position may be shifted by preceding expansions
+
+        if (Math.abs(i) >= (32767 - max_offset)) { // to large for short (estimate)
+            opcode = org.apache.bcel.Constants.GOTO_W;
+            length = 5;
+            return 2; // 5 - 3
+        }
+
+        return 0;
+    }
+
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitVariableLengthInstruction(this);
+        v.visitUnconditionalBranch(this);
+        v.visitBranchInstruction(this);
+        v.visitGotoInstruction(this);
+        v.visitGOTO(this);
+    }
 }

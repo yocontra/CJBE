@@ -10,7 +10,9 @@ package org.gjt.jclasslib.structures.constants;
 import org.gjt.jclasslib.structures.CPInfo;
 import org.gjt.jclasslib.structures.InvalidByteCodeException;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
 /**
  * Describes a <tt>CONSTANT_Utf8_info</tt> constant pool data structure.
@@ -96,7 +98,7 @@ public class ConstantUtf8Info extends CPInfo {
         if (!(object instanceof ConstantUtf8Info)) {
             return false;
         }
-        ConstantUtf8Info constantUtf8Info = (ConstantUtf8Info)object;
+        ConstantUtf8Info constantUtf8Info = (ConstantUtf8Info) object;
         return super.equals(object) && constantUtf8Info.string.equals(string);
     }
 

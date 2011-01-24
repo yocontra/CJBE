@@ -8,11 +8,11 @@
 package org.gjt.jclasslib.bytecode;
 
 /**
-    Holds a single match-offset pair.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Holds a single match-offset pair.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class MatchOffsetPair {
 
     private int match;
@@ -20,7 +20,8 @@ public class MatchOffsetPair {
 
     /**
      * Constructor.
-     * @param match the match value.
+     *
+     * @param match  the match value.
      * @param offset the branch offset.
      */
     public MatchOffsetPair(int match, int offset) {
@@ -29,32 +30,36 @@ public class MatchOffsetPair {
     }
 
     /**
-        Get the match value of this match-offset pair.
-        @return the value
+     * Get the match value of this match-offset pair.
+     *
+     * @return the value
      */
     public int getMatch() {
         return match;
     }
 
     /**
-        Set the match value of this match-offset pair.
-        @param match the value
+     * Set the match value of this match-offset pair.
+     *
+     * @param match the value
      */
     public void setMatch(int match) {
         this.match = match;
     }
 
     /**
-        Get the offset of the branch for this match-offset pair.
-        @return the offset
+     * Get the offset of the branch for this match-offset pair.
+     *
+     * @return the offset
      */
     public int getOffset() {
         return offset;
     }
 
     /**
-        Set the offset of the branch for this match-offset pair.
-        @param offset the offset
+     * Set the offset of the branch for this match-offset pair.
+     *
+     * @param offset the offset
      */
     public void setOffset(int offset) {
         this.offset = offset;

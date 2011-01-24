@@ -31,7 +31,7 @@ public class LocalVariableTypeTableAttribute extends LocalVariableCommonAttribut
      * @return the array
      */
     public LocalVariableTypeTableEntry[] getLocalVariableTypeTable() {
-        return (LocalVariableTypeTableEntry[])localVariableTable;
+        return (LocalVariableTypeTableEntry[]) localVariableTable;
     }
 
     /**

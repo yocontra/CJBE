@@ -7,13 +7,11 @@
 package ee.ioc.cs.jbe.browser.detail;
 
 
+import ee.ioc.cs.jbe.browser.BrowserServices;
+import ee.ioc.cs.jbe.browser.BrowserTreeNode;
 import org.gjt.jclasslib.structures.elementvalues.AnnotationElementValue;
 import org.gjt.jclasslib.structures.elementvalues.ElementValue;
 import org.gjt.jclasslib.util.ExtendedJLabel;
-
-import ee.ioc.cs.jbe.browser.BrowserServices;
-import ee.ioc.cs.jbe.browser.BrowserTreeNode;
-
 
 import javax.swing.tree.TreePath;
 
@@ -52,9 +50,9 @@ public class AnnotationDetailPane extends FixedListDetailPane {
 
     public void show(TreePath treePath) {
         AnnotationElementValue annotation = (AnnotationElementValue)
-                ((BrowserTreeNode)treePath.getLastPathComponent()).getElement();
+                ((BrowserTreeNode) treePath.getLastPathComponent()).getElement();
 
-        lblTag.setText(String.valueOf((char)annotation.getTag()));
+        lblTag.setText(String.valueOf((char) annotation.getTag()));
         lblTagVerbose.setText("<" + ElementValue.getTagDescription(annotation.getTag()) + ">");
 
         constantPoolHyperlink(lblType,

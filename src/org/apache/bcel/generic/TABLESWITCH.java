@@ -53,121 +53,119 @@ package org.apache.bcel.generic;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
-import java.io.*;
+
 import org.apache.bcel.util.ByteSequence;
+
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 /**
  * TABLESWITCH - Switch within given range of values, i.e., low..high
- * 
- * @version $Id: TABLESWITCH.java,v 1.5 2006/08/23 13:48:30 andos Exp $
+ *
  * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>. Modified by Ando Saabas
+ * @version $Id: TABLESWITCH.java,v 1.5 2006/08/23 13:48:30 andos Exp $
  * @see SWITCH
  */
 public class TABLESWITCH extends Select {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7000759502003600875L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -7000759502003600875L;
 
-	/**
-	 * Empty constructor needed for the Class.newInstance() statement in
-	 * Instruction.readInstruction(). Not to be used otherwise.
-	 */
-	public TABLESWITCH() {
-		super(org.apache.bcel.Constants.TABLESWITCH);
-	}
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    public TABLESWITCH() {
+        super(org.apache.bcel.Constants.TABLESWITCH);
+    }
 
-	/**
-	 * @param match
-	 *            sorted array of match values, match[0] must be low value,
-	 *            match[match_length - 1] high value
-	 * @param targets
-	 *            where to branch for matched values
-	 * @param target
-	 *            default branch
-	 */
-	public TABLESWITCH(int[] match, InstructionHandle[] targets,
-			InstructionHandle target) {
-		super(org.apache.bcel.Constants.TABLESWITCH, match, targets, target);
+    /**
+     * @param match   sorted array of match values, match[0] must be low value,
+     *                match[match_length - 1] high value
+     * @param targets where to branch for matched values
+     * @param target  default branch
+     */
+    public TABLESWITCH(int[] match, InstructionHandle[] targets,
+                       InstructionHandle target) {
+        super(org.apache.bcel.Constants.TABLESWITCH, match, targets, target);
 
-		length = (short) (13 + match_length * 4); /*
+        length = (short) (13 + match_length * 4); /*
 													 * Alignment remainder
 													 * assumed 0 here, until
 													 * dump time
 													 */
-		fixed_length = length;
-	}
+        fixed_length = length;
+    }
 
-	/**
-	 * Dump instruction as byte code to stream out.
-	 * 
-	 * @param out
-	 *            Output stream
-	 */
-	public void dump(DataOutputStream out) throws IOException {
-		super.dump(out);
+    /**
+     * Dump instruction as byte code to stream out.
+     *
+     * @param out Output stream
+     */
+    public void dump(DataOutputStream out) throws IOException {
+        super.dump(out);
 
-		int low = (match_length > 0) ? match[0] : 0;
-		out.writeInt(low);
+        int low = (match_length > 0) ? match[0] : 0;
+        out.writeInt(low);
 
-		int high = (match_length > 0) ? match[match_length - 1] : 0;
-		out.writeInt(high);
+        int high = (match_length > 0) ? match[match_length - 1] : 0;
+        out.writeInt(high);
 
-		for (int i = 0; i < match_length; i++)
-			// jump offsets
-			out.writeInt(indices[i] = getTargetOffset(targets[i]));
-	}
+        for (int i = 0; i < match_length; i++)
+            // jump offsets
+            out.writeInt(indices[i] = getTargetOffset(targets[i]));
+    }
 
-	/**
-	 * Read needed data (e.g. index) from file.
-	 */
-	protected void initFromFile(ByteSequence bytes, boolean wide)
-			throws IOException {
-		super.initFromFile(bytes, wide);
+    /**
+     * Read needed data (e.g. index) from file.
+     */
+    protected void initFromFile(ByteSequence bytes, boolean wide)
+            throws IOException {
+        super.initFromFile(bytes, wide);
 
-		int low = bytes.readInt();
-		int high = bytes.readInt();
+        int low = bytes.readInt();
+        int high = bytes.readInt();
 
-		match_length = high - low + 1;
-		fixed_length = (short) (13 + match_length * 4);
-		length = (short) (fixed_length + padding);
+        match_length = high - low + 1;
+        fixed_length = (short) (13 + match_length * 4);
+        length = (short) (fixed_length + padding);
 
-		match = new int[match_length];
-		indices = new int[match_length];
-		targets = new InstructionHandle[match_length];
+        match = new int[match_length];
+        indices = new int[match_length];
+        targets = new InstructionHandle[match_length];
 
-		for (int i = low; i <= high; i++)
-			match[i - low] = i;
+        for (int i = low; i <= high; i++)
+            match[i - low] = i;
 
-		for (int i = 0; i < match_length; i++) {
-			indices[i] = bytes.readInt();
-		}
-	}
+        for (int i = 0; i < match_length; i++) {
+            indices[i] = bytes.readInt();
+        }
+    }
 
-	/**
-	 * Call corresponding visitor method(s). The order is: Call visitor methods
-	 * of implemented interfaces first, then call methods according to the class
-	 * hierarchy in descending order, i.e., the most specific visitXXX() call
-	 * comes last.
-	 * 
-	 * @param v
-	 *            Visitor object
-	 */
-	public void accept(Visitor v) {
-		v.visitVariableLengthInstruction(this);
-		v.visitStackProducer(this);
-		v.visitBranchInstruction(this);
-		v.visitSelect(this);
-		v.visitTABLESWITCH(this);
-	}
+    /**
+     * Call corresponding visitor method(s). The order is: Call visitor methods
+     * of implemented interfaces first, then call methods according to the class
+     * hierarchy in descending order, i.e., the most specific visitXXX() call
+     * comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitVariableLengthInstruction(this);
+        v.visitStackProducer(this);
+        v.visitBranchInstruction(this);
+        v.visitSelect(this);
+        v.visitTABLESWITCH(this);
+    }
 
-	public void setMatchesTargets(int[] match, InstructionHandle[] targets) {
-		super.setMatchesTargets(match, targets);
-		length = (short) (13 + match_length * 4); /*
+    public void setMatchesTargets(int[] match, InstructionHandle[] targets) {
+        super.setMatchesTargets(match, targets);
+        length = (short) (13 + match_length * 4); /*
 													 * Alignment remainder
 													 * assumed 0 here, until
 													 * dump time
 													 */
-		fixed_length = length;
-	}
+        fixed_length = length;
+    }
 }

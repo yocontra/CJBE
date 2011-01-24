@@ -19,19 +19,19 @@ import javax.swing.tree.DefaultMutableTreeNode;
 public class BrowserTreeNode extends DefaultMutableTreeNode {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = -410528404280618258L;
+     *
+     */
+    private static final long serialVersionUID = -410528404280618258L;
 
-	/**
+    /**
      * Node that does not exhibit detail content.
      */
     public static final String NODE_NO_CONTENT = "noContent";
-    
+
     /**
      * Node for general pane of constant pool
      */
-    public static final String NODE_CONSTANT_POOL_GENERAL = "constantPoolGeneral";    
+    public static final String NODE_CONSTANT_POOL_GENERAL = "constantPoolGeneral";
 
     /**
      * Node for general information on the class file structure.
@@ -49,8 +49,8 @@ public class BrowserTreeNode extends DefaultMutableTreeNode {
     /**
      * Node for general fields page  (<tt>FieldInfo</tt>).
      */
-    public static final String NODE_FIELDS_GENERAL = "fieldGeneral";    
-    
+    public static final String NODE_FIELDS_GENERAL = "fieldGeneral";
+
     /**
      * Node for a field entry  (<tt>FieldInfo</tt>).
      */
@@ -82,9 +82,9 @@ public class BrowserTreeNode extends DefaultMutableTreeNode {
 
     public static final String NODE_METHOD_GENERAL = "methodGeneral";
 
-	public static final String NODE_INTERFACES_GENERAL = "interfacesGeneral";
+    public static final String NODE_INTERFACES_GENERAL = "interfacesGeneral";
 
-	public static final String NODE_ATTRIBUTES_GENERAL = "attributesGeneral";
+    public static final String NODE_ATTRIBUTES_GENERAL = "attributesGeneral";
 
 
     private String type;
@@ -135,8 +135,8 @@ public class BrowserTreeNode extends DefaultMutableTreeNode {
      */
     public void setType(String s) {
         type = s;
-    }    
-    
+    }
+
     /**
      * Get the type of the node as defined by the <tt>NODE_</tt> constants.
      *

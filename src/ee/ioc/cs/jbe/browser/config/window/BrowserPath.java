@@ -10,17 +10,18 @@ package ee.ioc.cs.jbe.browser.config.window;
 import java.util.LinkedList;
 
 /**
-    Description of the selected path in the tree of a <tt>BrowserComponent</tt>.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Description of the selected path in the tree of a <tt>BrowserComponent</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class BrowserPath {
 
     private LinkedList pathComponents = new LinkedList();
 
     /**
      * Get the list of browser path components.
+     *
      * @return the list.
      */
     public LinkedList getPathComponents() {
@@ -29,6 +30,7 @@ public class BrowserPath {
 
     /**
      * Set the list of browser path components.
+     *
      * @param pathComponents the list.
      */
     public void setPathComponents(LinkedList pathComponents) {
@@ -37,6 +39,7 @@ public class BrowserPath {
 
     /**
      * Add a single browser path component to this browser path.
+     *
      * @param pathComponent the new component.
      */
     public void addPathComponent(PathComponent pathComponent) {

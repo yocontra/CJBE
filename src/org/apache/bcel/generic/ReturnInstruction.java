@@ -53,52 +53,61 @@ package org.apache.bcel.generic;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
+
 import org.apache.bcel.Constants;
 import org.apache.bcel.ExceptionConstants;
 
 /**
  * Super class for the xRETURN family of instructions.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ReturnInstruction.java,v 1.1 2005/12/16 14:11:25 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public abstract class ReturnInstruction extends Instruction
-  implements ExceptionThrower, TypedInstruction, StackConsumer {
-  /**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  ReturnInstruction() {}
-
-  /**
-   * @param opcode of instruction
-   */
-  protected ReturnInstruction(short opcode) {
-    super(opcode, (short)1);
-  }
-
-  public Type getType() {
-    switch(opcode) {
-      case Constants.IRETURN: return Type.INT;
-      case Constants.LRETURN: return Type.LONG;
-      case Constants.FRETURN: return Type.FLOAT;
-      case Constants.DRETURN: return Type.DOUBLE;
-      case Constants.ARETURN: return Type.OBJECT;
-      case Constants.RETURN:  return Type.VOID;
- 
-    default: // Never reached
-      throw new ClassGenException("Unknown type " + opcode);
+        implements ExceptionThrower, TypedInstruction, StackConsumer {
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    ReturnInstruction() {
     }
-  }
 
-  public Class[] getExceptions() {
-    return new Class[] { ExceptionConstants.ILLEGAL_MONITOR_STATE };
-  }
+    /**
+     * @param opcode of instruction
+     */
+    protected ReturnInstruction(short opcode) {
+        super(opcode, (short) 1);
+    }
 
-  /** @return type associated with the instruction
-   */
-  public Type getType(ConstantPoolGen cp) {
-    return getType();
-  }
+    public Type getType() {
+        switch (opcode) {
+            case Constants.IRETURN:
+                return Type.INT;
+            case Constants.LRETURN:
+                return Type.LONG;
+            case Constants.FRETURN:
+                return Type.FLOAT;
+            case Constants.DRETURN:
+                return Type.DOUBLE;
+            case Constants.ARETURN:
+                return Type.OBJECT;
+            case Constants.RETURN:
+                return Type.VOID;
+
+            default: // Never reached
+                throw new ClassGenException("Unknown type " + opcode);
+        }
+    }
+
+    public Class[] getExceptions() {
+        return new Class[]{ExceptionConstants.ILLEGAL_MONITOR_STATE};
+    }
+
+    /**
+     * @return type associated with the instruction
+     */
+    public Type getType(ConstantPoolGen cp) {
+        return getType();
+    }
 }
 

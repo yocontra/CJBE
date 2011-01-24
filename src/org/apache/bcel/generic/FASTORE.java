@@ -54,40 +54,41 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * FASTORE -  Store into float array
  * <PRE>Stack: ..., arrayref, index, value -&gt; ...</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: FASTORE.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class FASTORE extends ArrayInstruction implements StackConsumer {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -1583134120388207470L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -1583134120388207470L;
 
 
-/** Store float into array
-   */
-  public FASTORE() {
-    super(org.apache.bcel.Constants.FASTORE);
-  }
+    /**
+     * Store float into array
+     */
+    public FASTORE() {
+        super(org.apache.bcel.Constants.FASTORE);
+    }
 
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitStackConsumer(this);
-    v.visitExceptionThrower(this);
-    v.visitTypedInstruction(this);
-    v.visitArrayInstruction(this);
-    v.visitFASTORE(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitStackConsumer(this);
+        v.visitExceptionThrower(this);
+        v.visitTypedInstruction(this);
+        v.visitArrayInstruction(this);
+        v.visitFASTORE(this);
+    }
 }

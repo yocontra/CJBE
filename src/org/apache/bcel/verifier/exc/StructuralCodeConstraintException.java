@@ -53,6 +53,7 @@ package org.apache.bcel.verifier.exc;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
+
 /**
  * Instances of this class are thrown by BCEL's class file verifier "JustIce" when
  * a class file to verify does not pass the verification pass 3 because of a violation
@@ -63,20 +64,21 @@ package org.apache.bcel.verifier.exc;
  * These are the constraints where data-flow analysis is needed to verify if they hold.
  * The data flow analysis of pass 3 is called pass 3b in JustIce.
  *
- * @version $Id: StructuralCodeConstraintException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: StructuralCodeConstraintException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  */
-public class StructuralCodeConstraintException extends CodeConstraintException{
-	/**
-	 * Constructs a new StructuralCodeConstraintException with the specified error message.
-	 */
-	public StructuralCodeConstraintException(String message){
-		super(message);
-	}
-	/**
-	 * Constructs a new StructuralCodeConstraintException with null as its error message string.
-	 */
-	public StructuralCodeConstraintException(){
-		super();
-	}
+public class StructuralCodeConstraintException extends CodeConstraintException {
+    /**
+     * Constructs a new StructuralCodeConstraintException with the specified error message.
+     */
+    public StructuralCodeConstraintException(String message) {
+        super(message);
+    }
+
+    /**
+     * Constructs a new StructuralCodeConstraintException with null as its error message string.
+     */
+    public StructuralCodeConstraintException() {
+        super();
+    }
 }

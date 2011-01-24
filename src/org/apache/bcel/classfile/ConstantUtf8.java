@@ -54,98 +54,99 @@ package org.apache.bcel.classfile;
  * <http://www.apache.org/>.
  */
 
-import  org.apache.bcel.Constants;
-import  java.io.*;
+import org.apache.bcel.Constants;
 
-/** 
- * This class is derived from the abstract 
- * <A HREF="org.apache.bcel.classfile.Constant.html">Constant</A> class 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+
+/**
+ * This class is derived from the abstract
+ * <A HREF="org.apache.bcel.classfile.Constant.html">Constant</A> class
  * and represents a reference to a Utf8 encoded string.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ConstantUtf8.java,v 1.2 2006/08/22 15:33:21 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
- * @see     Constant
+ * @see Constant
  */
 public final class ConstantUtf8 extends Constant {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -5990248333712937078L;
-private String bytes;
-  
-  /**
-   * Initialize from another object.
-   */
-  public ConstantUtf8(ConstantUtf8 c) {
-    this(c.getBytes());
-  }    
-  
-  /**
-   * Initialize instance from file data.
-   *
-   * @param file Input stream
-   * @throws IOException
-   */
-  ConstantUtf8(DataInputStream file) throws IOException
-  {    
-    super(Constants.CONSTANT_Utf8);
+    /**
+     *
+     */
+    private static final long serialVersionUID = -5990248333712937078L;
+    private String bytes;
 
-    bytes = file.readUTF();
-  }    
+    /**
+     * Initialize from another object.
+     */
+    public ConstantUtf8(ConstantUtf8 c) {
+        this(c.getBytes());
+    }
 
-  /**
-   * @param bytes Data
-   */
-  public ConstantUtf8(String bytes)
-  {
-    super(Constants.CONSTANT_Utf8);
+    /**
+     * Initialize instance from file data.
+     *
+     * @param file Input stream
+     * @throws IOException
+     */
+    ConstantUtf8(DataInputStream file) throws IOException {
+        super(Constants.CONSTANT_Utf8);
 
-    if(bytes == null)
-      throw new IllegalArgumentException("bytes must not be null!");
+        bytes = file.readUTF();
+    }
 
-    this.bytes  = bytes;
-  }    
+    /**
+     * @param bytes Data
+     */
+    public ConstantUtf8(String bytes) {
+        super(Constants.CONSTANT_Utf8);
 
-  /**
-   * Called by objects that are traversing the nodes of the tree implicitely
-   * defined by the contents of a Java class. I.e., the hierarchy of methods,
-   * fields, attributes, etc. spawns a tree of objects.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitConstantUtf8(this);
-  }
+        if (bytes == null)
+            throw new IllegalArgumentException("bytes must not be null!");
 
-  /**
-   * Dump String in Utf8 format to file stream.
-   *
-   * @param file Output file stream
-   * @throws IOException
-   */ 
-  public final void dump(DataOutputStream file) throws IOException
-  {
-    file.writeByte(tag);
-    file.writeUTF(bytes);
-  }
+        this.bytes = bytes;
+    }
 
-  /**
-   * @return Data converted to string.
-   */  
-  public final String getBytes() { return bytes; }    
+    /**
+     * Called by objects that are traversing the nodes of the tree implicitely
+     * defined by the contents of a Java class. I.e., the hierarchy of methods,
+     * fields, attributes, etc. spawns a tree of objects.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitConstantUtf8(this);
+    }
 
-  /**
-   * @param bytes.
-   */
-  public final void setBytes(String bytes) {
-    this.bytes = bytes;
-  }    
+    /**
+     * Dump String in Utf8 format to file stream.
+     *
+     * @param file Output file stream
+     * @throws IOException
+     */
+    public final void dump(DataOutputStream file) throws IOException {
+        file.writeByte(tag);
+        file.writeUTF(bytes);
+    }
 
-  /**
-   * @return String representation
-   */
-  public final String toString()
-  {
-    return super.toString() + "(\"" + Utility.replace(bytes, "\n", "\\n") + "\")";
-  }    
+    /**
+     * @return Data converted to string.
+     */
+    public final String getBytes() {
+        return bytes;
+    }
+
+    /**
+     * @param bytes.
+     */
+    public final void setBytes(String bytes) {
+        this.bytes = bytes;
+    }
+
+    /**
+     * @return String representation
+     */
+    public final String toString() {
+        return super.toString() + "(\"" + Utility.replace(bytes, "\n", "\\n") + "\")";
+    }
 }

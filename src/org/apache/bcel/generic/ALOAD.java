@@ -54,44 +54,46 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * ALOAD - Load reference from local variable
  * <PRE>Stack: ... -&gt; ..., objectref</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ALOAD.java,v 1.2 2006/08/22 15:33:21 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class ALOAD extends LoadInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 6993893925210913542L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 6993893925210913542L;
 
-/**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  ALOAD() {
-    super(org.apache.bcel.Constants.ALOAD, org.apache.bcel.Constants.ALOAD_0);
-  }
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    ALOAD() {
+        super(org.apache.bcel.Constants.ALOAD, org.apache.bcel.Constants.ALOAD_0);
+    }
 
-  /** Load reference from local variable
-   * @param n index of local variable
-   */
-  public ALOAD(int n) {
-    super(org.apache.bcel.Constants.ALOAD, org.apache.bcel.Constants.ALOAD_0, n);
-  }
+    /**
+     * Load reference from local variable
+     *
+     * @param n index of local variable
+     */
+    public ALOAD(int n) {
+        super(org.apache.bcel.Constants.ALOAD, org.apache.bcel.Constants.ALOAD_0, n);
+    }
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    super.accept(v);
-    v.visitALOAD(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        super.accept(v);
+        v.visitALOAD(this);
+    }
 }

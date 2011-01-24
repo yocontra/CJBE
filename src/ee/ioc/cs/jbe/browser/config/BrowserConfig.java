@@ -18,20 +18,21 @@ import java.util.regex.Pattern;
 
 
 /**
-    Workspace configuration object.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.3 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Workspace configuration object.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.3 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class BrowserConfig implements ClasspathComponent {
 
     private MDIConfig mdiConfig;
-    private List<ClasspathEntry>  classpath = new ArrayList<ClasspathEntry >();
+    private List<ClasspathEntry> classpath = new ArrayList<ClasspathEntry>();
     private Set<ClasspathEntry> mergedEntries = new HashSet<ClasspathEntry>();
     private Set<ClasspathChangeListener> changeListeners = new HashSet<ClasspathChangeListener>();
 
     /**
      * Get the associated MDI configuration object.
+     *
      * @return the <tt>MDIConfig</tt> object.
      */
     public MDIConfig getMDIConfig() {
@@ -40,6 +41,7 @@ public class BrowserConfig implements ClasspathComponent {
 
     /**
      * Set the associated MDI configuration object.
+     *
      * @param mdiConfig the <tt>MDIConfig</tt> object.
      */
     public void setMDIConfig(MDIConfig mdiConfig) {
@@ -48,6 +50,7 @@ public class BrowserConfig implements ClasspathComponent {
 
     /**
      * Get the list of <tt>ClasspathEntry</tt> objects that define the classpath.
+     *
      * @return the list
      */
     public List getClasspath() {
@@ -56,9 +59,10 @@ public class BrowserConfig implements ClasspathComponent {
 
     /**
      * Set the list of <tt>ClasspathEntry</tt> objects that define the classpath.
+     *
      * @param classpath the list
      */
-    public void setClasspath(List<ClasspathEntry > classpath) {
+    public void setClasspath(List<ClasspathEntry> classpath) {
         this.classpath = classpath;
     }
 
@@ -73,6 +77,7 @@ public class BrowserConfig implements ClasspathComponent {
     /**
      * Add a classpath entry for a directory.
      * Has no effect of the classpath entry is already present.
+     *
      * @param directoryName the name of the directory.
      */
     public void addClasspathDirectory(String directoryName) {
@@ -87,6 +92,7 @@ public class BrowserConfig implements ClasspathComponent {
     /**
      * Add a classpath entry for an archive.
      * Has no effect of the classpath entry is already present.
+     *
      * @param archiveName the path of he archive.
      */
     public void addClasspathArchive(String archiveName) {
@@ -101,6 +107,7 @@ public class BrowserConfig implements ClasspathComponent {
     /**
      * Add a classpath entry.
      * Has no effect of the classpath entry is already present.
+     *
      * @param entry the entry.
      */
     public void addClasspathEntry(ClasspathEntry entry) {
@@ -112,6 +119,7 @@ public class BrowserConfig implements ClasspathComponent {
 
     /**
      * Remove a classpath entry.
+     *
      * @param entry the entry.
      */
     public void removeClasspathEntry(ClasspathEntry entry) {
@@ -141,7 +149,7 @@ public class BrowserConfig implements ClasspathComponent {
 
         Iterator it = classpath.iterator();
         while (it.hasNext()) {
-            ClasspathEntry entry = (ClasspathEntry)it.next();
+            ClasspathEntry entry = (ClasspathEntry) it.next();
             FindResult findResult = entry.findClass(className);
             if (findResult != null) {
                 return findResult;
@@ -154,7 +162,7 @@ public class BrowserConfig implements ClasspathComponent {
 
         Iterator it = classpath.iterator();
         while (it.hasNext()) {
-            ClasspathEntry entry = (ClasspathEntry)it.next();
+            ClasspathEntry entry = (ClasspathEntry) it.next();
             if (reset || !mergedEntries.contains(entry)) {
                 entry.mergeClassesIntoTree(model, reset);
                 mergedEntries.add(entry);
@@ -166,7 +174,7 @@ public class BrowserConfig implements ClasspathComponent {
         Iterator it = changeListeners.iterator();
         ClasspathChangeEvent event = new ClasspathChangeEvent(this, removal);
         while (it.hasNext()) {
-            ClasspathChangeListener listener = (ClasspathChangeListener)it.next();
+            ClasspathChangeListener listener = (ClasspathChangeListener) it.next();
             listener.classpathChanged(event);
         }
     }

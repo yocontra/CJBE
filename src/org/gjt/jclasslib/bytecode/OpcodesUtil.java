@@ -9,7 +9,7 @@ package org.gjt.jclasslib.bytecode;
 
 /**
  * Defines utility methods for dealing with opcodes.
- * 
+ *
  * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
  * @version $Revision: 1.2 $ $Date: 2005/12/19 18:15:20 $
  */
@@ -231,9 +231,8 @@ public class OpcodesUtil implements Opcodes {
 
     /**
      * Get the verbose description for a numeric opcode.
-     * 
-     * @param opcode
-     *            the opcode
+     *
+     * @param opcode the opcode
      * @return the description
      */
     public static String getVerbose(int opcode) {
@@ -247,61 +246,59 @@ public class OpcodesUtil implements Opcodes {
     /**
      * Get the verbose description for a numeric array type in the immediate
      * argument of the <tt>newarray</tt> instruction.
-     * 
-     * @param arrayType
-     *            the array type
+     *
+     * @param arrayType the array type
      * @return the description
      */
     public static String getArrayTypeVerbose(int arrayType) {
 
         switch (arrayType) {
-        case NEWARRAY_T_BOOLEAN:
-            return "boolean";
-        case NEWARRAY_T_CHAR:
-            return "char";
-        case NEWARRAY_T_FLOAT:
-            return "float";
-        case NEWARRAY_T_DOUBLE:
-            return "double";
-        case NEWARRAY_T_BYTE:
-            return "byte";
-        case NEWARRAY_T_SHORT:
-            return "short";
-        case NEWARRAY_T_INT:
-            return "int";
-        case NEWARRAY_T_LONG:
-            return "long";
-        default:
-            return "invalid array type";
+            case NEWARRAY_T_BOOLEAN:
+                return "boolean";
+            case NEWARRAY_T_CHAR:
+                return "char";
+            case NEWARRAY_T_FLOAT:
+                return "float";
+            case NEWARRAY_T_DOUBLE:
+                return "double";
+            case NEWARRAY_T_BYTE:
+                return "byte";
+            case NEWARRAY_T_SHORT:
+                return "short";
+            case NEWARRAY_T_INT:
+                return "int";
+            case NEWARRAY_T_LONG:
+                return "long";
+            default:
+                return "invalid array type";
         }
     }
 
     /**
-     * Get the nymeric array type from the verbose description
-     * 
-     * @param the
-     *            description
+     * Get the numeric array type from the verbose description
+     *
+     * @param verbose description
      * @return arrayType the array type
      */
     public static byte getArrayType(String verbose) {
         if (verbose.equals("boolean")) {
             return NEWARRAY_T_BOOLEAN;
-        } else     if (verbose.equals("char")) {
+        } else if (verbose.equals("char")) {
             return NEWARRAY_T_CHAR;
-        } else     if (verbose.equals("float")) {
+        } else if (verbose.equals("float")) {
             return NEWARRAY_T_FLOAT;
-        } else     if (verbose.equals("double")) {
+        } else if (verbose.equals("double")) {
             return NEWARRAY_T_DOUBLE;
-        } else     if (verbose.equals("byte")) {
+        } else if (verbose.equals("byte")) {
             return NEWARRAY_T_BYTE;
-        } else     if (verbose.equals("short")) {
+        } else if (verbose.equals("short")) {
             return NEWARRAY_T_SHORT;
-        } else     if (verbose.equals("int")) {
+        } else if (verbose.equals("int")) {
             return NEWARRAY_T_INT;
-        } else     if (verbose.equals("long")) {
+        } else if (verbose.equals("long")) {
             return NEWARRAY_T_LONG;
         }
         return 0;
-    
+
     }
 }

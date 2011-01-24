@@ -54,38 +54,38 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * LSHL - Arithmetic shift left long
  * <PRE>Stack: ..., value1.word1, value1.word2, value2 -&gt; ..., result.word1, result.word2</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: LSHL.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class LSHL extends ArithmeticInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 7855322471731877312L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 7855322471731877312L;
 
 
-public LSHL() {
-    super(org.apache.bcel.Constants.LSHL);
-  }
+    public LSHL() {
+        super(org.apache.bcel.Constants.LSHL);
+    }
 
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitTypedInstruction(this);
-    v.visitStackProducer(this);
-    v.visitStackConsumer(this);
-    v.visitArithmeticInstruction(this);
-    v.visitLSHL(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitTypedInstruction(this);
+        v.visitStackProducer(this);
+        v.visitStackConsumer(this);
+        v.visitArithmeticInstruction(this);
+        v.visitLSHL(this);
+    }
 }

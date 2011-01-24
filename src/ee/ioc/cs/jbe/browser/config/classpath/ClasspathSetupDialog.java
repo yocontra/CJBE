@@ -7,12 +7,10 @@
 
 package ee.ioc.cs.jbe.browser.config.classpath;
 
-import org.gjt.jclasslib.mdi.BasicFileFilter;
-import org.gjt.jclasslib.util.GUIHelper;
-
 import ee.ioc.cs.jbe.browser.BrowserMDIFrame;
 import ee.ioc.cs.jbe.browser.config.BrowserConfig;
-
+import org.gjt.jclasslib.mdi.BasicFileFilter;
+import org.gjt.jclasslib.util.GUIHelper;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -20,17 +18,18 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
-    Dialog for viewing and modifying the classpath.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Dialog for viewing and modifying the classpath.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class ClasspathSetupDialog extends JDialog
-                                  implements ActionListener, ListSelectionListener {
+        implements ActionListener, ListSelectionListener {
 
     private static final int DIALOG_WIDTH = 500;
     private static final int DIALOG_HEIGHT = 300;
@@ -58,9 +57,10 @@ public class ClasspathSetupDialog extends JDialog
 
     /**
      * Constructor.
+     *
      * @param frame the parent frame.
      */
-    public ClasspathSetupDialog(BrowserMDIFrame frame)  {
+    public ClasspathSetupDialog(BrowserMDIFrame frame) {
         super(frame);
         this.frame = frame;
         setupControls();
@@ -191,7 +191,7 @@ public class ClasspathSetupDialog extends JDialog
 
     private void setupAccelerators() {
 
-        addAccelerator((JComponent)getContentPane(), KeyEvent.VK_ESCAPE, 0, new AbstractAction() {
+        addAccelerator((JComponent) getContentPane(), KeyEvent.VK_ESCAPE, 0, new AbstractAction() {
             public void actionPerformed(ActionEvent event) {
                 doCancel();
             }
@@ -282,14 +282,14 @@ public class ClasspathSetupDialog extends JDialog
 
         Iterator itOld = oldEntries.iterator();
         while (itOld.hasNext()) {
-            ClasspathEntry entry = (ClasspathEntry)itOld.next();
+            ClasspathEntry entry = (ClasspathEntry) itOld.next();
             if (!newEntries.contains(entry)) {
                 config.removeClasspathEntry(entry);
             }
         }
         Iterator itNew = newEntries.iterator();
         while (itNew.hasNext()) {
-            ClasspathEntry entry = (ClasspathEntry)itNew.next();
+            ClasspathEntry entry = (ClasspathEntry) itNew.next();
             if (!oldEntries.contains(entry)) {
                 config.addClasspathEntry(entry);
             }

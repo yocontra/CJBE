@@ -43,7 +43,7 @@ public class BrowserAboutDialog extends JDialog {
         setSize(400, 450);
         GUIHelper.centerOnParentWindow(this, getOwner());
 
-        JComponent contentPane = (JComponent)getContentPane();
+        JComponent contentPane = (JComponent) getContentPane();
         contentPane.setLayout(new GridBagLayout());
         GridBagConstraints gc = new GridBagConstraints();
         gc.insets = new Insets(10, 5, 0, 5);
@@ -70,7 +70,7 @@ public class BrowserAboutDialog extends JDialog {
         contentPane.add(new JLabel("This product includes software developed by the"), gc);
         contentPane.add(new JLabel("Apache Software Foundation (http://www.apache.org/)"), gc);
 
-        
+
         gc.weighty = 0;
         gc.insets.top = 20;
         gc.insets.bottom = 5;

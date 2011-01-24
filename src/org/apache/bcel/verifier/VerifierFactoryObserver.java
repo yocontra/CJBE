@@ -58,19 +58,18 @@ package org.apache.bcel.verifier;
  * VerifierFactoryObserver instances are notified when new Verifier
  * instances are created.
  *
- * @version $Id: VerifierFactoryObserver.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
- *
+ * @version $Id: VerifierFactoryObserver.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  * @see VerifierFactory#getVerifier(String)
  * @see VerifierFactory#getVerifiers()
  * @see VerifierFactory#attach(VerifierFactoryObserver)
  * @see VerifierFactory#detach(VerifierFactoryObserver)
  */
-public interface VerifierFactoryObserver{
-	/**
-	 * VerifierFactoryObserver instances are notified invoking this method.
-	 * The String argument is the fully qualified class name of a class a
-	 * new Verifier instance created by the VerifierFactory operates on.
-	 */
-	public void update(String s);
+public interface VerifierFactoryObserver {
+    /**
+     * VerifierFactoryObserver instances are notified invoking this method.
+     * The String argument is the fully qualified class name of a class a
+     * new Verifier instance created by the VerifierFactory operates on.
+     */
+    public void update(String s);
 }

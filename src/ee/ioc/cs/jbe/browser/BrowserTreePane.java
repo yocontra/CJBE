@@ -8,9 +8,14 @@
 package ee.ioc.cs.jbe.browser;
 
 import org.gjt.jclasslib.structures.*;
-import org.gjt.jclasslib.structures.attributes.*;
+import org.gjt.jclasslib.structures.attributes.AnnotationDefaultAttribute;
+import org.gjt.jclasslib.structures.attributes.CodeAttribute;
+import org.gjt.jclasslib.structures.attributes.RuntimeAnnotationsAttribute;
 import org.gjt.jclasslib.structures.constants.ConstantLargeNumeric;
-import org.gjt.jclasslib.structures.elementvalues.*;
+import org.gjt.jclasslib.structures.elementvalues.AnnotationElementValue;
+import org.gjt.jclasslib.structures.elementvalues.ArrayElementValue;
+import org.gjt.jclasslib.structures.elementvalues.ElementValue;
+import org.gjt.jclasslib.structures.elementvalues.ElementValuePair;
 
 import javax.swing.*;
 import javax.swing.tree.*;
@@ -61,7 +66,7 @@ public class BrowserTreePane extends JPanel {
      * @return the tree path.
      */
     public TreePath getPathForCategory(String category) {
-        return (TreePath)categoryToPath.get(category);
+        return (TreePath) categoryToPath.get(category);
     }
 
     /**
@@ -72,14 +77,14 @@ public class BrowserTreePane extends JPanel {
      */
     public void showMethod(String methodName, String methodSignature) {
 
-        TreePath methodsPath = (TreePath)categoryToPath.get(BrowserTreeNode.NODE_METHOD);
+        TreePath methodsPath = (TreePath) categoryToPath.get(BrowserTreeNode.NODE_METHOD);
         if (methodsPath == null) {
             return;
         }
         MethodInfo[] methods = services.getClassFile().getMethods();
-        TreeNode methodsNode = (TreeNode)methodsPath.getLastPathComponent();
+        TreeNode methodsNode = (TreeNode) methodsPath.getLastPathComponent();
         for (int i = 0; i < methodsNode.getChildCount(); i++) {
-            BrowserTreeNode treeNode = (BrowserTreeNode)methodsNode.getChildAt(i);
+            BrowserTreeNode treeNode = (BrowserTreeNode) methodsNode.getChildAt(i);
             MethodInfo testMethod = methods[treeNode.getIndex()];
             try {
                 if (testMethod.getName().equals(methodName) && testMethod.getDescriptor().equals(methodSignature)) {
@@ -189,15 +194,15 @@ public class BrowserTreePane extends JPanel {
         if (constantPoolEntry == null) {
             constantPoolNode.add(buildNullNode());
         } else {
-            String constDescription ="";
+            String constDescription = "";
             try {
-                constDescription = constantPoolEntry.getTagVerbose().substring(9) + ": "+constantPoolEntry.getVerbose();
+                constDescription = constantPoolEntry.getTagVerbose().substring(9) + ": " + constantPoolEntry.getVerbose();
             } catch (InvalidByteCodeException e) {
                 e.printStackTrace();
             }
             BrowserTreeNode entryNode =
                     new BrowserTreeNode(getFormattedIndex(index, constantPoolCount) +
-                    constDescription,
+                            constDescription,
                             BrowserTreeNode.NODE_CONSTANT_POOL,
                             index);
 
@@ -218,7 +223,7 @@ public class BrowserTreePane extends JPanel {
 
         BrowserTreeNode entryNode =
                 new BrowserTreeNode(getFormattedIndex(index, constantPoolCount) +
-                "(large numeric continued)",
+                        "(large numeric continued)",
                         BrowserTreeNode.NODE_NO_CONTENT);
         constantPoolNode.add(entryNode);
     }
@@ -289,7 +294,7 @@ public class BrowserTreePane extends JPanel {
             try {
                 BrowserTreeNode entryNode =
                         new BrowserTreeNode(
-                        classMember.getName(),
+                                classMember.getName(),
                                 type,
                                 index);
 
@@ -305,13 +310,13 @@ public class BrowserTreePane extends JPanel {
     private BrowserTreeNode buildAttributesNode() {
         BrowserTreeNode mainNode = new BrowserTreeNode("Attributes");
         mainNode.setType(BrowserTreeNode.NODE_ATTRIBUTES_GENERAL);
-        
+
         //BrowserTreeNode attributesNode = new BrowserTreeNode("Attributes");
         addAttributeNodes(mainNode, services.getClassFile());
-       
-        
-      //  mainNode.add(attributesNode);
-        
+
+
+        //  mainNode.add(attributesNode);
+
         return mainNode;
     }
 
@@ -348,15 +353,15 @@ public class BrowserTreePane extends JPanel {
             try {
                 BrowserTreeNode entryNode =
                         new BrowserTreeNode(getFormattedIndex(index, attributesCount) +
-                        attribute.getName(),
+                                attribute.getName(),
                                 BrowserTreeNode.NODE_ATTRIBUTE,
                                 index);
 
                 parentNode.add(entryNode);
                 if (attribute instanceof RuntimeAnnotationsAttribute) {
-                    addRuntimeAnnotation(entryNode, (RuntimeAnnotationsAttribute)attribute);
+                    addRuntimeAnnotation(entryNode, (RuntimeAnnotationsAttribute) attribute);
                 } else if (attribute instanceof AnnotationDefaultAttribute) {
-                    addSingleElementValueEntryNode(((AnnotationDefaultAttribute)attribute).getDefaultValue(), 0, 1, entryNode);
+                    addSingleElementValueEntryNode(((AnnotationDefaultAttribute) attribute).getDefaultValue(), 0, 1, entryNode);
                 } else {
                     addAttributeNodes(entryNode, attribute);
                 }
@@ -387,7 +392,7 @@ public class BrowserTreePane extends JPanel {
         AttributeInfo[] attributes = methodInfo.getAttributes();
         for (int i = 0; i < attributes.length; i++) {
             if (attributes[i] instanceof CodeAttribute) {
-                return (BrowserTreeNode)treeNode.getChildAt(i);
+                return (BrowserTreeNode) treeNode.getChildAt(i);
             }
         }
         return null;
@@ -421,7 +426,7 @@ public class BrowserTreePane extends JPanel {
         } else {
             BrowserTreeNode entryNode =
                     new BrowserTreeNode(getFormattedIndex(index, attributesCount) +
-                    annotation.getEntryName(),
+                            annotation.getEntryName(),
                             BrowserTreeNode.NODE_ANNOTATION,
                             index,
                             annotation);
@@ -474,7 +479,7 @@ public class BrowserTreePane extends JPanel {
         } else {
             BrowserTreeNode entryNode =
                     new BrowserTreeNode(getFormattedIndex(index, attributesCount) +
-                    evep.getEntryName(),
+                            evep.getEntryName(),
                             BrowserTreeNode.NODE_ELEMENTVALUEPAIR,
                             index,
                             evep);
@@ -506,9 +511,9 @@ public class BrowserTreePane extends JPanel {
 
             parentNode.add(entryNode);
             if (nodeType == BrowserTreeNode.NODE_ANNOTATION) {
-                addElementValuePairEntry(entryNode, (AnnotationElementValue)eve);
+                addElementValuePairEntry(entryNode, (AnnotationElementValue) eve);
             } else if (nodeType == BrowserTreeNode.NODE_ARRAYELEMENTVALUE) {
-                addArrayElementValueEntry(entryNode, (ArrayElementValue)eve);
+                addArrayElementValueEntry(entryNode, (ArrayElementValue) eve);
             }
         }
     }

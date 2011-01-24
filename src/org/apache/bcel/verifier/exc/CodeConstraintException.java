@@ -53,25 +53,27 @@ package org.apache.bcel.verifier.exc;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
+
 /**
  * Instances of this class are thrown by BCEL's class file verifier "JustIce" when
  * a class file does not pass the verification pass 3. Note that the pass 3 used by
  * "JustIce" involves verification that is usually delayed to pass 4.
  *
- * @version $Id: CodeConstraintException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: CodeConstraintException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  */
-public abstract class CodeConstraintException extends VerificationException{
-	/**
-	 * Constructs a new CodeConstraintException with null as its error message string.
-	 */
-	CodeConstraintException(){
-		super();
-	}
-	/**
-	 * Constructs a new CodeConstraintException with the specified error message.
-	 */
-	CodeConstraintException(String message){
-		super(message);
-	}	
+public abstract class CodeConstraintException extends VerificationException {
+    /**
+     * Constructs a new CodeConstraintException with null as its error message string.
+     */
+    CodeConstraintException() {
+        super();
+    }
+
+    /**
+     * Constructs a new CodeConstraintException with the specified error message.
+     */
+    CodeConstraintException(String message) {
+        super(message);
+    }
 }

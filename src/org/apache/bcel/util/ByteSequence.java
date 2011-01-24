@@ -53,30 +53,45 @@ package org.apache.bcel.util;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
-import java.io.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
 
 /**
  * Utility class that implements a sequence of bytes which can be read
- * via the `readByte()' method. This is used to implement a wrapper for the 
+ * via the `readByte()' method. This is used to implement a wrapper for the
  * Java byte code stream to gain some more readability.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ByteSequence.java,v 1.1 2005/12/16 14:11:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public final class ByteSequence extends DataInputStream {
-  private ByteArrayStream byte_stream;
+    private ByteArrayStream byte_stream;
 
-  public ByteSequence(byte[] bytes) { 
-    super(new ByteArrayStream(bytes));
-    byte_stream = (ByteArrayStream)in;
-  }
+    public ByteSequence(byte[] bytes) {
+        super(new ByteArrayStream(bytes));
+        byte_stream = (ByteArrayStream) in;
+    }
 
-  public final int getIndex()   { return byte_stream.getPosition(); }    
-  final  void      unreadByte() { byte_stream.unreadByte(); }
+    public final int getIndex() {
+        return byte_stream.getPosition();
+    }
 
-  private static final class ByteArrayStream extends ByteArrayInputStream {
-    ByteArrayStream(byte[] bytes) { super(bytes); }
-    final int  getPosition() { return pos; } // is protected in ByteArrayInputStream
-    final void unreadByte()  { if(pos > 0) pos--; }
-  }
+    final void unreadByte() {
+        byte_stream.unreadByte();
+    }
+
+    private static final class ByteArrayStream extends ByteArrayInputStream {
+        ByteArrayStream(byte[] bytes) {
+            super(bytes);
+        }
+
+        final int getPosition() {
+            return pos;
+        } // is protected in ByteArrayInputStream
+
+        final void unreadByte() {
+            if (pos > 0) pos--;
+        }
+    }
 }

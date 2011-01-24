@@ -9,14 +9,16 @@ package org.gjt.jclasslib.structures.constants;
 
 import org.gjt.jclasslib.structures.InvalidByteCodeException;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
 /**
-    Describes a <tt>CONSTANT_Long_info</tt> constant pool data structure.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
-*/
+ * Describes a <tt>CONSTANT_Long_info</tt> constant pool data structure.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
+ */
 public class ConstantLongInfo extends ConstantLargeNumeric {
 
     public byte getTag() {
@@ -32,40 +34,42 @@ public class ConstantLongInfo extends ConstantLargeNumeric {
     }
 
     /**
-        Get the long value of this constant pool entry.
-        @return the value
+     * Get the long value of this constant pool entry.
+     *
+     * @return the value
      */
     public long getLong() {
-        return (long)highBytes << 32 | ((long)lowBytes & 0x7FFFFFFF);
+        return (long) highBytes << 32 | ((long) lowBytes & 0x7FFFFFFF);
     }
 
     /**
-        Set the long value of this constant pool entry.
-        @param number the value
+     * Set the long value of this constant pool entry.
+     *
+     * @param number the value
      */
     public void setLong(long number) {
-        highBytes = (int)(number >>> 32);
-        lowBytes = (int)(number & 0x0000FFFF);
+        highBytes = (int) (number >>> 32);
+        lowBytes = (int) (number & 0x0000FFFF);
     }
 
     public void read(DataInput in)
-        throws InvalidByteCodeException, IOException {
-        
+            throws InvalidByteCodeException, IOException {
+
         super.read(in);
         if (debug) debug("read ");
     }
-    
+
     public void write(DataOutput out)
-        throws InvalidByteCodeException, IOException {
-        
+            throws InvalidByteCodeException, IOException {
+
         out.writeByte(CONSTANT_LONG);
         super.write(out);
         if (debug) debug("wrote ");
     }
-    
+
     protected void debug(String message) {
-        super.debug(message + getTagVerbose() + " with high_bytes " + highBytes + 
-              " and low_bytes " + lowBytes);
+        super.debug(message + getTagVerbose() + " with high_bytes " + highBytes +
+                " and low_bytes " + lowBytes);
     }
 
 }

@@ -58,13 +58,13 @@ package org.apache.bcel.generic;
  * Denotes an instruction to be a variable length instruction, such as
  * GOTO, JSR, LOOKUPSWITCH and TABLESWITCH.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: VariableLengthInstruction.java,v 1.1 2005/12/16 14:11:25 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
-
  * @see GOTO
  * @see JSR
  * @see LOOKUPSWITCH
  * @see TABLESWITCH
  */
-public interface VariableLengthInstruction {}
+public interface VariableLengthInstruction {
+}
 

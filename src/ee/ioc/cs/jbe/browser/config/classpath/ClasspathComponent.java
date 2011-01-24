@@ -10,15 +10,16 @@ package ee.ioc.cs.jbe.browser.config.classpath;
 import javax.swing.tree.DefaultTreeModel;
 
 /**
-    A logical component of the classpath.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * A logical component of the classpath.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
+ */
 public interface ClasspathComponent {
 
     /**
      * Find a class by name within thsi classpath component.
+     *
      * @param className the name of the class
      * @return the <tt>FindResult</tt> object. <tt>null</tt> if no class could be found.
      */
@@ -26,6 +27,7 @@ public interface ClasspathComponent {
 
     /**
      * Merge all classes in this classpath component into the supplied tree.
+     *
      * @param model the tree model.
      * @param reset whether this is an incremental operation or part of a reset.
      *              For a reset, no change events will be fired on the tree model.
@@ -34,12 +36,14 @@ public interface ClasspathComponent {
 
     /**
      * Add a <tt>ClasspathChangeListener</tt>.
+     *
      * @param listener the listener
      */
     public void addClasspathChangeListener(ClasspathChangeListener listener);
 
     /**
      * Remove a <tt>ClasspathChangeListener</tt>.
+     *
      * @param listener the listener
      */
     public void removeClasspathChangeListener(ClasspathChangeListener listener);

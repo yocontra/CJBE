@@ -11,20 +11,21 @@ import javax.swing.filechooser.FileFilter;
 import java.io.File;
 
 /**
-    Configurable file filter for a <tt>JFileChooser</tt>.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
-*/
+ * Configurable file filter for a <tt>JFileChooser</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
+ */
 public class BasicFileFilter extends FileFilter {
 
     private String[] extensions;
     private String description;
 
     /**
-        Constructor.
-        @param extensions the file extensions.
-        @param description the description.
+     * Constructor.
+     *
+     * @param extensions  the file extensions.
+     * @param description the description.
      */
     public BasicFileFilter(String[] extensions, String description) {
 
@@ -45,13 +46,14 @@ public class BasicFileFilter extends FileFilter {
     }
 
     /**
-        Constructor.
-        @param extension the file extension.
-        @param description the description.
+     * Constructor.
+     *
+     * @param extension   the file extension.
+     * @param description the description.
      */
     public BasicFileFilter(String extension, String description) {
 
-        this(new String[] {extension}, description);
+        this(new String[]{extension}, description);
     }
 
     public boolean accept(File file) {

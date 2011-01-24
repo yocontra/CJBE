@@ -12,14 +12,16 @@ import java.io.File;
 import java.io.IOException;
 
 /**
-    Base class for classpath entries.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Base class for classpath entries.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
+ */
 public abstract class ClasspathEntry implements ClasspathComponent {
 
-    /** Suffix for class files. */
+    /**
+     * Suffix for class files.
+     */
     protected static final String CLASSFILE_SUFFIX = ".class";
 
     private String fileName;
@@ -27,6 +29,7 @@ public abstract class ClasspathEntry implements ClasspathComponent {
 
     /**
      * Get the name of the classpath entry.
+     *
      * @return the name
      */
     public String getFileName() {
@@ -35,6 +38,7 @@ public abstract class ClasspathEntry implements ClasspathComponent {
 
     /**
      * Set the name of the classpath entry.
+     *
      * @param fileName the name.
      */
     public void setFileName(String fileName) {
@@ -57,7 +61,7 @@ public abstract class ClasspathEntry implements ClasspathComponent {
             return false;
         }
 
-        return fileName.equals(((ClasspathEntry)other).fileName);
+        return fileName.equals(((ClasspathEntry) other).fileName);
     }
 
     public int hashCode() {
@@ -73,6 +77,7 @@ public abstract class ClasspathEntry implements ClasspathComponent {
 
     /**
      * Get the file for the classpath entry. May be <tt>null</tt> if the entry is invalid.
+     *
      * @return the file.
      */
     protected File getFile() {
@@ -82,24 +87,24 @@ public abstract class ClasspathEntry implements ClasspathComponent {
     /**
      * Convenience method to get a node or add a new class of package node to
      * a parent node. New nodes will be added in correct sort order, packages first.
+     *
      * @param newNodeName the name of the new node.
-     * @param parentNode the parent node.
+     * @param parentNode  the parent node.
      * @param packageNode whether the new node is a package node or not.
-     * @param model the tree model.
-     * @param reset whether a reset operation is in progress.
+     * @param model       the tree model.
+     * @param reset       whether a reset operation is in progress.
      * @return the fould or created node.
      */
     protected ClassTreeNode addOrFindNode(String newNodeName,
                                           ClassTreeNode parentNode,
                                           boolean packageNode,
                                           DefaultTreeModel model,
-                                          boolean reset)
-    {
+                                          boolean reset) {
         int childCount = parentNode.getChildCount();
 
         ClassTreeNode newNode = new ClassTreeNode(newNodeName, packageNode);
         for (int i = 0; i < childCount; i++) {
-            ClassTreeNode childNode = (ClassTreeNode)parentNode.getChildAt(i);
+            ClassTreeNode childNode = (ClassTreeNode) parentNode.getChildAt(i);
             String childNodeName = childNode.toString();
             if (childNode.getChildCount() > 0 && !packageNode) {
                 continue;
@@ -120,6 +125,7 @@ public abstract class ClasspathEntry implements ClasspathComponent {
 
     /**
      * Strip the class suffix from the supplied file name.
+     *
      * @param name the file name.
      * @return the stripped name.
      */
@@ -128,14 +134,13 @@ public abstract class ClasspathEntry implements ClasspathComponent {
     }
 
     private void insertNode(ClassTreeNode newNode,
-                              ClassTreeNode parentNode,
-                              int insertionIndex,
-                              DefaultTreeModel model,
-                              boolean reset)
-    {
+                            ClassTreeNode parentNode,
+                            int insertionIndex,
+                            DefaultTreeModel model,
+                            boolean reset) {
         parentNode.insert(newNode, insertionIndex);
         if (!reset) {
-            model.nodesWereInserted(parentNode, new int[] {insertionIndex});
+            model.nodesWereInserted(parentNode, new int[]{insertionIndex});
         }
     }
 

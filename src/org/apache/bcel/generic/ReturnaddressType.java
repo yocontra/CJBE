@@ -53,54 +53,55 @@ package org.apache.bcel.generic;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
-import org.apache.bcel.Constants;
-import org.apache.bcel.generic.InstructionHandle;
 
-/** 
+import org.apache.bcel.Constants;
+
+/**
  * Returnaddress, the type JSR or JSR_W instructions push upon the stack.
+ * <p/>
+ * see vmspec2 ï¿½3.3.3
  *
- * see vmspec2 §3.3.3
+ * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase">Enver Haase</A>
  * @version $Id: ReturnaddressType.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="http://www.inf.fu-berlin.de/~ehaase">Enver Haase</A>
  */
 public class ReturnaddressType extends Type {
 
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 4736133533279893837L;
-public static final ReturnaddressType NO_TARGET = new ReturnaddressType();
-  private InstructionHandle returnTarget;
- 
-  /**
-   * A Returnaddress [that doesn't know where to return to].
-   */
-  private ReturnaddressType(){
-    super(Constants.T_ADDRESS, "<return address>");
-  }
- 	
-  /**
-   * Creates a ReturnaddressType object with a target.
-   */
-  public ReturnaddressType(InstructionHandle returnTarget) {
-    super(Constants.T_ADDRESS, "<return address targeting "+returnTarget+">");
-  	this.returnTarget = returnTarget;
-  }
-	
-  /**
-   * Returns if the two Returnaddresses refer to the same target.
-   */
-  public boolean equals(Object rat){
-    if(!(rat instanceof ReturnaddressType))
-      return false;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 4736133533279893837L;
+    public static final ReturnaddressType NO_TARGET = new ReturnaddressType();
+    private InstructionHandle returnTarget;
 
-    return ((ReturnaddressType)rat).returnTarget.equals(this.returnTarget);
-  }	
+    /**
+     * A Returnaddress [that doesn't know where to return to].
+     */
+    private ReturnaddressType() {
+        super(Constants.T_ADDRESS, "<return address>");
+    }
 
-  /**
-   * @return the target of this ReturnaddressType
-   */
-  public InstructionHandle getTarget(){
-    return returnTarget;
-  }
+    /**
+     * Creates a ReturnaddressType object with a target.
+     */
+    public ReturnaddressType(InstructionHandle returnTarget) {
+        super(Constants.T_ADDRESS, "<return address targeting " + returnTarget + ">");
+        this.returnTarget = returnTarget;
+    }
+
+    /**
+     * Returns if the two Returnaddresses refer to the same target.
+     */
+    public boolean equals(Object rat) {
+        if (!(rat instanceof ReturnaddressType))
+            return false;
+
+        return ((ReturnaddressType) rat).returnTarget.equals(this.returnTarget);
+    }
+
+    /**
+     * @return the target of this ReturnaddressType
+     */
+    public InstructionHandle getTarget() {
+        return returnTarget;
+    }
 }

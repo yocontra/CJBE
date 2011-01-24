@@ -10,62 +10,68 @@ package org.gjt.jclasslib.structures.attributes;
 import org.gjt.jclasslib.structures.AttributeInfo;
 import org.gjt.jclasslib.structures.InvalidByteCodeException;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
 /**
-    Describes an <tt>LineNumberTable</tt> attribute structure.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
-*/
+ * Describes an <tt>LineNumberTable</tt> attribute structure.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
+ */
 public class LineNumberTableAttribute extends AttributeInfo {
 
-    /** Name of the attribute as in the corresponding constant pool entry. */
+    /**
+     * Name of the attribute as in the corresponding constant pool entry.
+     */
     public static final String ATTRIBUTE_NAME = "LineNumberTable";
 
     private static final int INITIAL_LENGTH = 2;
-    
+
     private LineNumberTableEntry[] lineNumberTable;
-    
+
     /**
-        Get the list of line number associations of the parent
-        <tt>Code</tt> structure as an array of <tt>LineNumberTableEntry</tt> structures.
-        @return the array
+     * Get the list of line number associations of the parent
+     * <tt>Code</tt> structure as an array of <tt>LineNumberTableEntry</tt> structures.
+     *
+     * @return the array
      */
     public LineNumberTableEntry[] getLineNumberTable() {
         return lineNumberTable;
     }
-    
+
     /**
-        Set the list of line number associations of the parent
-        <tt>Code</tt> structure as an array of <tt>LineNumberTableEntry</tt> structures.
-        @param lineNumberTable the index
+     * Set the list of line number associations of the parent
+     * <tt>Code</tt> structure as an array of <tt>LineNumberTableEntry</tt> structures.
+     *
+     * @param lineNumberTable the index
      */
     public void setLineNumberTable(LineNumberTableEntry[] lineNumberTable) {
         this.lineNumberTable = lineNumberTable;
     }
-    
+
     public void read(DataInput in)
-        throws InvalidByteCodeException, IOException {
-            
+            throws InvalidByteCodeException, IOException {
+
         int lineNumberTableLength = in.readUnsignedShort();
         lineNumberTable = new LineNumberTableEntry[lineNumberTableLength];
-        for (int i = 0 ; i < lineNumberTableLength; i++) {
+        for (int i = 0; i < lineNumberTableLength; i++) {
             lineNumberTable[i] = LineNumberTableEntry.create(in, classFile);
         }
-        
+
         if (debug) debug("read ");
     }
 
     public void write(DataOutput out)
-        throws InvalidByteCodeException, IOException {
-        
+            throws InvalidByteCodeException, IOException {
+
         super.write(out);
 
         int lineNumberTableLength = getLength(lineNumberTable);
-        
+
         out.writeShort(lineNumberTableLength);
-        for (int i = 0 ; i < lineNumberTableLength; i++) {
+        for (int i = 0; i < lineNumberTableLength; i++) {
             lineNumberTable[i].write(out);
         }
         if (debug) debug("wrote ");

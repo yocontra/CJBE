@@ -11,7 +11,9 @@ import org.gjt.jclasslib.io.Log;
 import org.gjt.jclasslib.structures.constants.ConstantLargeNumeric;
 import org.gjt.jclasslib.structures.constants.ConstantUtf8Info;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 import java.util.HashMap;
 
 /**
@@ -105,9 +107,9 @@ public class ClassFile extends AbstractStructureWithAttributes {
      * @return the index, -1 if no equivalent constant pool entry can be found
      */
     public int getConstantPoolIndex(CPInfo cpInfo) {
-        Integer index = (Integer)constantPoolEntryToIndex.get(cpInfo);
+        Integer index = constantPoolEntryToIndex.get(cpInfo);
         if (index != null) {
-            return index.intValue();
+            return index;
         } else {
             return -1;
         }
@@ -123,7 +125,7 @@ public class ClassFile extends AbstractStructureWithAttributes {
     public void setConstantPool(CPInfo[] constantPool) {
         this.constantPool = constantPool;
         for (int i = 0; i < constantPool.length; i++) {
-            constantPoolEntryToIndex.put(constantPool[i], new Integer(i));
+            constantPoolEntryToIndex.put(constantPool[i], i);
         }
     }
 
@@ -139,7 +141,7 @@ public class ClassFile extends AbstractStructureWithAttributes {
         this.constantPool = enlargedConstantPool;
         for (int i = startIndex; i < constantPool.length; i++) {
             if (constantPool[i] != null) {
-                constantPoolEntryToIndex.put(constantPool[i], new Integer(i));
+                constantPoolEntryToIndex.put(constantPool[i], i);
             }
         }
     }
@@ -151,7 +153,7 @@ public class ClassFile extends AbstractStructureWithAttributes {
      * @param index the index
      */
     public void registerConstantPoolEntry(int index) {
-        constantPoolEntryToIndex.put(constantPool[index], new Integer(index));
+        constantPoolEntryToIndex.put(constantPool[index], index);
     }
 
     /**
@@ -320,13 +322,13 @@ public class ClassFile extends AbstractStructureWithAttributes {
     public ConstantUtf8Info getConstantPoolUtf8Entry(int index)
             throws InvalidByteCodeException {
 
-        return (ConstantUtf8Info)getConstantPoolEntry(index, ConstantUtf8Info.class);
+        return (ConstantUtf8Info) getConstantPoolEntry(index, ConstantUtf8Info.class);
     }
 
     /**
      * Get the constant pool entry at the specified index.
      *
-     * @param index      the index
+     * @param index the index
      * @return the constant pool entry
      * @throws InvalidByteCodeException if the entry is of a different class than expected
      */
@@ -337,15 +339,13 @@ public class ClassFile extends AbstractStructureWithAttributes {
             return null;
         }
 
-        CPInfo cpInfo = constantPool[index];
 
-        
-        return cpInfo;
+        return constantPool[index];
 
 
-    }    
-    
-    
+    }
+
+
     /**
      * Get the constant pool entry at the specified index and cast it to a specified class.
      *
@@ -506,10 +506,7 @@ public class ClassFile extends AbstractStructureWithAttributes {
 
     private boolean checkValidConstantPoolIndex(int index) {
 
-        if (index < 1 || index >= constantPool.length) {
-            return false;
-        }
-        return true;
+        return !(index < 1 || index >= constantPool.length);
 
     }
 
@@ -575,7 +572,7 @@ public class ClassFile extends AbstractStructureWithAttributes {
                 // of the constant is not yet known
                 if (debug) debug("reading constant pool entry " + i);
                 constantPool[i] = CPInfo.create(in, this);
-                constantPoolEntryToIndex.put(constantPool[i], new Integer(i));
+                constantPoolEntryToIndex.put(constantPool[i], i);
                 if (constantPool[i] instanceof ConstantLargeNumeric) {
                     // CONSTANT_Double_info and CONSTANT_Long_info take 2 constant
                     // pool entries, the second entry is unusable (design mistake)

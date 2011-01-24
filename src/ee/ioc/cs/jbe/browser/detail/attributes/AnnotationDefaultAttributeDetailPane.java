@@ -6,13 +6,11 @@
 */
 package ee.ioc.cs.jbe.browser.detail.attributes;
 
+import ee.ioc.cs.jbe.browser.BrowserServices;
+import ee.ioc.cs.jbe.browser.detail.FixedListDetailPane;
 import org.gjt.jclasslib.structures.attributes.AnnotationDefaultAttribute;
 import org.gjt.jclasslib.structures.elementvalues.ElementValue;
 import org.gjt.jclasslib.util.ExtendedJLabel;
-
-import ee.ioc.cs.jbe.browser.BrowserServices;
-import ee.ioc.cs.jbe.browser.detail.FixedListDetailPane;
-
 
 import javax.swing.tree.TreePath;
 
@@ -38,7 +36,7 @@ public class AnnotationDefaultAttributeDetailPane extends FixedListDetailPane {
     }
 
     public void show(TreePath treePath) {
-        AnnotationDefaultAttribute ada = (AnnotationDefaultAttribute)findAttribute(treePath);
+        AnnotationDefaultAttribute ada = (AnnotationDefaultAttribute) findAttribute(treePath);
 
         int tag = ada.getDefaultValue().getTag();
         String name = ada.getDefaultValue().getEntryName();

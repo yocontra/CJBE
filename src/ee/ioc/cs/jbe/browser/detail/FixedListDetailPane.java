@@ -7,12 +7,6 @@
 
 package ee.ioc.cs.jbe.browser.detail;
 
-import ee.ioc.cs.jbe.browser.detail.attributes.code.ErrorReportWindow;
-import ee.ioc.cs.jbe.browser.detail.attributes.code.MiscDetailPane;
-import org.gjt.jclasslib.util.ExtendedJLabel;
-import org.gjt.jclasslib.util.GUIHelper;
-import org.gjt.jclasslib.util.ProgressDialog;
-
 import ee.ioc.cs.jbe.browser.AbstractDetailPane;
 import ee.ioc.cs.jbe.browser.BrowserInternalFrame;
 import ee.ioc.cs.jbe.browser.BrowserServices;
@@ -20,8 +14,12 @@ import ee.ioc.cs.jbe.browser.BrowserTreeNode;
 import ee.ioc.cs.jbe.browser.codeedit.ClassSaver;
 import ee.ioc.cs.jbe.browser.detail.attributes.GenericAttributeDetailPane;
 import ee.ioc.cs.jbe.browser.detail.attributes.SourceFileAttributeDetailPane;
+import ee.ioc.cs.jbe.browser.detail.attributes.code.ErrorReportWindow;
+import ee.ioc.cs.jbe.browser.detail.attributes.code.MiscDetailPane;
 import ee.ioc.cs.jbe.browser.detail.constants.AbstractConstantInfoDetailPane;
-
+import org.gjt.jclasslib.util.ExtendedJLabel;
+import org.gjt.jclasslib.util.GUIHelper;
+import org.gjt.jclasslib.util.ProgressDialog;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -32,25 +30,26 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
-    Base class for all detail panes with a structure of
-    a fixed number of key-value pairs arranged in a list.
-    
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.9 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Base class for all detail panes with a structure of
+ * a fixed number of key-value pairs arranged in a list.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.9 $ $Date: 2006/09/25 16:00:58 $
+ */
 public abstract class FixedListDetailPane extends AbstractDetailPane implements ActionListener {
-    
+
     // Visual components
 
     private java.util.List<DetailPaneEntry> detailPaneEntries;
     private JScrollPane scrollPane;
     private JButton deleteBtn;
     private BrowserInternalFrame internalFrame;
-	private TreePath treePath;
+    private TreePath treePath;
 
     /**
-        Constructor.
-        @param services the associated browser services.
+     * Constructor.
+     *
+     * @param services the associated browser services.
      */
     protected FixedListDetailPane(BrowserServices services) {
         super(services);
@@ -58,9 +57,10 @@ public abstract class FixedListDetailPane extends AbstractDetailPane implements 
     }
 
     /**
-        Add a detail entry consisting of a key value pair.
-        @param key the key label
-        @param value the value label
+     * Add a detail entry consisting of a key value pair.
+     *
+     * @param key   the key label
+     * @param value the value label
      */
     protected void addDetailPaneEntry(JComponent key, JComponent value) {
         addDetailPaneEntry(key, value, null);
@@ -68,50 +68,51 @@ public abstract class FixedListDetailPane extends AbstractDetailPane implements 
 
 
     /**
-        Add a detail entry consisting of a key value pair with a associated comment
-        which is made scrollable.
-        @param key the key label
-        @param value the value label
-        @param comment the comment
+     * Add a detail entry consisting of a key value pair with a associated comment
+     * which is made scrollable.
+     *
+     * @param key     the key label
+     * @param value   the value label
+     * @param comment the comment
      */
     protected void addDetailPaneEntry(JComponent key,
-                                        JComponent  value,
+                                      JComponent value,
                                       ExtendedJLabel comment) {
-                                          
+
         if (detailPaneEntries == null) {
             detailPaneEntries = new ArrayList<DetailPaneEntry>();
         }
-        
+
         detailPaneEntries.add(
                 new DetailPaneEntry(key, value, comment)
-            );
+        );
     }
-    
+
     protected void setupComponent() {
-        
+
         setupLabels();
-        
+
         setLayout(new GridBagLayout());
-        
+
         GridBagConstraints gKey = new GridBagConstraints();
         gKey.anchor = GridBagConstraints.NORTHWEST;
-        gKey.insets = new Insets(1,10,0,10);
-        
+        gKey.insets = new Insets(1, 10, 0, 10);
+
         GridBagConstraints gValue = new GridBagConstraints();
         gValue.gridx = 1;
         gValue.anchor = GridBagConstraints.NORTHEAST;
-        gValue.insets = new Insets(1,0,0,5);
+        gValue.insets = new Insets(1, 0, 0, 5);
 
         GridBagConstraints gComment = new GridBagConstraints();
         gComment.gridx = 2;
         gComment.anchor = GridBagConstraints.NORTHWEST;
-        gComment.insets = new Insets(1,0,0,5);
+        gComment.insets = new Insets(1, 0, 0, 5);
         gComment.fill = GridBagConstraints.HORIZONTAL;
-        
-        GridBagConstraints gCommentOnly = (GridBagConstraints)gComment.clone();
+
+        GridBagConstraints gCommentOnly = (GridBagConstraints) gComment.clone();
         gCommentOnly.gridx = 1;
         gCommentOnly.gridwidth = 2;
-        
+
         GridBagConstraints gRemainder = new GridBagConstraints();
         gRemainder.gridx = 2;
         gRemainder.weightx = gRemainder.weighty = 1;
@@ -119,7 +120,7 @@ public abstract class FixedListDetailPane extends AbstractDetailPane implements 
 
         Iterator it = detailPaneEntries.iterator();
         while (it.hasNext()) {
-            DetailPaneEntry entry = (DetailPaneEntry)it.next();
+            DetailPaneEntry entry = (DetailPaneEntry) it.next();
             if (entry == null) {
                 continue;
             }
@@ -135,13 +136,13 @@ public abstract class FixedListDetailPane extends AbstractDetailPane implements 
                 add(entry.comment, (entry.value == null) ? gCommentOnly : gComment);
                 entry.comment.setAutoTooltip(true);
             }
-     
+
         }
         if (!(this instanceof GeneralDetailPane || this instanceof GenericAttributeDetailPane || this instanceof MiscDetailPane || this instanceof SourceFileAttributeDetailPane)) {
-        	addDeleteButton();
+            addDeleteButton();
         }
-        
-        
+
+
         gRemainder.gridy = gKey.gridy + 1;
         gRemainder.gridy += addSpecial(gRemainder.gridy);
 
@@ -153,22 +154,22 @@ public abstract class FixedListDetailPane extends AbstractDetailPane implements 
     }
 
     private void addDeleteButton() {
-    	String buttonText = "Delete this entry";
-    	if (this instanceof AbstractConstantInfoDetailPane) {
-    		buttonText = "Delete constant";
-    	} else   if (this instanceof ClassMemberDetailPane) {
-    		ClassMemberDetailPane cmdp = (ClassMemberDetailPane)this;
-    		if (cmdp.getMode() == 2) {
-    			buttonText = "Delete method";
-    		} else  if (cmdp.getMode() == 1) {
-    			buttonText = "Delete field";
-    		}
-    	}else   if (this instanceof InterfaceDetailPane) {
-    		buttonText = "Delete interface";
-    	}
-    	deleteBtn = new JButton(buttonText);
-    	deleteBtn.addActionListener(this);
-    	GridBagConstraints gc = new GridBagConstraints();
+        String buttonText = "Delete this entry";
+        if (this instanceof AbstractConstantInfoDetailPane) {
+            buttonText = "Delete constant";
+        } else if (this instanceof ClassMemberDetailPane) {
+            ClassMemberDetailPane cmdp = (ClassMemberDetailPane) this;
+            if (cmdp.getMode() == 2) {
+                buttonText = "Delete method";
+            } else if (cmdp.getMode() == 1) {
+                buttonText = "Delete field";
+            }
+        } else if (this instanceof InterfaceDetailPane) {
+            buttonText = "Delete interface";
+        }
+        deleteBtn = new JButton(buttonText);
+        deleteBtn.addActionListener(this);
+        GridBagConstraints gc = new GridBagConstraints();
         gc.weightx = 1;
         gc.anchor = GridBagConstraints.NORTHWEST;
         gc.insets = new Insets(5, 10, 0, 10);
@@ -176,33 +177,35 @@ public abstract class FixedListDetailPane extends AbstractDetailPane implements 
         gc.gridx = 0;
         gc.gridwidth = 3;
         add(deleteBtn, gc);
-		
-	}
 
-	/**
-        Get the scroll pane.
-        @return the scroll pane.
+    }
+
+    /**
+     * Get the scroll pane.
+     *
+     * @return the scroll pane.
      */
     public JScrollPane getScrollPane() {
         return scrollPane;
     }
 
     public void show(TreePath treePath) {
-    	this.treePath = treePath;
+        this.treePath = treePath;
         scrollPane.getViewport().setViewPosition(new Point(0, 0));
 
     }
 
     /**
-        Setup all label and fill the <tt>detailPaneEntries</tt> list so that
-        <tt>setupComponent</tt> can layout the pane.
+     * Setup all label and fill the <tt>detailPaneEntries</tt> list so that
+     * <tt>setupComponent</tt> can layout the pane.
      */
     protected abstract void setupLabels();
 
     /**
-        Hook for derived classes to add additional visual elements.
-        @param gridy the current <tt>gridy</tt> of the <tt>GridbagLayout</tt>.
-        @return the number of added rows.
+     * Hook for derived classes to add additional visual elements.
+     *
+     * @param gridy the current <tt>gridy</tt> of the <tt>GridbagLayout</tt>.
+     * @return the number of added rows.
      */
     protected int addSpecial(int gridy) {
         return 0;
@@ -212,7 +215,7 @@ public abstract class FixedListDetailPane extends AbstractDetailPane implements 
         public final JComponent key;
         public final JComponent value;
         public final ExtendedJLabel comment;
-        
+
         private DetailPaneEntry(JComponent key,
                                 JComponent value,
                                 ExtendedJLabel comment) {
@@ -222,92 +225,92 @@ public abstract class FixedListDetailPane extends AbstractDetailPane implements 
         }
     }
 
-    
+
     public void actionPerformed(ActionEvent event) {
-    	if (this instanceof AbstractConstantInfoDetailPane) {
+        if (this instanceof AbstractConstantInfoDetailPane) {
             String fileName = internalFrame.getFileName();
-            int constantPoolIndex = ((BrowserTreeNode)treePath.getLastPathComponent()).getIndex();
+            int constantPoolIndex = ((BrowserTreeNode) treePath.getLastPathComponent()).getIndex();
             ClassSaver cs = new ClassSaver(ClassSaver.REMOVE_CONSTANT, fileName, constantPoolIndex);
-			ProgressDialog progressDialog = new ProgressDialog(internalFrame
-					.getParentFrame(), null, "Removing constant...");
+            ProgressDialog progressDialog = new ProgressDialog(internalFrame
+                    .getParentFrame(), null, "Removing constant...");
 
-			progressDialog.setRunnable(cs);
-			progressDialog.setVisible(true);
-			if (cs.exceptionOccured()) {
-				ErrorReportWindow er = new ErrorReportWindow(internalFrame
-						.getParentFrame(), cs.getExceptionVerbose(), "removing constant failed");
+            progressDialog.setRunnable(cs);
+            progressDialog.setVisible(true);
+            if (cs.exceptionOccured()) {
+                ErrorReportWindow er = new ErrorReportWindow(internalFrame
+                        .getParentFrame(), cs.getExceptionVerbose(), "removing constant failed");
 
-				er.pack();
-				GUIHelper.centerOnParentWindow(er, internalFrame
-						.getParentFrame());
-				er.setVisible(true);
-			} else {
-				internalFrame.getParentFrame().doReload();
-			}
-    	} else   if (this instanceof ClassMemberDetailPane) {
-    		ClassMemberDetailPane cmdp = (ClassMemberDetailPane)this;
-    		if (cmdp.getMode() == 2) {
+                er.pack();
+                GUIHelper.centerOnParentWindow(er, internalFrame
+                        .getParentFrame());
+                er.setVisible(true);
+            } else {
+                internalFrame.getParentFrame().doReload();
+            }
+        } else if (this instanceof ClassMemberDetailPane) {
+            ClassMemberDetailPane cmdp = (ClassMemberDetailPane) this;
+            if (cmdp.getMode() == 2) {
                 String fileName = internalFrame.getFileName();
-                int methodIndex = ((BrowserTreeNode)treePath.getLastPathComponent()).getIndex();
+                int methodIndex = ((BrowserTreeNode) treePath.getLastPathComponent()).getIndex();
                 ClassSaver cs = new ClassSaver(ClassSaver.REMOVE_METHOD, fileName, methodIndex);
-    			ProgressDialog progressDialog = new ProgressDialog(internalFrame
-    					.getParentFrame(), null, "Removing method...");
+                ProgressDialog progressDialog = new ProgressDialog(internalFrame
+                        .getParentFrame(), null, "Removing method...");
 
-    			progressDialog.setRunnable(cs);
-    			progressDialog.setVisible(true);
-    			if (cs.exceptionOccured()) {
-    				ErrorReportWindow er = new ErrorReportWindow(internalFrame
-    						.getParentFrame(), cs.getExceptionVerbose(),  "Removing method failed");
+                progressDialog.setRunnable(cs);
+                progressDialog.setVisible(true);
+                if (cs.exceptionOccured()) {
+                    ErrorReportWindow er = new ErrorReportWindow(internalFrame
+                            .getParentFrame(), cs.getExceptionVerbose(), "Removing method failed");
 
-    				er.pack();
-    				GUIHelper.centerOnParentWindow(er, internalFrame
-    						.getParentFrame());
-    				er.setVisible(true);
-    			} else {
-    				internalFrame.getParentFrame().doReload();
-    			}
-    		} else  if (cmdp.getMode() == 1) {
-    			String fileName = internalFrame.getFileName();
-                int fieldIndex = ((BrowserTreeNode)treePath.getLastPathComponent()).getIndex();
+                    er.pack();
+                    GUIHelper.centerOnParentWindow(er, internalFrame
+                            .getParentFrame());
+                    er.setVisible(true);
+                } else {
+                    internalFrame.getParentFrame().doReload();
+                }
+            } else if (cmdp.getMode() == 1) {
+                String fileName = internalFrame.getFileName();
+                int fieldIndex = ((BrowserTreeNode) treePath.getLastPathComponent()).getIndex();
                 ClassSaver cs = new ClassSaver(ClassSaver.REMOVE_FIELD, fileName, fieldIndex);
-    			ProgressDialog progressDialog = new ProgressDialog(internalFrame
-    					.getParentFrame(), null, "Removing field...");
+                ProgressDialog progressDialog = new ProgressDialog(internalFrame
+                        .getParentFrame(), null, "Removing field...");
 
-    			progressDialog.setRunnable(cs);
-    			progressDialog.setVisible(true);
-    			if (cs.exceptionOccured()) {
-    				ErrorReportWindow er = new ErrorReportWindow(internalFrame
-    						.getParentFrame(), cs.getExceptionVerbose(), "Removing field failed");
+                progressDialog.setRunnable(cs);
+                progressDialog.setVisible(true);
+                if (cs.exceptionOccured()) {
+                    ErrorReportWindow er = new ErrorReportWindow(internalFrame
+                            .getParentFrame(), cs.getExceptionVerbose(), "Removing field failed");
 
-    				er.pack();
-    				GUIHelper.centerOnParentWindow(er, internalFrame
-    						.getParentFrame());
-    				er.setVisible(true);
-    			} else {
-    				internalFrame.getParentFrame().doReload();
-    			}
-    		}
-    	}else   if (this instanceof InterfaceDetailPane) {
-			String fileName = internalFrame.getFileName();
-            int interfaceIndex = ((BrowserTreeNode)treePath.getLastPathComponent()).getIndex();
+                    er.pack();
+                    GUIHelper.centerOnParentWindow(er, internalFrame
+                            .getParentFrame());
+                    er.setVisible(true);
+                } else {
+                    internalFrame.getParentFrame().doReload();
+                }
+            }
+        } else if (this instanceof InterfaceDetailPane) {
+            String fileName = internalFrame.getFileName();
+            int interfaceIndex = ((BrowserTreeNode) treePath.getLastPathComponent()).getIndex();
             ClassSaver cs = new ClassSaver(ClassSaver.REMOVE_INTERFACE, fileName, interfaceIndex);
-			ProgressDialog progressDialog = new ProgressDialog(internalFrame
-					.getParentFrame(), null, "Removing interface...");
+            ProgressDialog progressDialog = new ProgressDialog(internalFrame
+                    .getParentFrame(), null, "Removing interface...");
 
-			progressDialog.setRunnable(cs);
-			progressDialog.setVisible(true);
-			if (cs.exceptionOccured()) {
-				ErrorReportWindow er = new ErrorReportWindow(internalFrame
-						.getParentFrame(), cs.getExceptionVerbose(), "Removing interface failed");
+            progressDialog.setRunnable(cs);
+            progressDialog.setVisible(true);
+            if (cs.exceptionOccured()) {
+                ErrorReportWindow er = new ErrorReportWindow(internalFrame
+                        .getParentFrame(), cs.getExceptionVerbose(), "Removing interface failed");
 
-				er.pack();
-				GUIHelper.centerOnParentWindow(er, internalFrame
-						.getParentFrame());
-				er.setVisible(true);
-			} else {
-				internalFrame.getParentFrame().doReload();
-			}
-    	}
+                er.pack();
+                GUIHelper.centerOnParentWindow(er, internalFrame
+                        .getParentFrame());
+                er.setVisible(true);
+            } else {
+                internalFrame.getParentFrame().doReload();
+            }
+        }
 
     }
 }

@@ -11,11 +11,11 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
-    Cell renderer for the list in the <tt>ClasspathSetupDialog</tt>.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Cell renderer for the list in the <tt>ClasspathSetupDialog</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class ClasspathCellRenderer extends DefaultListCellRenderer {
 
     public Component getListCellRendererComponent(
@@ -23,9 +23,8 @@ public class ClasspathCellRenderer extends DefaultListCellRenderer {
             Object value,
             int index,
             boolean isSelected,
-            boolean cellHasFocus)
-    {
-        ClasspathEntry entry = (ClasspathEntry)value;
+            boolean cellHasFocus) {
+        ClasspathEntry entry = (ClasspathEntry) value;
         super.getListCellRendererComponent(list, entry.getFileName(), index, isSelected, cellHasFocus);
 
         Icon icon;

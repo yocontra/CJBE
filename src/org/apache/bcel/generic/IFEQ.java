@@ -54,51 +54,52 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * IFEQ - Branch if int comparison with zero succeeds
- *
+ * <p/>
  * <PRE>Stack: ..., value -&gt; ...</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: IFEQ.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class IFEQ extends IfInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -6140576561545855324L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -6140576561545855324L;
 
 
-/**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  IFEQ() {}
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    IFEQ() {
+    }
 
-  public IFEQ(InstructionHandle target) {
-    super(org.apache.bcel.Constants.IFEQ, target);
-  }
+    public IFEQ(InstructionHandle target) {
+        super(org.apache.bcel.Constants.IFEQ, target);
+    }
 
-  /**
-   * @return negation of instruction, e.g. IFEQ.negate() == IFNE
-   */
-  public IfInstruction negate() {
-    return new IFNE(target);
-  }
+    /**
+     * @return negation of instruction, e.g. IFEQ.negate() == IFNE
+     */
+    public IfInstruction negate() {
+        return new IFNE(target);
+    }
 
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitStackConsumer(this);
-    v.visitBranchInstruction(this);
-    v.visitIfInstruction(this);
-    v.visitIFEQ(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitStackConsumer(this);
+        v.visitBranchInstruction(this);
+        v.visitIfInstruction(this);
+        v.visitIFEQ(this);
+    }
 }

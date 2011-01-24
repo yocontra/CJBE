@@ -10,18 +10,19 @@ package org.gjt.jclasslib.io;
 import java.io.DataInput;
 
 /**
-    Extends <tt>DataInput</tt> to accomodate for a method to retrieve the number
-    of bytes read.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Extends <tt>DataInput</tt> to accomodate for a method to retrieve the number
+ * of bytes read.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public interface ByteCodeInput extends DataInput {
 
     /**
-        Get the number of bytes read.
-        @return the number of bytes
+     * Get the number of bytes read.
+     *
+     * @return the number of bytes
      */
     public int getBytesRead();
-    
+
 }

@@ -6,13 +6,11 @@
 */
 package ee.ioc.cs.jbe.browser.detail;
 
+import ee.ioc.cs.jbe.browser.BrowserServices;
+import ee.ioc.cs.jbe.browser.BrowserTreeNode;
 import org.gjt.jclasslib.structures.elementvalues.ElementValue;
 import org.gjt.jclasslib.structures.elementvalues.ElementValuePair;
 import org.gjt.jclasslib.util.ExtendedJLabel;
-
-import ee.ioc.cs.jbe.browser.BrowserServices;
-import ee.ioc.cs.jbe.browser.BrowserTreeNode;
-
 
 import javax.swing.tree.TreePath;
 
@@ -46,14 +44,14 @@ public class ElementValuePairDetailPane extends FixedListDetailPane {
 
     public void show(TreePath treePath) {
         ElementValuePair evp = (ElementValuePair)
-                ((BrowserTreeNode)treePath.getLastPathComponent()).getElement();
+                ((BrowserTreeNode) treePath.getLastPathComponent()).getElement();
 
 
         constantPoolHyperlink(lblElementName,
                 lblElementNameVerbose,
                 evp.getElementNameIndex());
 
-        lblValueTag.setText(String.valueOf((char)evp.getElementValue().getTag()));
+        lblValueTag.setText(String.valueOf((char) evp.getElementValue().getTag()));
         lblValueTagVerbose.setText("<" + ElementValue.getTagDescription(evp.getElementValue().getTag()) + ">");
 
         super.show(treePath);

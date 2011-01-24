@@ -53,41 +53,43 @@ package org.apache.bcel.generic;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
-import java.io.IOException;
+
 import org.apache.bcel.util.ByteSequence;
 
-/** 
- * LDC_W - Push item from constant pool (wide index)
- *
- * <PRE>Stack: ... -&gt; ..., item.word1, item.word2</PRE>
- *
- * @version $Id: LDC_W.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
- */
-public class LDC_W extends LDC {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -8040188785844554411L;
+import java.io.IOException;
 
 /**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  LDC_W() {}
+ * LDC_W - Push item from constant pool (wide index)
+ * <p/>
+ * <PRE>Stack: ... -&gt; ..., item.word1, item.word2</PRE>
+ *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
+ * @version $Id: LDC_W.java,v 1.2 2006/08/23 13:48:30 andos Exp $
+ */
+public class LDC_W extends LDC {
+    /**
+     *
+     */
+    private static final long serialVersionUID = -8040188785844554411L;
 
-  public LDC_W(int index) {
-    super(index);
-  }
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    LDC_W() {
+    }
 
-  /**
-   * Read needed data (i.e., index) from file.
-   */
-  protected void initFromFile(ByteSequence bytes, boolean wide)
-       throws IOException
-  {
-    setIndex(bytes.readUnsignedShort());
-    // Override just in case it has been changed
-    opcode = org.apache.bcel.Constants.LDC_W;
-  }
+    public LDC_W(int index) {
+        super(index);
+    }
+
+    /**
+     * Read needed data (i.e., index) from file.
+     */
+    protected void initFromFile(ByteSequence bytes, boolean wide)
+            throws IOException {
+        setIndex(bytes.readUnsignedShort());
+        // Override just in case it has been changed
+        opcode = org.apache.bcel.Constants.LDC_W;
+    }
 }

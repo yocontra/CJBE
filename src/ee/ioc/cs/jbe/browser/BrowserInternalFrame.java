@@ -7,18 +7,6 @@
 
 package ee.ioc.cs.jbe.browser;
 
-import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.beans.PropertyVetoException;
-import java.io.File;
-import java.io.IOException;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
-
-import javax.swing.Action;
-import javax.swing.JOptionPane;
-
 import ee.ioc.cs.jbe.browser.config.classpath.FindResult;
 import ee.ioc.cs.jbe.browser.config.window.BrowserPath;
 import ee.ioc.cs.jbe.browser.config.window.WindowState;
@@ -29,6 +17,15 @@ import org.gjt.jclasslib.structures.ClassFile;
 import org.gjt.jclasslib.structures.InvalidByteCodeException;
 import org.gjt.jclasslib.util.FileUtils;
 import org.gjt.jclasslib.util.GUIHelper;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.beans.PropertyVetoException;
+import java.io.File;
+import java.io.IOException;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 /**
  * A child window of the class file browser application.
@@ -50,12 +47,12 @@ public class BrowserInternalFrame extends BasicInternalFrame
     private String fileName;
     private ClassFile classFile;
     private String backupFile;
-    
+
     // Visual Components
 
     private BrowserComponent browserComponent;
 
-	private boolean reloading = false;
+    private boolean reloading = false;
 
     /**
      * Constructor.
@@ -74,21 +71,21 @@ public class BrowserInternalFrame extends BasicInternalFrame
     }
 
     private void doBackup(String fileName2) {
-    	
-    	try {
-    		File source = new File (fileName);
-			File temp = File.createTempFile("backup", ".class");
-			FileUtils.copy(source, temp);
-			backupFile = temp.getAbsolutePath();
-			getParentFrame().addTempFile(backupFile);
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-	}
 
-	public Object getInitParam() {
+        try {
+            File source = new File(fileName);
+            File temp = File.createTempFile("backup", ".class");
+            FileUtils.copy(source, temp);
+            backupFile = temp.getAbsolutePath();
+            getParentFrame().addTempFile(backupFile);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public Object getInitParam() {
         WindowState windowState = new WindowState(fileName, browserComponent.getBrowserPath(""));
         return windowState;
     }
@@ -123,7 +120,7 @@ public class BrowserInternalFrame extends BasicInternalFrame
         while (findResult == null) {
             int result = GUIHelper.showOptionDialog(getParentFrame(),
                     "The class " + className + " could not be found.\n" +
-                    "You can check your classpath configuration and try again.",
+                            "You can check your classpath configuration and try again.",
                     new String[]{"Setup classpath", "Cancel"},
                     JOptionPane.WARNING_MESSAGE);
             if (result == 0) {
@@ -134,7 +131,7 @@ public class BrowserInternalFrame extends BasicInternalFrame
             }
         }
 
-        BrowserInternalFrame frame = (BrowserInternalFrame)desktopManager.getOpenFrame(new WindowState(findResult.getFileName()));
+        BrowserInternalFrame frame = (BrowserInternalFrame) desktopManager.getOpenFrame(new WindowState(findResult.getFileName()));
         if (frame != null) {
             try {
                 frame.setSelected(true);
@@ -164,10 +161,11 @@ public class BrowserInternalFrame extends BasicInternalFrame
 
     /**
      * Reload class file.
-     * @param categoryName 
+     *
+     * @param categoryName
      */
     public void reload(String categoryName) {
-    	reloading = true;
+        reloading = true;
         readClassFile();
         browserComponent.rebuild(categoryName);
     }
@@ -197,7 +195,7 @@ public class BrowserInternalFrame extends BasicInternalFrame
     }
 
     public BrowserMDIFrame getParentFrame() {
-        return (BrowserMDIFrame)desktopManager.getParentFrame();
+        return (BrowserMDIFrame) desktopManager.getParentFrame();
     }
 
     private void readClassFile() {
@@ -222,18 +220,17 @@ public class BrowserInternalFrame extends BasicInternalFrame
     }
 
 
+    public boolean isReloading() {
+        return reloading;
+    }
 
-	public boolean isReloading() {
-		return reloading;
-	}
+    public void setReloading(boolean b) {
+        reloading = b;
 
-	public void setReloading(boolean b) {
-		reloading = b;
-		
-	}
+    }
 
-	public String getBackupFile() {
-		return backupFile;
-	}
+    public String getBackupFile() {
+        return backupFile;
+    }
 
 }

@@ -13,94 +13,103 @@ import org.gjt.jclasslib.io.ByteCodeOutput;
 import java.io.IOException;
 
 /**
-    Describes the <tt>tableswitch</tt> instruction.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Describes the <tt>tableswitch</tt> instruction.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class TableSwitchInstruction extends PaddedInstruction {
 
     private int defaultOffset;
     private int lowByte;
     private int highByte;
     private int[] jumpOffsets;
-   
+
     /**
-        Constructor.
-        @param opcode the opcode.
+     * Constructor.
+     *
+     * @param opcode the opcode.
      */
     public TableSwitchInstruction(int opcode) {
-        super(opcode); 
+        super(opcode);
     }
-    
+
     public int getSize() {
         return super.getSize() + 12 + 4 * jumpOffsets.length;
     }
 
     /**
-        Get the default offset of the branch of this instruction.
-        @return the offset
+     * Get the default offset of the branch of this instruction.
+     *
+     * @return the offset
      */
     public int getDefaultOffset() {
         return defaultOffset;
     }
 
     /**
-        Set the default offset of the branch of this instruction.
-        @param defaultOffset the offset
+     * Set the default offset of the branch of this instruction.
+     *
+     * @param defaultOffset the offset
      */
     public void setDefaultOffset(int defaultOffset) {
         this.defaultOffset = defaultOffset;
     }
-    
+
     /**
-        Get the lower bound for the table switch.
-        @return the lower bound
+     * Get the lower bound for the table switch.
+     *
+     * @return the lower bound
      */
     public int getLowByte() {
         return lowByte;
     }
 
     /**
-        Set the lower bound for the table switch.
-        @param lowByte the lower bound
+     * Set the lower bound for the table switch.
+     *
+     * @param lowByte the lower bound
      */
     public void setLowByte(int lowByte) {
         this.lowByte = lowByte;
     }
-    
+
     /**
-        Get the upper bound for the table switch.
-        @return the upper bound
+     * Get the upper bound for the table switch.
+     *
+     * @return the upper bound
      */
     public int getHighByte() {
         return highByte;
     }
 
     /**
-        Set the upper bound for the table switch.
-        @param highByte the upper bound
+     * Set the upper bound for the table switch.
+     *
+     * @param highByte the upper bound
      */
     public void setHighByte(int highByte) {
         this.highByte = highByte;
     }
-    
+
     /**
-        Get the array of relative jump offsets for the table switch.
-        @return the array
+     * Get the array of relative jump offsets for the table switch.
+     *
+     * @return the array
      */
     public int[] getJumpOffsets() {
         return jumpOffsets;
     }
 
     /**
-        Set the array of relative jump offsets for the table switch.
-        @param jumpOffsets the array
+     * Set the array of relative jump offsets for the table switch.
+     *
+     * @param jumpOffsets the array
      */
     public void setJumpOffsets(int[] jumpOffsets) {
         this.jumpOffsets = jumpOffsets;
     }
-    
+
     public void read(ByteCodeInput in) throws IOException {
         super.read(in);
 
@@ -110,11 +119,11 @@ public class TableSwitchInstruction extends PaddedInstruction {
 
         int numberOfOffsets = highByte - lowByte + 1;
         jumpOffsets = new int[numberOfOffsets];
-        
+
         for (int i = 0; i < numberOfOffsets; i++) {
             jumpOffsets[i] = in.readInt();
         }
-        
+
     }
 
     public void write(ByteCodeOutput out) throws IOException {
@@ -125,7 +134,7 @@ public class TableSwitchInstruction extends PaddedInstruction {
         out.writeInt(highByte);
 
         int numberOfOffsets = jumpOffsets.length;
-        
+
         for (int i = 0; i < numberOfOffsets; i++) {
             out.writeInt(jumpOffsets[i]);
         }

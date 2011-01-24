@@ -10,11 +10,11 @@ package org.gjt.jclasslib.mdi;
 import java.util.List;
 
 /**
-    Serializable configuration object for the window state of an MDI frame.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
-*/
+ * Serializable configuration object for the window state of an MDI frame.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
+ */
 public class MDIConfig {
 
     private List internalFrameDescs;
@@ -22,6 +22,7 @@ public class MDIConfig {
 
     /**
      * Get the list of internal frame descriptions.
+     *
      * @return the list.
      */
     public List getInternalFrameDescs() {
@@ -30,6 +31,7 @@ public class MDIConfig {
 
     /**
      * Set the list of internal frame descriptions.
+     *
      * @param internalFrameDescs the list.
      */
     public void setInternalFrameDescs(List internalFrameDescs) {
@@ -38,6 +40,7 @@ public class MDIConfig {
 
     /**
      * Get the internal frame description of the active internal frame.
+     *
      * @return the internal frame description.
      */
     public InternalFrameDesc getActiveFrameDesc() {
@@ -46,6 +49,7 @@ public class MDIConfig {
 
     /**
      * Set the internal frame description of the active internal frame.
+     *
      * @param activeFrameDesc the internal frame description.
      */
     public void setActiveFrameDesc(InternalFrameDesc activeFrameDesc) {
@@ -68,6 +72,7 @@ public class MDIConfig {
 
         /**
          * Get the class name of the internal frame.
+         *
          * @return the class name.
          */
         public String getClassName() {
@@ -76,6 +81,7 @@ public class MDIConfig {
 
         /**
          * Set the class name of the internal frame.
+         *
          * @param className the class name.
          */
         public void setClassName(String className) {
@@ -84,6 +90,7 @@ public class MDIConfig {
 
         /**
          * Get the initialization parameter for the internal frame.
+         *
          * @return the initialization parameter
          */
         public Object getInitParam() {
@@ -92,6 +99,7 @@ public class MDIConfig {
 
         /**
          * Set the initialization parameter for the internal frame.
+         *
          * @param initParam the initialization parameter
          */
         public void setInitParam(Object initParam) {
@@ -100,6 +108,7 @@ public class MDIConfig {
 
         /**
          * Get the x-position of the internal frame on the desktop.
+         *
          * @return the x-position.
          */
         public int getX() {
@@ -108,6 +117,7 @@ public class MDIConfig {
 
         /**
          * Set the x-position of the internal frame on the desktop.
+         *
          * @param x the x-position.
          */
         public void setX(int x) {
@@ -116,6 +126,7 @@ public class MDIConfig {
 
         /**
          * Get the y-position of the internal frame on the desktop.
+         *
          * @return the y-position.
          */
         public int getY() {
@@ -124,6 +135,7 @@ public class MDIConfig {
 
         /**
          * Set the y-position of the internal frame on the desktop.
+         *
          * @param y the y-position.
          */
         public void setY(int y) {
@@ -132,6 +144,7 @@ public class MDIConfig {
 
         /**
          * Get the width of the internal frame on the desktop.
+         *
          * @return the width.
          */
         public int getWidth() {
@@ -140,6 +153,7 @@ public class MDIConfig {
 
         /**
          * Set the width of the internal frame on the desktop.
+         *
          * @param width the width.
          */
         public void setWidth(int width) {
@@ -148,6 +162,7 @@ public class MDIConfig {
 
         /**
          * Get the height of the internal frame on the desktop.
+         *
          * @return the height.
          */
         public int getHeight() {
@@ -156,6 +171,7 @@ public class MDIConfig {
 
         /**
          * Set the height of the internal frame on the desktop.
+         *
          * @param height the height.
          */
         public void setHeight(int height) {
@@ -164,6 +180,7 @@ public class MDIConfig {
 
         /**
          * Returns whether the internal frame is maximized.
+         *
          * @return the value.
          */
         public boolean isMaximized() {
@@ -172,6 +189,7 @@ public class MDIConfig {
 
         /**
          * Sets whether the internal frame is maximized.
+         *
          * @param maximized the value.
          */
         public void setMaximized(boolean maximized) {
@@ -180,6 +198,7 @@ public class MDIConfig {
 
         /**
          * Returns whether the internal frame is iconified.
+         *
          * @return the value.
          */
         public boolean isIconified() {
@@ -188,6 +207,7 @@ public class MDIConfig {
 
         /**
          * Sets whether the internal frame is iconified.
+         *
          * @param iconified the value.
          */
         public void setIconified(boolean iconified) {

@@ -58,12 +58,13 @@ package org.apache.bcel.generic;
  * Denote an instruction that may produce a value on top of the stack
  * (this excludes DUP_X1, e.g.)
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: StackProducer.java,v 1.1 2005/12/16 14:11:25 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public interface StackProducer {
-  /** @return how many words are produced on stack
-   */
-  public int produceStack(ConstantPoolGen cpg);
+    /**
+     * @return how many words are produced on stack
+     */
+    public int produceStack(ConstantPoolGen cpg);
 }
 

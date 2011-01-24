@@ -7,41 +7,43 @@
 
 package org.gjt.jclasslib.io;
 
-import org.gjt.jclasslib.structures.*;
+import org.gjt.jclasslib.structures.AttributeInfo;
+import org.gjt.jclasslib.structures.ClassFile;
+import org.gjt.jclasslib.structures.InvalidByteCodeException;
 
 import java.io.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 /**
-    Converts class files to a class file structure <tt>ClassFile</tt> as defined in
-    <tt>org.gjt.jclasslib.structures</tt>.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Converts class files to a class file structure <tt>ClassFile</tt> as defined in
+ * <tt>org.gjt.jclasslib.structures</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class ClassFileReader {
 
     private ClassFileReader() {
     }
 
     /**
-        Looks up a class file in the specified class path and converts it 
-        to a <tt>ClassFile</tt> structure.
-        @param classPath the class path from which to read the <tt>ClassFile</tt> structure
-        @param packageName the name of the package in which the class resides
-        @param className the simple name of the class
-        @return the new <tt>ClassFile</tt> structure or <tt>null</tt> if it cannot be found
-        @throws InvalidByteCodeException if the code is invalid
-        @throws IOException if an exception occurs while reading the file
+     * Looks up a class file in the specified class path and converts it
+     * to a <tt>ClassFile</tt> structure.
+     *
+     * @param classPath   the class path from which to read the <tt>ClassFile</tt> structure
+     * @param packageName the name of the package in which the class resides
+     * @param className   the simple name of the class
+     * @return the new <tt>ClassFile</tt> structure or <tt>null</tt> if it cannot be found
+     * @throws InvalidByteCodeException if the code is invalid
+     * @throws IOException              if an exception occurs while reading the file
      */
     public static ClassFile readFromClassPath(String[] classPath, String packageName, String className)
-        throws InvalidByteCodeException, IOException
-    {
-        
+            throws InvalidByteCodeException, IOException {
+
         String relativePath = packageName.replace('.', File.separatorChar) + (packageName.length() == 0 ? "" : File.separator) + className + ".class";
         String jarRelativePath = relativePath.replace(File.separatorChar, '/');
-        for (int i = 0; i <  classPath.length; i++) {
+        for (int i = 0; i < classPath.length; i++) {
             File currentClassPathEntry = new File(classPath[i]);
             if (!currentClassPathEntry.exists()) {
                 continue;
@@ -68,34 +70,34 @@ public class ClassFileReader {
     }
 
     /**
-        Converts a class file to a <tt>ClassFile</tt> structure.
-        @param file the file from which to read the <tt>ClassFile</tt> structure
-        @return the new <tt>ClassFile</tt> structure
-        @throws InvalidByteCodeException if the code is invalid
-        @throws IOException if an exception occurs while reading the file
+     * Converts a class file to a <tt>ClassFile</tt> structure.
+     *
+     * @param file the file from which to read the <tt>ClassFile</tt> structure
+     * @return the new <tt>ClassFile</tt> structure
+     * @throws InvalidByteCodeException if the code is invalid
+     * @throws IOException              if an exception occurs while reading the file
      */
     public static ClassFile readFromFile(File file)
-        throws InvalidByteCodeException, IOException
-    {
+            throws InvalidByteCodeException, IOException {
 
         return readFromInputStream(new FileInputStream(file));
     }
 
     /**
-        Converts a class file to a <tt>ClassFile</tt> structure.
-        @param is the input stream from which to read the
-                  <tt>ClassFile</tt> structure
-        @return the new <tt>ClassFile</tt> structure
-        @throws InvalidByteCodeException if the code is invalid
-        @throws IOException if an exception occurs while reading from
-                            the input stream
+     * Converts a class file to a <tt>ClassFile</tt> structure.
+     *
+     * @param is the input stream from which to read the
+     *           <tt>ClassFile</tt> structure
+     * @return the new <tt>ClassFile</tt> structure
+     * @throws InvalidByteCodeException if the code is invalid
+     * @throws IOException              if an exception occurs while reading from
+     *                                  the input stream
      */
     public static ClassFile readFromInputStream(InputStream is)
-        throws InvalidByteCodeException, IOException
-    {
+            throws InvalidByteCodeException, IOException {
 
         DataInputStream in = new DataInputStream(
-                                new BufferedInputStream(is));
+                new BufferedInputStream(is));
 
         ClassFile classFile = new ClassFile();
         classFile.read(in);
@@ -105,6 +107,7 @@ public class ClassFileReader {
 
     /**
      * Test method.
+     *
      * @param args arguments
      * @throws Exception
      */

@@ -54,58 +54,59 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * INSTANCEOF - Determine if object is of given type
  * <PRE>Stack: ..., objectref -&gt; ..., result</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: INSTANCEOF.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class INSTANCEOF extends CPInstruction
-  implements LoadClass, ExceptionThrower, StackProducer, StackConsumer {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -1068668479062613915L;
+        implements LoadClass, ExceptionThrower, StackProducer, StackConsumer {
+    /**
+     *
+     */
+    private static final long serialVersionUID = -1068668479062613915L;
 
-/**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  INSTANCEOF() {}
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    INSTANCEOF() {
+    }
 
-  public INSTANCEOF(int index) {
-    super(org.apache.bcel.Constants.INSTANCEOF, index);
-  }
+    public INSTANCEOF(int index) {
+        super(org.apache.bcel.Constants.INSTANCEOF, index);
+    }
 
-  public Class[] getExceptions() {
-    return org.apache.bcel.ExceptionConstants.EXCS_CLASS_AND_INTERFACE_RESOLUTION;
-  }
+    public Class[] getExceptions() {
+        return org.apache.bcel.ExceptionConstants.EXCS_CLASS_AND_INTERFACE_RESOLUTION;
+    }
 
-  public ObjectType getLoadClassType(ConstantPoolGen cpg) {
-    Type t = getType(cpg);
+    public ObjectType getLoadClassType(ConstantPoolGen cpg) {
+        Type t = getType(cpg);
 
-    if(t instanceof ArrayType)
-      t = ((ArrayType) t).getBasicType();
+        if (t instanceof ArrayType)
+            t = ((ArrayType) t).getBasicType();
 
-    return (t instanceof ObjectType)? (ObjectType) t : null;
-  }
+        return (t instanceof ObjectType) ? (ObjectType) t : null;
+    }
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitLoadClass(this);
-    v.visitExceptionThrower(this);
-    v.visitStackProducer(this);
-    v.visitStackConsumer(this);
-    v.visitTypedInstruction(this);
-    v.visitCPInstruction(this);
-    v.visitINSTANCEOF(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitLoadClass(this);
+        v.visitExceptionThrower(this);
+        v.visitStackProducer(this);
+        v.visitStackConsumer(this);
+        v.visitTypedInstruction(this);
+        v.visitCPInstruction(this);
+        v.visitINSTANCEOF(this);
+    }
 }

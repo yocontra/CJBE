@@ -55,8 +55,12 @@ package org.apache.bcel.classfile;
  */
 
 import org.apache.bcel.Constants;
-import java.io.*;
-import java.util.*;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * This class represents a reference to an unknown (i.e.,
@@ -67,151 +71,154 @@ import java.util.*;
  * attach it via <a
  * href="./Attribute.html#addAttributeReader(java.lang.String,
  * org.apache.bcel.classfile.AttributeReader)">Attribute.addAttributeReader</a>.
-
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: Unknown.java,v 1.2 2006/08/22 15:33:21 andos Exp $
  * @see org.apache.bcel.classfile.Attribute
  * @see org.apache.bcel.classfile.AttributeReader
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public final class Unknown extends Attribute {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 5223116203360488437L;
-private byte[] bytes;
-  private String name;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 5223116203360488437L;
+    private byte[] bytes;
+    private String name;
 
-  private static HashMap<String, Unknown> unknown_attributes = new HashMap<String, Unknown>();
+    private static HashMap<String, Unknown> unknown_attributes = new HashMap<String, Unknown>();
 
-  /** @return array of unknown attributes, but just one for each kind.
-   */
-  static Unknown[] getUnknownAttributes() {
-    Unknown[] unknowns = new Unknown[unknown_attributes.size()];
-    Iterator  entries  = unknown_attributes.values().iterator();
+    /**
+     * @return array of unknown attributes, but just one for each kind.
+     */
+    static Unknown[] getUnknownAttributes() {
+        Unknown[] unknowns = new Unknown[unknown_attributes.size()];
+        Iterator entries = unknown_attributes.values().iterator();
 
-    for(int i=0; entries.hasNext(); i++)
-      unknowns[i] = (Unknown)entries.next();
+        for (int i = 0; entries.hasNext(); i++)
+            unknowns[i] = (Unknown) entries.next();
 
-    unknown_attributes.clear();
-    return unknowns;
-  }
-
-  /**
-   * Initialize from another object. Note that both objects use the same
-   * references (shallow copy). Use clone() for a physical copy.
-   */
-  public Unknown(Unknown c) {
-    this(c.getNameIndex(), c.getLength(), c.getBytes(), c.getConstantPool());
-  }
-
-  /**
-   * Create a non-standard attribute.
-   *
-   * @param name_index Index in constant pool
-   * @param length Content length in bytes
-   * @param bytes Attribute contents
-   * @param constant_pool Array of constants
-   */
-  public Unknown(int name_index, int length, byte[] bytes,
-		 ConstantPool constant_pool)
-  {
-    super(Constants.ATTR_UNKNOWN, name_index, length, constant_pool);
-    this.bytes = bytes;
-
-    name = ((ConstantUtf8)constant_pool.getConstant(name_index,
-						    Constants.CONSTANT_Utf8)).getBytes();
-    unknown_attributes.put(name, this);
-  }
-
-  /**
-   * Construct object from file stream.
-   * @param name_index Index in constant pool
-   * @param length Content length in bytes
-   * @param file Input stream
-   * @param constant_pool Array of constants
-   * @throws IOException
-   */
-  Unknown(int name_index, int length, DataInputStream file,
-	  ConstantPool constant_pool)
-       throws IOException
-  {
-    this(name_index, length, (byte [])null, constant_pool);
-
-    if(length > 0) {
-      bytes = new byte[length];
-      file.readFully(bytes);
+        unknown_attributes.clear();
+        return unknowns;
     }
-  }    
 
-  /**
-   * Called by objects that are traversing the nodes of the tree implicitely
-   * defined by the contents of a Java class. I.e., the hierarchy of methods,
-   * fields, attributes, etc. spawns a tree of objects.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitUnknown(this);
-  }    
-  /**
-   * Dump unknown bytes to file stream.
-   *
-   * @param file Output file stream
-   * @throws IOException
-   */ 
-  public final void dump(DataOutputStream file) throws IOException
-  {
-    super.dump(file);
-    if(length > 0)
-      file.write(bytes, 0, length);
-  }    
-  /**
-   * @return data bytes.
-   */  
-  public final byte[] getBytes() { return bytes; }    
-
-  /**
-   * @return name of attribute.
-   */  
-  public final String getName() { return name; }    
-
-  /**
-   * @param bytes.
-   */
-  public final void setBytes(byte[] bytes) {
-    this.bytes = bytes;
-  }
-
-  /**
-   * @return String representation.
-   */ 
-  public final String toString() {
-    if(length == 0 || bytes == null)
-      return "(Unknown attribute " + name + ")";
-
-    String hex;
-    if(length > 10) {
-      byte[] tmp = new byte[10];
-      System.arraycopy(bytes, 0, tmp, 0, 10);
-      hex = Utility.toHexString(tmp) + "... (truncated)";
+    /**
+     * Initialize from another object. Note that both objects use the same
+     * references (shallow copy). Use clone() for a physical copy.
+     */
+    public Unknown(Unknown c) {
+        this(c.getNameIndex(), c.getLength(), c.getBytes(), c.getConstantPool());
     }
-    else
-      hex = Utility.toHexString(bytes);
 
-    return "(Unknown attribute " + name + ": " + hex + ")";
-  }
+    /**
+     * Create a non-standard attribute.
+     *
+     * @param name_index    Index in constant pool
+     * @param length        Content length in bytes
+     * @param bytes         Attribute contents
+     * @param constant_pool Array of constants
+     */
+    public Unknown(int name_index, int length, byte[] bytes,
+                   ConstantPool constant_pool) {
+        super(Constants.ATTR_UNKNOWN, name_index, length, constant_pool);
+        this.bytes = bytes;
 
-  /**
-   * @return deep copy of this attribute
-   */
-  public Attribute copy(ConstantPool constant_pool) {
-    Unknown c = (Unknown)clone();
+        name = ((ConstantUtf8) constant_pool.getConstant(name_index,
+                Constants.CONSTANT_Utf8)).getBytes();
+        unknown_attributes.put(name, this);
+    }
 
-    if(bytes != null)
-      c.bytes = (byte[])bytes.clone();
+    /**
+     * Construct object from file stream.
+     *
+     * @param name_index    Index in constant pool
+     * @param length        Content length in bytes
+     * @param file          Input stream
+     * @param constant_pool Array of constants
+     * @throws IOException
+     */
+    Unknown(int name_index, int length, DataInputStream file,
+            ConstantPool constant_pool)
+            throws IOException {
+        this(name_index, length, (byte[]) null, constant_pool);
 
-    c.constant_pool = constant_pool;
-    return c;
-  }
+        if (length > 0) {
+            bytes = new byte[length];
+            file.readFully(bytes);
+        }
+    }
+
+    /**
+     * Called by objects that are traversing the nodes of the tree implicitely
+     * defined by the contents of a Java class. I.e., the hierarchy of methods,
+     * fields, attributes, etc. spawns a tree of objects.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitUnknown(this);
+    }
+
+    /**
+     * Dump unknown bytes to file stream.
+     *
+     * @param file Output file stream
+     * @throws IOException
+     */
+    public final void dump(DataOutputStream file) throws IOException {
+        super.dump(file);
+        if (length > 0)
+            file.write(bytes, 0, length);
+    }
+
+    /**
+     * @return data bytes.
+     */
+    public final byte[] getBytes() {
+        return bytes;
+    }
+
+    /**
+     * @return name of attribute.
+     */
+    public final String getName() {
+        return name;
+    }
+
+    /**
+     * @param bytes.
+     */
+    public final void setBytes(byte[] bytes) {
+        this.bytes = bytes;
+    }
+
+    /**
+     * @return String representation.
+     */
+    public final String toString() {
+        if (length == 0 || bytes == null)
+            return "(Unknown attribute " + name + ")";
+
+        String hex;
+        if (length > 10) {
+            byte[] tmp = new byte[10];
+            System.arraycopy(bytes, 0, tmp, 0, 10);
+            hex = Utility.toHexString(tmp) + "... (truncated)";
+        } else
+            hex = Utility.toHexString(bytes);
+
+        return "(Unknown attribute " + name + ": " + hex + ")";
+    }
+
+    /**
+     * @return deep copy of this attribute
+     */
+    public Attribute copy(ConstantPool constant_pool) {
+        Unknown c = (Unknown) clone();
+
+        if (bytes != null)
+            c.bytes = (byte[]) bytes.clone();
+
+        c.constant_pool = constant_pool;
+        return c;
+    }
 }

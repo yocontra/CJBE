@@ -53,66 +53,68 @@ package org.apache.bcel.generic;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
+
 import org.apache.bcel.Constants;
 import org.apache.bcel.ExceptionConstants;
 
-/** 
+/**
  * INVOKEVIRTUAL - Invoke instance method; dispatch based on class
- *
+ * <p/>
  * <PRE>Stack: ..., objectref, [arg1, [arg2 ...]] -&gt; ...</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: INVOKEVIRTUAL.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class INVOKEVIRTUAL extends InvokeInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -7355623307528443725L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -7355623307528443725L;
 
 
-/**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  INVOKEVIRTUAL() {}
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    INVOKEVIRTUAL() {
+    }
 
-  public INVOKEVIRTUAL(int index) {
-    super(Constants.INVOKEVIRTUAL, index);
-  }
+    public INVOKEVIRTUAL(int index) {
+        super(Constants.INVOKEVIRTUAL, index);
+    }
 
-  public Class[] getExceptions() {
-    Class[] cs = new Class[4 + ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length];
+    public Class[] getExceptions() {
+        Class[] cs = new Class[4 + ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length];
 
-    System.arraycopy(ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION, 0,
-		     cs, 0, ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length);
+        System.arraycopy(ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION, 0,
+                cs, 0, ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length);
 
-    cs[ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length+3] = ExceptionConstants.UNSATISFIED_LINK_ERROR;
-    cs[ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length+2] = ExceptionConstants.ABSTRACT_METHOD_ERROR;
-    cs[ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length+1] = ExceptionConstants.INCOMPATIBLE_CLASS_CHANGE_ERROR;
-    cs[ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length]   = ExceptionConstants.NULL_POINTER_EXCEPTION;
+        cs[ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length + 3] = ExceptionConstants.UNSATISFIED_LINK_ERROR;
+        cs[ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length + 2] = ExceptionConstants.ABSTRACT_METHOD_ERROR;
+        cs[ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length + 1] = ExceptionConstants.INCOMPATIBLE_CLASS_CHANGE_ERROR;
+        cs[ExceptionConstants.EXCS_FIELD_AND_METHOD_RESOLUTION.length] = ExceptionConstants.NULL_POINTER_EXCEPTION;
 
-    return cs;
-  }
+        return cs;
+    }
 
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitExceptionThrower(this);
-    v.visitTypedInstruction(this);
-    v.visitStackConsumer(this);
-    v.visitStackProducer(this);
-    v.visitLoadClass(this);
-    v.visitCPInstruction(this);
-    v.visitFieldOrMethod(this);
-    v.visitInvokeInstruction(this);
-    v.visitINVOKEVIRTUAL(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitExceptionThrower(this);
+        v.visitTypedInstruction(this);
+        v.visitStackConsumer(this);
+        v.visitStackProducer(this);
+        v.visitLoadClass(this);
+        v.visitCPInstruction(this);
+        v.visitFieldOrMethod(this);
+        v.visitInvokeInstruction(this);
+        v.visitINVOKEVIRTUAL(this);
+    }
 }

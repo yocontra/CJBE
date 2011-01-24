@@ -61,21 +61,21 @@ package org.apache.bcel.verifier.exc;
  * LocalVariableTable entries in the Code attribute of a certain
  * Method object.
  *
- * @version $Id: LocalVariableInfoInconsistentException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: LocalVariableInfoInconsistentException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  */
-public class LocalVariableInfoInconsistentException extends ClassConstraintException{
-	/**
-	 * Constructs a new LocalVariableInfoInconsistentException with null as its error message string.
-	 */
-	public LocalVariableInfoInconsistentException(){
-		super();
-	}
-	
-	/**
-	 * Constructs a new LocalVariableInfoInconsistentException with the specified error message.
-	 */
-	public LocalVariableInfoInconsistentException(String message){
-		super (message);
-	}
+public class LocalVariableInfoInconsistentException extends ClassConstraintException {
+    /**
+     * Constructs a new LocalVariableInfoInconsistentException with null as its error message string.
+     */
+    public LocalVariableInfoInconsistentException() {
+        super();
+    }
+
+    /**
+     * Constructs a new LocalVariableInfoInconsistentException with the specified error message.
+     */
+    public LocalVariableInfoInconsistentException(String message) {
+        super(message);
+    }
 }

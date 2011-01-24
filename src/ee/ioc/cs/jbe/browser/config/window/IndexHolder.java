@@ -8,17 +8,18 @@
 package ee.ioc.cs.jbe.browser.config.window;
 
 /**
-    Browser path component for an index value.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Browser path component for an index value.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class IndexHolder implements PathComponent {
 
     private int index = -1;
 
     /**
      * Constructor.
+     *
      * @param index the index.
      */
     public IndexHolder(int index) {
@@ -33,6 +34,7 @@ public class IndexHolder implements PathComponent {
 
     /**
      * Get the index.
+     *
      * @return the index.
      */
     public int getIndex() {
@@ -41,6 +43,7 @@ public class IndexHolder implements PathComponent {
 
     /**
      * Set the index.
+     *
      * @param index the index.
      */
     public void setIndex(int index) {

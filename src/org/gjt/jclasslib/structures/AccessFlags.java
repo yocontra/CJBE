@@ -60,30 +60,30 @@ public interface AccessFlags {
      * Class access flag bits for generating a verbose list in a loop.
      */
     public static final int[] CLASS_ACCESS_FLAGS = new int[]{
-        ACC_PUBLIC,
-        ACC_FINAL,
-        ACC_SUPER,
-        ACC_INTERFACE,
-        ACC_ABSTRACT,
-        ACC_SYNTHETIC,
-        ACC_ANNOTATION,
-        ACC_ENUM
+            ACC_PUBLIC,
+            ACC_FINAL,
+            ACC_SUPER,
+            ACC_INTERFACE,
+            ACC_ABSTRACT,
+            ACC_SYNTHETIC,
+            ACC_ANNOTATION,
+            ACC_ENUM
     };
 
     /**
      * Inner class access flag bits for generating a verbose list in a loop.
      */
     public static final int[] INNER_CLASS_ACCESS_FLAGS = new int[]{
-        ACC_PUBLIC,
-        ACC_PRIVATE,
-        ACC_PROTECTED,
-        ACC_STATIC,
-        ACC_FINAL,
-        ACC_INTERFACE,
-        ACC_ABSTRACT,
-        ACC_SYNTHETIC,
-        ACC_ANNOTATION,
-        ACC_ENUM
+            ACC_PUBLIC,
+            ACC_PRIVATE,
+            ACC_PROTECTED,
+            ACC_STATIC,
+            ACC_FINAL,
+            ACC_INTERFACE,
+            ACC_ABSTRACT,
+            ACC_SYNTHETIC,
+            ACC_ANNOTATION,
+            ACC_ENUM
     };
 
 
@@ -91,33 +91,33 @@ public interface AccessFlags {
      * Field access flag bits for generating a verbose list in a loop.
      */
     public static final int[] FIELD_ACCESS_FLAGS = new int[]{
-        ACC_PUBLIC,
-        ACC_PRIVATE,
-        ACC_PROTECTED,
-        ACC_STATIC,
-        ACC_FINAL,
-        ACC_VOLATILE,
-        ACC_TRANSIENT,
-        ACC_SYNTHETIC,
-        ACC_ENUM
+            ACC_PUBLIC,
+            ACC_PRIVATE,
+            ACC_PROTECTED,
+            ACC_STATIC,
+            ACC_FINAL,
+            ACC_VOLATILE,
+            ACC_TRANSIENT,
+            ACC_SYNTHETIC,
+            ACC_ENUM
     };
 
     /**
      * Method access flag bits for generating a verbose list in a loop.
      */
     public static final int[] METHOD_ACCESS_FLAGS = new int[]{
-        ACC_PUBLIC,
-        ACC_PRIVATE,
-        ACC_PROTECTED,
-        ACC_STATIC,
-        ACC_FINAL,
-        ACC_SYNCHRONIZED,
-        ACC_BRIDGE,
-        ACC_VARARGS,
-        ACC_NATIVE,
-        ACC_ABSTRACT,
-        ACC_STRICT,
-        ACC_SYNTHETIC
+            ACC_PUBLIC,
+            ACC_PRIVATE,
+            ACC_PROTECTED,
+            ACC_STATIC,
+            ACC_FINAL,
+            ACC_SYNCHRONIZED,
+            ACC_BRIDGE,
+            ACC_VARARGS,
+            ACC_NATIVE,
+            ACC_ABSTRACT,
+            ACC_STRICT,
+            ACC_SYNTHETIC
     };
 
     public static final String ACC_SUPER_VERBOSE = "";
@@ -145,14 +145,14 @@ public interface AccessFlags {
      * list in a loop.
      */
     public static final String[] CLASS_ACCESS_FLAGS_VERBOSE = new String[]{
-        ACC_PUBLIC_VERBOSE,
-        ACC_FINAL_VERBOSE,
-        ACC_SUPER_VERBOSE,
-        ACC_INTERFACE_VERBOSE,
-        ACC_ABSTRACT_VERBOSE,
-        ACC_SYNTHETIC_VERBOSE,
-        ACC_ANNOTATION_VERBOSE,
-        ACC_ENUM_VERBOSE
+            ACC_PUBLIC_VERBOSE,
+            ACC_FINAL_VERBOSE,
+            ACC_SUPER_VERBOSE,
+            ACC_INTERFACE_VERBOSE,
+            ACC_ABSTRACT_VERBOSE,
+            ACC_SYNTHETIC_VERBOSE,
+            ACC_ANNOTATION_VERBOSE,
+            ACC_ENUM_VERBOSE
     };
 
     /**
@@ -160,16 +160,16 @@ public interface AccessFlags {
      * list in a loop.
      */
     public static final String[] INNER_CLASS_ACCESS_FLAGS_VERBOSE = new String[]{
-        ACC_PUBLIC_VERBOSE,
-        ACC_PRIVATE_VERBOSE,
-        ACC_PROTECTED_VERBOSE,
-        ACC_STATIC_VERBOSE,
-        ACC_FINAL_VERBOSE,
-        ACC_INTERFACE_VERBOSE,
-        ACC_ABSTRACT_VERBOSE,
-        ACC_SYNTHETIC_VERBOSE,
-        ACC_ANNOTATION_VERBOSE,
-        ACC_ENUM_VERBOSE
+            ACC_PUBLIC_VERBOSE,
+            ACC_PRIVATE_VERBOSE,
+            ACC_PROTECTED_VERBOSE,
+            ACC_STATIC_VERBOSE,
+            ACC_FINAL_VERBOSE,
+            ACC_INTERFACE_VERBOSE,
+            ACC_ABSTRACT_VERBOSE,
+            ACC_SYNTHETIC_VERBOSE,
+            ACC_ANNOTATION_VERBOSE,
+            ACC_ENUM_VERBOSE
     };
 
 
@@ -178,15 +178,15 @@ public interface AccessFlags {
      * list in a loop.
      */
     public static final String[] FIELD_ACCESS_FLAGS_VERBOSE = new String[]{
-        ACC_PUBLIC_VERBOSE,
-        ACC_PRIVATE_VERBOSE,
-        ACC_PROTECTED_VERBOSE,
-        ACC_STATIC_VERBOSE,
-        ACC_FINAL_VERBOSE,
-        ACC_VOLATILE_VERBOSE,
-        ACC_TRANSIENT_VERBOSE,
-        ACC_SYNTHETIC_VERBOSE,
-        ACC_ENUM_VERBOSE
+            ACC_PUBLIC_VERBOSE,
+            ACC_PRIVATE_VERBOSE,
+            ACC_PROTECTED_VERBOSE,
+            ACC_STATIC_VERBOSE,
+            ACC_FINAL_VERBOSE,
+            ACC_VOLATILE_VERBOSE,
+            ACC_TRANSIENT_VERBOSE,
+            ACC_SYNTHETIC_VERBOSE,
+            ACC_ENUM_VERBOSE
     };
 
     /**
@@ -194,17 +194,17 @@ public interface AccessFlags {
      * list in a loop.
      */
     public static final String[] METHOD_ACCESS_FLAGS_VERBOSE = new String[]{
-        ACC_PUBLIC_VERBOSE,
-        ACC_PRIVATE_VERBOSE,
-        ACC_PROTECTED_VERBOSE,
-        ACC_STATIC_VERBOSE,
-        ACC_FINAL_VERBOSE,
-        ACC_SYNCHRONIZED_VERBOSE,
-        ACC_BRIDGE_VERBOSE,
-        ACC_VARARGS_VERBOSE,
-        ACC_NATIVE_VERBOSE,
-        ACC_ABSTRACT_VERBOSE,
-        ACC_STRICT_VERBOSE,
-        ACC_SYNTHETIC_VERBOSE
+            ACC_PUBLIC_VERBOSE,
+            ACC_PRIVATE_VERBOSE,
+            ACC_PROTECTED_VERBOSE,
+            ACC_STATIC_VERBOSE,
+            ACC_FINAL_VERBOSE,
+            ACC_SYNCHRONIZED_VERBOSE,
+            ACC_BRIDGE_VERBOSE,
+            ACC_VARARGS_VERBOSE,
+            ACC_NATIVE_VERBOSE,
+            ACC_ABSTRACT_VERBOSE,
+            ACC_STRICT_VERBOSE,
+            ACC_SYNTHETIC_VERBOSE
     };
 }

@@ -7,11 +7,12 @@
 
 package ee.ioc.cs.jbe.browser.detail;
 
+import ee.ioc.cs.jbe.browser.AbstractDetailPane;
+import ee.ioc.cs.jbe.browser.BrowserServices;
+import ee.ioc.cs.jbe.browser.BrowserTreeNode;
+import ee.ioc.cs.jbe.browser.detail.constants.*;
 import org.gjt.jclasslib.structures.CPInfo;
 import org.gjt.jclasslib.structures.constants.*;
-
-import ee.ioc.cs.jbe.browser.*;
-import ee.ioc.cs.jbe.browser.detail.constants.*;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -19,20 +20,20 @@ import java.awt.*;
 import java.util.HashMap;
 
 /**
-    Detail pane showing constant pool entries. This class is a container for
-    the classes defined in the <tt>constants</tt> subpackage and switches between
-    the contained panes as required.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.14 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Detail pane showing constant pool entries. This class is a container for
+ * the classes defined in the <tt>constants</tt> subpackage and switches between
+ * the contained panes as required.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.14 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class ConstantPoolDetailPane extends AbstractDetailPane {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 6151201599569220869L;
-	private static final String SCREEN_CONSTANT_UTF8_INFO = "ConstantUtf8Info";
+     *
+     */
+    private static final long serialVersionUID = 6151201599569220869L;
+    private static final String SCREEN_CONSTANT_UTF8_INFO = "ConstantUtf8Info";
     private static final String SCREEN_CONSTANT_UNKNOWN = "ConstantUnknown";
     private static final String SCREEN_CONSTANT_CLASS_INFO = "ConstantClassInfo";
     private static final String SCREEN_CONSTANT_DOUBLE_INFO = "ConstantDoubleInfo";
@@ -43,67 +44,66 @@ public class ConstantPoolDetailPane extends AbstractDetailPane {
     private static final String SCREEN_CONSTANT_STRING_INFO = "ConstantStringInfo";
     private static final String SCREEN_CONSTANT_REFERENCE = "ConstantReference";
     private static final String SCREEN_CONSTANT_ADD = "ConstantAdd";
-    
+
     private HashMap<String, AbstractDetailPane> constantTypeToDetailPane;
 
     /**
-        Constructor.
-        @param services the associated browser services.
+     * Constructor.
+     *
+     * @param services the associated browser services.
      */
     public ConstantPoolDetailPane(BrowserServices services) {
         super(services);
     }
 
     protected void setupComponent() {
-    	setLayout(new CardLayout());
+        setLayout(new CardLayout());
         constantTypeToDetailPane = new HashMap<String, AbstractDetailPane>();
-        
+
         JPanel pane;
-        
+
         pane = new JPanel();
         pane.setBackground(Color.blue);
 
 
-        
         addScreen(new ConstantAddPane(services),
                 SCREEN_CONSTANT_ADD);
-        
+
         addScreen(new ConstantUtf8InfoDetailPane(services),
-            SCREEN_CONSTANT_UTF8_INFO);
+                SCREEN_CONSTANT_UTF8_INFO);
 
         addScreen(new ConstantClassInfoDetailPane(services),
-                  SCREEN_CONSTANT_CLASS_INFO);
+                SCREEN_CONSTANT_CLASS_INFO);
 
         addScreen(new ConstantDoubleInfoDetailPane(services),
-                  SCREEN_CONSTANT_DOUBLE_INFO);
+                SCREEN_CONSTANT_DOUBLE_INFO);
 
         addScreen(new ConstantLongInfoDetailPane(services),
-            SCREEN_CONSTANT_LONG_INFO);
+                SCREEN_CONSTANT_LONG_INFO);
 
         addScreen(new ConstantFloatInfoDetailPane(services),
-            SCREEN_CONSTANT_FLOAT_INFO);
+                SCREEN_CONSTANT_FLOAT_INFO);
 
         addScreen(new ConstantIntegerInfoDetailPane(services),
-            SCREEN_CONSTANT_INTEGER_INFO);
+                SCREEN_CONSTANT_INTEGER_INFO);
 
         addScreen(new ConstantNameAndTypeInfoDetailPane(services),
-            SCREEN_CONSTANT_NAME_AND_TYPE_INFO);
+                SCREEN_CONSTANT_NAME_AND_TYPE_INFO);
 
         addScreen(new ConstantStringInfoDetailPane(services),
-            SCREEN_CONSTANT_STRING_INFO);
-                
-        addScreen(new ConstantReferenceDetailPane(services),
-            SCREEN_CONSTANT_REFERENCE);
+                SCREEN_CONSTANT_STRING_INFO);
 
-        
-                
+        addScreen(new ConstantReferenceDetailPane(services),
+                SCREEN_CONSTANT_REFERENCE);
+
+
     }
-    
+
     public void show(TreePath treePath) {
-        
-        int constantPoolIndex = ((BrowserTreeNode)treePath.getLastPathComponent()).getIndex();
+
+        int constantPoolIndex = ((BrowserTreeNode) treePath.getLastPathComponent()).getIndex();
         CPInfo constantPoolEntry = services.getClassFile().getConstantPool()[constantPoolIndex];
-        
+
         String paneName = null;
         if (constantPoolEntry instanceof ConstantUtf8Info) {
             paneName = SCREEN_CONSTANT_UTF8_INFO;
@@ -127,28 +127,28 @@ public class ConstantPoolDetailPane extends AbstractDetailPane {
             paneName = SCREEN_CONSTANT_ADD;
         }
 
-    
-        CardLayout layout = (CardLayout)this.getLayout();
+
+        CardLayout layout = (CardLayout) this.getLayout();
         if (paneName == null) {
             layout.show(this, SCREEN_CONSTANT_UNKNOWN);
         } else {
-            AbstractDetailPane pane = (AbstractDetailPane)constantTypeToDetailPane.get(paneName);
+            AbstractDetailPane pane = (AbstractDetailPane) constantTypeToDetailPane.get(paneName);
             pane.show(treePath);
             layout.show(this, paneName);
         }
-        
+
     }
-    
+
     private void addScreen(AbstractDetailPane detailPane, String name) {
 
         if (detailPane instanceof FixedListDetailPane) {
-            add(((FixedListDetailPane)detailPane).getScrollPane(), name);
+            add(((FixedListDetailPane) detailPane).getScrollPane(), name);
         } else {
             add(detailPane, name);
         }
         constantTypeToDetailPane.put(name, detailPane);
     }
 
-    
+
 }
 

@@ -9,27 +9,29 @@ package ee.ioc.cs.jbe.browser.detail.attributes.code;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.font.*;
+import java.awt.font.FontRenderContext;
+import java.awt.font.TextAttribute;
+import java.awt.font.TextLayout;
 import java.text.AttributedCharacterIterator;
 import java.text.AttributedString;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
-    Line number renderer used as a row header view for a <tt>BytecodeDisplay</tt>.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/05 15:41:47 $
-*/
+ * Line number renderer used as a row header view for a <tt>BytecodeDisplay</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/05 15:41:47 $
+ */
 public class CounterDisplay extends JPanel {
 
-    private static final Map<TextAttribute, Object>  STYLE;
+    private static final Map<TextAttribute, Object> STYLE;
     private static final Color COLOR_BACKGROUND = UIManager.getColor("Panel.background");
 
     static {
         Font baseFont = UIManager.getFont("TextArea.font");
 
-        STYLE = new HashMap<TextAttribute, Object> (3);
+        STYLE = new HashMap<TextAttribute, Object>(3);
         STYLE.put(TextAttribute.FAMILY, baseFont.getFamily());
         STYLE.put(TextAttribute.SIZE, new Float(baseFont.getSize() - 2));
         STYLE.put(TextAttribute.FOREGROUND, new Color(92, 92, 92));
@@ -53,6 +55,7 @@ public class CounterDisplay extends JPanel {
 
     /**
      * Initialize with the properties of a given bytecode display.
+     *
      * @param byteCodeDisplay the bytecode display.
      */
     public void init(ByteCodeDisplay byteCodeDisplay) {
@@ -61,12 +64,12 @@ public class CounterDisplay extends JPanel {
         this.lineHeight = byteCodeDisplay.getLineHeight();
         this.ascent = byteCodeDisplay.getAscent();
 
-        frc = ((Graphics2D)getGraphics()).getFontRenderContext();
+        frc = ((Graphics2D) getGraphics()).getFontRenderContext();
         maxChars = Math.max(1, String.valueOf(maxCount).length());
 
         TextLayout textLayout = new TextLayout(getCharacterIterator(maxCount), frc);
 
-        setPreferredSize(new Dimension((int)textLayout.getAdvance() + 2 * ByteCodeDisplay.MARGIN_X, maxCount * lineHeight + 2 * ByteCodeDisplay.MARGIN_Y));
+        setPreferredSize(new Dimension((int) textLayout.getAdvance() + 2 * ByteCodeDisplay.MARGIN_X, maxCount * lineHeight + 2 * ByteCodeDisplay.MARGIN_Y));
         invalidate();
     }
 
@@ -82,7 +85,7 @@ public class CounterDisplay extends JPanel {
             return;
         }
 
-        Graphics2D g = (Graphics2D)graphics;
+        Graphics2D g = (Graphics2D) graphics;
         g.translate(ByteCodeDisplay.MARGIN_X, ByteCodeDisplay.MARGIN_Y);
         Rectangle clipBounds = graphics.getClipBounds();
         Paint oldPaint = g.getPaint();

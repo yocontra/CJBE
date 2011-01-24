@@ -7,17 +7,15 @@
 
 package ee.ioc.cs.jbe.browser.detail;
 
-import ee.ioc.cs.jbe.browser.detail.attributes.code.ErrorReportWindow;
-import org.gjt.jclasslib.util.GUIHelper;
-import org.gjt.jclasslib.util.ProgressDialog;
-
 import ee.ioc.cs.jbe.browser.AbstractDetailPane;
 import ee.ioc.cs.jbe.browser.BrowserInternalFrame;
 import ee.ioc.cs.jbe.browser.BrowserServices;
 import ee.ioc.cs.jbe.browser.codeedit.ClassSaver;
 import ee.ioc.cs.jbe.browser.codeedit.CodeGenerator;
 import ee.ioc.cs.jbe.browser.detail.attributes.LinkRenderer;
-
+import ee.ioc.cs.jbe.browser.detail.attributes.code.ErrorReportWindow;
+import org.gjt.jclasslib.util.GUIHelper;
+import org.gjt.jclasslib.util.ProgressDialog;
 
 import javax.swing.*;
 import javax.swing.table.TableCellEditor;
@@ -32,7 +30,7 @@ import java.awt.event.*;
 /**
  * Base class for all detail panes with a structure of a variable number of row
  * entries with the same number of columns.
- * 
+ *
  * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
  * @version $Revision: 1.10 $ $Date: 2006/09/25 16:00:58 $
  */
@@ -42,14 +40,13 @@ public abstract class ListDetailPane extends AbstractDetailPane {
 
     private JTable table;
     private BrowserInternalFrame internalFrame;
-    
+
     private int currentMethodIndex;
 
     /**
      * Constructor.
-     * 
-     * @param services
-     *            the associated browser services.
+     *
+     * @param services the associated browser services.
      */
     protected ListDetailPane(BrowserServices services) {
         super(services);
@@ -81,13 +78,13 @@ public abstract class ListDetailPane extends AbstractDetailPane {
     public void show(TreePath treePath) {
         CodeGenerator cg = new CodeGenerator();
         currentMethodIndex = cg.getMethodIndex(treePath);
-        
-        TableModel tableModel = getTableModel(treePath);
- 
-          table.setModel(tableModel);
-       
 
-       createTableColumnModel(table, tableModel);
+        TableModel tableModel = getTableModel(treePath);
+
+        table.setModel(tableModel);
+
+
+        createTableColumnModel(table, tableModel);
         ((JLabel) table.getDefaultRenderer(Number.class))
                 .setVerticalAlignment(JLabel.TOP);
         ((JLabel) table.getDefaultRenderer(String.class))
@@ -95,14 +92,14 @@ public abstract class ListDetailPane extends AbstractDetailPane {
         table.setDefaultRenderer(Link.class, new LinkRenderer());
         if (tableModel.getColumnCount() > 6) {
             ButtonColumn bc = new ButtonColumn(table, 6);
-         }
-        
+        }
+
     }
 
     /**
      * Get the factor for calculating the row height as a multiple of the normal
      * row height of a single label.
-     * 
+     *
      * @return the factor.
      */
     protected float getRowHeightFactor() {
@@ -111,11 +108,9 @@ public abstract class ListDetailPane extends AbstractDetailPane {
 
     /**
      * Create the table column model for the given table and table column model.
-     * 
-     * @param table
-     *            the table
-     * @param tableModel
-     *            the table model
+     *
+     * @param table      the table
+     * @param tableModel the table model
      */
     protected void createTableColumnModel(JTable table, TableModel tableModel) {
         table.createDefaultColumnsFromModel();
@@ -123,9 +118,8 @@ public abstract class ListDetailPane extends AbstractDetailPane {
 
     /**
      * Get the table model for the selected tree node.
-     * 
-     * @param treePath
-     *            the tree path selected in <tt>BrowserTreePane</tt>
+     *
+     * @param treePath the tree path selected in <tt>BrowserTreePane</tt>
      * @return the table model
      */
     protected abstract TableModel getTableModel(TreePath treePath);
@@ -133,9 +127,8 @@ public abstract class ListDetailPane extends AbstractDetailPane {
     /**
      * Create a link value object with a comment for use of a
      * <tt>LinkRenderer</tt>.
-     * 
-     * @param index
-     *            the constant pool index to link to.
+     *
+     * @param index the constant pool index to link to.
      * @return the link value object.
      */
     protected Object createCommentLink(int index) {
@@ -146,11 +139,9 @@ public abstract class ListDetailPane extends AbstractDetailPane {
     /**
      * Link to the destination described by the target of the hyperlink
      * contained in a specific cell.
-     * 
-     * @param row
-     *            the row number of the hyperlink
-     * @param column
-     *            the column number of the hyperlink
+     *
+     * @param row    the row number of the hyperlink
+     * @param column the column number of the hyperlink
      */
     protected void link(int row, int column) {
     }
@@ -164,11 +155,9 @@ public abstract class ListDetailPane extends AbstractDetailPane {
 
         /**
          * Constructor.
-         * 
-         * @param rowNumber
-         *            the row number.
-         * @param columnNumber
-         *            the column number.
+         *
+         * @param rowNumber    the row number.
+         * @param columnNumber the column number.
          */
         public ColumnCache(int rowNumber, int columnNumber) {
             cache = new Object[rowNumber][columnNumber];
@@ -176,11 +165,9 @@ public abstract class ListDetailPane extends AbstractDetailPane {
 
         /**
          * Get the cached value of a specific cell.
-         * 
-         * @param row
-         *            the row number of the cell
-         * @param column
-         *            the column number of the cell
+         *
+         * @param row    the row number of the cell
+         * @param column the column number of the cell
          * @return the value
          */
         public Object getValueAt(int row, int column) {
@@ -189,13 +176,10 @@ public abstract class ListDetailPane extends AbstractDetailPane {
 
         /**
          * Set the cached value of a specific cell.
-         * 
-         * @param row
-         *            the row number of the cell
-         * @param column
-         *            the column number of the cell
-         * @param value
-         *            the value
+         *
+         * @param row    the row number of the cell
+         * @param column the column number of the cell
+         * @param value  the value
          */
         public void setValueAt(int row, int column, Object value) {
             cache[row][column] = value;
@@ -259,7 +243,7 @@ public abstract class ListDetailPane extends AbstractDetailPane {
                     && column >= 0
                     && table.getColumnClass(column).equals(Link.class)
                     && !table.getModel().getValueAt(row, column).toString()
-                            .equals(CPINFO_LINK_TEXT + "0");
+                    .equals(CPINFO_LINK_TEXT + "0");
         }
 
     }
@@ -279,7 +263,7 @@ public abstract class ListDetailPane extends AbstractDetailPane {
             this.table = table;
             renderButton = new JButton();
             renderButton.addActionListener(this);
-            
+
             editButton = new JButton("DEkete");
             editButton.setFocusPainted(false);
             editButton.addActionListener(this);
@@ -290,7 +274,7 @@ public abstract class ListDetailPane extends AbstractDetailPane {
         }
 
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row,
-                int column) {
+                                                       int column) {
             if (hasFocus) {
                 renderButton.setForeground(table.getForeground());
                 renderButton.setBackground(UIManager
@@ -309,7 +293,7 @@ public abstract class ListDetailPane extends AbstractDetailPane {
         }
 
         public Component getTableCellEditorComponent(JTable table,
-                Object value, boolean isSelected, int row, int column) {
+                                                     Object value, boolean isSelected, int row, int column) {
             text = (value == null) ? "" : value.toString();
             editButton.setText(text);
             return editButton;
@@ -321,25 +305,25 @@ public abstract class ListDetailPane extends AbstractDetailPane {
 
         public void actionPerformed(ActionEvent e) {
             //fireEditingStopped();
-            
+
             String fileName = internalFrame.getFileName();
             ClassSaver cs = new ClassSaver(ClassSaver.REMOVE_EXCEPTION, fileName, currentMethodIndex, table.getSelectedRow());
-			ProgressDialog progressDialog = new ProgressDialog(internalFrame
-					.getParentFrame(), null, "Removing exception...");
+            ProgressDialog progressDialog = new ProgressDialog(internalFrame
+                    .getParentFrame(), null, "Removing exception...");
 
-			progressDialog.setRunnable(cs);
-			progressDialog.setVisible(true);
-			if (cs.exceptionOccured()) {
-				ErrorReportWindow er = new ErrorReportWindow(internalFrame
-						.getParentFrame(), cs.getExceptionVerbose(), "Removing exception failed");
+            progressDialog.setRunnable(cs);
+            progressDialog.setVisible(true);
+            if (cs.exceptionOccured()) {
+                ErrorReportWindow er = new ErrorReportWindow(internalFrame
+                        .getParentFrame(), cs.getExceptionVerbose(), "Removing exception failed");
 
-				er.pack();
-				GUIHelper.centerOnParentWindow(er, internalFrame
-						.getParentFrame());
-				er.setVisible(true);
-			}
-            
-           
+                er.pack();
+                GUIHelper.centerOnParentWindow(er, internalFrame
+                        .getParentFrame());
+                er.setVisible(true);
+            }
+
+
             internalFrame.getParentFrame().doReload();
         }
     }

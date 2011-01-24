@@ -58,10 +58,10 @@ package org.apache.bcel.generic;
  * Implement this interface if you're interested in changes to an InstructionList object
  * and register yourself with addObserver().
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: InstructionListObserver.java,v 1.1 2005/12/16 14:11:25 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public interface InstructionListObserver {
-  public void notify(InstructionList list);
+    public void notify(InstructionList list);
 }
 

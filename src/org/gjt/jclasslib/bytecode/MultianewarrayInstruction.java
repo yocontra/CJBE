@@ -13,38 +13,41 @@ import org.gjt.jclasslib.io.ByteCodeOutput;
 import java.io.IOException;
 
 /**
-    Describes the <tt>multianewarray</tt> instruction.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Describes the <tt>multianewarray</tt> instruction.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class MultianewarrayInstruction extends ImmediateShortInstruction {
 
     private int dimensions;
-    
+
     /**
-        Constructor.
-        @param opcode the opcode.
+     * Constructor.
+     *
+     * @param opcode the opcode.
      */
     public MultianewarrayInstruction(int opcode) {
-        super(opcode); 
+        super(opcode);
     }
-    
+
     public int getSize() {
         return super.getSize() + 1;
     }
 
     /**
-        Get the number of dimensions for the new array.
-        @return the number of dimensions
+     * Get the number of dimensions for the new array.
+     *
+     * @return the number of dimensions
      */
     public int getDimensions() {
         return dimensions;
     }
 
     /**
-        Set the number of dimensions for the new array.
-        @param dimensions the number of dimensions
+     * Set the number of dimensions for the new array.
+     *
+     * @param dimensions the number of dimensions
      */
     public void setDimensions(int dimensions) {
         this.dimensions = dimensions;
@@ -61,5 +64,5 @@ public class MultianewarrayInstruction extends ImmediateShortInstruction {
 
         out.writeByte(dimensions);
     }
-    
+
 }

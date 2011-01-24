@@ -54,44 +54,46 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * ASTORE - Store reference into local variable
  * <PRE>Stack ..., objectref -&gt; ... </PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ASTORE.java,v 1.2 2006/08/22 15:33:21 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class ASTORE extends StoreInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 3598929416636143200L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 3598929416636143200L;
 
-/**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  ASTORE() {
-    super(org.apache.bcel.Constants.ASTORE, org.apache.bcel.Constants.ASTORE_0);
-  }
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    ASTORE() {
+        super(org.apache.bcel.Constants.ASTORE, org.apache.bcel.Constants.ASTORE_0);
+    }
 
-  /** Store reference into local variable
-   * @param n index of local variable
-   */
-  public ASTORE(int n) {
-    super(org.apache.bcel.Constants.ASTORE, org.apache.bcel.Constants.ASTORE_0, n);
-  }
+    /**
+     * Store reference into local variable
+     *
+     * @param n index of local variable
+     */
+    public ASTORE(int n) {
+        super(org.apache.bcel.Constants.ASTORE, org.apache.bcel.Constants.ASTORE_0, n);
+    }
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    super.accept(v);
-    v.visitASTORE(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        super.accept(v);
+        v.visitASTORE(this);
+    }
 }

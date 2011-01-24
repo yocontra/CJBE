@@ -54,38 +54,38 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * IOR - Bitwise OR int
  * <PRE>Stack: ..., value1, value2 -&gt; ..., result</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: IOR.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class IOR extends ArithmeticInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -6128609553204409153L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -6128609553204409153L;
 
 
-public IOR() {
-    super(org.apache.bcel.Constants.IOR);
-  }
+    public IOR() {
+        super(org.apache.bcel.Constants.IOR);
+    }
 
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitTypedInstruction(this);
-    v.visitStackProducer(this);
-    v.visitStackConsumer(this);
-    v.visitArithmeticInstruction(this);
-    v.visitIOR(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitTypedInstruction(this);
+        v.visitStackProducer(this);
+        v.visitStackConsumer(this);
+        v.visitArithmeticInstruction(this);
+        v.visitIOR(this);
+    }
 }

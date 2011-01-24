@@ -53,63 +53,67 @@ package org.apache.bcel.generic;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
-import java.io.*;
+
 import org.apache.bcel.util.ByteSequence;
 
-/** 
- * JSR_W - Jump to subroutine
- *
- * @version $Id: JSR_W.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
- */
-public class JSR_W extends JsrInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -7352049131416924650L;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 /**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  JSR_W() {}
+ * JSR_W - Jump to subroutine
+ *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
+ * @version $Id: JSR_W.java,v 1.2 2006/08/23 13:48:30 andos Exp $
+ */
+public class JSR_W extends JsrInstruction {
+    /**
+     *
+     */
+    private static final long serialVersionUID = -7352049131416924650L;
 
-  public JSR_W(InstructionHandle target) {
-    super(org.apache.bcel.Constants.JSR_W, target);
-    length = 5;
-  }
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    JSR_W() {
+    }
 
-  /**
-   * Dump instruction as byte code to stream out.
-   * @param out Output stream
-   */
-  public void dump(DataOutputStream out) throws IOException {
-    index = getTargetOffset();
-    out.writeByte(opcode);
-    out.writeInt(index);
-  }
+    public JSR_W(InstructionHandle target) {
+        super(org.apache.bcel.Constants.JSR_W, target);
+        length = 5;
+    }
 
-  /**
-   * Read needed data (e.g. index) from file.
-   */
-  protected void initFromFile(ByteSequence bytes, boolean wide) throws IOException
-  {
-    index = bytes.readInt();
-    length = 5;
-  }
+    /**
+     * Dump instruction as byte code to stream out.
+     *
+     * @param out Output stream
+     */
+    public void dump(DataOutputStream out) throws IOException {
+        index = getTargetOffset();
+        out.writeByte(opcode);
+        out.writeInt(index);
+    }
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitStackProducer(this);
-    v.visitBranchInstruction(this);
-    v.visitJsrInstruction(this);
-    v.visitJSR_W(this);
-  }
+    /**
+     * Read needed data (e.g. index) from file.
+     */
+    protected void initFromFile(ByteSequence bytes, boolean wide) throws IOException {
+        index = bytes.readInt();
+        length = 5;
+    }
+
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitStackProducer(this);
+        v.visitBranchInstruction(this);
+        v.visitJsrInstruction(this);
+        v.visitJSR_W(this);
+    }
 }

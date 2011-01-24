@@ -57,11 +57,11 @@ package org.apache.bcel.generic;
 /**
  * Denotes an instruction to perform an unconditional branch, i.e., GOTO, JSR.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: UnconditionalBranch.java,v 1.1 2005/12/16 14:11:25 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
-
  * @see GOTO
  * @see JSR
  */
-public interface UnconditionalBranch {}
+public interface UnconditionalBranch {
+}
 

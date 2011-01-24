@@ -6,11 +6,17 @@
 */
 package ee.ioc.cs.jbe.browser.detail;
 
-import ee.ioc.cs.jbe.browser.detail.elementvalues.*;
-import org.gjt.jclasslib.structures.elementvalues.*;
-
-import ee.ioc.cs.jbe.browser.*;
-
+import ee.ioc.cs.jbe.browser.AbstractDetailPane;
+import ee.ioc.cs.jbe.browser.BrowserServices;
+import ee.ioc.cs.jbe.browser.BrowserTreeNode;
+import ee.ioc.cs.jbe.browser.detail.elementvalues.ClassElementValueEntryDetailPane;
+import ee.ioc.cs.jbe.browser.detail.elementvalues.ConstElementValueEntryDetailPane;
+import ee.ioc.cs.jbe.browser.detail.elementvalues.EnumElementValueEntryDetailPane;
+import ee.ioc.cs.jbe.browser.detail.elementvalues.GenericElementValueDetailPane;
+import org.gjt.jclasslib.structures.elementvalues.ClassElementValue;
+import org.gjt.jclasslib.structures.elementvalues.ConstElementValue;
+import org.gjt.jclasslib.structures.elementvalues.ElementValue;
+import org.gjt.jclasslib.structures.elementvalues.EnumElementValue;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -56,7 +62,7 @@ public class ElementValueDetailPane extends AbstractDetailPane {
 
     public void show(TreePath treePath) {
         ElementValue eve = (ElementValue)
-                ((BrowserTreeNode)treePath.getLastPathComponent()).getElement();
+                ((BrowserTreeNode) treePath.getLastPathComponent()).getElement();
 
         String paneName = null;
         if (eve instanceof ConstElementValue) {
@@ -67,11 +73,11 @@ public class ElementValueDetailPane extends AbstractDetailPane {
             paneName = SCREEN_ENUM_VALUE;
         }
 
-        CardLayout layout = (CardLayout)specificInfoPane.getLayout();
+        CardLayout layout = (CardLayout) specificInfoPane.getLayout();
         if (paneName == null) {
             layout.show(specificInfoPane, SCREEN_UNKNOWN);
         } else {
-            AbstractDetailPane pane = (AbstractDetailPane)elementTypeToDetailPane.get(paneName);
+            AbstractDetailPane pane = (AbstractDetailPane) elementTypeToDetailPane.get(paneName);
             pane.show(treePath);
             layout.show(specificInfoPane, paneName);
         }
@@ -105,7 +111,7 @@ public class ElementValueDetailPane extends AbstractDetailPane {
 
     private void addScreen(AbstractDetailPane detailPane, String name) {
         if (detailPane instanceof FixedListDetailPane) {
-            specificInfoPane.add(((FixedListDetailPane)detailPane).getScrollPane(), name);
+            specificInfoPane.add(((FixedListDetailPane) detailPane).getScrollPane(), name);
         } else {
             specificInfoPane.add(detailPane, name);
         }

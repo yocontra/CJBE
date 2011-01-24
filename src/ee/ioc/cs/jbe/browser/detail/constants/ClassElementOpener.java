@@ -7,28 +7,27 @@
 
 package ee.ioc.cs.jbe.browser.detail.constants;
 
-import ee.ioc.cs.jbe.browser.config.window.*;
+import ee.ioc.cs.jbe.browser.BrowserTreeNode;
+import ee.ioc.cs.jbe.browser.config.window.BrowserPath;
+import ee.ioc.cs.jbe.browser.config.window.CategoryHolder;
+import ee.ioc.cs.jbe.browser.config.window.ReferenceHolder;
 import org.gjt.jclasslib.structures.CPInfo;
 import org.gjt.jclasslib.structures.InvalidByteCodeException;
 import org.gjt.jclasslib.structures.constants.*;
 
-import ee.ioc.cs.jbe.browser.BrowserTreeNode;
-
-
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
-    Component that opens named references to methods and fields.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.5 $ $Date: 2006/09/25 16:00:58 $
-    
-    Modified by Ando Saabas
-*/
+ * Component that opens named references to methods and fields.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.5 $ $Date: 2006/09/25 16:00:58 $
+ *          <p/>
+ *          Modified by Ando Saabas
+ */
 public class ClassElementOpener implements ActionListener {
 
     private JButton btnShow;
@@ -37,6 +36,7 @@ public class ClassElementOpener implements ActionListener {
 
     /**
      * Constructor.
+     *
      * @param detailPane the parent detail pane.
      */
     public ClassElementOpener(AbstractConstantInfoDetailPane detailPane) {
@@ -52,15 +52,15 @@ public class ClassElementOpener implements ActionListener {
             ConstantClassInfo classInfo = null;
             BrowserPath browserPath = null;
             if (cpInfo instanceof ConstantClassInfo) {
-                classInfo = (ConstantClassInfo)cpInfo;
+                classInfo = (ConstantClassInfo) cpInfo;
             } else if (cpInfo instanceof ConstantReference) {
-                ConstantReference reference = (ConstantReference)cpInfo;
+                ConstantReference reference = (ConstantReference) cpInfo;
                 ConstantNameAndTypeInfo nameAndType = reference.getNameAndTypeInfo();
                 classInfo = reference.getClassInfo();
                 String category = null;
                 if (cpInfo instanceof ConstantFieldrefInfo) {
                     category = BrowserTreeNode.NODE_FIELD;
-                } else if (cpInfo instanceof ConstantMethodrefInfo || cpInfo instanceof ConstantInterfaceMethodrefInfo){
+                } else if (cpInfo instanceof ConstantMethodrefInfo || cpInfo instanceof ConstantInterfaceMethodrefInfo) {
                     category = BrowserTreeNode.NODE_METHOD;
                 }
                 if (category != null) {
@@ -81,8 +81,9 @@ public class ClassElementOpener implements ActionListener {
 
     /**
      * Add an opening button to the supplied detail pane.
+     *
      * @param detailPane the detail pane.
-     * @param gridy the current <tt>gridy</tt> of the <tt>GridBagLayout</tt> of the detail pane.
+     * @param gridy      the current <tt>gridy</tt> of the <tt>GridBagLayout</tt> of the detail pane.
      * @return the number of added rows.
      */
     public int addSpecial(AbstractConstantInfoDetailPane detailPane, int gridy) {
@@ -91,8 +92,8 @@ public class ClassElementOpener implements ActionListener {
         gc.weightx = 1;
         gc.anchor = GridBagConstraints.FIRST_LINE_START;
         gc.insets = new Insets(5, 10, 0, 10);
-        gc.gridy = gridy+1;
-        gc.gridx =0;
+        gc.gridy = gridy + 1;
+        gc.gridx = 0;
         gc.gridwidth = 3;
 
         detailPane.add(btnShow, gc);
@@ -101,6 +102,7 @@ public class ClassElementOpener implements ActionListener {
 
     /**
      * Set the constant pool info that is to be the source of the link.
+     *
      * @param cpInfo the contant pool info.
      */
     public void setCPInfo(CPInfo cpInfo) {
@@ -111,7 +113,7 @@ public class ClassElementOpener implements ActionListener {
         if (cpInfo instanceof ConstantClassInfo) {
             buttonText = "Show class";
             try {
-                if (((ConstantClassInfo)cpInfo).getName().equals(detailPane.getBrowserServices().getClassFile().getThisClassName())) {
+                if (((ConstantClassInfo) cpInfo).getName().equals(detailPane.getBrowserServices().getClassFile().getThisClassName())) {
                     buttonText = null;
                 }
             } catch (InvalidByteCodeException e) {

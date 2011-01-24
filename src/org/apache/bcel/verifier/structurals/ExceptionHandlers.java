@@ -54,8 +54,9 @@ package org.apache.bcel.verifier.structurals;
  * <http://www.apache.org/>.
  */
 
-import org.apache.bcel.generic.*;
-
+import org.apache.bcel.generic.CodeExceptionGen;
+import org.apache.bcel.generic.InstructionHandle;
+import org.apache.bcel.generic.MethodGen;
 
 import java.util.HashSet;
 import java.util.Hashtable;
@@ -63,47 +64,47 @@ import java.util.Hashtable;
 /**
  * This class allows easy access to ExceptionHandler objects.
  *
- * @version $Id: ExceptionHandlers.java,v 1.2 2006/09/04 15:43:18 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: ExceptionHandlers.java,v 1.2 2006/09/04 15:43:18 andos Exp $
  */
-public class ExceptionHandlers{
-	/**
-	 * The ExceptionHandler instances.
-	 * Key: InstructionHandle objects, Values: HashSet<ExceptionHandler> instances.
-	 */
-	private Hashtable<InstructionHandle, HashSet> exceptionhandlers;
-	 
-	/**
-	 * Constructor. Creates a new ExceptionHandlers instance.
-	 */
-	public ExceptionHandlers(MethodGen mg){
-		exceptionhandlers = new Hashtable<InstructionHandle, HashSet> ();
-		CodeExceptionGen[] cegs = mg.getExceptionHandlers();
-		for (int i=0; i<cegs.length; i++){
-			ExceptionHandler eh = new ExceptionHandler(cegs[i].getCatchType(), cegs[i].getHandlerPC());
-			for (InstructionHandle ih=cegs[i].getStartPC(); ih != cegs[i].getEndPC().getNext(); ih=ih.getNext()){
-				HashSet<ExceptionHandler> hs;
-				hs = (HashSet) exceptionhandlers.get(ih);
-				if (hs == null){
-					hs = new HashSet<ExceptionHandler>();
-					exceptionhandlers.put(ih, hs);
-				}
-				hs.add(eh);
-			}
-		}
-	}
-	
-	/**
-	 * Returns all the ExceptionHandler instances representing exception
-	 * handlers that protect the instruction ih.
-	 */
-	public ExceptionHandler[] getExceptionHandlers(InstructionHandle ih){
-		HashSet hs = (HashSet) exceptionhandlers.get(ih);
-		if (hs == null) return new ExceptionHandler[0];
-		else{
-			ExceptionHandler[] ret = new ExceptionHandler[hs.size()];
-			return (ExceptionHandler[]) (hs.toArray(ret));
-		}
-	}
+public class ExceptionHandlers {
+    /**
+     * The ExceptionHandler instances.
+     * Key: InstructionHandle objects, Values: HashSet<ExceptionHandler> instances.
+     */
+    private Hashtable<InstructionHandle, HashSet> exceptionhandlers;
+
+    /**
+     * Constructor. Creates a new ExceptionHandlers instance.
+     */
+    public ExceptionHandlers(MethodGen mg) {
+        exceptionhandlers = new Hashtable<InstructionHandle, HashSet>();
+        CodeExceptionGen[] cegs = mg.getExceptionHandlers();
+        for (int i = 0; i < cegs.length; i++) {
+            ExceptionHandler eh = new ExceptionHandler(cegs[i].getCatchType(), cegs[i].getHandlerPC());
+            for (InstructionHandle ih = cegs[i].getStartPC(); ih != cegs[i].getEndPC().getNext(); ih = ih.getNext()) {
+                HashSet<ExceptionHandler> hs;
+                hs = (HashSet) exceptionhandlers.get(ih);
+                if (hs == null) {
+                    hs = new HashSet<ExceptionHandler>();
+                    exceptionhandlers.put(ih, hs);
+                }
+                hs.add(eh);
+            }
+        }
+    }
+
+    /**
+     * Returns all the ExceptionHandler instances representing exception
+     * handlers that protect the instruction ih.
+     */
+    public ExceptionHandler[] getExceptionHandlers(InstructionHandle ih) {
+        HashSet hs = (HashSet) exceptionhandlers.get(ih);
+        if (hs == null) return new ExceptionHandler[0];
+        else {
+            ExceptionHandler[] ret = new ExceptionHandler[hs.size()];
+            return (ExceptionHandler[]) (hs.toArray(ret));
+        }
+    }
 
 }

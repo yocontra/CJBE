@@ -53,6 +53,7 @@ package org.apache.bcel.verifier.exc;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
+
 /**
  * Instances of this class are thrown by BCEL's class file verifier "JustIce" when
  * a class file to verify does not pass the verification pass 3 because of a violation
@@ -67,8 +68,8 @@ package org.apache.bcel.verifier.exc;
  * and Resolution") of the above mentioned book.
  * <B>TODO: At this time, this class is not used in JustIce.</B>
  *
- * @version $Id: LinkingConstraintException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: LinkingConstraintException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  */
-public class LinkingConstraintException extends StructuralCodeConstraintException{
+public class LinkingConstraintException extends StructuralCodeConstraintException {
 }

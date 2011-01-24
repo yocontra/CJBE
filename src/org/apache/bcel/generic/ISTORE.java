@@ -54,44 +54,46 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * ISTORE - Store int from stack into local variable
  * <PRE>Stack: ..., value -&gt; ... </PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ISTORE.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class ISTORE extends StoreInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 6155373362393796303L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 6155373362393796303L;
 
-/**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  ISTORE() {
-    super(org.apache.bcel.Constants.ISTORE, org.apache.bcel.Constants.ISTORE_0);
-  }
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    ISTORE() {
+        super(org.apache.bcel.Constants.ISTORE, org.apache.bcel.Constants.ISTORE_0);
+    }
 
-  /** Store int into local variable
-   * @param n index of local variable
-   */
-  public ISTORE(int n) {
-    super(org.apache.bcel.Constants.ISTORE, org.apache.bcel.Constants.ISTORE_0, n);
-  }
+    /**
+     * Store int into local variable
+     *
+     * @param n index of local variable
+     */
+    public ISTORE(int n) {
+        super(org.apache.bcel.Constants.ISTORE, org.apache.bcel.Constants.ISTORE_0, n);
+    }
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    super.accept(v);
-    v.visitISTORE(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        super.accept(v);
+        v.visitISTORE(this);
+    }
 }

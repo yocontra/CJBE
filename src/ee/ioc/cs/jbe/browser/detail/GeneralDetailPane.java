@@ -7,26 +7,24 @@
 
 package ee.ioc.cs.jbe.browser.detail;
 
+import ee.ioc.cs.jbe.browser.BrowserServices;
 import org.gjt.jclasslib.structures.ClassFile;
 import org.gjt.jclasslib.util.ExtendedJLabel;
-
-import ee.ioc.cs.jbe.browser.BrowserServices;
-
 
 import javax.swing.tree.TreePath;
 
 /**
-    Detail pane showing general information on the class file structure.
-    All fields in the <tt>ClassFile</tt> structure without substructure 
-    are incorporated in theis pane.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.4 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Detail pane showing general information on the class file structure.
+ * All fields in the <tt>ClassFile</tt> structure without substructure
+ * are incorporated in theis pane.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.4 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class GeneralDetailPane extends FixedListDetailPane {
-    
+
     // Visual components
-    
+
     private ExtendedJLabel lblMinorVersion;
     private ExtendedJLabel lblMajorVersion;
     private ExtendedJLabel lblConstantPoolCount;
@@ -42,54 +40,55 @@ public class GeneralDetailPane extends FixedListDetailPane {
     private ExtendedJLabel lblAttributesCount;
 
     /**
-        Constructor.
-        @param services the associated browser services.
+     * Constructor.
+     *
+     * @param services the associated browser services.
      */
     public GeneralDetailPane(BrowserServices services) {
         super(services);
     }
-    
+
     protected void setupLabels() {
-        
+
         addDetailPaneEntry(normalLabel("Minor version:"),
-                           lblMinorVersion = highlightLabel());
+                lblMinorVersion = highlightLabel());
 
         addDetailPaneEntry(normalLabel("Major version:"),
-                           lblMajorVersion = highlightLabel());
-        
+                lblMajorVersion = highlightLabel());
+
         addDetailPaneEntry(normalLabel("Constant pool count:"),
-                           lblConstantPoolCount = highlightLabel());
-        
+                lblConstantPoolCount = highlightLabel());
+
         addDetailPaneEntry(normalLabel("Access flags:"),
-                           lblAccessFlags = highlightLabel(), 
-                           lblAccessFlagsVerbose = highlightLabel());
-        
+                lblAccessFlags = highlightLabel(),
+                lblAccessFlagsVerbose = highlightLabel());
+
         addDetailPaneEntry(normalLabel("This class:"),
-                           lblThisClass = linkLabel(),
-                           lblThisClassVerbose = highlightLabel());
-        
+                lblThisClass = linkLabel(),
+                lblThisClassVerbose = highlightLabel());
+
         addDetailPaneEntry(normalLabel("Super class:"),
-                           lblSuperClass = linkLabel(),
-                           lblSuperClassVerbose = highlightLabel());
-        
+                lblSuperClass = linkLabel(),
+                lblSuperClassVerbose = highlightLabel());
+
         addDetailPaneEntry(normalLabel("Interfaces count:"),
-                           lblInterfacesCount = highlightLabel());
-        
+                lblInterfacesCount = highlightLabel());
+
         addDetailPaneEntry(normalLabel("Fields count:"),
-                           lblFieldsCount = highlightLabel());
-        
+                lblFieldsCount = highlightLabel());
+
         addDetailPaneEntry(normalLabel("Methods count:"),
-                           lblMethodsCount = highlightLabel());
-        
+                lblMethodsCount = highlightLabel());
+
         addDetailPaneEntry(normalLabel("Attributes count:"),
-                           lblAttributesCount = highlightLabel());
+                lblAttributesCount = highlightLabel());
 
     }
 
     public void show(TreePath treePath) {
-        
+
         ClassFile classFile = services.getClassFile();
-        
+
         lblMinorVersion.setText(classFile.getMinorVersion());
         lblMajorVersion.setText(classFile.getMajorVersion());
         lblConstantPoolCount.setText(classFile.getConstantPool().length);
@@ -98,13 +97,13 @@ public class GeneralDetailPane extends FixedListDetailPane {
         lblAccessFlagsVerbose.setText("[" + classFile.getAccessFlagsVerbose() + "]");
 
         constantPoolHyperlink(lblThisClass,
-                              lblThisClassVerbose,
-                              classFile.getThisClass());
+                lblThisClassVerbose,
+                classFile.getThisClass());
 
         constantPoolHyperlink(lblSuperClass,
-                              lblSuperClassVerbose,
-                              classFile.getSuperClass());
-        
+                lblSuperClassVerbose,
+                classFile.getSuperClass());
+
         lblInterfacesCount.setText(classFile.getInterfaces().length);
         lblFieldsCount.setText(classFile.getFields().length);
         lblMethodsCount.setText(classFile.getMethods().length);
@@ -112,6 +111,6 @@ public class GeneralDetailPane extends FixedListDetailPane {
 
         super.show(treePath);
     }
-    
+
 }
 

@@ -13,50 +13,54 @@ import org.gjt.jclasslib.io.ByteCodeOutput;
 import java.io.IOException;
 
 /**
-    Describes the <tt>invokeinterface</tt> instruction.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Describes the <tt>invokeinterface</tt> instruction.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class InvokeInterfaceInstruction extends ImmediateShortInstruction {
 
     private int count;
-    
+
     /**
-        Constructor.
-        @param opcode the opcode.
+     * Constructor.
+     *
+     * @param opcode the opcode.
      */
     public InvokeInterfaceInstruction(int opcode) {
-        super(opcode); 
+        super(opcode);
     }
-    
+
     /**
-        Constructor.
-        @param opcode the opcode
-        @param immediateShort the immediate short value.
-        @param count the argument count.
+     * Constructor.
+     *
+     * @param opcode         the opcode
+     * @param immediateShort the immediate short value.
+     * @param count          the argument count.
      */
     public InvokeInterfaceInstruction(int opcode, int immediateShort, int count) {
-        super(opcode, immediateShort); 
+        super(opcode, immediateShort);
         this.count = count;
     }
-    
-    
+
+
     public int getSize() {
         return super.getSize() + 2;
     }
 
     /**
-        Get the argument count of this instruction.
-        @return the argument count
+     * Get the argument count of this instruction.
+     *
+     * @return the argument count
      */
     public int getCount() {
         return count;
     }
 
     /**
-        Set the argument count of this instruction.
-        @param count the argument count
+     * Set the argument count of this instruction.
+     *
+     * @param count the argument count
      */
     public void setCount(int count) {
         this.count = count;
@@ -76,5 +80,5 @@ public class InvokeInterfaceInstruction extends ImmediateShortInstruction {
         out.writeByte(count);
         out.writeByte(0);
     }
-    
+
 }

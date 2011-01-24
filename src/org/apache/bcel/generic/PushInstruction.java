@@ -58,9 +58,8 @@ package org.apache.bcel.generic;
  * Denotes an unparameterized instruction to produce a value on top of the stack,
  * such as ILOAD, LDC, SIPUSH, DUP, ICONST, etc.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: PushInstruction.java,v 1.1 2005/12/16 14:11:25 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
-
  * @see ILOAD
  * @see ICONST
  * @see LDC

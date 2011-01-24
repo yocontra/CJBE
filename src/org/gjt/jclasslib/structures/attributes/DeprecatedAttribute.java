@@ -10,30 +10,34 @@ package org.gjt.jclasslib.structures.attributes;
 import org.gjt.jclasslib.structures.AttributeInfo;
 import org.gjt.jclasslib.structures.InvalidByteCodeException;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
 /**
-    Describes a <tt>Deprecated</tt> attribute structure.
-
- @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
-*/
+ * Describes a <tt>Deprecated</tt> attribute structure.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
+ */
 public class DeprecatedAttribute extends AttributeInfo {
 
-    /** Name of the attribute as in the corresponding constant pool entry. */
+    /**
+     * Name of the attribute as in the corresponding constant pool entry.
+     */
     public static final String ATTRIBUTE_NAME = "Deprecated";
 
     private static final int LENGTH = 0;
-    
+
     public void read(DataInput in)
-        throws InvalidByteCodeException, IOException {
-            
+            throws InvalidByteCodeException, IOException {
+
         if (debug) debug("read ");
     }
 
     public void write(DataOutput out)
-        throws InvalidByteCodeException, IOException {
-        
+            throws InvalidByteCodeException, IOException {
+
         super.write(out);
         if (debug) debug("wrote ");
     }

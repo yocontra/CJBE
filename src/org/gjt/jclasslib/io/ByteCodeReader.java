@@ -12,52 +12,53 @@ import org.gjt.jclasslib.bytecode.*;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
-    Converts code to a list of instructions as defined in the package
-    <tt>org.gjt.jclasslib.code</tt>.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Converts code to a list of instructions as defined in the package
+ * <tt>org.gjt.jclasslib.code</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class ByteCodeReader implements Opcodes {
 
     private ByteCodeReader() {
     }
-    
+
     /**
-        Converts the code to a list of instructions.
-        @param code the code as an array of bytes from which to read the instructions
-        @return the <tt>java.util.List</tt> with the instructions
-        @throws IOException if an exception occurs with the code
+     * Converts the code to a list of instructions.
+     *
+     * @param code the code as an array of bytes from which to read the instructions
+     * @return the <tt>java.util.List</tt> with the instructions
+     * @throws IOException if an exception occurs with the code
      */
-    public static List readByteCode(byte[] code) throws IOException {
+    public static List<AbstractInstruction> readByteCode(byte[] code) throws IOException {
         return readByteCode(code, null);
     }
 
     /**
-        Converts the code to a list of instructions.
-        @param code the code as an array of bytes from which to read the instructions
-        @param prependInstructions an array of instructions that is prepended, may be <tt>null</tt>
-        @return the <tt>java.util.List</tt> with the instructions
-        @throws IOException if an exception occurs with the code
+     * Converts the code to a list of instructions.
+     *
+     * @param code                the code as an array of bytes from which to read the instructions
+     * @param prependInstructions an array of instructions that is prepended, may be <tt>null</tt>
+     * @return the <tt>java.util.List</tt> with the instructions
+     * @throws IOException if an exception occurs with the code
      */
-    public static List readByteCode(byte[] code,
-                       AbstractInstruction[] prependInstructions)
-        throws IOException {
+    public static List<AbstractInstruction> readByteCode(byte[] code,
+                                                         AbstractInstruction[] prependInstructions)
+            throws IOException {
 
         ByteCodeInputStream bcis = new ByteCodeInputStream(
-                                        new ByteArrayInputStream(code)
-                                    );
-        
-        ArrayList instructions = new ArrayList();
+                new ByteArrayInputStream(code)
+        );
+
+        ArrayList<AbstractInstruction> instructions = new ArrayList<AbstractInstruction>();
         if (prependInstructions != null) {
-            for (int i = 0; i < prependInstructions.length; i++) {
-                instructions.add(prependInstructions[i]);
-            }
+            instructions.addAll(Arrays.asList(prependInstructions));
         }
-        
+
         boolean wide = false;
         AbstractInstruction currentInstruction;
         while (bcis.getBytesRead() < code.length) {
@@ -65,19 +66,18 @@ public class ByteCodeReader implements Opcodes {
             wide = (currentInstruction.getOpcode() == OPCODE_WIDE);
             instructions.add(currentInstruction);
         }
-        
+
         return instructions;
     }
-    
+
     private static AbstractInstruction readNextInstruction(ByteCodeInputStream bcis, boolean wide)
-        throws IOException
-    {
+            throws IOException {
         AbstractInstruction instruction;
 
         int opcode = bcis.readUnsignedByte();
 
         switch (opcode) {
-            
+
             case OPCODE_WIDE:
             case OPCODE_NOP:
             case OPCODE_ACONST_NULL:
@@ -230,7 +230,7 @@ public class ByteCodeReader implements Opcodes {
             case OPCODE_BREAKPOINT:
             case OPCODE_IMPDEP1:
             case OPCODE_IMPDEP2:
-                
+
                 instruction = new SimpleInstruction(opcode);
                 break;
 
@@ -266,7 +266,7 @@ public class ByteCodeReader implements Opcodes {
             case OPCODE_CHECKCAST:
             case OPCODE_INSTANCEOF:
             case OPCODE_SIPUSH: // the only immediate short instruction that does
-                                // not have an immediate constant pool reference
+                // not have an immediate constant pool reference
 
                 instruction = new ImmediateShortInstruction(opcode);
                 break;
@@ -298,38 +298,38 @@ public class ByteCodeReader implements Opcodes {
 
                 instruction = new ImmediateIntInstruction(opcode);
                 break;
-                
+
             case OPCODE_IINC: // subject to wide
 
                 instruction = new IncrementInstruction(opcode, wide);
                 break;
-                
+
             case OPCODE_TABLESWITCH:
 
                 instruction = new TableSwitchInstruction(opcode);
                 break;
-                
+
             case OPCODE_LOOKUPSWITCH:
 
                 instruction = new LookupSwitchInstruction(opcode);
                 break;
-                
+
             case OPCODE_INVOKEINTERFACE:
 
                 instruction = new InvokeInterfaceInstruction(opcode);
                 break;
-                
+
             case OPCODE_MULTIANEWARRAY:
-            
+
                 instruction = new MultianewarrayInstruction(opcode);
                 break;
-                
+
             default:
                 throw new IOException("invalid opcode 0x" + Integer.toHexString(opcode));
         }
-        
+
         instruction.read(bcis);
         return instruction;
     }
-    
+
 }

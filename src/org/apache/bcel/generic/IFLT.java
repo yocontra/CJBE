@@ -54,51 +54,52 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * IFLT - Branch if int comparison with zero succeeds
- *
+ * <p/>
  * <PRE>Stack: ..., value -&gt; ...</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: IFLT.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class IFLT extends IfInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 2489268758129304231L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 2489268758129304231L;
 
 
-/**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  IFLT() {}
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    IFLT() {
+    }
 
-  public IFLT(InstructionHandle target) {
-    super(org.apache.bcel.Constants.IFLT, target);
-  }
+    public IFLT(InstructionHandle target) {
+        super(org.apache.bcel.Constants.IFLT, target);
+    }
 
-  /**
-   * @return negation of instruction
-   */
-  public IfInstruction negate() {
-    return new IFGE(target);
-  }
+    /**
+     * @return negation of instruction
+     */
+    public IfInstruction negate() {
+        return new IFGE(target);
+    }
 
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitStackConsumer(this);
-    v.visitBranchInstruction(this);
-    v.visitIfInstruction(this);
-    v.visitIFLT(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitStackConsumer(this);
+        v.visitBranchInstruction(this);
+        v.visitIfInstruction(this);
+        v.visitIFLT(this);
+    }
 }

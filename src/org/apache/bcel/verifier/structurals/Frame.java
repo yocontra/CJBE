@@ -59,92 +59,92 @@ package org.apache.bcel.verifier.structurals;
  * This class represents a JVM execution frame; that means,
  * a local variable array and an operand stack.
  *
- * @version $Id: Frame.java,v 1.2 2006/09/04 15:43:18 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: Frame.java,v 1.2 2006/09/04 15:43:18 andos Exp $
  */
- 
-public class Frame{
 
-	/**
-	 * For instance initialization methods, it is important to remember
-	 * which instance it is that is not initialized yet. It will be
-	 * initialized invoking another constructor later.
-	 * NULL means the instance already *is* initialized.
-	 */
-	protected static UninitializedObjectType _this;
+public class Frame {
 
-	/**
-	 *
-	 */
-	private LocalVariables locals;
+    /**
+     * For instance initialization methods, it is important to remember
+     * which instance it is that is not initialized yet. It will be
+     * initialized invoking another constructor later.
+     * NULL means the instance already *is* initialized.
+     */
+    protected static UninitializedObjectType _this;
 
-	/**
-	 *
-	 */
-	private OperandStack stack;
+    /**
+     *
+     */
+    private LocalVariables locals;
 
-	/**
-	 *
-	 */
-	public Frame(int maxLocals, int maxStack){
-		locals = new LocalVariables(maxLocals);
-		stack = new OperandStack(maxStack);
-	}
+    /**
+     *
+     */
+    private OperandStack stack;
 
-	/**
-	 *
-	 */
-	public Frame(LocalVariables locals, OperandStack stack){
-		this.locals = locals;
-		this.stack = stack;
-	}
+    /**
+     *
+     */
+    public Frame(int maxLocals, int maxStack) {
+        locals = new LocalVariables(maxLocals);
+        stack = new OperandStack(maxStack);
+    }
 
-	/**
-	 *
-	 */
-	protected Object clone(){
-		Frame f = new Frame(locals.getClone(), stack.getClone());
-		return f;
-	}
+    /**
+     *
+     */
+    public Frame(LocalVariables locals, OperandStack stack) {
+        this.locals = locals;
+        this.stack = stack;
+    }
 
-	/**
-	 *
-	 */
-	public Frame getClone(){
-		return (Frame) clone();
-	}
+    /**
+     *
+     */
+    protected Object clone() {
+        Frame f = new Frame(locals.getClone(), stack.getClone());
+        return f;
+    }
 
-	/**
-	 *
-	 */
-	public LocalVariables getLocals(){
-		return locals;
-	}
+    /**
+     *
+     */
+    public Frame getClone() {
+        return (Frame) clone();
+    }
 
-	/**
-	 *
-	 */
-	public OperandStack getStack(){
-		return stack;
-	}
+    /**
+     *
+     */
+    public LocalVariables getLocals() {
+        return locals;
+    }
 
-	/**
-	 *
-	 */
-	public boolean equals(Object o){
-		if (!(o instanceof Frame)) return false; // implies "null" is non-equal.
-		Frame f = (Frame) o;
-		return this.stack.equals(f.stack) && this.locals.equals(f.locals);
-	}
+    /**
+     *
+     */
+    public OperandStack getStack() {
+        return stack;
+    }
 
-	/**
-	 * Returns a String representation of the Frame instance.
-	 */
-	public String toString(){
-		String s="Local Variables:\n";
-		s += locals;
-		s += "OperandStack:\n";
-		s += stack;
-		return s;
-	}
+    /**
+     *
+     */
+    public boolean equals(Object o) {
+        if (!(o instanceof Frame)) return false; // implies "null" is non-equal.
+        Frame f = (Frame) o;
+        return this.stack.equals(f.stack) && this.locals.equals(f.locals);
+    }
+
+    /**
+     * Returns a String representation of the Frame instance.
+     */
+    public String toString() {
+        String s = "Local Variables:\n";
+        s += locals;
+        s += "OperandStack:\n";
+        s += stack;
+        return s;
+    }
 }

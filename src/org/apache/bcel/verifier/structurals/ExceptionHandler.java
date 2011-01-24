@@ -54,40 +54,47 @@ package org.apache.bcel.verifier.structurals;
  * <http://www.apache.org/>.
  */
 
-import org.apache.bcel.generic.*;
+import org.apache.bcel.generic.InstructionHandle;
+import org.apache.bcel.generic.ObjectType;
 
 /**
  * This class represents an exception handler; that is, an ObjectType
  * representing a subclass of java.lang.Throwable and the instruction
  * the handler starts off (represented by an InstructionContext).
- * 
- * @version $Id: ExceptionHandler.java,v 1.1 2005/12/16 14:11:30 andos Exp $
+ *
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: ExceptionHandler.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  */
-public class ExceptionHandler{
-	/** The type of the exception to catch. NULL means ANY. */
-	private ObjectType catchtype;
-	
-	/** The InstructionHandle where the handling begins. */
-	private InstructionHandle handlerpc;
+public class ExceptionHandler {
+    /**
+     * The type of the exception to catch. NULL means ANY.
+     */
+    private ObjectType catchtype;
 
-	/** Leave instance creation to JustIce. */
-	ExceptionHandler(ObjectType catch_type, InstructionHandle handler_pc){
-		catchtype = catch_type;
-		handlerpc = handler_pc;
-	}
+    /**
+     * The InstructionHandle where the handling begins.
+     */
+    private InstructionHandle handlerpc;
 
-	/**
-	 * Returns the type of the exception that's handled. <B>'null' means 'ANY'.</B>
-	 */
-	public ObjectType getExceptionType(){
-		return catchtype;
-	}
+    /**
+     * Leave instance creation to JustIce.
+     */
+    ExceptionHandler(ObjectType catch_type, InstructionHandle handler_pc) {
+        catchtype = catch_type;
+        handlerpc = handler_pc;
+    }
 
-	/**
-	 * Returns the InstructionHandle where the handler starts off.
-	 */
-	public InstructionHandle getHandlerStart(){
-		return handlerpc;
-	}
+    /**
+     * Returns the type of the exception that's handled. <B>'null' means 'ANY'.</B>
+     */
+    public ObjectType getExceptionType() {
+        return catchtype;
+    }
+
+    /**
+     * Returns the InstructionHandle where the handler starts off.
+     */
+    public InstructionHandle getHandlerStart() {
+        return handlerpc;
+    }
 }

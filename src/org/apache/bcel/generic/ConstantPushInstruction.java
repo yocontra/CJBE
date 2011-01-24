@@ -58,13 +58,12 @@ package org.apache.bcel.generic;
  * Denotes a push instruction that produces a literal on the stack
  * such as  SIPUSH, BIPUSH, ICONST, etc.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ConstantPushInstruction.java,v 1.1 2005/12/16 14:11:24 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
-
  * @see ICONST
  * @see SIPUSH
  */
 public interface ConstantPushInstruction extends PushInstruction, TypedInstruction {
-  public Number getValue();
+    public Number getValue();
 }
 

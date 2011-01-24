@@ -63,20 +63,21 @@ package org.apache.bcel.verifier.exc;
  * edition, page 164, 5.4.1 where verification as a part of the linking process is
  * defined to be the verification happening in passes 2 and 3.
  *
- * @version $Id: VerificationException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: VerificationException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  */
-public abstract class VerificationException extends VerifierConstraintViolatedException{
-	/**
-	 * Constructs a new VerificationException with null as its error message string.
-	 */
-	VerificationException(){
-		super();
-	}
-	/**
-	 * Constructs a new VerificationException with the specified error message.
-	 */
-	VerificationException(String message){
-		super(message);
-	}
+public abstract class VerificationException extends VerifierConstraintViolatedException {
+    /**
+     * Constructs a new VerificationException with null as its error message string.
+     */
+    VerificationException() {
+        super();
+    }
+
+    /**
+     * Constructs a new VerificationException with the specified error message.
+     */
+    VerificationException(String message) {
+        super(message);
+    }
 }

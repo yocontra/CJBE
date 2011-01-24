@@ -54,40 +54,41 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * DRETURN -  Return double from method
  * <PRE>Stack: ..., value.word1, value.word2 -&gt; &lt;empty&gt;</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: DRETURN.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class DRETURN extends ReturnInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 7442064109402271402L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 7442064109402271402L;
 
 
-/** Return double from method
-   */
-  public DRETURN() {
-    super(org.apache.bcel.Constants.DRETURN);
-  }
+    /**
+     * Return double from method
+     */
+    public DRETURN() {
+        super(org.apache.bcel.Constants.DRETURN);
+    }
 
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitExceptionThrower(this);
-    v.visitTypedInstruction(this);
-    v.visitStackConsumer(this);
-    v.visitReturnInstruction(this);
-    v.visitDRETURN(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitExceptionThrower(this);
+        v.visitTypedInstruction(this);
+        v.visitStackConsumer(this);
+        v.visitReturnInstruction(this);
+        v.visitDRETURN(this);
+    }
 }

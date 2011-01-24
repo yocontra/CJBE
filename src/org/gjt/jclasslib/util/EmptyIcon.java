@@ -11,11 +11,11 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
-    Transparent icon with no content.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
-*/
+ * Transparent icon with no content.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
+ */
 public class EmptyIcon implements Icon {
 
     private int width;
@@ -23,7 +23,8 @@ public class EmptyIcon implements Icon {
 
     /**
      * Constructor.
-     * @param width the width of the icon.
+     *
+     * @param width  the width of the icon.
      * @param height the height of the icon.
      */
     public EmptyIcon(int width, int height) {

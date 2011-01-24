@@ -54,40 +54,41 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * ISUB - Substract ints
  * <PRE>Stack: ..., value1, value2 -&gt; result</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ISUB.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class ISUB extends ArithmeticInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1878271684888856459L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1878271684888856459L;
 
 
-/** Substract ints
-   */
-  public ISUB() {
-    super(org.apache.bcel.Constants.ISUB);
-  }
+    /**
+     * Substract ints
+     */
+    public ISUB() {
+        super(org.apache.bcel.Constants.ISUB);
+    }
 
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitTypedInstruction(this);
-    v.visitStackProducer(this);
-    v.visitStackConsumer(this);
-    v.visitArithmeticInstruction(this);
-    v.visitISUB(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitTypedInstruction(this);
+        v.visitStackProducer(this);
+        v.visitStackConsumer(this);
+        v.visitArithmeticInstruction(this);
+        v.visitISUB(this);
+    }
 }

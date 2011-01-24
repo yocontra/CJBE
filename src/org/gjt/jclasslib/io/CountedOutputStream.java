@@ -7,7 +7,9 @@
 
 package org.gjt.jclasslib.io;
 
-import java.io.*;
+import java.io.FilterOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 /**
  * <tt>OutputStream</tt> which counts the number of bytes written.

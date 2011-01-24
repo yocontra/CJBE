@@ -9,7 +9,9 @@ package org.gjt.jclasslib.structures.attributes;
 import org.gjt.jclasslib.structures.AttributeInfo;
 import org.gjt.jclasslib.structures.InvalidByteCodeException;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
 /**
  * Describes an  <tt>EnclosingMethod</tt> attribute structure.

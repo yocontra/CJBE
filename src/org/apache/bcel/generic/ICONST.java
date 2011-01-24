@@ -54,60 +54,64 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * ICONST - Push value between -1, ..., 5, other values cause an exception
- *
+ * <p/>
  * <PRE>Stack: ... -&gt; ..., </PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ICONST.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class ICONST extends Instruction
-  implements ConstantPushInstruction, TypedInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -8584608346858574131L;
-private int value;
+        implements ConstantPushInstruction, TypedInstruction {
+    /**
+     *
+     */
+    private static final long serialVersionUID = -8584608346858574131L;
+    private int value;
 
-  /**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  ICONST() {}
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    ICONST() {
+    }
 
-  public ICONST(int i) {
-    super(org.apache.bcel.Constants.ICONST_0, (short)1);
+    public ICONST(int i) {
+        super(org.apache.bcel.Constants.ICONST_0, (short) 1);
 
-    if((i >= -1) && (i <= 5))
-      opcode = (short)(org.apache.bcel.Constants.ICONST_0 + i); // Even works for i == -1
-    else
-      throw new ClassGenException("ICONST can be used only for value between -1 and 5: " +
-				  i);
-    value = i;
-  }
-  
-  public Number getValue() { return new Integer(value); }
+        if ((i >= -1) && (i <= 5))
+            opcode = (short) (org.apache.bcel.Constants.ICONST_0 + i); // Even works for i == -1
+        else
+            throw new ClassGenException("ICONST can be used only for value between -1 and 5: " +
+                    i);
+        value = i;
+    }
 
-  /** @return Type.INT
-   */
-  public Type getType(ConstantPoolGen cp) {
-    return Type.INT;
-  }
+    public Number getValue() {
+        return new Integer(value);
+    }
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitPushInstruction(this);
-    v.visitStackProducer(this);
-    v.visitTypedInstruction(this);
-    v.visitConstantPushInstruction(this);
-    v.visitICONST(this);
-  }
+    /**
+     * @return Type.INT
+     */
+    public Type getType(ConstantPoolGen cp) {
+        return Type.INT;
+    }
+
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitPushInstruction(this);
+        v.visitStackProducer(this);
+        v.visitTypedInstruction(this);
+        v.visitConstantPushInstruction(this);
+        v.visitICONST(this);
+    }
 }

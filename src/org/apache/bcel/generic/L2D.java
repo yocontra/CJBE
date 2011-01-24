@@ -54,38 +54,38 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * L2D - Convert long to double
  * <PRE>Stack: ..., value.word1, value.word2 -&gt; ..., result.word1, result.word2</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: L2D.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class L2D extends ConversionInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1166552346340922659L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1166552346340922659L;
 
 
-public L2D() {
-    super(org.apache.bcel.Constants.L2D);
-  }
+    public L2D() {
+        super(org.apache.bcel.Constants.L2D);
+    }
 
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitTypedInstruction(this);
-    v.visitStackProducer(this);
-    v.visitStackConsumer(this);
-    v.visitConversionInstruction(this);
-    v.visitL2D(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitTypedInstruction(this);
+        v.visitStackProducer(this);
+        v.visitStackConsumer(this);
+        v.visitConversionInstruction(this);
+        v.visitL2D(this);
+    }
 }

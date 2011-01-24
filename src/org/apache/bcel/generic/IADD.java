@@ -54,40 +54,41 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * IADD - Add ints
  * <PRE>Stack: ..., value1, value2 -&gt; result</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: IADD.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class IADD extends ArithmeticInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 8749750216946526117L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 8749750216946526117L;
 
 
-/** Add ints
-   */
-  public IADD() {
-    super(org.apache.bcel.Constants.IADD);
-  }
+    /**
+     * Add ints
+     */
+    public IADD() {
+        super(org.apache.bcel.Constants.IADD);
+    }
 
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitTypedInstruction(this);
-    v.visitStackProducer(this);
-    v.visitStackConsumer(this);
-    v.visitArithmeticInstruction(this);
-    v.visitIADD(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitTypedInstruction(this);
+        v.visitStackProducer(this);
+        v.visitStackConsumer(this);
+        v.visitArithmeticInstruction(this);
+        v.visitIADD(this);
+    }
 }

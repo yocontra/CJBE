@@ -54,41 +54,42 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * DSUB - Substract doubles
  * <PRE>Stack: ..., value1.word1, value1.word2, value2.word1, value2.word2 -&gt;</PRE>
- *        ..., result.word1, result.word2
+ * ..., result.word1, result.word2
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: DSUB.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class DSUB extends ArithmeticInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -5398969227995149466L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -5398969227995149466L;
 
 
-/** Substract doubles
-   */
-  public DSUB() {
-    super(org.apache.bcel.Constants.DSUB);
-  }
+    /**
+     * Substract doubles
+     */
+    public DSUB() {
+        super(org.apache.bcel.Constants.DSUB);
+    }
 
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitTypedInstruction(this);
-    v.visitStackProducer(this);
-    v.visitStackConsumer(this);
-    v.visitArithmeticInstruction(this);
-    v.visitDSUB(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitTypedInstruction(this);
+        v.visitStackProducer(this);
+        v.visitStackConsumer(this);
+        v.visitArithmeticInstruction(this);
+        v.visitDSUB(this);
+    }
 }

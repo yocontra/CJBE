@@ -9,7 +9,9 @@ package org.gjt.jclasslib.structures;
 
 import org.gjt.jclasslib.io.Log;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 import java.lang.reflect.Array;
 
 /**
@@ -202,7 +204,7 @@ public abstract class AbstractStructure {
                 accessFlagsVerbose.append(availableAccessFlagsVerbose[i]).append(' ');
             }
         }
-        
+
         // Check if every possible flag has been processed
         if ((all | accessFlags) != all) {
             accessFlagsVerbose.append("? ");

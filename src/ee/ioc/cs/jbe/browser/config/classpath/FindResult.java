@@ -8,11 +8,11 @@
 package ee.ioc.cs.jbe.browser.config.classpath;
 
 /**
-    Result of a search operation on the classpath.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Result of a search operation on the classpath.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class FindResult {
 
     private ClasspathEntry classpathEntry;
@@ -20,8 +20,9 @@ public class FindResult {
 
     /**
      * Constructor.
+     *
      * @param classpathEntry the classpath entry in which the class has been found.
-     * @param fileName the file name of the found class.
+     * @param fileName       the file name of the found class.
      */
     public FindResult(ClasspathEntry classpathEntry, String fileName) {
         this.classpathEntry = classpathEntry;
@@ -30,6 +31,7 @@ public class FindResult {
 
     /**
      * Get the classpath entry in which the class has been found.
+     *
      * @return the classpath entry.
      */
     public ClasspathEntry getClasspathEntry() {
@@ -38,6 +40,7 @@ public class FindResult {
 
     /**
      * Get the file name of the found class.
+     *
      * @return the file name.
      */
     public String getFileName() {

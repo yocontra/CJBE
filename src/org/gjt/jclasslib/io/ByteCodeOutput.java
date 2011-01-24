@@ -10,18 +10,19 @@ package org.gjt.jclasslib.io;
 import java.io.DataOutput;
 
 /**
-    Extends <tt>DataOutput</tt> to accomodate for a method to retrieve the number
-    of bytes written.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Extends <tt>DataOutput</tt> to accomodate for a method to retrieve the number
+ * of bytes written.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public interface ByteCodeOutput extends DataOutput {
 
     /**
-        Get the number of bytes written.
-        @return the number of bytes
+     * Get the number of bytes written.
+     *
+     * @return the number of bytes
      */
     public int getBytesWritten();
-    
+
 }

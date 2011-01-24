@@ -6,10 +6,8 @@
 */
 package ee.ioc.cs.jbe.browser.detail.attributes;
 
-import org.gjt.jclasslib.structures.AttributeInfo;
-
 import ee.ioc.cs.jbe.browser.BrowserServices;
-
+import org.gjt.jclasslib.structures.AttributeInfo;
 
 
 /**

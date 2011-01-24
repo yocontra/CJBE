@@ -54,64 +54,68 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * FCONST - Push 0.0, 1.0 or 2.0, other values cause an exception
- *
+ * <p/>
  * <PRE>Stack: ... -&gt; ..., </PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: FCONST.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class FCONST extends Instruction
-  implements ConstantPushInstruction, TypedInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 6158569201875020625L;
-private float value;
+        implements ConstantPushInstruction, TypedInstruction {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 6158569201875020625L;
+    private float value;
 
-  /**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  FCONST() {}
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    FCONST() {
+    }
 
-  public FCONST(float f) {
-    super(org.apache.bcel.Constants.FCONST_0, (short)1);
+    public FCONST(float f) {
+        super(org.apache.bcel.Constants.FCONST_0, (short) 1);
 
-    if(f == 0.0)
-      opcode = org.apache.bcel.Constants.FCONST_0;
-    else if(f == 1.0)
-      opcode = org.apache.bcel.Constants.FCONST_1;
-    else if(f == 2.0)
-      opcode = org.apache.bcel.Constants.FCONST_2;
-    else
-      throw new ClassGenException("FCONST can be used only for 0.0, 1.0 and 2.0: " + f);
+        if (f == 0.0)
+            opcode = org.apache.bcel.Constants.FCONST_0;
+        else if (f == 1.0)
+            opcode = org.apache.bcel.Constants.FCONST_1;
+        else if (f == 2.0)
+            opcode = org.apache.bcel.Constants.FCONST_2;
+        else
+            throw new ClassGenException("FCONST can be used only for 0.0, 1.0 and 2.0: " + f);
 
-    value = f;
-  }
+        value = f;
+    }
 
-  public Number getValue() { return new Float(value); }
+    public Number getValue() {
+        return new Float(value);
+    }
 
-  /** @return Type.FLOAT
-   */
-  public Type getType(ConstantPoolGen cp) {
-    return Type.FLOAT;
-  }
+    /**
+     * @return Type.FLOAT
+     */
+    public Type getType(ConstantPoolGen cp) {
+        return Type.FLOAT;
+    }
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitPushInstruction(this);
-    v.visitStackProducer(this);
-    v.visitTypedInstruction(this);
-    v.visitConstantPushInstruction(this);
-    v.visitFCONST(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitPushInstruction(this);
+        v.visitStackProducer(this);
+        v.visitTypedInstruction(this);
+        v.visitConstantPushInstruction(this);
+        v.visitFCONST(this);
+    }
 }

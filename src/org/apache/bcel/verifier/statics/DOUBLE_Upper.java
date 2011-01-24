@@ -59,21 +59,28 @@ import org.apache.bcel.generic.Type;
 
 /**
  * This class represents the upper half of a DOUBLE variable.
- * @version $Id: DOUBLE_Upper.java,v 1.1 2005/12/16 14:11:30 andos Exp $
+ *
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: DOUBLE_Upper.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  */
-public final class DOUBLE_Upper extends Type{
+public final class DOUBLE_Upper extends Type {
 
-	/** The one and only instance of this class. */
-	private static DOUBLE_Upper singleInstance = new DOUBLE_Upper();
+    /**
+     * The one and only instance of this class.
+     */
+    private static DOUBLE_Upper singleInstance = new DOUBLE_Upper();
 
-	/** The constructor; this class must not be instantiated from the outside. */
-	private DOUBLE_Upper(){
-		super(Constants.T_UNKNOWN, "Long_Upper");
-	}
+    /**
+     * The constructor; this class must not be instantiated from the outside.
+     */
+    private DOUBLE_Upper() {
+        super(Constants.T_UNKNOWN, "Long_Upper");
+    }
 
-	/** Use this method to get the single instance of this class. */
-	public static DOUBLE_Upper theInstance(){
-		return singleInstance;
-	}
+    /**
+     * Use this method to get the single instance of this class.
+     */
+    public static DOUBLE_Upper theInstance() {
+        return singleInstance;
+    }
 }

@@ -77,67 +77,73 @@ import java.util.ArrayList;
  * That means, if you really want a new verification run of a certain
  * pass you must use a new instance of a given PassVerifier.
  *
- * @version $Id: PassVerifier.java,v 1.2 2006/09/18 14:51:46 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: PassVerifier.java,v 1.2 2006/09/18 14:51:46 andos Exp $
  * @see org.apache.bcel.verifier.Verifier
  * @see #verify()
  */
-public abstract class PassVerifier{
+public abstract class PassVerifier {
 
-	/** The (warning) messages. */
-	private ArrayList<String> messages = new ArrayList<String>(); //Type of elements: String
-	
-	/** The VerificationResult cache. */
-	private VerificationResult verificationResult = null;
+    /**
+     * The (warning) messages.
+     */
+    private ArrayList<String> messages = new ArrayList<String>(); //Type of elements: String
 
-	/**
-	 * This method runs a verification pass conforming to the
-	 * Java Virtual Machine Specification, 2nd edition, on a
-	 * class file.
-	 * PassVerifier instances perform caching;
-	 * i.e. if the verify() method once determined a VerificationResult,
-	 * then this result may be returned after every invocation of this
-	 * method instead of running the verification pass anew; likewise with
-	 * the result of getMessages().
-	 *
-	 * @see #getMessages()
-	 * @see #addMessage(String)
-	 */
-	public VerificationResult verify(){
-		if (verificationResult == null){
-			verificationResult = do_verify();
-		}
-		return verificationResult;
-	}
+    /**
+     * The VerificationResult cache.
+     */
+    private VerificationResult verificationResult = null;
 
-	/** Does the real verification work, uncached. */
-	public abstract VerificationResult do_verify();
+    /**
+     * This method runs a verification pass conforming to the
+     * Java Virtual Machine Specification, 2nd edition, on a
+     * class file.
+     * PassVerifier instances perform caching;
+     * i.e. if the verify() method once determined a VerificationResult,
+     * then this result may be returned after every invocation of this
+     * method instead of running the verification pass anew; likewise with
+     * the result of getMessages().
+     *
+     * @see #getMessages()
+     * @see #addMessage(String)
+     */
+    public VerificationResult verify() {
+        if (verificationResult == null) {
+            verificationResult = do_verify();
+        }
+        return verificationResult;
+    }
 
-	/**
-	 * This method adds a (warning) message to the message pool of this
-	 * PassVerifier. This method is normally only internally used by
-	 * BCEL's class file verifier "JustIce" and should not be used from
-	 * the outside. 
-	 *
-	 * @see #getMessages()
-	 */
-	public void addMessage(String message){
-		messages.add(message);
-	}
+    /**
+     * Does the real verification work, uncached.
+     */
+    public abstract VerificationResult do_verify();
 
-	/**
-	 * Returns the (warning) messages that this PassVerifier accumulated
-	 * during its do_verify()ing work.
-	 *
-	 * @see #addMessage(String)
-	 * @see #do_verify()
-	 */
-	public String[] getMessages(){
-		verify(); // create messages if not already done (cached!)
-		String[] ret = new String[messages.size()];
-		for (int i=0; i<messages.size(); i++){
-			ret[i] = (String) messages.get(i);
-		}
-		return ret;
-	}
+    /**
+     * This method adds a (warning) message to the message pool of this
+     * PassVerifier. This method is normally only internally used by
+     * BCEL's class file verifier "JustIce" and should not be used from
+     * the outside.
+     *
+     * @see #getMessages()
+     */
+    public void addMessage(String message) {
+        messages.add(message);
+    }
+
+    /**
+     * Returns the (warning) messages that this PassVerifier accumulated
+     * during its do_verify()ing work.
+     *
+     * @see #addMessage(String)
+     * @see #do_verify()
+     */
+    public String[] getMessages() {
+        verify(); // create messages if not already done (cached!)
+        String[] ret = new String[messages.size()];
+        for (int i = 0; i < messages.size(); i++) {
+            ret[i] = (String) messages.get(i);
+        }
+        return ret;
+    }
 }

@@ -8,19 +8,20 @@
 package org.gjt.jclasslib.io;
 
 /**
-    Utility class to log errors, warnings and debug messages.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Utility class to log errors, warnings and debug messages.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class Log {
 
     private Log() {
     }
 
     /**
-        Log an error message.
-        @param message the message
+     * Log an error message.
+     *
+     * @param message the message
      */
     public static void error(String message) {
         System.out.print("[error] ");
@@ -28,21 +29,23 @@ public class Log {
     }
 
     /**
-        Log a warning message.
-        @param message the message
+     * Log a warning message.
+     *
+     * @param message the message
      */
     public static void warning(String message) {
         System.out.print("[warning] ");
         System.out.println(message);
     }
-    
+
     /**
-        Log a debug message.
-        @param message the message
+     * Log a debug message.
+     *
+     * @param message the message
      */
     public static void debug(String message) {
         System.out.print("[debug] ");
         System.out.println(message);
     }
-    
+
 }

@@ -7,7 +7,9 @@
 
 package org.gjt.jclasslib.structures;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
 /**
  * Describes a method in a <tt>ClassFile</tt> structure.

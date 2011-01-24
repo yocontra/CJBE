@@ -6,12 +6,10 @@
 */
 package ee.ioc.cs.jbe.browser.detail.attributes;
 
-import org.gjt.jclasslib.structures.attributes.SignatureAttribute;
-import org.gjt.jclasslib.util.ExtendedJLabel;
-
 import ee.ioc.cs.jbe.browser.BrowserServices;
 import ee.ioc.cs.jbe.browser.detail.FixedListDetailPane;
-
+import org.gjt.jclasslib.structures.attributes.SignatureAttribute;
+import org.gjt.jclasslib.util.ExtendedJLabel;
 
 import javax.swing.tree.TreePath;
 
@@ -43,7 +41,7 @@ public class SignatureAttributeDetailPane extends FixedListDetailPane {
     }
 
     public void show(TreePath treePath) {
-        SignatureAttribute attribute = (SignatureAttribute)findAttribute(treePath);
+        SignatureAttribute attribute = (SignatureAttribute) findAttribute(treePath);
         constantPoolHyperlink(lblSignature,
                 lblSignatureVerbose,
                 attribute.getSignatureIndex());

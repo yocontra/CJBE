@@ -54,7 +54,8 @@ package org.apache.bcel.util;
  * <http://www.apache.org/>.
  */
 
-import java.lang.reflect.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 
 /**
  * Java interpreter replacement, i.e., wrapper that uses its own ClassLoader
@@ -68,85 +69,86 @@ import java.lang.reflect.*;
  * <pre>java org.apache.bcel.util.JavaWrapper -Dbcel.classloader=foo.MyLoader &lt;real.class.name&gt; [arguments]</pre>
  * </p>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: JavaWrapper.java,v 1.1 2005/12/16 14:11:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @see ClassLoader
  */
 public class JavaWrapper {
-  private java.lang.ClassLoader loader;
+    private java.lang.ClassLoader loader;
 
-  private static java.lang.ClassLoader getClassLoader() {
-    String s = System.getProperty("bcel.classloader");
+    private static java.lang.ClassLoader getClassLoader() {
+        String s = System.getProperty("bcel.classloader");
 
-    if((s == null) || "".equals(s))
-      s = "org.apache.bcel.util.ClassLoader";
+        if ((s == null) || "".equals(s))
+            s = "org.apache.bcel.util.ClassLoader";
 
-    try {
-      return (java.lang.ClassLoader)Class.forName(s).newInstance();
-    } catch(Exception e) {
-      throw new RuntimeException(e.toString());
+        try {
+            return (java.lang.ClassLoader) Class.forName(s).newInstance();
+        } catch (Exception e) {
+            throw new RuntimeException(e.toString());
+        }
     }
-  }
-      
-  public JavaWrapper(java.lang.ClassLoader loader) {
-    this.loader = loader;
-  }
 
-  public JavaWrapper() {
-    this(getClassLoader());
-  }
-
-  /** Runs the main method of the given class with the arguments passed in argv
-   *
-   * @param class_name the fully qualified class name
-   * @param argv the arguments just as you would pass them directly
-   */
-  public void runMain(String class_name, String[] argv) throws ClassNotFoundException
-  {
-    Class   cl    = loader.loadClass(class_name);
-    Method method = null;
-
-    try {
-      method = cl.getMethod("main",  new Class[] { argv.getClass() });
-      
-      /* Method main is sane ?
-       */
-      int   m = method.getModifiers();
-      Class r = method.getReturnType();
-      
-      if(!(Modifier.isPublic(m) && Modifier.isStatic(m)) ||
-	 Modifier.isAbstract(m) || (r != Void.TYPE))
-	throw new NoSuchMethodException();
-    } catch(NoSuchMethodException no) {
-      System.out.println("In class " + class_name +
-			 ": public static void main(String[] argv) is not defined");
-      return;
+    public JavaWrapper(java.lang.ClassLoader loader) {
+        this.loader = loader;
     }
-    
-    try {
-      method.invoke(null, new Object[] { argv });
-    } catch(Exception ex) {
-      ex.printStackTrace();
-    }
-  }
 
-  /** Default main method used as wrapper, expects the fully qualified class name
-   * of the real class as the first argument.
-   */
-  public static void main(String[] argv) throws Exception {
-    /* Expects class name as first argument, other arguments are by-passed.
+    public JavaWrapper() {
+        this(getClassLoader());
+    }
+
+    /**
+     * Runs the main method of the given class with the arguments passed in argv
+     *
+     * @param class_name the fully qualified class name
+     * @param argv       the arguments just as you would pass them directly
      */
-    if(argv.length == 0) {
-      System.out.println("Missing class name.");
-      return;
+    public void runMain(String class_name, String[] argv) throws ClassNotFoundException {
+        Class cl = loader.loadClass(class_name);
+        Method method = null;
+
+        try {
+            method = cl.getMethod("main", new Class[]{argv.getClass()});
+
+            /* Method main is sane ?
+            */
+            int m = method.getModifiers();
+            Class r = method.getReturnType();
+
+            if (!(Modifier.isPublic(m) && Modifier.isStatic(m)) ||
+                    Modifier.isAbstract(m) || (r != Void.TYPE))
+                throw new NoSuchMethodException();
+        } catch (NoSuchMethodException no) {
+            System.out.println("In class " + class_name +
+                    ": public static void main(String[] argv) is not defined");
+            return;
+        }
+
+        try {
+            method.invoke(null, new Object[]{argv});
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
-    String class_name = argv[0];
-    String[] new_argv = new String[argv.length - 1];
-    System.arraycopy(argv, 1, new_argv, 0, new_argv.length);
+    /**
+     * Default main method used as wrapper, expects the fully qualified class name
+     * of the real class as the first argument.
+     */
+    public static void main(String[] argv) throws Exception {
+        /* Expects class name as first argument, other arguments are by-passed.
+        */
+        if (argv.length == 0) {
+            System.out.println("Missing class name.");
+            return;
+        }
 
-    JavaWrapper wrapper = new JavaWrapper();
-    wrapper.runMain(class_name, new_argv);
-  }
+        String class_name = argv[0];
+        String[] new_argv = new String[argv.length - 1];
+        System.arraycopy(argv, 1, new_argv, 0, new_argv.length);
+
+        JavaWrapper wrapper = new JavaWrapper();
+        wrapper.runMain(class_name, new_argv);
+    }
 }
 

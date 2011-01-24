@@ -8,7 +8,10 @@
 package ee.ioc.cs.jbe.browser;
 
 import ee.ioc.cs.jbe.browser.config.window.*;
-import org.gjt.jclasslib.structures.*;
+import org.gjt.jclasslib.structures.ClassMember;
+import org.gjt.jclasslib.structures.FieldInfo;
+import org.gjt.jclasslib.structures.InvalidByteCodeException;
+import org.gjt.jclasslib.structures.MethodInfo;
 
 import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
@@ -29,7 +32,7 @@ public class BrowserComponent extends JComponent
 
     private BrowserHistory history;
     private BrowserServices services;
-    
+
     // Visual Components
 
     private JSplitPane splitPane;
@@ -45,7 +48,7 @@ public class BrowserComponent extends JComponent
 
         this.services = services;
         setupComponent();
-        
+
     }
 
     /**
@@ -88,9 +91,9 @@ public class BrowserComponent extends JComponent
             return null;
         }
 
-        BrowserTreeNode categoryNode = (BrowserTreeNode)selectionPath.getPathComponent(2);
+        BrowserTreeNode categoryNode = (BrowserTreeNode) selectionPath.getPathComponent(2);
         if (!oldCatName.equals(categoryNode.getUserObject().toString())) {
-        	return null;
+            return null;
         }
         String category = categoryNode.getType();
         if (category.equals(BrowserTreeNode.NODE_NO_CONTENT)) {
@@ -131,17 +134,17 @@ public class BrowserComponent extends JComponent
         if (!it.hasNext()) {
             return;
         }
-        CategoryHolder categoryComponent = (CategoryHolder)it.next();
+        CategoryHolder categoryComponent = (CategoryHolder) it.next();
         String category = categoryComponent.getCategory();
         TreePath path = treePane.getPathForCategory(category);
         if (path == null) {
             return;
         }
         while (it.hasNext()) {
-            PathComponent pathComponent = (PathComponent)it.next();
+            PathComponent pathComponent = (PathComponent) it.next();
             int childIndex;
             if (pathComponent instanceof ReferenceHolder) {
-                ReferenceHolder referenceHolder = (ReferenceHolder)pathComponent;
+                ReferenceHolder referenceHolder = (ReferenceHolder) pathComponent;
                 try {
                     if (category.equals(BrowserTreeNode.NODE_METHOD)) {
                         childIndex = services.getClassFile().getMethodIndex(referenceHolder.getName(), referenceHolder.getType());
@@ -154,11 +157,11 @@ public class BrowserComponent extends JComponent
                     break;
                 }
             } else if (pathComponent instanceof IndexHolder) {
-                childIndex = ((IndexHolder)pathComponent).getIndex();
+                childIndex = ((IndexHolder) pathComponent).getIndex();
             } else {
                 break;
             }
-            BrowserTreeNode lastNode = (BrowserTreeNode)path.getLastPathComponent();
+            BrowserTreeNode lastNode = (BrowserTreeNode) path.getLastPathComponent();
             if (childIndex >= lastNode.getChildCount()) {
                 break;
             }
@@ -178,7 +181,8 @@ public class BrowserComponent extends JComponent
 
     /**
      * Rebuild tree view, clear history and try to set the same path in the browser as before.
-     * @param categoryName 
+     *
+     * @param categoryName
      */
     public void rebuild(String categoryName) {
 
@@ -211,10 +215,10 @@ public class BrowserComponent extends JComponent
 
         JTree tree = treePane.getTree();
         if (services.getClassFile() == null) {
-            ((CardLayout)detailPane.getLayout()).show(detailPane, BrowserTreeNode.NODE_NO_CONTENT);
+            ((CardLayout) detailPane.getLayout()).show(detailPane, BrowserTreeNode.NODE_NO_CONTENT);
         } else {
             if (tree.getSelectionPath() == null) {
-                BrowserTreeNode rootNode = (BrowserTreeNode)tree.getModel().getRoot();
+                BrowserTreeNode rootNode = (BrowserTreeNode) tree.getModel().getRoot();
                 tree.setSelectionPath(new TreePath(new Object[]{rootNode, rootNode.getFirstChild()}));
             }
         }
@@ -237,7 +241,7 @@ public class BrowserComponent extends JComponent
             browserPath.addPathComponent(new ReferenceHolder(classMember.getName(), classMember.getDescriptor()));
             if (selectionPath.getPathCount() > 3) {
                 for (int i = 3; i < selectionPath.getPathCount(); i++) {
-                    BrowserTreeNode attributeNode = (BrowserTreeNode)selectionPath.getPathComponent(i);
+                    BrowserTreeNode attributeNode = (BrowserTreeNode) selectionPath.getPathComponent(i);
                     browserPath.addPathComponent(new IndexHolder(attributeNode.getIndex()));
                 }
             }
@@ -246,7 +250,7 @@ public class BrowserComponent extends JComponent
     }
 
     private void showDetailPaneForPath(TreePath path) {
-        BrowserTreeNode node = (BrowserTreeNode)path.getLastPathComponent();
+        BrowserTreeNode node = (BrowserTreeNode) path.getLastPathComponent();
         String nodeType = node.getType();
         detailPane.showPane(nodeType, path);
     }

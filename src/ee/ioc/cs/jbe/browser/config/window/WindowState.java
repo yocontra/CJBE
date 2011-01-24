@@ -8,11 +8,11 @@
 package ee.ioc.cs.jbe.browser.config.window;
 
 /**
-    Complete serializable state of a <tt>BrowserComponent</tt>.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Complete serializable state of a <tt>BrowserComponent</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class WindowState {
 
     private String fileName;
@@ -20,7 +20,8 @@ public class WindowState {
 
     /**
      * Constructor.
-     * @param fileName the file name for the displayed class.
+     *
+     * @param fileName    the file name for the displayed class.
      * @param browserPath the browser path that should be selected. May be <tt>null</tt>.
      */
     public WindowState(String fileName, BrowserPath browserPath) {
@@ -30,6 +31,7 @@ public class WindowState {
 
     /**
      * Constructor.
+     *
      * @param fileName the file name for the displayed class.
      */
     public WindowState(String fileName) {
@@ -44,6 +46,7 @@ public class WindowState {
 
     /**
      * Get the file name of the displayed class.
+     *
      * @return the file name.
      */
     public String getFileName() {
@@ -52,6 +55,7 @@ public class WindowState {
 
     /**
      * Set the file name of the displayed class.
+     *
      * @param fileName
      */
     public void setFileName(String fileName) {
@@ -60,6 +64,7 @@ public class WindowState {
 
     /**
      * Get the browser path.
+     *
      * @return the browser path.
      */
     public BrowserPath getBrowserPath() {
@@ -68,6 +73,7 @@ public class WindowState {
 
     /**
      * Set the browser path.
+     *
      * @param browserPath the browser path.
      */
     public void setBrowserPath(BrowserPath browserPath) {
@@ -79,7 +85,7 @@ public class WindowState {
         if (fileName == null || other == null || !(other instanceof WindowState)) {
             return false;
         }
-        return fileName.equals(((WindowState)other).fileName);
+        return fileName.equals(((WindowState) other).fileName);
     }
 
     public int hashCode() {

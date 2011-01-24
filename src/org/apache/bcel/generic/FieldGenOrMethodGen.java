@@ -1,6 +1,10 @@
 package org.apache.bcel.generic;
 
 import org.apache.bcel.Constants;
+import org.apache.bcel.classfile.AccessFlags;
+import org.apache.bcel.classfile.Attribute;
+
+import java.util.ArrayList;
 
 /* ====================================================================
  * The Apache Software License, Version 1.1
@@ -56,112 +60,108 @@ import org.apache.bcel.Constants;
  * <http://www.apache.org/>.
  */
 
-import org.apache.bcel.classfile.*;
-import java.util.ArrayList;
-
 /**
  * Super class for FieldGen and MethodGen objects, since they have some methods
  * in common!
- * 
- * @version $Id: FieldGenOrMethodGen.java,v 1.3 2006/08/23 13:48:30 andos Exp $
+ *
  * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
+ * @version $Id: FieldGenOrMethodGen.java,v 1.3 2006/08/23 13:48:30 andos Exp $
  */
 public abstract class FieldGenOrMethodGen extends AccessFlags implements
-		NamedAndTyped, Cloneable {
-	protected String name;
+        NamedAndTyped, Cloneable {
+    protected String name;
 
-	protected String descriptor;
+    protected String descriptor;
 
-	protected Type type;
+    protected Type type;
 
-	protected ConstantPoolGen cp;
+    protected ConstantPoolGen cp;
 
-	private ArrayList<Attribute> attribute_vec = new ArrayList<Attribute>();
+    private ArrayList<Attribute> attribute_vec = new ArrayList<Attribute>();
 
-	protected FieldGenOrMethodGen() {
-	}
+    protected FieldGenOrMethodGen() {
+    }
 
-	public void setType(Type type) {
-		if (type.getType() == Constants.T_ADDRESS)
-			throw new IllegalArgumentException("Type can not be " + type);
+    public void setType(Type type) {
+        if (type.getType() == Constants.T_ADDRESS)
+            throw new IllegalArgumentException("Type can not be " + type);
 
-		this.type = type;
-	}
+        this.type = type;
+    }
 
-	public Type getType() {
-		return type;
-	}
+    public Type getType() {
+        return type;
+    }
 
-	/**
-	 * @return name of method/field.
-	 */
-	public String getName() {
-		return name;
-	}
+    /**
+     * @return name of method/field.
+     */
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setDescriptor(String descriptor) {
-		this.descriptor = descriptor;
-		
-	}	
-	
-	public ConstantPoolGen getConstantPool() {
-		return cp;
-	}
+    public void setDescriptor(String descriptor) {
+        this.descriptor = descriptor;
 
-	public void setConstantPool(ConstantPoolGen cp) {
-		this.cp = cp;
-	}
+    }
 
-	/**
-	 * Add an attribute to this method. Currently, the JVM knows about the
-	 * `Code', `ConstantValue', `Synthetic' and `Exceptions' attributes. Other
-	 * attributes will be ignored by the JVM but do no harm.
-	 * 
-	 * @param a
-	 *            attribute to be added
-	 */
-	public void addAttribute(Attribute a) {
-		attribute_vec.add(a);
-	}
+    public ConstantPoolGen getConstantPool() {
+        return cp;
+    }
 
-	/**
-	 * Remove an attribute.
-	 */
-	public void removeAttribute(Attribute a) {
-		attribute_vec.remove(a);
-	}
+    public void setConstantPool(ConstantPoolGen cp) {
+        this.cp = cp;
+    }
 
-	/**
-	 * Remove all attributes.
-	 */
-	public void removeAttributes() {
-		attribute_vec.clear();
-	}
+    /**
+     * Add an attribute to this method. Currently, the JVM knows about the
+     * `Code', `ConstantValue', `Synthetic' and `Exceptions' attributes. Other
+     * attributes will be ignored by the JVM but do no harm.
+     *
+     * @param a attribute to be added
+     */
+    public void addAttribute(Attribute a) {
+        attribute_vec.add(a);
+    }
 
-	/**
-	 * @return all attributes of this method.
-	 */
-	public Attribute[] getAttributes() {
-		Attribute[] attributes = new Attribute[attribute_vec.size()];
-		attribute_vec.toArray(attributes);
-		return attributes;
-	}
+    /**
+     * Remove an attribute.
+     */
+    public void removeAttribute(Attribute a) {
+        attribute_vec.remove(a);
+    }
 
-	/**
-	 * @return signature of method/field.
-	 */
-	public abstract String getSignature();
+    /**
+     * Remove all attributes.
+     */
+    public void removeAttributes() {
+        attribute_vec.clear();
+    }
 
-	public Object clone() {
-		try {
-			return super.clone();
-		} catch (CloneNotSupportedException e) {
-			System.err.println(e);
-			return null;
-		}
-	}
+    /**
+     * @return all attributes of this method.
+     */
+    public Attribute[] getAttributes() {
+        Attribute[] attributes = new Attribute[attribute_vec.size()];
+        attribute_vec.toArray(attributes);
+        return attributes;
+    }
+
+    /**
+     * @return signature of method/field.
+     */
+    public abstract String getSignature();
+
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            System.err.println(e);
+            return null;
+        }
+    }
 }

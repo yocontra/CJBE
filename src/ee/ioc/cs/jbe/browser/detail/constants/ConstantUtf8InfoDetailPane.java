@@ -7,55 +7,54 @@
 
 package ee.ioc.cs.jbe.browser.detail.constants;
 
+import ee.ioc.cs.jbe.browser.BrowserServices;
 import org.gjt.jclasslib.structures.InvalidByteCodeException;
 import org.gjt.jclasslib.structures.constants.ConstantUtf8Info;
 import org.gjt.jclasslib.util.ExtendedJLabel;
 
-import ee.ioc.cs.jbe.browser.BrowserServices;
-
-
 import javax.swing.tree.TreePath;
 
 /**
-    Detail pane showing a <tt>CONSTANT_Utf8</tt> constant pool entry.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.4 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Detail pane showing a <tt>CONSTANT_Utf8</tt> constant pool entry.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.4 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class ConstantUtf8InfoDetailPane extends AbstractConstantInfoDetailPane {
 
     // Visual components
-    
+
     private ExtendedJLabel lblByteLength;
     private ExtendedJLabel lblByteLengthComment;
     private ExtendedJLabel lblStringLength;
     private ExtendedJLabel lblString;
-    
+
     /**
-        Constructor.
-        @param services the associated browser services.
+     * Constructor.
+     *
+     * @param services the associated browser services.
      */
     public ConstantUtf8InfoDetailPane(BrowserServices services) {
         super(services);
     }
-    
+
     protected void setupLabels() {
-        
+
         addDetailPaneEntry(normalLabel("Length of byte array:"),
-                           lblByteLength = highlightLabel(),
-                           lblByteLengthComment = highlightLabel());
+                lblByteLength = highlightLabel(),
+                lblByteLengthComment = highlightLabel());
 
         addDetailPaneEntry(normalLabel("Length of string:"),
-                           lblStringLength = highlightLabel());
-        
+                lblStringLength = highlightLabel());
+
         addDetailPaneEntry(normalLabel("String:"),
-                           null,
-                           lblString = highlightLabel());
+                null,
+                lblString = highlightLabel());
 
     }
 
     public void show(TreePath treePath) {
-        
+
         int constantPoolIndex = constantPoolIndex(treePath);
 
         try {
@@ -68,9 +67,9 @@ public class ConstantUtf8InfoDetailPane extends AbstractConstantInfoDetailPane {
             lblStringLength.setText(-1);
             lblByteLengthComment.setText(MESSAGE_INVALID_CONSTANT_POOL_ENTRY);
         }
-        
+
         super.show(treePath);
     }
-    
+
 }
 

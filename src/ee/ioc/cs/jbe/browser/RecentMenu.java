@@ -14,16 +14,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.TreeMap;
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
 /**
-    Menu that holds recent workspace files.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Menu that holds recent workspace files.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class RecentMenu extends JMenu implements ActionListener {
 
     private static final int RECENT_PROJECTS_MAX_SIZE = 10;
@@ -35,8 +37,9 @@ public class RecentMenu extends JMenu implements ActionListener {
     private LinkedList<String> recentWorkspaces = new LinkedList<String>();
 
     /**
-        Constructor.
-        @param frame the parent frame.
+     * Constructor.
+     *
+     * @param frame the parent frame.
      */
     public RecentMenu(BrowserMDIFrame frame) {
         this.frame = frame;
@@ -58,7 +61,7 @@ public class RecentMenu extends JMenu implements ActionListener {
             setPopupMenuVisible(false);
             SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                    frame.openWorkspace(new File(((JMenuItem)event.getSource()).getText()));
+                    frame.openWorkspace(new File(((JMenuItem) event.getSource()).getText()));
                 }
             });
 
@@ -66,8 +69,9 @@ public class RecentMenu extends JMenu implements ActionListener {
     }
 
     /**
-        Add a file to the list of recently useed workspaces.
-        @param file the workspace file.
+     * Add a file to the list of recently useed workspaces.
+     *
+     * @param file the workspace file.
      */
     public void addRecentWorkspace(File file) {
 
@@ -83,8 +87,9 @@ public class RecentMenu extends JMenu implements ActionListener {
     }
 
     /**
-        Read the list of recently used workspaces from the preferences store.
-        @param preferences the preferences node
+     * Read the list of recently used workspaces from the preferences store.
+     *
+     * @param preferences the preferences node
      */
     public void read(Preferences preferences) {
 
@@ -107,8 +112,9 @@ public class RecentMenu extends JMenu implements ActionListener {
     }
 
     /**
-        Save the list of recently used workspaces to the preferences store.
-        @param preferences the preferences node
+     * Save the list of recently used workspaces to the preferences store.
+     *
+     * @param preferences the preferences node
      */
     public void save(Preferences preferences) {
 
@@ -120,7 +126,7 @@ public class RecentMenu extends JMenu implements ActionListener {
         int count = 0;
         Iterator it = recentWorkspaces.iterator();
         while (it.hasNext()) {
-            String fileName = (String)it.next();
+            String fileName = (String) it.next();
             recentNode.put(String.valueOf(count++), fileName);
         }
     }
@@ -131,7 +137,7 @@ public class RecentMenu extends JMenu implements ActionListener {
         if (recentWorkspaces.size() > 0) {
             Iterator it = recentWorkspaces.iterator();
             while (it.hasNext()) {
-                String fileName = (String)it.next();
+                String fileName = (String) it.next();
                 JMenuItem menuItem = new JMenuItem(fileName);
                 menuItem.addActionListener(this);
                 add(menuItem);

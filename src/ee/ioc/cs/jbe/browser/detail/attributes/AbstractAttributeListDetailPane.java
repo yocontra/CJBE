@@ -7,35 +7,40 @@
 
 package ee.ioc.cs.jbe.browser.detail.attributes;
 
-import org.gjt.jclasslib.structures.AttributeInfo;
-
 import ee.ioc.cs.jbe.browser.BrowserServices;
 import ee.ioc.cs.jbe.browser.detail.ListDetailPane;
-
+import org.gjt.jclasslib.structures.AttributeInfo;
 
 import javax.swing.*;
-import javax.swing.table.*;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
 import javax.swing.tree.TreePath;
-
 import java.util.WeakHashMap;
 
 /**
  * Base class for all detail panes showing specific information for a specific
  * attribute tree node selected in <tt>BrowserTreePane</tt> which can be
  * displayed as a list of row entries with the same number of columns.
- * 
+ *
  * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
  * @version $Revision: 1.3 $ $Date: 2006/09/04 15:43:18 $
  */
 public abstract class AbstractAttributeListDetailPane extends ListDetailPane {
 
-    /** Default width in pixels for a column displaying a number. */
+    /**
+     * Default width in pixels for a column displaying a number.
+     */
     protected static final int NUMBER_COLUMN_WIDTH = 60;
 
-    /** Default width in pixels for a column displaying a hyperlink. */
+    /**
+     * Default width in pixels for a column displaying a hyperlink.
+     */
     protected static final int LINK_COLUMN_WIDTH = 80;
 
-    /** Default width in pixels for a column displaying a verbose entry. */
+    /**
+     * Default width in pixels for a column displaying a verbose entry.
+     */
     protected static final int VERBOSE_COLUMN_WIDTH = 250;
 
     private static final int COLUMN_MIN_WIDTH = 20;
@@ -48,9 +53,8 @@ public abstract class AbstractAttributeListDetailPane extends ListDetailPane {
 
     /**
      * Constructor.
-     * 
-     * @param services
-     *            the associated browser services.
+     *
+     * @param services the associated browser services.
      */
     protected AbstractAttributeListDetailPane(BrowserServices services) {
         super(services);
@@ -70,9 +74,8 @@ public abstract class AbstractAttributeListDetailPane extends ListDetailPane {
     /**
      * Create the table model for a specific attribute. This method is called by
      * <tt>getTableModel()</tt>.
-     * 
-     * @param attribute
-     *            the attribute
+     *
+     * @param attribute the attribute
      * @return the table model
      */
     protected abstract AbstractAttributeTableModel createTableModel(
@@ -80,9 +83,8 @@ public abstract class AbstractAttributeListDetailPane extends ListDetailPane {
 
     /**
      * Get the width in pixels for a specific column.
-     * 
-     * @param column
-     *            the index of the column in the model
+     *
+     * @param column the index of the column in the model
      * @return the width
      */
     protected int getColumnWidth(int column) {
@@ -137,5 +139,5 @@ public abstract class AbstractAttributeListDetailPane extends ListDetailPane {
         return tableModel;
     }
 
-  
+
 }

@@ -13,57 +13,61 @@ import org.gjt.jclasslib.io.ByteCodeOutput;
 import java.io.IOException;
 
 /**
-    Describes the <tt>iinc</tt> instruction.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Describes the <tt>iinc</tt> instruction.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class IncrementInstruction extends ImmediateByteInstruction {
 
     private int incrementConst;
-    
+
     /**
-        Constructor.
-        @param opcode the opcode
-        @param wide whether the instruction is a wide instruction.
+     * Constructor.
+     *
+     * @param opcode the opcode
+     * @param wide   whether the instruction is a wide instruction.
      */
     public IncrementInstruction(int opcode, boolean wide) {
-        super(opcode, wide); 
+        super(opcode, wide);
     }
 
     /**
-        Constructor.
-        @param opcode the opcode
-        @param wide whether the instruction is a wide instruction.
-        @param immediateByte the immediate byte value.
-        @param incrementConst the increment.
+     * Constructor.
+     *
+     * @param opcode         the opcode
+     * @param wide           whether the instruction is a wide instruction.
+     * @param immediateByte  the immediate byte value.
+     * @param incrementConst the increment.
      */
     public IncrementInstruction(int opcode, boolean wide, int immediateByte, int incrementConst) {
-        super(opcode, wide, immediateByte); 
+        super(opcode, wide, immediateByte);
         this.incrementConst = incrementConst;
     }
-    
-    
+
+
     public int getSize() {
         return super.getSize() + (wide ? 2 : 1);
     }
 
     /**
-        Get the increment of this instruction.
-        @return the increment
+     * Get the increment of this instruction.
+     *
+     * @return the increment
      */
     public int getIncrementConst() {
         return incrementConst;
     }
 
     /**
-        Set the increment of this instruction.
-        @param incrementConst the increment
+     * Set the increment of this instruction.
+     *
+     * @param incrementConst the increment
      */
     public void setIncrementConst(int incrementConst) {
         this.incrementConst = incrementConst;
     }
-    
+
     public void read(ByteCodeInput in) throws IOException {
         super.read(in);
 
@@ -83,5 +87,5 @@ public class IncrementInstruction extends ImmediateByteInstruction {
             out.writeByte(incrementConst);
         }
     }
-    
+
 }

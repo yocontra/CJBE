@@ -6,12 +6,10 @@
 */
 package ee.ioc.cs.jbe.browser.detail.attributes;
 
-import org.gjt.jclasslib.structures.attributes.RuntimeAnnotationsAttribute;
-import org.gjt.jclasslib.util.ExtendedJLabel;
-
 import ee.ioc.cs.jbe.browser.BrowserServices;
 import ee.ioc.cs.jbe.browser.detail.FixedListDetailPane;
-
+import org.gjt.jclasslib.structures.attributes.RuntimeAnnotationsAttribute;
+import org.gjt.jclasslib.util.ExtendedJLabel;
 
 import javax.swing.tree.TreePath;
 
@@ -43,7 +41,7 @@ public class RuntimeAnnotationsAttributeDetailPane extends FixedListDetailPane {
 
     public void show(TreePath treePath) {
         RuntimeAnnotationsAttribute raa =
-                (RuntimeAnnotationsAttribute)findAttribute(treePath);
+                (RuntimeAnnotationsAttribute) findAttribute(treePath);
 
         lblAnnotationEntries.setText(String.valueOf(raa.getRuntimeAnnotations().length));
 

@@ -59,21 +59,21 @@ package org.apache.bcel.verifier.exc;
  * when a class file to verify does not pass the verification pass 2 as described
  * in the Java Virtual Machine specification, 2nd edition.
  *
- * @version $Id: ClassConstraintException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: ClassConstraintException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  */
-public class ClassConstraintException extends VerificationException{
-	/**
-	 * Constructs a new ClassConstraintException with null as its error message string.
-	 */
-	public ClassConstraintException(){
-		super();
-	}
-	
-	/**
-	 * Constructs a new ClassConstraintException with the specified error message.
-	 */
-	public ClassConstraintException(String message){
-		super (message);
-	}
+public class ClassConstraintException extends VerificationException {
+    /**
+     * Constructs a new ClassConstraintException with null as its error message string.
+     */
+    public ClassConstraintException() {
+        super();
+    }
+
+    /**
+     * Constructs a new ClassConstraintException with the specified error message.
+     */
+    public ClassConstraintException(String message) {
+        super(message);
+    }
 }

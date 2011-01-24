@@ -13,51 +13,56 @@ import org.gjt.jclasslib.io.ByteCodeOutput;
 import java.io.IOException;
 
 /**
-    Base class for all opcode instruction wrappers.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Base class for all opcode instruction wrappers.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public abstract class AbstractInstruction implements Opcodes {
 
     private int offset;
     private int opcode;
 
     /**
-        Constructor.
-        @param opcode the opcode.
+     * Constructor.
+     *
+     * @param opcode the opcode.
      */
     protected AbstractInstruction(int opcode) {
-        this.opcode = opcode; 
+        this.opcode = opcode;
     }
-    
+
     /**
-        Get the size in bytes of this instruction.
-        @return the size in bytes
+     * Get the size in bytes of this instruction.
+     *
+     * @return the size in bytes
      */
     public int getSize() {
         return 1;
     }
 
     /**
-        Get the opcode of this instruction.
-        @return the opcode
+     * Get the opcode of this instruction.
+     *
+     * @return the opcode
      */
     public int getOpcode() {
         return opcode;
     }
 
     /**
-        Set the opcode of this instruction.
-        @param opcode the opcode
+     * Set the opcode of this instruction.
+     *
+     * @param opcode the opcode
      */
     public void setOpcode(int opcode) {
         this.opcode = opcode;
     }
 
     /**
-        Get the verbose description of the opcode of this instruction.
-        @return the description
+     * Get the verbose description of the opcode of this instruction.
+     *
+     * @return the description
      */
     public String getOpcodeVerbose() {
         String verbose = OpcodesUtil.getVerbose(opcode);
@@ -67,30 +72,33 @@ public abstract class AbstractInstruction implements Opcodes {
             return verbose;
         }
     }
-    
+
     /**
-        Get the offset of this instruction in its parent <tt>Code</tt> attribute.
-        @return the offset
+     * Get the offset of this instruction in its parent <tt>Code</tt> attribute.
+     *
+     * @return the offset
      */
     public int getOffset() {
         return offset;
     }
-    
+
     /**
-        Set the offset of this instruction in its parent <tt>Code</tt> attribute.
-        @param offset the offset
+     * Set the offset of this instruction in its parent <tt>Code</tt> attribute.
+     *
+     * @param offset the offset
      */
     public void setOffset(int offset) {
         this.offset = offset;
     }
-    
+
     /**
-        Read this instruction from the given <tt>ByteCodeInput</tt>. <p>
-     
-        Excpects <tt>ByteCodeInput</tt> to be in JVM class file format and just
-        before a instruction of this kind.
-        @param in the <tt>ByteCodeInput</tt> from which to read
-        @throws IOException if an exception occurs with the <tt>ByteCodeInput</tt>
+     * Read this instruction from the given <tt>ByteCodeInput</tt>. <p>
+     * <p/>
+     * Excpects <tt>ByteCodeInput</tt> to be in JVM class file format and just
+     * before a instruction of this kind.
+     *
+     * @param in the <tt>ByteCodeInput</tt> from which to read
+     * @throws IOException if an exception occurs with the <tt>ByteCodeInput</tt>
      */
     public void read(ByteCodeInput in) throws IOException {
         // The opcode has already been read
@@ -98,12 +106,13 @@ public abstract class AbstractInstruction implements Opcodes {
     }
 
     /**
-        Write this instruction to the given <tt>ByteCodeOutput</tt>.
-        @param out the <tt>ByteCodeOutput</tt> to which to write
-        @throws IOException if an exception occurs with the <tt>ByteCodeOutput</tt>
+     * Write this instruction to the given <tt>ByteCodeOutput</tt>.
+     *
+     * @param out the <tt>ByteCodeOutput</tt> to which to write
+     * @throws IOException if an exception occurs with the <tt>ByteCodeOutput</tt>
      */
     public void write(ByteCodeOutput out) throws IOException {
         out.writeByte(opcode);
     }
-    
+
 }

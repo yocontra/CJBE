@@ -13,27 +13,29 @@ import org.gjt.jclasslib.io.ByteCodeOutput;
 import java.io.IOException;
 
 /**
-    Base class for intstructions which need a four byte padding relative
-    to the start of the enclosing code of the parent <tt>Code</tt>
-    attribute before reading immediate arguments.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Base class for intstructions which need a four byte padding relative
+ * to the start of the enclosing code of the parent <tt>Code</tt>
+ * attribute before reading immediate arguments.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class PaddedInstruction extends AbstractInstruction {
 
     /**
-        Constructor.
-        @param opcode the opcode.
+     * Constructor.
+     *
+     * @param opcode the opcode.
      */
     public PaddedInstruction(int opcode) {
-        super(opcode); 
+        super(opcode);
     }
 
     /**
-        Get the padded size in bytes of this instruction.
-        @param offset the offset at which this instruction is found.
-        @return the padded size in bytes
+     * Get the padded size in bytes of this instruction.
+     *
+     * @param offset the offset at which this instruction is found.
+     * @return the padded size in bytes
      */
     public int getPaddedSize(int offset) {
         return getSize() + paddingBytes(offset + 1);
@@ -41,7 +43,7 @@ public class PaddedInstruction extends AbstractInstruction {
 
     public void read(ByteCodeInput in) throws IOException {
         super.read(in);
-        
+
         int bytesToRead = paddingBytes(in.getBytesRead());
         for (int i = 0; i < bytesToRead; i++) {
             in.readByte();
@@ -50,15 +52,15 @@ public class PaddedInstruction extends AbstractInstruction {
 
     public void write(ByteCodeOutput out) throws IOException {
         super.write(out);
-        
+
         int bytesToWrite = paddingBytes(out.getBytesWritten());
         for (int i = 0; i < bytesToWrite; i++) {
             out.writeByte(0);
         }
     }
-    
+
     private int paddingBytes(int bytesCount) {
-        
+
         int bytesToPad = 4 - bytesCount % 4;
         return (bytesToPad == 4) ? 0 : bytesToPad;
     }

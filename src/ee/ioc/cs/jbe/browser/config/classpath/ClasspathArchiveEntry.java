@@ -15,11 +15,11 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 /**
-    Classpath entry for an archive.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.3 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Classpath entry for an archive.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.3 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class ClasspathArchiveEntry extends ClasspathEntry {
 
     public FindResult findClass(String className) {
@@ -53,7 +53,7 @@ public class ClasspathArchiveEntry extends ClasspathEntry {
             JarFile jarFile = new JarFile(archive);
             Enumeration enumr = jarFile.entries();
             while (enumr.hasMoreElements()) {
-                JarEntry entry = (JarEntry)enumr.nextElement();
+                JarEntry entry = (JarEntry) enumr.nextElement();
                 if (!entry.isDirectory() && entry.getName().toLowerCase().endsWith(CLASSFILE_SUFFIX)) {
                     addEntry((stripClassSuffix(entry.getName())), model, reset);
                 }
@@ -65,7 +65,7 @@ public class ClasspathArchiveEntry extends ClasspathEntry {
     private void addEntry(String path, DefaultTreeModel model, boolean reset) {
 
         String[] pathComponents = path.replace('\\', '/').split("/");
-        ClassTreeNode currentNode = (ClassTreeNode)model.getRoot();
+        ClassTreeNode currentNode = (ClassTreeNode) model.getRoot();
         for (int i = 0; i < pathComponents.length; i++) {
             String pathComponent = pathComponents[i];
             currentNode = addOrFindNode(pathComponent, currentNode, i < pathComponents.length - 1, model, reset);

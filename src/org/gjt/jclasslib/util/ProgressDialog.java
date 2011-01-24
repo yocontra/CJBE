@@ -13,11 +13,11 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
 /**
-    Dialog which displays indeterminate progress.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/04 15:43:18 $
-*/
+ * Dialog which displays indeterminate progress.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/04 15:43:18 $
+ */
 public class ProgressDialog extends JDialog {
 
     private static final int PROGRESS_BAR_WIDTH = 200;
@@ -29,9 +29,10 @@ public class ProgressDialog extends JDialog {
 
     /**
      * Constructor.
-     * @param parent the parent frame.
+     *
+     * @param parent   the parent frame.
      * @param runnable the <tt>Runnable</tt> to be started on <tt>setVisible</tt>.
-     * @param message the initial status message.
+     * @param message  the initial status message.
      */
     public ProgressDialog(JFrame parent, Runnable runnable, String message) {
         super(parent);
@@ -40,18 +41,20 @@ public class ProgressDialog extends JDialog {
 
     /**
      * Constructor.
-     * @param parent the parent dialog.
+     *
+     * @param parent   the parent dialog.
      * @param runnable the <tt>Runnable</tt> to be started on <tt>setVisible</tt>.
-     * @param message the initial status message.
+     * @param message  the initial status message.
      */
     public ProgressDialog(JDialog parent, Runnable runnable, String message) {
         super(parent);
         init(runnable, message);
     }
 
-    
+
     /**
      * Set the current status message.
+     *
      * @param message the message.
      */
     public void setMessage(String message) {
@@ -60,6 +63,7 @@ public class ProgressDialog extends JDialog {
 
     /**
      * Set the  <tt>Runnable</tt> to be started on <tt>setVisible</tt>.
+     *
      * @param runnable the <tt>Runnable</tt>.
      */
     public void setRunnable(Runnable runnable) {
@@ -95,7 +99,7 @@ public class ProgressDialog extends JDialog {
 
     private void setupComponent() {
 
-        JPanel contentPane = (JPanel)getContentPane();
+        JPanel contentPane = (JPanel) getContentPane();
         contentPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new GridBagLayout());
         GridBagConstraints gc = new GridBagConstraints();

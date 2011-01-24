@@ -52,8 +52,8 @@ public class BrowserDetailPane extends JPanel {
         if (services.getClassFile() == null) {
             return;
         }
-        CardLayout layout = (CardLayout)getLayout();
-        AbstractDetailPane detailPane = (AbstractDetailPane)nodeTypeToDetailPane.get(nodeType);
+        CardLayout layout = (CardLayout) getLayout();
+        AbstractDetailPane detailPane = (AbstractDetailPane) nodeTypeToDetailPane.get(nodeType);
         if (detailPane != null) {
             detailPane.show(treePath);
         }
@@ -69,10 +69,10 @@ public class BrowserDetailPane extends JPanel {
      * @return the <tt>AttributeDetailPane</tt>
      */
     public AttributeDetailPane getAttributeDetailPane() {
-        return (AttributeDetailPane)nodeTypeToDetailPane.get(BrowserTreeNode.NODE_ATTRIBUTE);
+        return (AttributeDetailPane) nodeTypeToDetailPane.get(BrowserTreeNode.NODE_ATTRIBUTE);
     }
 
-        
+
     private void setupComponent() {
 
         setLayout(new CardLayout());
@@ -82,21 +82,21 @@ public class BrowserDetailPane extends JPanel {
         addScreen(new GeneralDetailPane(services),
                 BrowserTreeNode.NODE_GENERAL);
         addScreen(new ConstantPoolDetailPane(services),
-                BrowserTreeNode.NODE_CONSTANT_POOL_GENERAL);    
-        
+                BrowserTreeNode.NODE_CONSTANT_POOL_GENERAL);
+
         addScreen(new ConstantPoolDetailPane(services),
                 BrowserTreeNode.NODE_CONSTANT_POOL);
         addScreen(new InterfaceDetailPane(services),
                 BrowserTreeNode.NODE_INTERFACE);
         addScreen(new ClassMemberDetailPane(services, ClassMemberDetailPane.FIELDS),
                 BrowserTreeNode.NODE_FIELD);
-        addScreen(new FieldsGeneralPane(services), 
-                BrowserTreeNode.NODE_FIELDS_GENERAL);        
+        addScreen(new FieldsGeneralPane(services),
+                BrowserTreeNode.NODE_FIELDS_GENERAL);
         addScreen(new ClassMemberDetailPane(services, ClassMemberDetailPane.METHODS),
                 BrowserTreeNode.NODE_METHOD);
-        addScreen(new AttributeGeneralPane(services),                BrowserTreeNode.NODE_ATTRIBUTES_GENERAL);        
+        addScreen(new AttributeGeneralPane(services), BrowserTreeNode.NODE_ATTRIBUTES_GENERAL);
         addScreen(new MethodsGeneralPane(services),
-                BrowserTreeNode.NODE_METHOD_GENERAL);        
+                BrowserTreeNode.NODE_METHOD_GENERAL);
         addScreen(new InterfacesGeneralPane(services),
                 BrowserTreeNode.NODE_INTERFACES_GENERAL);
         addScreen(new AttributeDetailPane(services),
@@ -118,7 +118,7 @@ public class BrowserDetailPane extends JPanel {
     private void addScreen(AbstractDetailPane detailPane, String nodeType) {
 
         if (detailPane instanceof FixedListDetailPane) {
-            add(((FixedListDetailPane)detailPane).getScrollPane(), nodeType);
+            add(((FixedListDetailPane) detailPane).getScrollPane(), nodeType);
         } else {
             add(detailPane, nodeType);
         }

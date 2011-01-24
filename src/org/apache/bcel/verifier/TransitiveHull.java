@@ -54,7 +54,7 @@ package org.apache.bcel.verifier;
  * <http://www.apache.org/>.
  */
 
-import org.apache.bcel.*;
+import org.apache.bcel.Repository;
 import org.apache.bcel.classfile.JavaClass;
 
 /**
@@ -63,75 +63,79 @@ import org.apache.bcel.classfile.JavaClass;
  * all class files encountered; this may take up a lot of time and,
  * more notably, memory.
  *
- * @version $Id: TransitiveHull.java,v 1.3 2006/09/05 15:41:47 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: TransitiveHull.java,v 1.3 2006/09/05 15:41:47 andos Exp $
  */
-public class TransitiveHull implements VerifierFactoryObserver{
+public class TransitiveHull implements VerifierFactoryObserver {
 
-	/** Used for indentation. */
-	private int indent = 0;
+    /**
+     * Used for indentation.
+     */
+    private int indent = 0;
 
-	/** Not publicly instantiable. */
-	private TransitiveHull(){
-	}
-	
-	/* Implementing VerifierFactoryObserver. */
-	public void update(String classname){
+    /**
+     * Not publicly instantiable.
+     */
+    private TransitiveHull() {
+    }
 
-		System.gc(); // avoid swapping if possible.
+    /* Implementing VerifierFactoryObserver. */
+    public void update(String classname) {
 
-		for (int i=0; i<indent; i++){
-			System.out.print(" ");
-		}
-		System.out.println(classname);
-		indent += 1;
+        System.gc(); // avoid swapping if possible.
 
-		Verifier v = VerifierFactory.getVerifier(classname);
-	
-		VerificationResult vr;
-		vr = v.doPass1();
-		if (vr != VerificationResult.VR_OK) //System.exit(1);
-			System.out.println("Pass 1:\n"+vr);
+        for (int i = 0; i < indent; i++) {
+            System.out.print(" ");
+        }
+        System.out.println(classname);
+        indent += 1;
 
-		vr = v.doPass2();
-      if (vr != VerificationResult.VR_OK) //System.exit(1);
-			System.out.println("Pass 2:\n"+vr);
+        Verifier v = VerifierFactory.getVerifier(classname);
 
-		if (vr == VerificationResult.VR_OK){
-			JavaClass jc = Repository.lookupClass(v.getClassName());
-			for (int i=0; i<jc.getMethods().length; i++){
-				vr = v.doPass3a(i);
-				if (vr != VerificationResult.VR_OK) //System.exit(1);
-					System.out.println(v.getClassName()+", Pass 3a, method "+i+" ['"+jc.getMethods()[i]+"']:\n"+vr);
+        VerificationResult vr;
+        vr = v.doPass1();
+        if (vr != VerificationResult.VR_OK) //System.exit(1);
+            System.out.println("Pass 1:\n" + vr);
 
-				vr = v.doPass3b(i);
-				if (vr != VerificationResult.VR_OK) //System.exit(1);
-					System.out.println(v.getClassName()+", Pass 3b, method "+i+" ['"+jc.getMethods()[i]+"']:\n"+vr);
-			}
-		}
+        vr = v.doPass2();
+        if (vr != VerificationResult.VR_OK) //System.exit(1);
+            System.out.println("Pass 2:\n" + vr);
 
-		indent -= 1;
-	}
+        if (vr == VerificationResult.VR_OK) {
+            JavaClass jc = Repository.lookupClass(v.getClassName());
+            for (int i = 0; i < jc.getMethods().length; i++) {
+                vr = v.doPass3a(i);
+                if (vr != VerificationResult.VR_OK) //System.exit(1);
+                    System.out.println(v.getClassName() + ", Pass 3a, method " + i + " ['" + jc.getMethods()[i] + "']:\n" + vr);
 
-	/**
-	 * This method implements a demonstration program
-	 * of how to use the VerifierFactoryObserver. It transitively verifies
-	 * all class files encountered; this may take up a lot of time and,
-	 * more notably, memory.
-	 */
-	public static void main(String[] args){
-		if (args.length != 1){
-			System.out.println("Need exactly one argument: The root class to verify.");
-			System.exit(1);
-		}
+                vr = v.doPass3b(i);
+                if (vr != VerificationResult.VR_OK) //System.exit(1);
+                    System.out.println(v.getClassName() + ", Pass 3b, method " + i + " ['" + jc.getMethods()[i] + "']:\n" + vr);
+            }
+        }
 
-		int dotclasspos = args[0].lastIndexOf(".class");
-		if (dotclasspos != -1) args[0] = args[0].substring(0,dotclasspos);
-		args[0] = args[0].replace('/', '.');
-	
-		TransitiveHull th = new TransitiveHull();
-		VerifierFactory.attach(th);
-		VerifierFactory.getVerifier(args[0]); // the observer is called back and does the actual trick.
-		VerifierFactory.detach(th);
-	}
+        indent -= 1;
+    }
+
+    /**
+     * This method implements a demonstration program
+     * of how to use the VerifierFactoryObserver. It transitively verifies
+     * all class files encountered; this may take up a lot of time and,
+     * more notably, memory.
+     */
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Need exactly one argument: The root class to verify.");
+            System.exit(1);
+        }
+
+        int dotclasspos = args[0].lastIndexOf(".class");
+        if (dotclasspos != -1) args[0] = args[0].substring(0, dotclasspos);
+        args[0] = args[0].replace('/', '.');
+
+        TransitiveHull th = new TransitiveHull();
+        VerifierFactory.attach(th);
+        VerifierFactory.getVerifier(args[0]); // the observer is called back and does the actual trick.
+        VerifierFactory.detach(th);
+    }
 }

@@ -54,68 +54,71 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * LDC2_W - Push long or double from constant pool
- *
+ * <p/>
  * <PRE>Stack: ... -&gt; ..., item.word1, item.word2</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: LDC2_W.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class LDC2_W extends CPInstruction
-  implements PushInstruction, TypedInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 5439491920639995265L;
+        implements PushInstruction, TypedInstruction {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 5439491920639995265L;
 
-/**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  LDC2_W() {}
-
-  public LDC2_W(int index) {
-    super(org.apache.bcel.Constants.LDC2_W, index);
-  }
-
-  public Type getType(ConstantPoolGen cpg) {
-    switch(cpg.getConstantPool().getConstant(index).getTag()) {
-    case org.apache.bcel.Constants.CONSTANT_Long:   return Type.LONG;
-    case org.apache.bcel.Constants.CONSTANT_Double: return Type.DOUBLE;
-    default: // Never reached
-      throw new RuntimeException("Unknown constant type " + opcode);
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    LDC2_W() {
     }
-  }
 
-  public Number getValue(ConstantPoolGen cpg) {
-    org.apache.bcel.classfile.Constant c = cpg.getConstantPool().getConstant(index);
+    public LDC2_W(int index) {
+        super(org.apache.bcel.Constants.LDC2_W, index);
+    }
 
-    switch(c.getTag()) {
-    case org.apache.bcel.Constants.CONSTANT_Long:
-	return new Long(((org.apache.bcel.classfile.ConstantLong)c).getBytes());
+    public Type getType(ConstantPoolGen cpg) {
+        switch (cpg.getConstantPool().getConstant(index).getTag()) {
+            case org.apache.bcel.Constants.CONSTANT_Long:
+                return Type.LONG;
+            case org.apache.bcel.Constants.CONSTANT_Double:
+                return Type.DOUBLE;
+            default: // Never reached
+                throw new RuntimeException("Unknown constant type " + opcode);
+        }
+    }
 
-    case org.apache.bcel.Constants.CONSTANT_Double:
-	return new Double(((org.apache.bcel.classfile.ConstantDouble)c).getBytes());
+    public Number getValue(ConstantPoolGen cpg) {
+        org.apache.bcel.classfile.Constant c = cpg.getConstantPool().getConstant(index);
 
-    default: // Never reached
-      throw new RuntimeException("Unknown or invalid constant type at " + index);
-      }
-  }
+        switch (c.getTag()) {
+            case org.apache.bcel.Constants.CONSTANT_Long:
+                return new Long(((org.apache.bcel.classfile.ConstantLong) c).getBytes());
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitStackProducer(this);
-    v.visitPushInstruction(this);
-    v.visitTypedInstruction(this);
-    v.visitCPInstruction(this);
-    v.visitLDC2_W(this);
-  }
+            case org.apache.bcel.Constants.CONSTANT_Double:
+                return new Double(((org.apache.bcel.classfile.ConstantDouble) c).getBytes());
+
+            default: // Never reached
+                throw new RuntimeException("Unknown or invalid constant type at " + index);
+        }
+    }
+
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitStackProducer(this);
+        v.visitPushInstruction(this);
+        v.visitTypedInstruction(this);
+        v.visitCPInstruction(this);
+        v.visitLDC2_W(this);
+    }
 }

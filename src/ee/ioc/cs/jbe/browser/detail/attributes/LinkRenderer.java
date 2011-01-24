@@ -7,23 +7,21 @@
 
 package ee.ioc.cs.jbe.browser.detail.attributes;
 
-import org.gjt.jclasslib.util.ExtendedTableCellRenderer;
-
 import ee.ioc.cs.jbe.browser.AbstractDetailPane;
 import ee.ioc.cs.jbe.browser.detail.ListDetailPane;
-
+import org.gjt.jclasslib.util.ExtendedTableCellRenderer;
 
 import javax.swing.*;
 import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 
 /**
-    Renderer for links in <tt>ListDetailPane</tt>s.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
-public class LinkRenderer implements TableCellRenderer  {
+ * Renderer for links in <tt>ListDetailPane</tt>s.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
+public class LinkRenderer implements TableCellRenderer {
 
     private ExtendedTableCellRenderer linkLineRenderer;
     private ExtendedTableCellRenderer infoLineRenderer;
@@ -51,8 +49,7 @@ public class LinkRenderer implements TableCellRenderer  {
                                                    boolean isSelected,
                                                    boolean hasFocus,
                                                    int row,
-                                                   int column)
-    {
+                                                   int column) {
 
         boolean standardLabel = value.toString().equals(ListDetailPane.CPINFO_LINK_TEXT + "0");
         linkLineRenderer.setForeground(standardLabel ? standardForeground : AbstractDetailPane.COLOR_LINK);
@@ -60,7 +57,7 @@ public class LinkRenderer implements TableCellRenderer  {
         linkLineRenderer.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
         if (value instanceof LinkCommentValue) {
-            infoLineRenderer.getTableCellRendererComponent(table, ((LinkCommentValue)value).commentValue, isSelected, false, row, column);
+            infoLineRenderer.getTableCellRendererComponent(table, ((LinkCommentValue) value).commentValue, isSelected, false, row, column);
             panel.setBorder(linkLineRenderer.getBorder());
             linkLineRenderer.setBorder(infoLineRenderer.getBorder());
             infoLineRenderer.setVisible(true);
@@ -83,7 +80,8 @@ public class LinkRenderer implements TableCellRenderer  {
 
         /**
          * Constructor.
-         * @param linkValue the text for the link.
+         *
+         * @param linkValue    the text for the link.
          * @param commentValue the text for the comment.
          */
         public LinkCommentValue(String linkValue, String commentValue) {

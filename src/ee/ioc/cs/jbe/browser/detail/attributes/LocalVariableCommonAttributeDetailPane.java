@@ -6,12 +6,11 @@
 */
 package ee.ioc.cs.jbe.browser.detail.attributes;
 
+import ee.ioc.cs.jbe.browser.BrowserServices;
+import ee.ioc.cs.jbe.browser.ConstantPoolHyperlinkListener;
 import org.gjt.jclasslib.structures.AttributeInfo;
 import org.gjt.jclasslib.structures.attributes.LocalVariableCommonAttribute;
 import org.gjt.jclasslib.structures.attributes.LocalVariableCommonEntry;
-
-import ee.ioc.cs.jbe.browser.BrowserServices;
-import ee.ioc.cs.jbe.browser.ConstantPoolHyperlinkListener;
 
 
 /**
@@ -58,7 +57,7 @@ public abstract class LocalVariableCommonAttributeDetailPane extends AbstractAtt
                                     String descriptorOrSignatureVerbose) {
 
             super(attribute);
-            localVariableEntries = ((LocalVariableCommonAttribute)attribute).getLocalVariableEntries();
+            localVariableEntries = ((LocalVariableCommonAttribute) attribute).getLocalVariableEntries();
             this.descriptorOrSignatureVerbose = descriptorOrSignatureVerbose;
         }
 

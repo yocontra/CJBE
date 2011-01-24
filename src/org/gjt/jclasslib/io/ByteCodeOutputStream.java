@@ -11,24 +11,24 @@ import java.io.DataOutputStream;
 import java.io.OutputStream;
 
 /**
-    <tt>DataOutputStream</tt> which extends <tt>ByteCodeOutput</tt>.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * <tt>DataOutputStream</tt> which extends <tt>ByteCodeOutput</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class ByteCodeOutputStream extends DataOutputStream
-                                  implements ByteCodeOutput
-{
+        implements ByteCodeOutput {
 
     /**
-        Constructor.
-        @param out the output stream.
+     * Constructor.
+     *
+     * @param out the output stream.
      */
     public ByteCodeOutputStream(OutputStream out) {
         super(new CountedOutputStream(out));
     }
-    
+
     public int getBytesWritten() {
-        return ((CountedOutputStream)out).getBytesWritten();
+        return ((CountedOutputStream) out).getBytesWritten();
     }
 }

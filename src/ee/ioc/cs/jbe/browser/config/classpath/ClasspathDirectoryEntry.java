@@ -11,11 +11,11 @@ import javax.swing.tree.DefaultTreeModel;
 import java.io.File;
 
 /**
-    Classpath entry for a directory.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Classpath entry for a directory.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class ClasspathDirectoryEntry extends ClasspathEntry {
 
     public FindResult findClass(String className) {
@@ -40,7 +40,7 @@ public class ClasspathDirectoryEntry extends ClasspathEntry {
             return;
         }
 
-        ClassTreeNode rootNode = (ClassTreeNode)model.getRoot();
+        ClassTreeNode rootNode = (ClassTreeNode) model.getRoot();
         mergeDirectory(directory, rootNode, model, reset);
 
     }
@@ -60,7 +60,7 @@ public class ClasspathDirectoryEntry extends ClasspathEntry {
                     int deletionIndex = parentNode.getIndex(directoryNode);
                     parentNode.remove(directoryNode);
                     if (!reset) {
-                        model.nodesWereRemoved(parentNode, new int[] {deletionIndex}, new Object[] {directoryNode});
+                        model.nodesWereRemoved(parentNode, new int[]{deletionIndex}, new Object[]{directoryNode});
                     }
                 }
             } else if (file.getName().toLowerCase().endsWith(CLASSFILE_SUFFIX)) {

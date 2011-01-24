@@ -54,16 +54,17 @@ package org.apache.bcel.classfile;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * This interface denotes those constants that have a "natural" value,
  * such as ConstantLong, ConstantString, etc..
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ConstantObject.java,v 1.1 2005/12/16 14:11:24 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
- * @see     Constant
+ * @see Constant
  */
 public interface ConstantObject {
-  /** @return object representing the constant, e.g., Long for ConstantLong
-   */
-  public abstract Object getConstantValue(ConstantPool cp);
+    /**
+     * @return object representing the constant, e.g., Long for ConstantLong
+     */
+    public abstract Object getConstantValue(ConstantPool cp);
 }

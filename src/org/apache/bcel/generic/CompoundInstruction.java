@@ -61,16 +61,16 @@ package org.apache.bcel.generic;
  * appropiate code at dump time (ICONST, LDC, BIPUSH, ...). Also you can use the
  * SWITCH instruction as a useful template for either LOOKUPSWITCH or
  * TABLESWITCH.
- *
+ * <p/>
  * The interface provides the possibilty for the user to write
  * `templates' or `macros' for such reuseable code patterns.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: CompoundInstruction.java,v 1.1 2005/12/16 14:11:24 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @see PUSH
  * @see SWITCH
  */
 public interface CompoundInstruction {
-  public InstructionList getInstructionList();
+    public InstructionList getInstructionList();
 }
 

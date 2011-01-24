@@ -53,63 +53,67 @@ package org.apache.bcel.generic;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
-import java.io.*;
+
 import org.apache.bcel.util.ByteSequence;
 
-/** 
- * GOTO_W - Branch always (to relative offset, not absolute address)
- *
- * @version $Id: GOTO_W.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
- */
-public class GOTO_W extends GotoInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -344799540124265957L;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 /**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  GOTO_W() {}
+ * GOTO_W - Branch always (to relative offset, not absolute address)
+ *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
+ * @version $Id: GOTO_W.java,v 1.2 2006/08/23 13:48:30 andos Exp $
+ */
+public class GOTO_W extends GotoInstruction {
+    /**
+     *
+     */
+    private static final long serialVersionUID = -344799540124265957L;
 
-  public GOTO_W(InstructionHandle target) {
-    super(org.apache.bcel.Constants.GOTO_W, target);
-    length = 5;
-  }
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    GOTO_W() {
+    }
 
-  /**
-   * Dump instruction as byte code to stream out.
-   * @param out Output stream
-   */
-  public void dump(DataOutputStream out) throws IOException {
-    index = getTargetOffset();
-    out.writeByte(opcode);
-    out.writeInt(index);
-  }
+    public GOTO_W(InstructionHandle target) {
+        super(org.apache.bcel.Constants.GOTO_W, target);
+        length = 5;
+    }
 
-  /**
-   * Read needed data (e.g. index) from file.
-   */
-  protected void initFromFile(ByteSequence bytes, boolean wide) throws IOException
-  {
-    index  = bytes.readInt();
-    length = 5;
-  }
+    /**
+     * Dump instruction as byte code to stream out.
+     *
+     * @param out Output stream
+     */
+    public void dump(DataOutputStream out) throws IOException {
+        index = getTargetOffset();
+        out.writeByte(opcode);
+        out.writeInt(index);
+    }
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitUnconditionalBranch(this);
-    v.visitBranchInstruction(this);
-    v.visitGotoInstruction(this);
-    v.visitGOTO_W(this);
-  }
+    /**
+     * Read needed data (e.g. index) from file.
+     */
+    protected void initFromFile(ByteSequence bytes, boolean wide) throws IOException {
+        index = bytes.readInt();
+        length = 5;
+    }
+
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitUnconditionalBranch(this);
+        v.visitBranchInstruction(this);
+        v.visitGotoInstruction(this);
+        v.visitGOTO_W(this);
+    }
 }

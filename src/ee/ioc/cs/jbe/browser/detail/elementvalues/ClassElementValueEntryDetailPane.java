@@ -6,13 +6,11 @@
 */
 package ee.ioc.cs.jbe.browser.detail.elementvalues;
 
-import org.gjt.jclasslib.structures.elementvalues.ClassElementValue;
-import org.gjt.jclasslib.util.ExtendedJLabel;
-
 import ee.ioc.cs.jbe.browser.BrowserServices;
 import ee.ioc.cs.jbe.browser.BrowserTreeNode;
 import ee.ioc.cs.jbe.browser.detail.FixedListDetailPane;
-
+import org.gjt.jclasslib.structures.elementvalues.ClassElementValue;
+import org.gjt.jclasslib.util.ExtendedJLabel;
 
 import javax.swing.tree.TreePath;
 
@@ -40,7 +38,7 @@ public class ClassElementValueEntryDetailPane extends FixedListDetailPane {
 
     public void show(TreePath treePath) {
         ClassElementValue ceve = (ClassElementValue)
-                ((BrowserTreeNode)treePath.getLastPathComponent()).getElement();
+                ((BrowserTreeNode) treePath.getLastPathComponent()).getElement();
 
         constantPoolHyperlink(lblClassInfoIndex,
                 lblClassInfoIndexVerbose,

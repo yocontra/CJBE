@@ -11,25 +11,25 @@ import java.io.DataInputStream;
 import java.io.InputStream;
 
 /**
-    <tt>DataInputStream</tt> which extends <tt>ByteCodeInput</tt>.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * <tt>DataInputStream</tt> which extends <tt>ByteCodeInput</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class ByteCodeInputStream extends DataInputStream
-                                 implements ByteCodeInput
-{
+        implements ByteCodeInput {
 
     /**
-        Constructor.
-        @param in the input stream.
+     * Constructor.
+     *
+     * @param in the input stream.
      */
     public ByteCodeInputStream(InputStream in) {
         super(new CountedInputStream(in));
     }
-    
+
     public int getBytesRead() {
-        return ((CountedInputStream)in).getBytesRead();
+        return ((CountedInputStream) in).getBytesRead();
     }
-    
+
 }

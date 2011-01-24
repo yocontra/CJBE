@@ -7,11 +7,9 @@
 
 package ee.ioc.cs.jbe.browser.config.classpath;
 
+import ee.ioc.cs.jbe.browser.BrowserMDIFrame;
 import org.gjt.jclasslib.util.GUIHelper;
 import org.gjt.jclasslib.util.ProgressDialog;
-
-import ee.ioc.cs.jbe.browser.BrowserMDIFrame;
-
 
 import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
@@ -22,15 +20,14 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
-    Classpath browser that shows a tree of the contents of a
-    <tt>ClasspathComponent</tt>.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Classpath browser that shows a tree of the contents of a
+ * <tt>ClasspathComponent</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class ClasspathBrowser extends JDialog
-                              implements ActionListener, ClasspathChangeListener
-{
+        implements ActionListener, ClasspathChangeListener {
 
     private static final int DIALOG_WIDTH = 450;
     private static final int DIALOG_HEIGHT = 450;
@@ -54,10 +51,11 @@ public class ClasspathBrowser extends JDialog
 
     /**
      * Constructor.
-     * @param frame the parent frame.
+     *
+     * @param frame              the parent frame.
      * @param classpathComponent the classpath component to display initially.
-     * @param title the disalog title.
-     * @param setupVisible if the <i>setup classpath</i> button should be visible.
+     * @param title              the disalog title.
+     * @param setupVisible       if the <i>setup classpath</i> button should be visible.
      */
     public ClasspathBrowser(BrowserMDIFrame frame, ClasspathComponent classpathComponent, String title, boolean setupVisible) {
         super(frame);
@@ -99,6 +97,7 @@ public class ClasspathBrowser extends JDialog
 
     /**
      * Get the name of the selected class.
+     *
      * @return the name
      */
     public String getSelectedClassName() {
@@ -108,6 +107,7 @@ public class ClasspathBrowser extends JDialog
     /**
      * Set the new classpath component to be displayed by this dialog.
      * The previous content will be cleared.
+     *
      * @param classpathComponent the new classpath component.
      */
     public void setClasspathComponent(ClasspathComponent classpathComponent) {
@@ -214,7 +214,7 @@ public class ClasspathBrowser extends JDialog
         KeyStroke keyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0);
         Object key = new Object();
 
-        JComponent contentPane = (JComponent)getContentPane();
+        JComponent contentPane = (JComponent) getContentPane();
         contentPane.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(keyStroke, key);
         contentPane.getActionMap().put(key, new AbstractAction() {
             public void actionPerformed(ActionEvent event) {
@@ -257,7 +257,7 @@ public class ClasspathBrowser extends JDialog
         if (selectionPath == null || locationPath == null || !selectionPath.equals(locationPath)) {
             return false;
         }
-        ClassTreeNode lastPathComponent = (ClassTreeNode)selectionPath.getLastPathComponent();
+        ClassTreeNode lastPathComponent = (ClassTreeNode) selectionPath.getLastPathComponent();
         return !lastPathComponent.isPackageNode();
     }
 
@@ -266,7 +266,7 @@ public class ClasspathBrowser extends JDialog
         TreePath selectionPath = tree.getSelectionPath();
         boolean enabled = false;
         if (selectionPath != null) {
-            ClassTreeNode classTreeNode = (ClassTreeNode)selectionPath.getLastPathComponent();
+            ClassTreeNode classTreeNode = (ClassTreeNode) selectionPath.getLastPathComponent();
             enabled = !classTreeNode.isPackageNode();
         }
         btnOk.setEnabled(enabled);
@@ -299,7 +299,7 @@ public class ClasspathBrowser extends JDialog
 
     private void doSync(final boolean reset) {
 
-        final DefaultTreeModel model = reset ? new DefaultTreeModel(new ClassTreeNode()) : (DefaultTreeModel)tree.getModel();
+        final DefaultTreeModel model = reset ? new DefaultTreeModel(new ClassTreeNode()) : (DefaultTreeModel) tree.getModel();
         Runnable mergeTask = new Runnable() {
             public void run() {
                 if (classpathComponent != null) {

@@ -54,19 +54,25 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * Thrown on internal errors. Extends RuntimeException so it hasn't to be declared
  * in the throws clause every time.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ClassGenException.java,v 1.2 2006/08/22 15:33:21 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class ClassGenException extends RuntimeException {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -1755833374865086487L;
-public ClassGenException() { super(); }
-  public ClassGenException(String s) { super(s); }
+    /**
+     *
+     */
+    private static final long serialVersionUID = -1755833374865086487L;
+
+    public ClassGenException() {
+        super();
+    }
+
+    public ClassGenException(String s) {
+        super(s);
+    }
 }
 

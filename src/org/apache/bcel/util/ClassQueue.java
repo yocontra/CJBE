@@ -53,33 +53,39 @@ package org.apache.bcel.util;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
-import java.util.LinkedList;
+
 import org.apache.bcel.classfile.JavaClass;
 
-/** 
+import java.util.LinkedList;
+
+/**
  * Utility class implementing a (typesafe) queue of JavaClass
  * objects.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ClassQueue.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A> 
  * @see ClassVector
-*/
+ */
 public class ClassQueue implements java.io.Serializable {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 685144104322420292L;
-protected LinkedList<JavaClass> vec  = new LinkedList<JavaClass>();
+    /**
+     *
+     */
+    private static final long serialVersionUID = 685144104322420292L;
+    protected LinkedList<JavaClass> vec = new LinkedList<JavaClass>();
 
-  public void enqueue(JavaClass clazz) { vec.addLast(clazz); }
+    public void enqueue(JavaClass clazz) {
+        vec.addLast(clazz);
+    }
 
-  public JavaClass dequeue()                {
-    return (JavaClass)vec.removeFirst();
-  }
+    public JavaClass dequeue() {
+        return (JavaClass) vec.removeFirst();
+    }
 
-  public boolean empty() { return vec.isEmpty(); }
+    public boolean empty() {
+        return vec.isEmpty();
+    }
 
-  public String toString() {
-    return vec.toString();
-  }
+    public String toString() {
+        return vec.toString();
+    }
 }  

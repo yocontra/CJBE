@@ -7,9 +7,8 @@
 
 package ee.ioc.cs.jbe.browser.detail.attributes;
 
-import org.gjt.jclasslib.structures.AttributeInfo;
-
 import ee.ioc.cs.jbe.browser.detail.ListDetailPane.ColumnCache;
+import org.gjt.jclasslib.structures.AttributeInfo;
 
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumnModel;

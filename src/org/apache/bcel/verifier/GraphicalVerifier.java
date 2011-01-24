@@ -54,55 +54,59 @@ package org.apache.bcel.verifier;
  * <http://www.apache.org/>.
  */
 
-import javax.swing.UIManager;
+import org.apache.bcel.generic.Type;
+
+import javax.swing.*;
 import java.awt.*;
-import org.apache.bcel.generic.*;
 
 
 /**
  * A graphical user interface application demonstrating JustIce.
  *
- * @version $Id: GraphicalVerifier.java,v 1.2 2006/08/23 13:48:30 andos Exp $
  * @author Enver Haase
+ * @version $Id: GraphicalVerifier.java,v 1.2 2006/08/23 13:48:30 andos Exp $
  */
 public class GraphicalVerifier {
-  boolean packFrame = false;
+    boolean packFrame = false;
 
-  /** Constructor. */
-  public GraphicalVerifier() {
-    VerifierAppFrame frame = new VerifierAppFrame();
-    //Frames überprüfen, die voreingestellte Größe haben
-    //Frames packen, die nutzbare bevorzugte Größeninformationen enthalten, z.B. aus ihrem Layout
-    if (packFrame) {
-      frame.pack();
-    }
-    else {
-      frame.validate();
-    }
-    //Das Fenster zentrieren
-    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    Dimension frameSize = frame.getSize();
-    if (frameSize.height > screenSize.height) {
-      frameSize.height = screenSize.height;
-    }
-    if (frameSize.width > screenSize.width) {
-      frameSize.width = screenSize.width;
-    }
-    frame.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
-    frame.setVisible(true);
+    /**
+     * Constructor.
+     */
+    public GraphicalVerifier() {
+        VerifierAppFrame frame = new VerifierAppFrame();
+        //Frames ï¿½berprï¿½fen, die voreingestellte Grï¿½ï¿½e haben
+        //Frames packen, die nutzbare bevorzugte Grï¿½ï¿½eninformationen enthalten, z.B. aus ihrem Layout
+        if (packFrame) {
+            frame.pack();
+        } else {
+            frame.validate();
+        }
+        //Das Fenster zentrieren
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        Dimension frameSize = frame.getSize();
+        if (frameSize.height > screenSize.height) {
+            frameSize.height = screenSize.height;
+        }
+        if (frameSize.width > screenSize.width) {
+            frameSize.width = screenSize.width;
+        }
+        frame.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
+        frame.setVisible(true);
 
-    frame.classNamesJList.setModel(new VerifierFactoryListModel());
-    VerifierFactory.getVerifier(Type.OBJECT.getClassName()); // Fill list with java.lang.Object
-    frame.classNamesJList.setSelectedIndex(0); // default, will verify java.lang.Object
-  }
-  /** Main method. */
-  public static void main(String[] args) {
-    try {
-      UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        frame.classNamesJList.setModel(new VerifierFactoryListModel());
+        VerifierFactory.getVerifier(Type.OBJECT.getClassName()); // Fill list with java.lang.Object
+        frame.classNamesJList.setSelectedIndex(0); // default, will verify java.lang.Object
     }
-    catch(Exception e) {
-      e.printStackTrace();
+
+    /**
+     * Main method.
+     */
+    public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        new GraphicalVerifier();
     }
-    new GraphicalVerifier();
-  }
 }

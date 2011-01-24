@@ -6,9 +6,13 @@
 */
 package org.gjt.jclasslib.structures.elementvalues;
 
-import org.gjt.jclasslib.structures.*;
+import org.gjt.jclasslib.structures.AbstractStructure;
+import org.gjt.jclasslib.structures.ClassFile;
+import org.gjt.jclasslib.structures.InvalidByteCodeException;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
 /**
  * Describes an  <tt>ElementValue</tt> attribute structure.
@@ -96,7 +100,7 @@ public abstract class ElementValue extends AbstractStructure {
                 entry = new ArrayElementValue();
                 break;
             default:
-                throw new InvalidByteCodeException("Unknown tag " + (char)tagType);
+                throw new InvalidByteCodeException("Unknown tag " + (char) tagType);
         }
         entry.setClassFile(classFile);
         entry.read(in);

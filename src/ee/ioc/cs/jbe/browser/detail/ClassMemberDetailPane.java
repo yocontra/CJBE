@@ -7,31 +7,35 @@
 
 package ee.ioc.cs.jbe.browser.detail;
 
-import org.gjt.jclasslib.structures.*;
-import org.gjt.jclasslib.util.ExtendedJLabel;
-
 import ee.ioc.cs.jbe.browser.BrowserServices;
-
+import org.gjt.jclasslib.structures.ClassMember;
+import org.gjt.jclasslib.structures.FieldInfo;
+import org.gjt.jclasslib.structures.MethodInfo;
+import org.gjt.jclasslib.util.ExtendedJLabel;
 
 import javax.swing.tree.TreePath;
 
 /**
-    Detail pane showing class members (methods or fields).
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.7 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Detail pane showing class members (methods or fields).
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.7 $ $Date: 2006/09/25 16:00:58 $
+ */
 public class ClassMemberDetailPane extends FixedListDetailPane {
 
-    /** Constant which indicates that a <tt>ClassMemberDetailPane</tt> shows fields. */
+    /**
+     * Constant which indicates that a <tt>ClassMemberDetailPane</tt> shows fields.
+     */
     public static final int FIELDS = 1;
-    /** Constant which indicates that a <tt>ClassMemberDetailPane</tt> shows methods. */
+    /**
+     * Constant which indicates that a <tt>ClassMemberDetailPane</tt> shows methods.
+     */
     public static final int METHODS = 2;
-    
+
     private int mode;
-    
+
     // Visual components
-    
+
     private ExtendedJLabel lblName;
     private ExtendedJLabel lblNameVerbose;
 
@@ -42,33 +46,34 @@ public class ClassMemberDetailPane extends FixedListDetailPane {
     private ExtendedJLabel lblAccessFlagsVerbose;
 
     /**
-        Construct a <tt>ClassMemberDetailPane</tt> with a specified mode which is
-        either <tt>FIELDS</tt> or <tt>METHODS</tt>.
-        @param services browser services
-        @param mode the mode
+     * Construct a <tt>ClassMemberDetailPane</tt> with a specified mode which is
+     * either <tt>FIELDS</tt> or <tt>METHODS</tt>.
+     *
+     * @param services browser services
+     * @param mode     the mode
      */
     public ClassMemberDetailPane(BrowserServices services, int mode) {
         super(services);
         this.mode = mode;
     }
-    
+
     protected void setupLabels() {
-        
+
         addDetailPaneEntry(normalLabel("Name:"),
-                           lblName = linkLabel(),
-                           lblNameVerbose = highlightLabel());
+                lblName = linkLabel(),
+                lblNameVerbose = highlightLabel());
 
         addDetailPaneEntry(normalLabel("Descriptor:"),
-                           lblDescriptor = linkLabel(),
-                           lblDescriptorVerbose = highlightLabel());
+                lblDescriptor = linkLabel(),
+                lblDescriptorVerbose = highlightLabel());
 
         addDetailPaneEntry(normalLabel("Access flags:"),
-                           lblAccessFlags = highlightLabel(), 
-                           lblAccessFlagsVerbose = highlightLabel());
+                lblAccessFlags = highlightLabel(),
+                lblAccessFlagsVerbose = highlightLabel());
     }
 
     public void show(TreePath treePath) {
-        
+
         int index = getIndex(treePath);
         ClassMember classMember;
         if (mode == FIELDS) {
@@ -84,24 +89,25 @@ public class ClassMemberDetailPane extends FixedListDetailPane {
             }
             classMember = methods[index];
         }
-        
+
         constantPoolHyperlink(lblName,
-                              lblNameVerbose,
-                              classMember.getNameIndex());
-        
+                lblNameVerbose,
+                classMember.getNameIndex());
+
         constantPoolHyperlink(lblDescriptor,
-                              lblDescriptorVerbose,
-                              classMember.getDescriptorIndex());
-        
+                lblDescriptorVerbose,
+                classMember.getDescriptorIndex());
+
         lblAccessFlags.setText(classMember.getFormattedAccessFlags());
         lblAccessFlagsVerbose.setText("[" + classMember.getAccessFlagsVerbose() + "]");
 
         super.show(treePath);
-        
+
     }
-    public int getMode () {
-    	return mode;
+
+    public int getMode() {
+        return mode;
     }
-    
+
 }
 

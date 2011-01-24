@@ -15,14 +15,14 @@ import java.awt.*;
 
 
 /**
-    A <tt>TableCellRenderer</tt> which is based on an <tt>ExtendedJLabel</tt> rather than
-    a <tt>JLabel</tt> like the <tt>javax.swing.table.DefaultTableCellRenderer</tt>.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
-*/
+ * A <tt>TableCellRenderer</tt> which is based on an <tt>ExtendedJLabel</tt> rather than
+ * a <tt>JLabel</tt> like the <tt>javax.swing.table.DefaultTableCellRenderer</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
+ */
 public class ExtendedTableCellRenderer extends ExtendedJLabel
-                                       implements TableCellRenderer {
+        implements TableCellRenderer {
 
     private static final Border NO_FOCUS_BORDER = new EmptyBorder(1, 1, 1, 1);
 
@@ -39,31 +39,30 @@ public class ExtendedTableCellRenderer extends ExtendedJLabel
     }
 
     public void setForeground(Color c) {
-        super.setForeground(c); 
-        unselectedForeground = c; 
+        super.setForeground(c);
+        unselectedForeground = c;
     }
-    
+
     public void setBackground(Color c) {
-        super.setBackground(c); 
-        unselectedBackground = c; 
+        super.setBackground(c);
+        unselectedBackground = c;
     }
 
     public void updateUI() {
-        super.updateUI(); 
+        super.updateUI();
         setForeground(null);
         setBackground(null);
     }
-    
+
     public Component getTableCellRendererComponent(JTable table,
                                                    Object value,
                                                    boolean isSelected,
                                                    boolean hasFocus,
                                                    int row,
-                                                   int column)
-    {
+                                                   int column) {
         if (isSelected) {
-           super.setForeground(table.getSelectionForeground());
-           super.setBackground(table.getSelectionBackground());
+            super.setForeground(table.getSelectionForeground());
+            super.setBackground(table.getSelectionBackground());
 
         } else {
             super.setForeground((unselectedForeground != null) ? unselectedForeground : table.getForeground());
@@ -82,7 +81,7 @@ public class ExtendedTableCellRenderer extends ExtendedJLabel
             setBorder(NO_FOCUS_BORDER);
         }
 
-        setValue(value); 
+        setValue(value);
 
         Color background = getBackground();
         boolean colorMatch = (background != null) && (background.equals(table.getBackground())) && table.isOpaque();
@@ -90,15 +89,19 @@ public class ExtendedTableCellRenderer extends ExtendedJLabel
 
         return this;
     }
-    
 
-    public void validate() {}
 
-    public void revalidate() {}
+    public void validate() {
+    }
 
-    public void repaint(long tm, int x, int y, int width, int height) {}
+    public void revalidate() {
+    }
 
-    public void repaint(Rectangle r) { }
+    public void repaint(long tm, int x, int y, int width, int height) {
+    }
+
+    public void repaint(Rectangle r) {
+    }
 
     protected void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
         if (propertyName == "text") {
@@ -106,13 +109,14 @@ public class ExtendedTableCellRenderer extends ExtendedJLabel
         }
     }
 
-    public void firePropertyChange(String propertyName, boolean oldValue, boolean newValue) { }
+    public void firePropertyChange(String propertyName, boolean oldValue, boolean newValue) {
+    }
 
 
     private void setValue(Object value) {
         setText((value == null) ? "" : value.toString());
     }
-    
+
 
 }
 

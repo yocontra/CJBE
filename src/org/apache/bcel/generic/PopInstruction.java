@@ -58,8 +58,8 @@ package org.apache.bcel.generic;
  * Denotes an unparameterized instruction to pop a value on top from the stack,
  * such as ISTORE, POP, PUTSTATIC.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: PopInstruction.java,v 1.1 2005/12/16 14:11:25 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @see ISTORE
  * @see POP
  */

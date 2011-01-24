@@ -9,14 +9,16 @@ package org.gjt.jclasslib.structures.constants;
 
 import org.gjt.jclasslib.structures.InvalidByteCodeException;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
 /**
-    Describes a <tt>CONSTANT_Float_info</tt> constant pool data structure.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
-*/
+ * Describes a <tt>CONSTANT_Float_info</tt> constant pool data structure.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
+ */
 public class ConstantFloatInfo extends ConstantNumeric {
 
     public byte getTag() {
@@ -30,38 +32,40 @@ public class ConstantFloatInfo extends ConstantNumeric {
     public String getVerbose() throws InvalidByteCodeException {
         return String.valueOf(getFloat());
     }
-    
+
     /**
-        Get the float value of this constant pool entry.
-        @return the value
+     * Get the float value of this constant pool entry.
+     *
+     * @return the value
      */
     public float getFloat() {
         return Float.intBitsToFloat(bytes);
     }
 
     /**
-        Set the float value of this constant pool entry.
-        @param number the value
+     * Set the float value of this constant pool entry.
+     *
+     * @param number the value
      */
     public void setFloat(float number) {
         bytes = Float.floatToIntBits(number);
     }
 
     public void read(DataInput in)
-        throws InvalidByteCodeException, IOException {
-        
+            throws InvalidByteCodeException, IOException {
+
         super.read(in);
         if (debug) debug("read ");
     }
-    
-     public void write(DataOutput out)
-        throws InvalidByteCodeException, IOException {
-        
+
+    public void write(DataOutput out)
+            throws InvalidByteCodeException, IOException {
+
         out.writeByte(CONSTANT_FLOAT);
         super.write(out);
         if (debug) debug("wrote ");
     }
-    
+
     protected void debug(String message) {
         super.debug(message + getTagVerbose() + " with bytes " + bytes);
     }

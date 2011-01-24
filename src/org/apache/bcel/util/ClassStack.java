@@ -53,25 +53,38 @@ package org.apache.bcel.util;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
-import java.util.Stack;
+
 import org.apache.bcel.classfile.JavaClass;
 
-/** 
+import java.util.Stack;
+
+/**
  * Utility class implementing a (typesafe) stack of JavaClass objects.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ClassStack.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A> 
  * @see Stack
-*/
+ */
 public class ClassStack implements java.io.Serializable {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 6126079269396985982L;
-private Stack<JavaClass> stack = new Stack<JavaClass>();
+    /**
+     *
+     */
+    private static final long serialVersionUID = 6126079269396985982L;
+    private Stack<JavaClass> stack = new Stack<JavaClass>();
 
-  public void      push(JavaClass clazz) { stack.push(clazz); }
-  public JavaClass pop()                 { return (JavaClass)stack.pop(); }
-  public JavaClass top()                 { return (JavaClass)stack.peek(); }
-  public boolean   empty()               { return stack.empty(); }
+    public void push(JavaClass clazz) {
+        stack.push(clazz);
+    }
+
+    public JavaClass pop() {
+        return (JavaClass) stack.pop();
+    }
+
+    public JavaClass top() {
+        return (JavaClass) stack.peek();
+    }
+
+    public boolean empty() {
+        return stack.empty();
+    }
 }  

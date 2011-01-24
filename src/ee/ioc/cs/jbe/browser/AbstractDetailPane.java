@@ -8,8 +8,9 @@
 package ee.ioc.cs.jbe.browser;
 
 
-
-import org.gjt.jclasslib.structures.*;
+import org.gjt.jclasslib.structures.AttributeInfo;
+import org.gjt.jclasslib.structures.ClassFile;
+import org.gjt.jclasslib.structures.InvalidByteCodeException;
 import org.gjt.jclasslib.util.ExtendedJLabel;
 
 import javax.swing.*;
@@ -19,30 +20,39 @@ import java.awt.event.MouseListener;
 import java.util.HashMap;
 
 /**
-    Base class for all detail panes showing specific information for
-    a specific tree node selected in <tt>BrowserTreePane</tt>.
-    
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Base class for all detail panes showing specific information for
+ * a specific tree node selected in <tt>BrowserTreePane</tt>.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2006/09/25 16:00:58 $
+ */
 public abstract class AbstractDetailPane extends JPanel {
-    
-    /** Text prepended to constant pool hyperlinks. */
+
+    /**
+     * Text prepended to constant pool hyperlinks.
+     */
     public static final String CPINFO_LINK_TEXT = "cp_info #";
-    /** Color for hyperlinks. */
+    /**
+     * Color for hyperlinks.
+     */
     public static final Color COLOR_LINK = new Color(0, 128, 0);
 
-    /** Color for highlighted text (values in key-value pairs). */
+    /**
+     * Color for highlighted text (values in key-value pairs).
+     */
     protected static final Color COLOR_HIGHLIGHT = new Color(128, 0, 0);
 
-    /** Services for this detail pane. */
+    /**
+     * Services for this detail pane.
+     */
     protected BrowserServices services;
 
     private HashMap<ExtendedJLabel, MouseListener> labelToMouseListener = new HashMap<ExtendedJLabel, MouseListener>();
- 
+
     /**
-        Constructs a detail pane with a specified parent frame.
-        @param services browser services
+     * Constructs a detail pane with a specified parent frame.
+     *
+     * @param services browser services
      */
     protected AbstractDetailPane(BrowserServices services) {
         this.services = services;
@@ -50,37 +60,40 @@ public abstract class AbstractDetailPane extends JPanel {
     }
 
     /**
-        Get the associated <tt>BrowserServices</tt> object.
-        @return the browser services
+     * Get the associated <tt>BrowserServices</tt> object.
+     *
+     * @return the browser services
      */
     public BrowserServices getBrowserServices() {
         return services;
     }
 
     /**
-        Show the detail pane for a specific tree node 
-        selected in <tt>BrowserTreePane</tt>.
+     * Show the detail pane for a specific tree node
+     * selected in <tt>BrowserTreePane</tt>.
      */
-    
+
     public abstract void show(TreePath treePath);
 
     /**
-        Setup the detail pane at the beginning of its life cycle.
+     * Setup the detail pane at the beginning of its life cycle.
      */
     protected abstract void setupComponent();
 
     /**
-        Create a normal label (keys in key-value pairs).
-        @return the label
+     * Create a normal label (keys in key-value pairs).
+     *
+     * @return the label
      */
     protected ExtendedJLabel normalLabel() {
         return normalLabel("");
     }
 
     /**
-        Create a normal label (keys in key-value pairs).
-        @param text the text for the label
-        @return the label
+     * Create a normal label (keys in key-value pairs).
+     *
+     * @param text the text for the label
+     * @return the label
      */
     protected ExtendedJLabel normalLabel(String text) {
         ExtendedJLabel label = new ExtendedJLabel(text);
@@ -88,18 +101,20 @@ public abstract class AbstractDetailPane extends JPanel {
     }
 
     /**
-        Create a highlighted label (values in key-value pairs).
-        @return the label
+     * Create a highlighted label (values in key-value pairs).
+     *
+     * @return the label
      */
     protected ExtendedJLabel highlightLabel() {
         ExtendedJLabel label = normalLabel();
         label.setForeground(COLOR_HIGHLIGHT);
         return label;
     }
-    
+
     /**
-        Create a label with the appearance of a hyperlink.
-        @return the label
+     * Create a label with the appearance of a hyperlink.
+     *
+     * @return the label
      */
     protected ExtendedJLabel linkLabel() {
         ExtendedJLabel label = normalLabel();
@@ -108,32 +123,34 @@ public abstract class AbstractDetailPane extends JPanel {
         label.setUnderlined(true);
         return label;
     }
-    
+
     /**
-        Determine the index of the tree node selected in <tt>BrowserTreePane</tt>
-        among its siblings.
-        @param treePath the tree path
-        @return the index
+     * Determine the index of the tree node selected in <tt>BrowserTreePane</tt>
+     * among its siblings.
+     *
+     * @param treePath the tree path
+     * @return the index
      */
     protected int getIndex(TreePath treePath) {
-        return ((BrowserTreeNode)treePath.getLastPathComponent()).getIndex();
+        return ((BrowserTreeNode) treePath.getLastPathComponent()).getIndex();
     }
-    
+
     /**
-        Find the attribute pertaining to a specific tree path. 
-        @param path the tree path
-        @return the attribute
+     * Find the attribute pertaining to a specific tree path.
+     *
+     * @param path the tree path
+     * @return the attribute
      */
     protected AttributeInfo findAttribute(TreePath path) {
-        
+
         TreePath parentPath = path.getParentPath();
-        BrowserTreeNode parentNode = (BrowserTreeNode)parentPath.getLastPathComponent();
+        BrowserTreeNode parentNode = (BrowserTreeNode) parentPath.getLastPathComponent();
         String parentNodeType = parentNode.getType();
-        
+
         ClassFile classFile = services.getClassFile();
         int parentIndex = getIndex(parentPath);
         int index = getIndex(path);
-        
+
         if (parentNodeType.equals(BrowserTreeNode.NODE_NO_CONTENT)) {
             return classFile.getAttributes()[index];
 
@@ -147,16 +164,17 @@ public abstract class AbstractDetailPane extends JPanel {
             return classFile.getAttributes()[index];
 
         } else {
-        	AttributeInfo  ai = findAttribute(parentPath); 
-        	AttributeInfo[] atts  =ai.getAttributes(); 
+            AttributeInfo ai = findAttribute(parentPath);
+            AttributeInfo[] atts = ai.getAttributes();
             return atts[index];
         }
     }
-    
+
     /**
-        Get the name of a constant pool entry.
-        @param constantPoolIndex the index of the constant pool entry
-        @return the name
+     * Get the name of a constant pool entry.
+     *
+     * @param constantPoolIndex the index of the constant pool entry
+     * @return the name
      */
     protected String getConstantPoolEntryName(int constantPoolIndex) {
 
@@ -166,19 +184,20 @@ public abstract class AbstractDetailPane extends JPanel {
             return "invalid constant pool reference";
         }
     }
-    
+
     /**
-        Construct a hyperlink into the constant pool.
-        @param value the label for the hyperlink source
-        @param comment an oprional label whose text is automatically set to
-                       the name of the constant pool entry
-        @param constantPoolIndex the index of the constant pool entry for the
-                                 target of the hyperlink
+     * Construct a hyperlink into the constant pool.
+     *
+     * @param value             the label for the hyperlink source
+     * @param comment           an oprional label whose text is automatically set to
+     *                          the name of the constant pool entry
+     * @param constantPoolIndex the index of the constant pool entry for the
+     *                          target of the hyperlink
      */
     protected void constantPoolHyperlink(ExtendedJLabel value,
                                          ExtendedJLabel comment,
                                          int constantPoolIndex) {
-                                         
+
         value.setText(CPINFO_LINK_TEXT + constantPoolIndex);
         setupMouseListener(value, constantPoolIndex);
         value.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -189,21 +208,21 @@ public abstract class AbstractDetailPane extends JPanel {
         }
 
     }
-    
+
     private void setupMouseListener(ExtendedJLabel value, int constantPoolIndex) {
 
-        MouseListener oldListener = (MouseListener)labelToMouseListener.get(value);
+        MouseListener oldListener = (MouseListener) labelToMouseListener.get(value);
         if (oldListener != null) {
             value.removeMouseListener(oldListener);
         }
         MouseListener newListener = new ConstantPoolHyperlinkListener(
-                                        services,
-                                        constantPoolIndex);
+                services,
+                constantPoolIndex);
 
         value.addMouseListener(newListener);
         labelToMouseListener.put(value, newListener);
     }
-    
+
 
 }
 

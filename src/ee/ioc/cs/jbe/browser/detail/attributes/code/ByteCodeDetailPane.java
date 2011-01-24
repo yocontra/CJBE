@@ -7,10 +7,10 @@
 
 package ee.ioc.cs.jbe.browser.detail.attributes.code;
 
+import ee.ioc.cs.jbe.browser.AbstractDetailPane;
+import ee.ioc.cs.jbe.browser.BrowserComponent;
+import ee.ioc.cs.jbe.browser.BrowserServices;
 import org.gjt.jclasslib.structures.attributes.CodeAttribute;
-
-import ee.ioc.cs.jbe.browser.*;
-
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -18,11 +18,11 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
-    Detail pane showing the code of a <tt>Code</tt> attribute.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.3 $ $Date: 2006/01/02 17:57:03 $
-*/
+ * Detail pane showing the code of a <tt>Code</tt> attribute.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.3 $ $Date: 2006/01/02 17:57:03 $
+ */
 public class ByteCodeDetailPane extends AbstractDetailPane {
 
     private static final Rectangle RECT_ORIGIN = new Rectangle(0, 0, 0, 0);
@@ -35,8 +35,9 @@ public class ByteCodeDetailPane extends AbstractDetailPane {
     private JButton btnCopy;
 
     /**
-        Constructor.
-        @param services the associated browser services.
+     * Constructor.
+     *
+     * @param services the associated browser services.
      */
     public ByteCodeDetailPane(BrowserServices services) {
         super(services);
@@ -62,17 +63,17 @@ public class ByteCodeDetailPane extends AbstractDetailPane {
         byteCodeDisplay.addMouseListener(listener);
         byteCodeDisplay.addMouseMotionListener(listener);
     }
-    
+
     public void show(TreePath treePath) {
 
-        CodeAttribute attribute = (CodeAttribute)findAttribute(treePath);
+        CodeAttribute attribute = (CodeAttribute) findAttribute(treePath);
         if (byteCodeDisplay.getCodeAttribute() != attribute) {
 
             BrowserComponent browserComponent = services.getBrowserComponent();
             browserComponent.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
             byteCodeDisplay.setCodeAttribute(attribute, services.getClassFile());
             counterDisplay.init(byteCodeDisplay);
-            
+
             byteCodeDisplay.scrollRectToVisible(RECT_ORIGIN);
 
             scrollPane.validate();
@@ -80,16 +81,17 @@ public class ByteCodeDetailPane extends AbstractDetailPane {
             browserComponent.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         }
     }
-    
+
     /**
-        Scroll the code to a specified code offset.
-        @param offset the offset
+     * Scroll the code to a specified code offset.
+     *
+     * @param offset the offset
      */
     public void scrollToOffset(int offset) {
 
         byteCodeDisplay.scrollToOffset(offset);
     }
-    
+
     private JScrollPane buildByteCodeScrollPane() {
 
         byteCodeDisplay = new ByteCodeDisplay(this);
@@ -116,15 +118,14 @@ public class ByteCodeDetailPane extends AbstractDetailPane {
     }
 
     private class DocumentLinkListener extends MouseAdapter
-                                       implements MouseMotionListener
-    {
+            implements MouseMotionListener {
 
         private ByteCodeDisplay byteCodeDisplay;
-        
+
         private Cursor defaultCursor;
         private int defaultCursorType;
         private Cursor handCursor;
-        
+
         private DocumentLinkListener(ByteCodeDisplay byteCodeDisplay) {
             this.byteCodeDisplay = byteCodeDisplay;
 
@@ -132,7 +133,7 @@ public class ByteCodeDetailPane extends AbstractDetailPane {
             defaultCursorType = defaultCursor.getType();
             handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
         }
-        
+
         public void mouseClicked(MouseEvent event) {
 
             byteCodeDisplay.link(event.getPoint());
@@ -142,7 +143,7 @@ public class ByteCodeDetailPane extends AbstractDetailPane {
         }
 
         public void mouseMoved(MouseEvent event) {
-            
+
             boolean link = byteCodeDisplay.isLink(event.getPoint());
             if (byteCodeDisplay.getCursor().getType() == defaultCursorType && link) {
                 byteCodeDisplay.setCursor(handCursor);
@@ -150,9 +151,9 @@ public class ByteCodeDetailPane extends AbstractDetailPane {
                 byteCodeDisplay.setCursor(defaultCursor);
             }
         }
-        
+
     }
-    
+
 
 }
 

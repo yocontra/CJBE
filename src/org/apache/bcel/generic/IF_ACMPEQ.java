@@ -54,49 +54,50 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * IF_ACMPEQ - Branch if reference comparison succeeds
- *
+ * <p/>
  * <PRE>Stack: ..., value1, value2 -&gt; ...</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: IF_ACMPEQ.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class IF_ACMPEQ extends IfInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -4528733406576671849L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -4528733406576671849L;
 
-/**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  IF_ACMPEQ() {}
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    IF_ACMPEQ() {
+    }
 
-  public IF_ACMPEQ(InstructionHandle target) {
-    super(org.apache.bcel.Constants.IF_ACMPEQ, target);
-  }
+    public IF_ACMPEQ(InstructionHandle target) {
+        super(org.apache.bcel.Constants.IF_ACMPEQ, target);
+    }
 
-  /**
-   * @return negation of instruction
-   */
-  public IfInstruction negate() {
-    return new IF_ACMPNE(target);
-  }
+    /**
+     * @return negation of instruction
+     */
+    public IfInstruction negate() {
+        return new IF_ACMPNE(target);
+    }
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    v.visitStackConsumer(this);
-    v.visitBranchInstruction(this);
-    v.visitIfInstruction(this);
-    v.visitIF_ACMPEQ(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        v.visitStackConsumer(this);
+        v.visitBranchInstruction(this);
+        v.visitIfInstruction(this);
+        v.visitIF_ACMPEQ(this);
+    }
 }

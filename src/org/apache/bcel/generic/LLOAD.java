@@ -54,41 +54,41 @@ package org.apache.bcel.generic;
  * <http://www.apache.org/>.
  */
 
-/** 
+/**
  * LLOAD - Load long from local variable
- *<PRE>Stack ... -&GT; ..., result.word1, result.word2</PRE>
+ * <PRE>Stack ... -&GT; ..., result.word1, result.word2</PRE>
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: LLOAD.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public class LLOAD extends LoadInstruction {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 379331602405124174L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 379331602405124174L;
 
-/**
-   * Empty constructor needed for the Class.newInstance() statement in
-   * Instruction.readInstruction(). Not to be used otherwise.
-   */
-  LLOAD() {
-    super(org.apache.bcel.Constants.LLOAD, org.apache.bcel.Constants.LLOAD_0);
-  }
+    /**
+     * Empty constructor needed for the Class.newInstance() statement in
+     * Instruction.readInstruction(). Not to be used otherwise.
+     */
+    LLOAD() {
+        super(org.apache.bcel.Constants.LLOAD, org.apache.bcel.Constants.LLOAD_0);
+    }
 
-  public LLOAD(int n) {
-    super(org.apache.bcel.Constants.LLOAD, org.apache.bcel.Constants.LLOAD_0, n);
-  }
+    public LLOAD(int n) {
+        super(org.apache.bcel.Constants.LLOAD, org.apache.bcel.Constants.LLOAD_0, n);
+    }
 
-  /**
-   * Call corresponding visitor method(s). The order is:
-   * Call visitor methods of implemented interfaces first, then
-   * call methods according to the class hierarchy in descending order,
-   * i.e., the most specific visitXXX() call comes last.
-   *
-   * @param v Visitor object
-   */
-  public void accept(Visitor v) {
-    super.accept(v);
-    v.visitLLOAD(this);
-  }
+    /**
+     * Call corresponding visitor method(s). The order is:
+     * Call visitor methods of implemented interfaces first, then
+     * call methods according to the class hierarchy in descending order,
+     * i.e., the most specific visitXXX() call comes last.
+     *
+     * @param v Visitor object
+     */
+    public void accept(Visitor v) {
+        super.accept(v);
+        v.visitLLOAD(this);
+    }
 }

@@ -9,14 +9,16 @@ package org.gjt.jclasslib.structures.constants;
 
 import org.gjt.jclasslib.structures.InvalidByteCodeException;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
 /**
-    Describes a <tt>CONSTANT_InterfaceMethodref_info</tt> constant pool data structure.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
-*/
+ * Describes a <tt>CONSTANT_InterfaceMethodref_info</tt> constant pool data structure.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
+ */
 public class ConstantInterfaceMethodrefInfo extends ConstantReference {
 
     public byte getTag() {
@@ -28,23 +30,23 @@ public class ConstantInterfaceMethodrefInfo extends ConstantReference {
     }
 
     public void read(DataInput in)
-        throws InvalidByteCodeException, IOException {
-        
+            throws InvalidByteCodeException, IOException {
+
         super.read(in);
         if (debug) debug("read ");
     }
-    
+
     public void write(DataOutput out)
-        throws InvalidByteCodeException, IOException {
-        
+            throws InvalidByteCodeException, IOException {
+
         out.writeByte(CONSTANT_INTERFACE_METHODREF);
         super.write(out);
         if (debug) debug("wrote ");
     }
-    
+
     protected void debug(String message) {
         super.debug(message + getTagVerbose() + " with class_index " + classIndex +
-              " and name_and_type_index " + nameAndTypeIndex);
+                " and name_and_type_index " + nameAndTypeIndex);
     }
 
 }

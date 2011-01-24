@@ -58,11 +58,12 @@ package org.apache.bcel.generic;
  * Denote entity that refers to an index, e.g. local variable instructions,
  * RET, CPInstruction, etc.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: IndexedInstruction.java,v 1.1 2005/12/16 14:11:25 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
 public interface IndexedInstruction {
-  public int getIndex();
-  public void setIndex(int index);
+    public int getIndex();
+
+    public void setIndex(int index);
 }
 

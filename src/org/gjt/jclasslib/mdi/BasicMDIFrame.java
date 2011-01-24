@@ -14,18 +14,19 @@ import java.awt.*;
 import java.awt.event.*;
 import java.beans.PropertyVetoException;
 import java.lang.reflect.Constructor;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.prefs.Preferences;
 
 
 /**
-    Parent frame for MDI application. Handles window actions, state saving and loading
-    and supplies various utility methods.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
-*/
+ * Parent frame for MDI application. Handles window actions, state saving and loading
+ * and supplies various utility methods.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:24 $
+ */
 public class BasicMDIFrame extends JFrame {
 
     private static final int DEFAULT_WINDOW_WIDTH = 800;
@@ -38,31 +39,47 @@ public class BasicMDIFrame extends JFrame {
     private static final String SETTINGS_WINDOW_MAXIMIZED = "windowMaximized";
 
     // Actions
-    
-    /** Action for selecting the next child window. */
+
+    /**
+     * Action for selecting the next child window.
+     */
     protected Action actionNextWindow;
-    /** Action for selecting the provious child window. */
+    /**
+     * Action for selecting the provious child window.
+     */
     protected Action actionPreviousWindow;
-    /** Action for tiling all child windows. */
+    /**
+     * Action for tiling all child windows.
+     */
     protected Action actionTileWindows;
-    /** Action for stacking all child windows. */
+    /**
+     * Action for stacking all child windows.
+     */
     protected Action actionStackWindows;
 
     // Visual components
 
-    /** <tt>JDesktop</tt> pane which contains all child windows. */
+    /**
+     * <tt>JDesktop</tt> pane which contains all child windows.
+     */
     protected JScrollPane scpDesktop;
-    /** The desktop pane. */
+    /**
+     * The desktop pane.
+     */
     protected JDesktopPane desktopPane;
-    /** <tt>DesktopManager</tt> for this MDI parent frame. */
-    protected BasicDesktopManager desktopManager;    
-    /** <tt>JMenu</tt> for window actions. */
+    /**
+     * <tt>DesktopManager</tt> for this MDI parent frame.
+     */
+    protected BasicDesktopManager desktopManager;
+    /**
+     * <tt>JMenu</tt> for window actions.
+     */
     protected JMenu menuWindow;
 
     private Rectangle lastNormalFrameBounds;
 
     /**
-        Constructor.
+     * Constructor.
      */
     public BasicMDIFrame() {
 
@@ -74,16 +91,17 @@ public class BasicMDIFrame extends JFrame {
     }
 
     /**
-        Create a <tt>BasicDesktopManager</tt> for this MDI parent window.
-        @return the <tt>BasicDesktopManager</tt>
+     * Create a <tt>BasicDesktopManager</tt> for this MDI parent window.
+     *
+     * @return the <tt>BasicDesktopManager</tt>
      */
     protected BasicDesktopManager createDesktopManager() {
-        
+
         return new BasicDesktopManager(this);
     }
-    
+
     /**
-        Exit the application.
+     * Exit the application.
      */
     protected void doQuit() {
 
@@ -93,22 +111,23 @@ public class BasicMDIFrame extends JFrame {
     }
 
     /**
-        Close all internal frames.
+     * Close all internal frames.
      */
     protected void closeAllFrames() {
 
         List frames = desktopManager.getOpenFrames();
         while (frames.size() > 0) {
-            BasicInternalFrame frame = (BasicInternalFrame)frames.get(0);
+            BasicInternalFrame frame = (BasicInternalFrame) frames.get(0);
             frame.doDefaultCloseAction();
         }
     }
 
     /**
-         Create an <tt>MDIConfig</tt> object that describes the current configuration of
-         all internal frames. This object can be serialized and reactivated with
-         <tt>readMDIConfig</tt>.
-         @return the <tt>MDIConfig</tt> object
+     * Create an <tt>MDIConfig</tt> object that describes the current configuration of
+     * all internal frames. This object can be serialized and reactivated with
+     * <tt>readMDIConfig</tt>.
+     *
+     * @return the <tt>MDIConfig</tt> object
      */
     protected MDIConfig createMDIConfig() {
 
@@ -118,7 +137,7 @@ public class BasicMDIFrame extends JFrame {
 
         for (int i = 0; i < openFrames.size(); i++) {
 
-            BasicInternalFrame internalFrame = (BasicInternalFrame)openFrames.get(i);
+            BasicInternalFrame internalFrame = (BasicInternalFrame) openFrames.get(i);
 
             Rectangle bounds = internalFrame.getNormalBounds();
             MDIConfig.InternalFrameDesc internalFrameDesc = new MDIConfig.InternalFrameDesc();
@@ -143,16 +162,17 @@ public class BasicMDIFrame extends JFrame {
     }
 
     /**
-         Takes an <tt>MDIConfig</tt> object that describes a configuration of
-         internal frames and populates the MDI frame with this configuration.
-         @param config the <tt>MDIConfig</tt> object to be read
+     * Takes an <tt>MDIConfig</tt> object that describes a configuration of
+     * internal frames and populates the MDI frame with this configuration.
+     *
+     * @param config the <tt>MDIConfig</tt> object to be read
      */
     protected void readMDIConfig(MDIConfig config) {
 
         boolean anyFrameMaximized = false;
         Iterator it = config.getInternalFrameDescs().iterator();
         while (it.hasNext()) {
-            MDIConfig.InternalFrameDesc internalFrameDesc = (MDIConfig.InternalFrameDesc)it.next();
+            MDIConfig.InternalFrameDesc internalFrameDesc = (MDIConfig.InternalFrameDesc) it.next();
 
 
             Constructor frameConstructor;
@@ -169,7 +189,7 @@ public class BasicMDIFrame extends JFrame {
 
             BasicInternalFrame frame;
             try {
-                frame = (BasicInternalFrame)frameConstructor.newInstance(new Object[] {desktopManager, internalFrameDesc.getInitParam()});
+                frame = (BasicInternalFrame) frameConstructor.newInstance(new Object[]{desktopManager, internalFrameDesc.getInitParam()});
             } catch (Exception ex) {
                 ex.printStackTrace();
                 Throwable cause = ex.getCause();
@@ -207,9 +227,10 @@ public class BasicMDIFrame extends JFrame {
     }
 
     /**
-        Get the constructor arguments classes for the constructor of the supplied frame class.
-        @param frameClass the frame class.
-        @return the constructor argument classes.
+     * Get the constructor arguments classes for the constructor of the supplied frame class.
+     *
+     * @param frameClass the frame class.
+     * @return the constructor argument classes.
      */
     protected Class[] getFrameConstructorArguments(Class frameClass) {
         return BasicInternalFrame.CONSTRUCTOR_ARGUMENTS;
@@ -219,44 +240,44 @@ public class BasicMDIFrame extends JFrame {
 
         actionNextWindow = new WindowAction("Next window");
         actionNextWindow.putValue(Action.SHORT_DESCRIPTION,
-                                  "Cycle to the next opened window");
+                "Cycle to the next opened window");
         actionNextWindow.setEnabled(false);
-        
+
         actionPreviousWindow = new WindowAction("Previous window");
         actionPreviousWindow.putValue(Action.SHORT_DESCRIPTION,
-                                     "Cycle to the previous opened window");
+                "Cycle to the previous opened window");
         actionPreviousWindow.setEnabled(false);
-        
+
         actionTileWindows = new WindowAction("Tile windows");
         actionTileWindows.putValue(Action.SHORT_DESCRIPTION,
-                                   "Tile all windows in the main frame");
+                "Tile all windows in the main frame");
         actionTileWindows.setEnabled(false);
 
         actionStackWindows = new WindowAction("Stack windows");
         actionStackWindows.putValue(Action.SHORT_DESCRIPTION,
-                                    "Stack all windows in the main frame");
+                "Stack all windows in the main frame");
         actionStackWindows.setEnabled(false);
     }
 
     private void setupMenu() {
 
         menuWindow = new JMenu("Window");
-            menuWindow.add(actionPreviousWindow).setAccelerator(
+        menuWindow.add(actionPreviousWindow).setAccelerator(
                 KeyStroke.getKeyStroke(KeyEvent.VK_F2, Event.CTRL_MASK));
-            menuWindow.add(actionNextWindow).setAccelerator(
+        menuWindow.add(actionNextWindow).setAccelerator(
                 KeyStroke.getKeyStroke(KeyEvent.VK_F3, Event.CTRL_MASK));
-            menuWindow.add(actionTileWindows);
-            menuWindow.add(actionStackWindows);
+        menuWindow.add(actionTileWindows);
+        menuWindow.add(actionStackWindows);
     }
 
     private void setupFrame() {
 
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        
+
         Container contentPane = getContentPane();
-        contentPane.setLayout(new BorderLayout(5,5));
+        contentPane.setLayout(new BorderLayout(5, 5));
         contentPane.add(buildDesktop(), BorderLayout.CENTER);
-        
+
     }
 
     private void setupEventHandlers() {
@@ -272,6 +293,7 @@ public class BasicMDIFrame extends JFrame {
                 desktopManager.checkResizeInMaximizedState();
                 recordLastNormalFrameBounds();
             }
+
             public void componentMoved(ComponentEvent event) {
                 recordLastNormalFrameBounds();
             }
@@ -301,8 +323,8 @@ public class BasicMDIFrame extends JFrame {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         Rectangle screenBounds = new Rectangle(screenSize);
 
-        int windowX = preferences.getInt(SETTINGS_WINDOW_X, (int)(screenSize.getWidth() - DEFAULT_WINDOW_WIDTH)/2);
-        int windowY = preferences.getInt(SETTINGS_WINDOW_Y, (int)(screenSize.getHeight() - DEFAULT_WINDOW_HEIGHT)/2);
+        int windowX = preferences.getInt(SETTINGS_WINDOW_X, (int) (screenSize.getWidth() - DEFAULT_WINDOW_WIDTH) / 2);
+        int windowY = preferences.getInt(SETTINGS_WINDOW_Y, (int) (screenSize.getHeight() - DEFAULT_WINDOW_HEIGHT) / 2);
         int windowWidth = preferences.getInt(SETTINGS_WINDOW_WIDTH, DEFAULT_WINDOW_WIDTH);
         int windowHeight = preferences.getInt(SETTINGS_WINDOW_HEIGHT, DEFAULT_WINDOW_HEIGHT);
 
@@ -310,7 +332,7 @@ public class BasicMDIFrame extends JFrame {
 
         // sanitize frame bounds
         frameBounds.translate(-Math.min(0, frameBounds.x), -Math.min(0, frameBounds.y));
-        frameBounds.translate(-Math.max(0, frameBounds.x + frameBounds.width - screenSize.width), -Math.max(0, frameBounds.y + frameBounds.height- screenSize.height));
+        frameBounds.translate(-Math.max(0, frameBounds.x + frameBounds.width - screenSize.width), -Math.max(0, frameBounds.y + frameBounds.height - screenSize.height));
         frameBounds = screenBounds.intersection(frameBounds);
 
         setBounds(frameBounds);
@@ -341,7 +363,7 @@ public class BasicMDIFrame extends JFrame {
 
         return scpDesktop;
     }
-    
+
     private class WindowAction extends AbstractAction {
 
         private WindowAction(String name) {

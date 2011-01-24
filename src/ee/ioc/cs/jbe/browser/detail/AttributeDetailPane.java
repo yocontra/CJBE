@@ -7,13 +7,11 @@
 
 package ee.ioc.cs.jbe.browser.detail;
 
-import org.gjt.jclasslib.structures.AttributeInfo;
-import org.gjt.jclasslib.structures.attributes.*;
-
 import ee.ioc.cs.jbe.browser.AbstractDetailPane;
 import ee.ioc.cs.jbe.browser.BrowserServices;
 import ee.ioc.cs.jbe.browser.detail.attributes.*;
-
+import org.gjt.jclasslib.structures.AttributeInfo;
+import org.gjt.jclasslib.structures.attributes.*;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -26,11 +24,11 @@ import java.util.HashMap;
  * <tt>org.gjt.jclasslib.structures.AttributeInfo</tt>. This class is a
  * container for the classes defined in the <tt>attributes</tt> subpackage and
  * switches between the contained panes as required.
- * 
+ *
  * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
  * @version $Revision: 1.9 $ $Date: 2006/09/25 16:00:58 $
  */
-public class AttributeDetailPane extends AbstractDetailPane  {
+public class AttributeDetailPane extends AbstractDetailPane {
 
     private static final String SCREEN_UNKNOWN = "Unknown";
 
@@ -70,9 +68,8 @@ public class AttributeDetailPane extends AbstractDetailPane  {
 
     /**
      * Constructor.
-     * 
-     * @param services
-     *            the associated browser services.
+     *
+     * @param services the associated browser services.
      */
     public AttributeDetailPane(BrowserServices services) {
         super(services);
@@ -97,7 +94,7 @@ public class AttributeDetailPane extends AbstractDetailPane  {
 
         AttributeInfo attribute = findAttribute(treePath);
 
-        
+
         String paneName = null;
         if (attribute instanceof ConstantValueAttribute) {
             paneName = SCREEN_CONSTANT_VALUE;
@@ -141,7 +138,7 @@ public class AttributeDetailPane extends AbstractDetailPane  {
     /**
      * Get the <tt>CodeAttributeDetailPane</tt> showing the details of a
      * <tt>Code</tt> attribute.
-     * 
+     *
      * @return the <tt>CodeAttributeDetailPane</tt>
      */
     public CodeAttributeDetailPane getCodeAttributeDetailPane() {
@@ -172,7 +169,7 @@ public class AttributeDetailPane extends AbstractDetailPane  {
 
         //we need this reference for when saving changed attributes
         codeAttributeDetailPane = new CodeAttributeDetailPane(services);
-         
+
         addScreen(codeAttributeDetailPane, SCREEN_CODE);
 
         addScreen(new ExceptionsAttributeDetailPane(services),

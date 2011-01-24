@@ -7,30 +7,33 @@
 
 package org.gjt.jclasslib.io;
 
-import java.io.*;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
-    <tt>InputStream</tt> which counts the number of bytes read.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * <tt>InputStream</tt> which counts the number of bytes read.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class CountedInputStream extends FilterInputStream {
 
     private int bytesRead = 0;
 
     /**
-        Constructor.
-        @param in the input stream.
+     * Constructor.
+     *
+     * @param in the input stream.
      */
     public CountedInputStream(InputStream in) {
         super(in);
     }
-    
+
     public int read() throws IOException {
         int b = in.read();
         //if (b != -1) {
-            bytesRead++;
+        bytesRead++;
         //}
         return b;
     }
@@ -43,12 +46,12 @@ public class CountedInputStream extends FilterInputStream {
         int readCount = in.read(b, 0, b.length);
         bytesRead += readCount;
         return readCount;
-        
+
     }
-    
+
     public long skip(long n) throws IOException {
         long skipCount = in.skip(n);
-        bytesRead += (int)skipCount;
+        bytesRead += (int) skipCount;
         return skipCount;
     }
 
@@ -56,10 +59,11 @@ public class CountedInputStream extends FilterInputStream {
     public boolean markSupported() {
         return false;
     }
-   
+
     /**
-        Get the number of bytes read.
-        @return the number of bytes
+     * Get the number of bytes read.
+     *
+     * @return the number of bytes
      */
     public int getBytesRead() {
         return bytesRead;

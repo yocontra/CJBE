@@ -61,11 +61,11 @@ package org.apache.bcel.verifier.exc;
  * 2nd edition, 4.8.1, pages 133-137. The static constraints checking part of pass 3
  * is called pass 3a in JustIce.
  *
- * @version $Id: StaticCodeConstraintException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
+ * @version $Id: StaticCodeConstraintException.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  */
-public abstract class StaticCodeConstraintException extends CodeConstraintException{
-	public StaticCodeConstraintException(String message){
-		super(message);
-	}
+public abstract class StaticCodeConstraintException extends CodeConstraintException {
+    public StaticCodeConstraintException(String message) {
+        super(message);
+    }
 }

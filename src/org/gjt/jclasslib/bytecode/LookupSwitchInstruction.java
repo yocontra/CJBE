@@ -15,59 +15,64 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-    Describes the <tt>lookupswitch</tt> instruction.
- 
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
-*/
+ * Describes the <tt>lookupswitch</tt> instruction.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.1 $ $Date: 2005/11/01 13:18:23 $
+ */
 public class LookupSwitchInstruction extends PaddedInstruction {
 
     private int defaultOffset;
     private List matchOffsetPairs = new ArrayList();
-   
+
     /**
-        Constructor.
-        @param opcode the opcode.
+     * Constructor.
+     *
+     * @param opcode the opcode.
      */
     public LookupSwitchInstruction(int opcode) {
-        super(opcode); 
+        super(opcode);
     }
-    
+
     public int getSize() {
         return super.getSize() + 8 + 8 * matchOffsetPairs.size();
     }
 
     /**
-        Get the default offset of the branch of this instruction.
-        @return the offset
+     * Get the default offset of the branch of this instruction.
+     *
+     * @return the offset
      */
     public int getDefaultOffset() {
         return defaultOffset;
     }
 
     /**
-        Set the default offset of the branch of this instruction.
-        @param defaultOffset the offset
+     * Set the default offset of the branch of this instruction.
+     *
+     * @param defaultOffset the offset
      */
     public void setDefaultOffset(int defaultOffset) {
         this.defaultOffset = defaultOffset;
     }
-    
+
     /**
-        Get the match-offset pairs of the branch of this instruction as
-        a <tt>java.util.List</tt> of <tt>MatchOffsetPair</tt>
-        elements.
-        @return the list
+     * Get the match-offset pairs of the branch of this instruction as
+     * a <tt>java.util.List</tt> of <tt>MatchOffsetPair</tt>
+     * elements.
+     *
+     * @return the list
      */
     public List getMatchOffsetPairs() {
         return matchOffsetPairs;
     }
-    
+
     /**
-        Set the match-offset pairs of the branch of this instruction as
-        a <tt>java.util.List</tt> of <tt>LookupSwitchInstruction.MatchOffsetPair</tt>
-        elements.
-        @param matchOffsetPairs the list
+     * Set the match-offset pairs of the branch of this instruction as
+     * a <tt>java.util.List</tt> of <tt>LookupSwitchInstruction.MatchOffsetPair</tt>
+     * elements.
+     *
+     * @param matchOffsetPairs the list
      */
     public void setMatchOffsetPairs(List matchOffsetPairs) {
         this.matchOffsetPairs = matchOffsetPairs;
@@ -77,18 +82,18 @@ public class LookupSwitchInstruction extends PaddedInstruction {
         super.read(in);
 
         matchOffsetPairs.clear();
-        
+
         defaultOffset = in.readInt();
         int numberOfPairs = in.readInt();
-        
+
         int match, offset;
         for (int i = 0; i < numberOfPairs; i++) {
             match = in.readInt();
             offset = in.readInt();
-            
+
             matchOffsetPairs.add(new MatchOffsetPair(match, offset));
         }
-        
+
     }
 
     public void write(ByteCodeOutput out) throws IOException {
@@ -98,14 +103,14 @@ public class LookupSwitchInstruction extends PaddedInstruction {
 
         int numberOfPairs = matchOffsetPairs.size();
         out.writeInt(numberOfPairs);
-        
+
         MatchOffsetPair currentMatchOffsetPair;
         for (int i = 0; i < numberOfPairs; i++) {
-            currentMatchOffsetPair = (MatchOffsetPair)matchOffsetPairs.get(i);
+            currentMatchOffsetPair = (MatchOffsetPair) matchOffsetPairs.get(i);
             out.writeInt(currentMatchOffsetPair.getMatch());
             out.writeInt(currentMatchOffsetPair.getOffset());
         }
     }
 
-    
+
 }

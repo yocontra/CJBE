@@ -53,31 +53,41 @@ package org.apache.bcel.util;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
-import java.util.ArrayList;
+
 import org.apache.bcel.classfile.JavaClass;
 
-/** 
+import java.util.ArrayList;
+
+/**
  * Utility class implementing a (typesafe) collection of JavaClass
  * objects. Contains the most important methods of a Vector.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: ClassVector.java,v 1.2 2006/08/23 13:48:30 andos Exp $
- * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A> 
  * @see ClassQueue
-*/
+ */
 public class ClassVector implements java.io.Serializable {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 8672794840848389126L;
-protected ArrayList<JavaClass> vec = new ArrayList<JavaClass>();
-  
-  public void      addElement(JavaClass clazz) { vec.add(clazz); }
-  public JavaClass elementAt(int index)        { return (JavaClass)vec.get(index); }
-  public void      removeElementAt(int index)  { vec.remove(index); }
+    /**
+     *
+     */
+    private static final long serialVersionUID = 8672794840848389126L;
+    protected ArrayList<JavaClass> vec = new ArrayList<JavaClass>();
 
-  public JavaClass[] toArray() {
-    JavaClass[] classes = new JavaClass[vec.size()];
-    vec.toArray(classes);
-    return classes;
-  }
+    public void addElement(JavaClass clazz) {
+        vec.add(clazz);
+    }
+
+    public JavaClass elementAt(int index) {
+        return (JavaClass) vec.get(index);
+    }
+
+    public void removeElementAt(int index) {
+        vec.remove(index);
+    }
+
+    public JavaClass[] toArray() {
+        JavaClass[] classes = new JavaClass[vec.size()];
+        vec.toArray(classes);
+        return classes;
+    }
 }

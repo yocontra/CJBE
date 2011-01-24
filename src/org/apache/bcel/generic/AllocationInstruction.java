@@ -57,8 +57,9 @@ package org.apache.bcel.generic;
 /**
  * Denote family of instructions that allocates space in the heap.
  *
+ * @author <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  * @version $Id: AllocationInstruction.java,v 1.1 2005/12/16 14:11:24 andos Exp $
- * @author  <A HREF="mailto:markus.dahm@berlin.de">M. Dahm</A>
  */
-public interface AllocationInstruction {}
+public interface AllocationInstruction {
+}
 

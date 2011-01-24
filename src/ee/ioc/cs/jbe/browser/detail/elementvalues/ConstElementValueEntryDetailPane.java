@@ -6,13 +6,11 @@ package ee.ioc.cs.jbe.browser.detail.elementvalues;
     version 2 of the license, or (at your option) any later version.
 */
 
-import org.gjt.jclasslib.structures.elementvalues.ConstElementValue;
-import org.gjt.jclasslib.util.ExtendedJLabel;
-
 import ee.ioc.cs.jbe.browser.BrowserServices;
 import ee.ioc.cs.jbe.browser.BrowserTreeNode;
 import ee.ioc.cs.jbe.browser.detail.FixedListDetailPane;
-
+import org.gjt.jclasslib.structures.elementvalues.ConstElementValue;
+import org.gjt.jclasslib.util.ExtendedJLabel;
 
 import javax.swing.tree.TreePath;
 
@@ -40,7 +38,7 @@ public class ConstElementValueEntryDetailPane extends FixedListDetailPane {
 
     public void show(TreePath treePath) {
         ConstElementValue ceve = (ConstElementValue)
-                ((BrowserTreeNode)treePath.getLastPathComponent()).getElement();
+                ((BrowserTreeNode) treePath.getLastPathComponent()).getElement();
 
         constantPoolHyperlink(lblIndex,
                 lblIndexVerbose,

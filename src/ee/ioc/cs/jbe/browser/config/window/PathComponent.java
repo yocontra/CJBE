@@ -8,10 +8,10 @@
 package ee.ioc.cs.jbe.browser.config.window;
 
 /**
-    Marker interface for browser path components.
-
-    @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
-    @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
-*/
+ * Marker interface for browser path components.
+ *
+ * @author <a href="mailto:jclasslib@ej-technologies.com">Ingo Kegel</a>
+ * @version $Revision: 1.2 $ $Date: 2006/09/25 16:00:58 $
+ */
 public interface PathComponent {
 }
