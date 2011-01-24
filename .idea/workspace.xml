@@ -2,153 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bc4fe1b-ede6-4895-8838-f71b1604eb17" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cjbe.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cjbe.sh" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\CJBE\jbe.bat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\CJBE\jbe.sh" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\Jbe.iml" afterPath="$PROJECT_DIR$/CJBE.iml" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\AbstractDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/AbstractDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\BrowserAboutDialog.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserAboutDialog.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\BrowserApplication.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserApplication.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\BrowserComponent.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserComponent.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\BrowserDesktopManager.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserDesktopManager.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\BrowserDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\BrowserHistory.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserHistory.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\BrowserInternalFrame.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\BrowserMDIFrame.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\BrowserServices.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserServices.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\BrowserTreeNode.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserTreeNode.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\BrowserTreePane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserTreePane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\ConstantPoolHyperlinkListener.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/ConstantPoolHyperlinkListener.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\RecentMenu.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/RecentMenu.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\codeedit\ClassSaver.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/ClassSaver.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\codeedit\CodeGenerator.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/CodeGenerator.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\codeedit\InputFieldException.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/InputFieldException.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\codeedit\JAsmParseException.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParseException.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\codeedit\JAsmParser.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParser.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\codeedit\VerifierDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/VerifierDisplay.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\BrowserConfig.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/BrowserConfig.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\ClassTreeNode.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClassTreeNode.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\ClasspathArchiveEntry.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathArchiveEntry.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\ClasspathBrowser.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathBrowser.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\ClasspathCellRenderer.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathCellRenderer.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\ClasspathChangeEvent.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathChangeEvent.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\ClasspathChangeListener.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathChangeListener.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\ClasspathComponent.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathComponent.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\ClasspathDirectoryEntry.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathDirectoryEntry.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\ClasspathEntry.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathEntry.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\ClasspathSetupDialog.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathSetupDialog.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\FindResult.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/FindResult.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\classpath\package.html" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/package.html" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\package.html" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/package.html" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\window\BrowserPath.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/window/BrowserPath.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\window\CategoryHolder.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/window/CategoryHolder.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\window\IndexHolder.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/window/IndexHolder.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\window\PathComponent.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/window/PathComponent.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\window\ReferenceHolder.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/window/ReferenceHolder.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\window\WindowState.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/window/WindowState.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\config\window\package.html" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/window/package.html" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\AnnotationDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/AnnotationDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\ArrayElementValueDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/ArrayElementValueDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\AttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/AttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\AttributeGeneralPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/AttributeGeneralPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\ClassMemberDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/ClassMemberDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\ConstantPoolDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/ConstantPoolDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\ElementValueDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/ElementValueDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\ElementValuePairDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/ElementValuePairDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\FieldsGeneralPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/FieldsGeneralPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\FixedListDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/FixedListDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\GeneralDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/GeneralDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\InterfaceDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/InterfaceDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\InterfacesGeneralPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/InterfacesGeneralPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\ListDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/ListDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\MethodsGeneralPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/MethodsGeneralPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\AbstractAttributeListDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/AbstractAttributeListDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\AbstractAttributeTableModel.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/AbstractAttributeTableModel.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\AddExceptionPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/AddExceptionPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\AnnotationDefaultAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/AnnotationDefaultAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\CodeAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\ConstantValueAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/ConstantValueAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\EnclosingMethodAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/EnclosingMethodAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\ExceptionsAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/ExceptionsAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\GenericAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/GenericAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\InnerClassesAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/InnerClassesAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\LineNumberTableAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/LineNumberTableAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\LinkRenderer.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/LinkRenderer.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\LocalVariableCommonAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/LocalVariableCommonAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\LocalVariableTableAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/LocalVariableTableAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\LocalVariableTypeTableAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/LocalVariableTypeTableAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\RuntimeAnnotationsAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/RuntimeAnnotationsAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\SignatureAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/SignatureAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\SourceFileAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/SourceFileAttributeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\code\ByteCodeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\code\ByteCodeDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDisplay.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\code\CodeEditArea.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\code\CodeEditPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\code\CounterDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CounterDisplay.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\code\ErrorReportWindow.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ErrorReportWindow.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\code\ExceptionTableDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ExceptionTableDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\code\LineNumberView.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/LineNumberView.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\code\MiscDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/MiscDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\code\QuantDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/QuantDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\code\package.html" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/package.html" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\attributes\package.html" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/package.html" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\AbstractConstantInfoDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/AbstractConstantInfoDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\ClassElementOpener.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ClassElementOpener.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\ConstantAddPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantAddPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\ConstantClassInfoDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantClassInfoDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\ConstantDoubleInfoDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantDoubleInfoDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\ConstantFloatInfoDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantFloatInfoDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\ConstantIntegerInfoDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantIntegerInfoDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\ConstantLongInfoDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantLongInfoDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\ConstantNameAndTypeInfoDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantNameAndTypeInfoDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\ConstantReferenceDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantReferenceDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\ConstantStringInfoDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantStringInfoDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\ConstantUtf8InfoDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantUtf8InfoDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\constants\package.html" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/package.html" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\elementvalues\ClassElementValueEntryDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/elementvalues/ClassElementValueEntryDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\elementvalues\ConstElementValueEntryDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/elementvalues/ConstElementValueEntryDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\elementvalues\EnumElementValueEntryDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/elementvalues/EnumElementValueEntryDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\elementvalues\GenericElementValueDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/elementvalues/GenericElementValueDetailPane.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\elementvalues\package.html" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/elementvalues/package.html" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\detail\package.html" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/package.html" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\add.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/add.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\browser_backward_large.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/browser_backward_large.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\browser_backward_small.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/browser_backward_small.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\browser_forward_large.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/browser_forward_large.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\browser_forward_small.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/browser_forward_small.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\down.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/down.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\help.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/help.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\jbe.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/cjbe.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\jclasslib.gif" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/jclasslib.gif" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\open_large.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/open_large.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\open_small.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/open_small.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\open_ws_large.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/open_ws_large.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\open_ws_small.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/open_ws_small.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\redo_small.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/redo_small.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\reload_large.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/reload_large.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\reload_small.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/reload_small.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\remove.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/remove.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\revert.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/revert.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\save_ws_large.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/save_ws_large.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\save_ws_small.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/save_ws_small.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\tree_large.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/tree_large.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\tree_small.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/tree_small.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\undo_small.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/undo_small.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\up.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/up.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\verify.gif" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/verify.gif" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\verify_large.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/verify_large.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\verify_small.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/verify_small.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\web_large.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/web_large.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\images\web_small.png" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/images/web_small.png" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\CJBE\src\ee\ioc\cs\jbe\viewer\package.html" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/package.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/COPYING.TXT" afterPath="$PROJECT_DIR$/COPYING.TXT" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/ReferenceType.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/ReferenceType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/statics/Pass1Verifier.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/statics/Pass1Verifier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/ClassFile.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/ClassFile.java" />
     </list>
     <ignored path="JBE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -212,29 +70,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BrowserMDIFrame.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java">
+      <file leaf-file-name="ClassMemberDetailPane.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/ClassMemberDetailPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="37" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0">
+            <state line="67" column="21" selection-start="2101" selection-end="2102" vertical-scroll-proportion="-5.230769">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrowserApplication.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserApplication.java">
+      <file leaf-file-name="CodeAttributeDetailPane.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="7" selection-start="733" selection-end="733" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="233" column="107" selection-start="8121" selection-end="8121" vertical-scroll-proportion="0.41666666">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrowserAboutDialog.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserAboutDialog.java">
+      <file leaf-file-name="CodeEditArea.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="51" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.3194805">
-              <folding />
+            <state line="118" column="0" selection-start="4112" selection-end="4112" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -253,11 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ee/ioc/cs/jbe/browser/detail/attributes/code/CodeEditPane.java" />
-        <option value="$PROJECT_DIR$/src/org/gjt/jclasslib/bytecode/OpcodesUtil.java" />
-        <option value="$PROJECT_DIR$/src/org/gjt/jclasslib/io/ByteCodeReader.java" />
-        <option value="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/ClassFile.java" />
-        <option value="$PROJECT_DIR$/src/org/gjt/jclasslib/bytecode/CodeInsertion.java" />
         <option value="$PROJECT_DIR$/src/ee/ioc/cs/jbe/browser/codeedit/JAsmParser.java" />
         <option value="$PROJECT_DIR$/cjbe.sh" />
         <option value="$PROJECT_DIR$/src/ee/ioc/cs/jbe/viewer/BrowserMDIFrame.java" />
@@ -269,6 +126,11 @@
         <option value="$PROJECT_DIR$/src/net/rec/contra/jbe/editor/BrowserApplication.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserApplication.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserAboutDialog.java" />
+        <option value="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/ClassFile.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/WordSearcher.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
       </list>
     </option>
   </component>
@@ -356,6 +218,118 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="editor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="detail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="detail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="attributes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="detail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="attributes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="detail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="attributes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CodeEditArea.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -554,8 +528,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.67045456" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.67045456" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.67045456" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.6720779" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3292683" sideWeight="0.6720779" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32792208" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -601,60 +575,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/bytecode/IncrementInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="617" selection-end="617" vertical-scroll-proportion="-2.0494792" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/bytecode/Opcodes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="68" selection-start="599" selection-end="599" vertical-scroll-proportion="0.15625" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/bytecode/SimpleInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="81" selection-start="562" selection-end="562" vertical-scroll-proportion="0.37760416" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/io/ByteCodeReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="314" column="25" selection-start="10409" selection-end="10409" vertical-scroll-proportion="0.21805792" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/bytecode/OpcodesUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="277" column="17" selection-start="12094" selection-end="12094" vertical-scroll-proportion="0.044293016" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="75" selection-start="162" selection-end="162" vertical-scroll-proportion="0.14480409" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/bytecode/CodeInsertion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="384" column="21" selection-start="17165" selection-end="17165" vertical-scroll-proportion="0.029616725" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/structures/ClassFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="44" selection-start="3125" selection-end="3125" vertical-scroll-proportion="0.029616725" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cjbe.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="36" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CJBE.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="10" selection-start="185" selection-end="185" vertical-scroll-proportion="0.11584327">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/AbstractDetailPane.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="32" selection-start="810" selection-end="810" vertical-scroll-proportion="0.20272572">
@@ -674,9 +594,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="37" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0">
+        <state line="31" column="23" selection-start="1062" selection-end="1062" vertical-scroll-proportion="-10.473118">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserAboutDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="34" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.36363637">
           <folding />
         </state>
       </provider>
@@ -688,10 +615,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserAboutDialog.java">
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/VerifierDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="51" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.3194805">
+        <state line="21" column="80" selection-start="694" selection-end="694" vertical-scroll-proportion="-5.548052">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/BrowserConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="56" selection-start="955" selection-end="955" vertical-scroll-proportion="-4.5896106">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="37" selection-start="442" selection-end="442" vertical-scroll-proportion="0.42337662">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_22/src.zip!/javax/swing/undo/UndoManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="56" selection-start="4899" selection-end="4899" vertical-scroll-proportion="1.6732955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/structures/ClassFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="755" column="13" selection-start="22435" selection-end="22435" vertical-scroll-proportion="0.9064935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="38" selection-start="2392" selection-end="2392" vertical-scroll-proportion="0.13246754">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/ClassMemberDetailPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="21" selection-start="2101" selection-end="2102" vertical-scroll-proportion="-5.230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/WordSearcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="2310" selection-end="2310" vertical-scroll-proportion="0.9116883">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="0" selection-start="4112" selection-end="4112" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="233" column="107" selection-start="8121" selection-end="8121" vertical-scroll-proportion="0.41666666">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

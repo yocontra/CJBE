@@ -20,6 +20,7 @@ import org.gjt.jclasslib.util.GUIHelper;
 import org.gjt.jclasslib.util.ProgressDialog;
 
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
 import javax.swing.tree.TreePath;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -56,6 +57,8 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
     private JPanel mainPane;
 
     private JButton codeSaveButton;
+
+    private JTextField searchField;
 
     private JButton miscSaveButton;
 
@@ -136,11 +139,11 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
         c.gridy = 1;
 
         mainPane.add(quantPane, c);
-        miscSaveButton = new JButton("Save method");
+        miscSaveButton = new JButton("Save Method");
         miscSaveButton.addActionListener(this);
         c = new GridBagConstraints();
         c.gridy = 0;
-
+        mainPane.setBorder(BorderFactory.createTitledBorder("Method Actions"));
         mainPane.add(miscSaveButton, c);
         return mainPane;
 
@@ -149,26 +152,27 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
     private JPanel buildCodeEditPane() {
         mainPane = new JPanel();
         // mainPane.setLayout()
-        mainPane.setLayout(new GridBagLayout());
+        mainPane.setLayout(new BorderLayout());
         try {
             codeEditPane = new CodeEditPane(services);
         } catch (InvalidByteCodeException e) {
             e.printStackTrace();
         }
 
-        GridBagConstraints c = new GridBagConstraints();
-        c.fill = GridBagConstraints.BOTH;
-        c.weightx = 1;
-        c.weighty = 1;
-        c.gridy = 1;
+        mainPane.add(codeEditPane, "Center");
 
-        mainPane.add(codeEditPane, c);
-        codeSaveButton = new JButton("Save method");
+        JPanel savepane = new JPanel();
+        savepane.setLayout(new BorderLayout());
+        codeSaveButton = new JButton("Save Method");
         codeSaveButton.addActionListener(this);
-        c = new GridBagConstraints();
-        c.gridy = 0;
+        savepane.add(codeSaveButton, "East");
+        savepane.add(new JLabel("Search: "), "West");
+        searchField = new JTextField();
+        searchField.addActionListener(this);
+        savepane.add(searchField, "Center");
+        savepane.setBorder(BorderFactory.createTitledBorder("Method Actions"));
+        mainPane.add(savepane, "North");
 
-        mainPane.add(codeSaveButton, c);
         return mainPane;
     }
 
@@ -220,7 +224,17 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
             } else {
                 internalFrame.getParentFrame().doReload();
             }
-
+        } else if (event.getSource() == searchField){
+            int methodIndex = ((BrowserTreeNode) treePath.getParentPath().getLastPathComponent()).getIndex();
+                ((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).word =
+                        ((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).getText().trim();
+                int offset = ((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).searcher.search(((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).word);
+                if (offset != -1) {
+                    try {
+                        ((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).scrollRectToVisible(((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).modelToView(offset));
+                    } catch (BadLocationException e) {
+                    }
+                }
         } else if (event.getSource() == miscSaveButton) {
             try {
                 int methodIndex = ((BrowserTreeNode) treePath.getParentPath()

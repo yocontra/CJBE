@@ -57,13 +57,14 @@ public class CodeEditPane extends AbstractDetailPane implements FocusListener {
     }
 
     private void addEditPane(String methodIndex, byte[] code, ClassFile classFile) {
-        CodeEditArea editArea = new CodeEditArea(methodIndex, code, classFile, internalFrame);
+        CodeEditArea editArea = new CodeEditArea(code, classFile, internalFrame);
 
+        //Scrollbar
         JScrollPane scroll = new JScrollPane(editArea);
         scroll.setRowHeaderView(new LineNumberView(editArea));
         scroll.getVerticalScrollBar().setValue(10);
-        // p.add(scroll);
         this.add(scroll, methodIndex);
+
         editPanes.put(methodIndex, editArea);
     }
 
@@ -94,7 +95,7 @@ public class CodeEditPane extends AbstractDetailPane implements FocusListener {
                 if (methods[i].getAttributes().length > 1) {
                     code = ((CodeAttribute) methods[i].getAttributes()[1]).getCode();
                 } else {
-                    System.out.println("Couldn't locate code attribute for method");
+                    System.out.println("Couldn't locate code attribute for method. :(");
                 }
             }
             if (editPanes.get(methodIndex) == null) {
