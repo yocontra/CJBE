@@ -17,9 +17,8 @@ import java.awt.event.ActionEvent;
 
 public class CodeEditArea extends JEditorPane {
     public UndoManager undo = new UndoManager();
-    public static String word;
-    public static Highlighter highlighter = new UnderlineHighlighter(null);
-    public static WordSearcher searcher;
+    public UnderlineHighlighter.UnderlineHighlightPainter highlighter;
+    public WordSearcher searcher;
 
     private static final long serialVersionUID = -5922040899795041012L;
     BrowserInternalFrame internalFrame;
@@ -31,7 +30,8 @@ public class CodeEditArea extends JEditorPane {
         setEditable(true);
         CodeGenerator cg = new CodeGenerator();
         setText(cg.makeMethod(code, classFile));
-        searcher = new WordSearcher(this);
+        highlighter = new UnderlineHighlighter.UnderlineHighlightPainter(Color.RED);
+        searcher = new WordSearcher(this, highlighter);
 
         getDocument().addUndoableEditListener(new UndoRedoListener());
         getActionMap().put("Undo", new AbstractAction("Undo") {

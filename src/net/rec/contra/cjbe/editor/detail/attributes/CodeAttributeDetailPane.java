@@ -58,6 +58,8 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
 
     private JButton codeSaveButton;
 
+    private JButton codeSearchButton;
+
     private JTextField searchField;
 
     private JButton miscSaveButton;
@@ -163,16 +165,22 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
 
         JPanel savepane = new JPanel();
         savepane.setLayout(new BorderLayout());
+
         codeSaveButton = new JButton("Save Method");
         codeSaveButton.addActionListener(this);
         savepane.add(codeSaveButton, "East");
-        savepane.add(new JLabel("Search: "), "West");
+
+        codeSearchButton = new JButton("Search");
+        codeSearchButton.addActionListener(this);
+        savepane.add(codeSearchButton, "West");
+
+        //savepane.add(new JLabel("Search: "), "West");
         searchField = new JTextField();
-        searchField.addActionListener(this);
         savepane.add(searchField, "Center");
+
         savepane.setBorder(BorderFactory.createTitledBorder("Method Actions"));
         mainPane.add(savepane, "North");
-
+        System.out.println("Pane Built");
         return mainPane;
     }
 
@@ -198,7 +206,22 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
     }
 
     public void actionPerformed(ActionEvent event) {
-        if (event.getSource() == codeSaveButton) {
+        if (event.getSource() == codeSearchButton) {
+            String text = searchField.getText().trim();
+            //System.out.println("Searching for " + text);
+            int methodIndex = ((BrowserTreeNode) treePath.getParentPath().getLastPathComponent()).getIndex();
+            int offset = ((CodeEditArea) getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).searcher.search(text);
+            if (offset != -1) {
+                try {
+                    ((CodeEditArea) getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex)))
+                            .scrollRectToVisible(((CodeEditArea) getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).modelToView(offset));
+                } catch (BadLocationException ignored) {
+                    //System.out.println(ignored);
+                }
+            } else {
+                System.out.println("Couldn't find " + text);
+            }
+        } else if (event.getSource() == codeSaveButton) {
 
             int methodIndex = ((BrowserTreeNode) treePath.getParentPath()
                     .getLastPathComponent()).getIndex();
@@ -224,17 +247,6 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
             } else {
                 internalFrame.getParentFrame().doReload();
             }
-        } else if (event.getSource() == searchField){
-            int methodIndex = ((BrowserTreeNode) treePath.getParentPath().getLastPathComponent()).getIndex();
-                ((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).word =
-                        ((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).getText().trim();
-                int offset = ((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).searcher.search(((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).word);
-                if (offset != -1) {
-                    try {
-                        ((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).scrollRectToVisible(((CodeEditArea)getCodeEditPane().getEditPanes().get(Integer.toString(methodIndex))).modelToView(offset));
-                    } catch (BadLocationException e) {
-                    }
-                }
         } else if (event.getSource() == miscSaveButton) {
             try {
                 int methodIndex = ((BrowserTreeNode) treePath.getParentPath()

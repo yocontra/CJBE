@@ -4,26 +4,17 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.Highlighter;
 import javax.swing.text.JTextComponent;
-import java.awt.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Eric
- * Date: 1/24/11
- * Time: 9:38 AM
- * To change this template use File | Settings | File Templates.
- */
 public class WordSearcher {
-    public WordSearcher(JTextComponent comp) {
+    public WordSearcher(JTextComponent comp, UnderlineHighlighter.UnderlineHighlightPainter pz) {
         this.comp = comp;
-        this.painter = new UnderlineHighlighter.UnderlineHighlightPainter(
-                Color.red);
+        this.painter = pz;
     }
 
     // Search for a word and return the offset of the
     // first occurrence. Highlights are added for all
     // occurrences found.
-    public static int search(String word) {
+    public int search(String word) {
         int firstOffset = -1;
         Highlighter highlighter = comp.getHighlighter();
 
@@ -69,8 +60,8 @@ public class WordSearcher {
         return firstOffset;
     }
 
-    protected static JTextComponent comp;
+    protected JTextComponent comp;
 
-    protected static UnderlineHighlighter.UnderlineHighlightPainter painter;
+    protected UnderlineHighlighter.UnderlineHighlightPainter painter;
 
 }
