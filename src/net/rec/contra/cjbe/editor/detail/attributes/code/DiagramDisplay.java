@@ -23,6 +23,7 @@ public class DiagramDisplay extends JEditorPane {
     DiagramDisplay(int methodIndex, ClassFile classFile, BrowserInternalFrame internalFrame) {
         this.internalFrame = internalFrame;
         try {
+            this.setEditable(false);
             Scene tz = Scene.v();
             //tz.addBasicClass(classFile.getThisClassName(), SootClass.SIGNATURES);
             tz.setPhantomRefs(true);
