@@ -48,6 +48,8 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
 
     private ByteCodeDetailPane byteCodePane;
 
+    private BrowserDiagramPane diagramPane;
+
     private QuantDetailPane quantPane;
 
     private CodeEditPane codeEditPane;
@@ -104,18 +106,22 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
     }
 
     private JTabbedPane buildTabbedPane() {
-
         tabbedPane = new JTabbedPane();
         tabbedPane.addTab("Bytecode", buildByteCodePane());
         tabbedPane.addTab("Exception table", buildExceptionTablePane());
         tabbedPane.addTab("Misc", buildMiscPane());
         tabbedPane.addTab("Code Editor", buildCodeEditPane());
+        tabbedPane.addTab("Analysis", buildDiagramDisplayPanel());
         return tabbedPane;
     }
 
     private JPanel buildByteCodePane() {
         byteCodePane = new ByteCodeDetailPane(services);
         return byteCodePane;
+    }
+    private JPanel buildDiagramDisplayPanel() {
+        diagramPane = new BrowserDiagramPane(services);
+        return diagramPane;
     }
 
     private JPanel buildExceptionTablePane() {
@@ -180,7 +186,7 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
 
         savepane.setBorder(BorderFactory.createTitledBorder("Method Actions"));
         mainPane.add(savepane, "North");
-        System.out.println("Pane Built");
+        //System.out.println("Pane Built");
         return mainPane;
     }
 

@@ -64,13 +64,13 @@ public class BrowserInternalFrame extends BasicInternalFrame
     public BrowserInternalFrame(BasicDesktopManager desktopManager, WindowState windowState) {
         super(desktopManager, windowState.getFileName());
         fileName = windowState.getFileName();
-        doBackup(fileName);
+        doBackup();
         setFrameIcon(BrowserMDIFrame.ICON_APPLICATION);
         readClassFile();
         setupInternalFrame(windowState.getBrowserPath());
     }
 
-    private void doBackup(String fileName2) {
+    private void doBackup() {
 
         try {
             File source = new File(fileName);
@@ -86,14 +86,19 @@ public class BrowserInternalFrame extends BasicInternalFrame
     }
 
     public Object getInitParam() {
-        WindowState windowState = new WindowState(fileName, browserComponent.getBrowserPath(""));
-        return windowState;
+        return new WindowState(fileName, browserComponent.getBrowserPath(""));
     }
 
     // Browser services
 
     public ClassFile getClassFile() {
         return classFile;
+    }
+
+    public String getClassPathString() {
+        File nfile = new File(fileName);
+        String name = nfile.getAbsolutePath();
+        return name.substring(0, name.lastIndexOf("\\"));
     }
 
     public void activate() {
@@ -137,20 +142,18 @@ public class BrowserInternalFrame extends BasicInternalFrame
                 frame.setSelected(true);
                 frame.browserComponent.setBrowserPath(browserPath);
                 desktopManager.scrollToVisible(frame);
-            } catch (PropertyVetoException e) {
+            } catch (PropertyVetoException ignored) {
             }
         } else {
             WindowState windowState = new WindowState(findResult.getFileName(), browserPath);
             frame = new BrowserInternalFrame(desktopManager, windowState);
-            if (frame != null) {
-                if (isMaximum()) {
-                    try {
-                        frame.setMaximum(true);
-                    } catch (PropertyVetoException ex) {
-                    }
-                } else {
-                    desktopManager.scrollToVisible(frame);
+            if (isMaximum()) {
+                try {
+                    frame.setMaximum(true);
+                } catch (PropertyVetoException ignored) {
                 }
+            } else {
+                desktopManager.scrollToVisible(frame);
             }
         }
     }

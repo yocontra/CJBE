@@ -46,7 +46,7 @@ public class ByteCodeDetailPane extends AbstractDetailPane {
     protected void setupComponent() {
 
         setLayout(new BorderLayout());
-        btnCopy = new JButton("Copy to clipboard");
+        btnCopy = new JButton("Copy to Clipboard");
         btnCopy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 byteCodeDisplay.copyToClipboard();

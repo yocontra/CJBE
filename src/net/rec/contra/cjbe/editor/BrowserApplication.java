@@ -53,7 +53,7 @@ public class BrowserApplication {
             String lookAndFeelClass = UIManager.getSystemLookAndFeelClassName();
             try {
                 UIManager.setLookAndFeel(lookAndFeelClass);
-            } catch (Exception ex) {
+            } catch (Exception ignored) {
             }
         }
 
@@ -71,7 +71,7 @@ public class BrowserApplication {
                                     .openClassFromFile(file);
                             try {
                                 internalFrame.setMaximum(true);
-                            } catch (PropertyVetoException e) {
+                            } catch (PropertyVetoException ignored) {
                             }
                         }
                     }
