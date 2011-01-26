@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CJBE.iml" filepath="$PROJECT_DIR$/CJBE.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Jbe.iml" filepath="$PROJECT_DIR$/Jbe.iml" />
     </modules>
   </component>
 </project>
