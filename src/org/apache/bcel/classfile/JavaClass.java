@@ -166,9 +166,9 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
         this.source = source;
 
         // Get source file name if available
-        for (int i = 0; i < attributes.length; i++) {
-            if (attributes[i] instanceof SourceFile) {
-                source_file_name = ((SourceFile) attributes[i]).getSourceFileName();
+        for (Attribute attribute : attributes) {
+            if (attribute instanceof SourceFile) {
+                source_file_name = ((SourceFile) attribute).getSourceFileName();
                 break;
             }
         }
@@ -245,7 +245,7 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
 
     /* Print debug information depending on `JavaClass.debug'
     */
-    static final void Debug(String str) {
+    static void Debug(String str) {
         if (debug)
             System.out.println(str);
     }
@@ -329,21 +329,17 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
         file.writeShort(superclass_name_index);
 
         file.writeShort(interfaces.length);
-        for (int i = 0; i < interfaces.length; i++)
-            file.writeShort(interfaces[i]);
+        for (int anInterface : interfaces) file.writeShort(anInterface);
 
         file.writeShort(fields.length);
-        for (int i = 0; i < fields.length; i++)
-            fields[i].dump(file);
+        for (Field field : fields) field.dump(file);
 
         file.writeShort(methods.length);
-        for (int i = 0; i < methods.length; i++)
-            methods[i].dump(file);
+        for (Method method : methods) method.dump(file);
 
         if (attributes != null) {
             file.writeShort(attributes.length);
-            for (int i = 0; i < attributes.length; i++)
-                attributes[i].dump(file);
+            for (Attribute attribute : attributes) attribute.dump(file);
         } else
             file.writeShort(0);
 
@@ -434,9 +430,7 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
      *         java.lang.reflect.Method if any
      */
     public Method getMethod(java.lang.reflect.Method m) {
-        for (int i = 0; i < methods.length; i++) {
-            Method method = methods[i];
-
+        for (Method method : methods) {
             if (m.getName().equals(method.getName()) &&
                     (m.getModifiers() == method.getModifiers()) &&
                     Type.getSignature(m).equals(method.getSignature())) {
@@ -480,7 +474,7 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
         String debug = System.getProperty("JavaClass.debug");
 
         if (debug != null)
-            JavaClass.debug = new Boolean(debug).booleanValue();
+            JavaClass.debug = Boolean.parseBoolean(debug);
 
         // Get path separator either / or \ usually
         String sep = System.getProperty("file.separator");
@@ -488,7 +482,7 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
         if (sep != null)
             try {
                 JavaClass.sep = sep.charAt(0);
-            } catch (StringIndexOutOfBoundsException e) {
+            } catch (StringIndexOutOfBoundsException ignored) {
             } // Never reached
     }
 
@@ -626,26 +620,23 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
 
         if (attributes.length > 0) {
             buf.append("\nAttribute(s):\n");
-            for (int i = 0; i < attributes.length; i++)
-                buf.append(indent(attributes[i]));
+            for (Attribute attribute : attributes) buf.append(indent(attribute));
         }
 
         if (fields.length > 0) {
             buf.append("\n" + fields.length + " fields:\n");
-            for (int i = 0; i < fields.length; i++)
-                buf.append("\t" + fields[i] + '\n');
+            for (Field field : fields) buf.append("\t" + field + '\n');
         }
 
         if (methods.length > 0) {
             buf.append("\n" + methods.length + " methods:\n");
-            for (int i = 0; i < methods.length; i++)
-                buf.append("\t" + methods[i] + '\n');
+            for (Method method : methods) buf.append("\t" + method + '\n');
         }
 
         return buf.toString();
     }
 
-    private static final String indent(Object obj) {
+    private static String indent(Object obj) {
         StringTokenizer tok = new StringTokenizer(obj.toString(), "\n");
         StringBuffer buf = new StringBuffer();
 
@@ -663,12 +654,12 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
 
         try {
             c = (JavaClass) clone();
-        } catch (CloneNotSupportedException e) {
+        } catch (CloneNotSupportedException ignored) {
         }
 
         c.constant_pool = constant_pool.copy();
-        c.interfaces = (int[]) interfaces.clone();
-        c.interface_names = (String[]) interface_names.clone();
+        c.interfaces = interfaces.clone();
+        c.interface_names = interface_names.clone();
 
         c.fields = new Field[fields.length];
         for (int i = 0; i < fields.length; i++)
@@ -729,17 +720,14 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
 
         JavaClass[] super_classes = getSuperClasses();
 
-        for (int i = 0; i < super_classes.length; i++) {
-            if (super_classes[i].equals(super_class)) {
+        for (JavaClass super_class1 : super_classes) {
+            if (super_class1.equals(super_class)) {
                 return true;
             }
         }
 
-        if (super_class.isInterface()) {
-            return implementationOf(super_class);
-        }
+        return super_class.isInterface() && implementationOf(super_class);
 
-        return false;
     }
 
     /**
@@ -756,8 +744,8 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
 
         JavaClass[] super_interfaces = getAllInterfaces();
 
-        for (int i = 0; i < super_interfaces.length; i++) {
-            if (super_interfaces[i].equals(inter)) {
+        for (JavaClass super_interface : super_interfaces) {
+            if (super_interface.equals(inter)) {
                 return true;
             }
         }
@@ -840,8 +828,8 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
                 }
             }
 
-            for (int i = 0; i < interfaces.length; i++) {
-                queue.enqueue(interfaces[i]);
+            for (JavaClass anInterface : interfaces) {
+                queue.enqueue(anInterface);
             }
         }
 

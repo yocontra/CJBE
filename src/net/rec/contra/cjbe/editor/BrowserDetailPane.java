@@ -53,7 +53,7 @@ public class BrowserDetailPane extends JPanel {
             return;
         }
         CardLayout layout = (CardLayout) getLayout();
-        AbstractDetailPane detailPane = (AbstractDetailPane) nodeTypeToDetailPane.get(nodeType);
+        AbstractDetailPane detailPane = nodeTypeToDetailPane.get(nodeType);
         if (detailPane != null) {
             detailPane.show(treePath);
         }

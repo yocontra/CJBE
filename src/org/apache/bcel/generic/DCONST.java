@@ -91,7 +91,7 @@ public class DCONST extends Instruction
     }
 
     public Number getValue() {
-        return new Double(value);
+        return value;
     }
 
     /**

@@ -49,8 +49,8 @@ public class JAsmParseException extends Exception {
 
     public String getErrorVerbose() {
         StringBuffer errorVerbose = new StringBuffer();
-        for (int i = 0; i < errors.size(); i++) {
-            errorVerbose.append(errors.get(i).toString()).append("\n");
+        for (Error error : errors) {
+            errorVerbose.append(error.toString()).append("\n");
         }
         return errorVerbose.toString();
     }

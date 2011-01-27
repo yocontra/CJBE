@@ -94,11 +94,8 @@ public interface InstructionComparator {
                         } else if (i1 instanceof IndexedInstruction) {
                             return ((IndexedInstruction) i1).getIndex() ==
                                     ((IndexedInstruction) i2).getIndex();
-                        } else if (i1 instanceof NEWARRAY) {
-                            return ((NEWARRAY) i1).getTypecode() == ((NEWARRAY) i2).getTypecode();
-                        } else {
-                            return true;
-                        }
+                        } else
+                            return !(i1 instanceof NEWARRAY) || ((NEWARRAY) i1).getTypecode() == ((NEWARRAY) i2).getTypecode();
                     }
 
                     return false;

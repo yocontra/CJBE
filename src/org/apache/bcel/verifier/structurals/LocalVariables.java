@@ -89,9 +89,7 @@ public class LocalVariables {
      */
     protected Object clone() {
         LocalVariables lvs = new LocalVariables(locals.length);
-        for (int i = 0; i < locals.length; i++) {
-            lvs.locals[i] = this.locals[i];
-        }
+        System.arraycopy(this.locals, 0, lvs.locals, 0, locals.length);
         return lvs;
     }
 
@@ -209,7 +207,7 @@ public class LocalVariables {
      * Returns a String representation of this object.
      */
     public String toString() {
-        String s = new String();
+        String s = "";
         for (int i = 0; i < locals.length; i++) {
             s += Integer.toString(i) + ": " + locals[i] + "\n";
         }

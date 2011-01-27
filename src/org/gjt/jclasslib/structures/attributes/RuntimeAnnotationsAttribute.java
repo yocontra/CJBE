@@ -79,8 +79,8 @@ public class RuntimeAnnotationsAttribute extends AttributeInfo {
 
     public int getAttributeLength() {
         int length = INITIAL_LENGTH;
-        for (int i = 0; i < runtimeAnnotations.length; i++) {
-            length += runtimeAnnotations[i].getLength();
+        for (AnnotationElementValue runtimeAnnotation : runtimeAnnotations) {
+            length += runtimeAnnotation.getLength();
         }
         return length;
     }

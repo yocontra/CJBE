@@ -81,7 +81,7 @@ public final class BasicType extends Type {
             throw new ClassGenException("Invalid type: " + type);
     }
 
-    public static final BasicType getType(byte type) {
+    public static BasicType getType(byte type) {
         switch (type) {
             case Constants.T_VOID:
                 return VOID;
@@ -111,7 +111,6 @@ public final class BasicType extends Type {
      * @return true if both type objects refer to the same type
      */
     public boolean equals(Object type) {
-        return (type instanceof BasicType) ?
-                ((BasicType) type).type == this.type : false;
+        return (type instanceof BasicType) && ((BasicType) type).type == this.type;
     }
 }

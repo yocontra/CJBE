@@ -237,7 +237,7 @@ public final class CodeException
     public CodeException copy() {
         try {
             return (CodeException) clone();
-        } catch (CloneNotSupportedException e) {
+        } catch (CloneNotSupportedException ignored) {
         }
 
         return null;

@@ -132,7 +132,7 @@ public class ConstantPoolDetailPane extends AbstractDetailPane {
         if (paneName == null) {
             layout.show(this, SCREEN_CONSTANT_UNKNOWN);
         } else {
-            AbstractDetailPane pane = (AbstractDetailPane) constantTypeToDetailPane.get(paneName);
+            AbstractDetailPane pane = constantTypeToDetailPane.get(paneName);
             pane.show(treePath);
             layout.show(this, paneName);
         }

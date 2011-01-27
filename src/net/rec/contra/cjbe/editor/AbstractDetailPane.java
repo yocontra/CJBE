@@ -211,7 +211,7 @@ public abstract class AbstractDetailPane extends JPanel {
 
     private void setupMouseListener(ExtendedJLabel value, int constantPoolIndex) {
 
-        MouseListener oldListener = (MouseListener) labelToMouseListener.get(value);
+        MouseListener oldListener = labelToMouseListener.get(value);
         if (oldListener != null) {
             value.removeMouseListener(oldListener);
         }

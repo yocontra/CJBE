@@ -93,7 +93,7 @@ public class FCONST extends Instruction
     }
 
     public Number getValue() {
-        return new Float(value);
+        return value;
     }
 
     /**

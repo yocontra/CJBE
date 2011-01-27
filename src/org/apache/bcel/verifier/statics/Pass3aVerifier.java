@@ -199,10 +199,10 @@ public final class Pass3aVerifier extends PassVerifier {
             LineNumber[] lineNumbers = lnt.getLineNumberTable();
             IntList offsets = new IntList();
             lineNumber_loop:
-            for (int i = 0; i < lineNumbers.length; i++) { // may appear in any order.
+            for (LineNumber lineNumber : lineNumbers) { // may appear in any order.
                 for (int j = 0; j < instructionPositions.length; j++) {
                     // TODO: Make this a binary search! The instructionPositions array is naturally ordered!
-                    int offset = lineNumbers[i].getStartPC();
+                    int offset = lineNumber.getStartPC();
                     if (instructionPositions[j] == offset) {
                         if (offsets.contains(offset)) {
                             addMessage("LineNumberTable attribute '" + code.getLineNumberTable() + "' refers to the same code offset ('" + offset + "') more than once which is violating the semantics [but is sometimes produced by IBM's 'jikes' compiler].");
@@ -212,7 +212,7 @@ public final class Pass3aVerifier extends PassVerifier {
                         continue lineNumber_loop;
                     }
                 }
-                throw new ClassConstraintException("Code attribute '" + code + "' has a LineNumberTable attribute '" + code.getLineNumberTable() + "' referring to a code offset ('" + lineNumbers[i].getStartPC() + "') that does not exist.");
+                throw new ClassConstraintException("Code attribute '" + code + "' has a LineNumberTable attribute '" + code.getLineNumberTable() + "' referring to a code offset ('" + lineNumber.getStartPC() + "') that does not exist.");
             }
         }
 
@@ -222,14 +222,14 @@ public final class Pass3aVerifier extends PassVerifier {
         /* We cannot use code.getLocalVariableTable() because there could be more
              than only one. This is a bug in BCEL. */
         Attribute[] atts = code.getAttributes();
-        for (int a = 0; a < atts.length; a++) {
-            if (atts[a] instanceof LocalVariableTable) {
-                LocalVariableTable lvt = (LocalVariableTable) atts[a];
+        for (Attribute att : atts) {
+            if (att instanceof LocalVariableTable) {
+                LocalVariableTable lvt = (LocalVariableTable) att;
                 if (lvt != null) {
                     LocalVariable[] localVariables = lvt.getLocalVariableTable();
-                    for (int i = 0; i < localVariables.length; i++) {
-                        int startpc = localVariables[i].getStartPC();
-                        int length = localVariables[i].getLength();
+                    for (LocalVariable localVariable : localVariables) {
+                        int startpc = localVariable.getStartPC();
+                        int length = localVariable.getLength();
 
                         if (!contains(instructionPositions, startpc)) {
                             throw new ClassConstraintException("Code attribute '" + code + "' has a LocalVariableTable attribute '" + code.getLocalVariableTable() + "' referring to a code offset ('" + startpc + "') that does not exist.");
@@ -249,21 +249,21 @@ public final class Pass3aVerifier extends PassVerifier {
         // inclusive/exclusive as in the Java Virtual Machine Specification.
         // WARNING: This is not true for BCEL's "generic" API.
         CodeException[] exceptionTable = code.getExceptionTable();
-        for (int i = 0; i < exceptionTable.length; i++) {
-            int startpc = exceptionTable[i].getStartPC();
-            int endpc = exceptionTable[i].getEndPC();
-            int handlerpc = exceptionTable[i].getHandlerPC();
+        for (CodeException anExceptionTable : exceptionTable) {
+            int startpc = anExceptionTable.getStartPC();
+            int endpc = anExceptionTable.getEndPC();
+            int handlerpc = anExceptionTable.getHandlerPC();
             if (startpc >= endpc) {
-                throw new ClassConstraintException("Code attribute '" + code + "' has an exception_table entry '" + exceptionTable[i] + "' that has its start_pc ('" + startpc + "') not smaller than its end_pc ('" + endpc + "').");
+                throw new ClassConstraintException("Code attribute '" + code + "' has an exception_table entry '" + anExceptionTable + "' that has its start_pc ('" + startpc + "') not smaller than its end_pc ('" + endpc + "').");
             }
             if (!contains(instructionPositions, startpc)) {
-                throw new ClassConstraintException("Code attribute '" + code + "' has an exception_table entry '" + exceptionTable[i] + "' that has a non-existant bytecode offset as its start_pc ('" + startpc + "').");
+                throw new ClassConstraintException("Code attribute '" + code + "' has an exception_table entry '" + anExceptionTable + "' that has a non-existant bytecode offset as its start_pc ('" + startpc + "').");
             }
             if ((!contains(instructionPositions, endpc)) && (endpc != codeLength)) {
-                throw new ClassConstraintException("Code attribute '" + code + "' has an exception_table entry '" + exceptionTable[i] + "' that has a non-existant bytecode offset as its end_pc ('" + startpc + "') [that is also not equal to code_length ('" + codeLength + "')].");
+                throw new ClassConstraintException("Code attribute '" + code + "' has an exception_table entry '" + anExceptionTable + "' that has a non-existant bytecode offset as its end_pc ('" + startpc + "') [that is also not equal to code_length ('" + codeLength + "')].");
             }
             if (!contains(instructionPositions, handlerpc)) {
-                throw new ClassConstraintException("Code attribute '" + code + "' has an exception_table entry '" + exceptionTable[i] + "' that has a non-existant bytecode offset as its handler_pc ('" + handlerpc + "').");
+                throw new ClassConstraintException("Code attribute '" + code + "' has an exception_table entry '" + anExceptionTable + "' that has a non-existant bytecode offset as its handler_pc ('" + handlerpc + "').");
             }
         }
     }
@@ -380,8 +380,8 @@ public final class Pass3aVerifier extends PassVerifier {
      * A small utility method returning if a given int i is in the given int[] ints.
      */
     private static boolean contains(int[] ints, int i) {
-        for (int j = 0; j < ints.length; j++) {
-            if (ints[j] == i) return true;
+        for (int anInt : ints) {
+            if (anInt == i) return true;
         }
         return false;
     }
@@ -509,9 +509,9 @@ public final class Pass3aVerifier extends PassVerifier {
             JavaClass jc = Repository.lookupClass(o.getClassType(cpg).getClassName());
             Field[] fields = jc.getFields();
             Field f = null;
-            for (int i = 0; i < fields.length; i++) {
-                if (fields[i].getName().equals(field_name)) {
-                    f = fields[i];
+            for (Field field : fields) {
+                if (field.getName().equals(field_name)) {
+                    f = field;
                     break;
                 }
             }
@@ -592,8 +592,8 @@ public final class Pass3aVerifier extends PassVerifier {
             }
 
             Type[] ts = o.getArgumentTypes(cpg);
-            for (int i = 0; i < ts.length; i++) {
-                t = ts[i];
+            for (Type t1 : ts) {
+                t = t1;
                 if (t instanceof ArrayType) {
                     t = ((ArrayType) t).getBasicType();
                 }
@@ -921,9 +921,9 @@ public final class Pass3aVerifier extends PassVerifier {
             JavaClass jc = Repository.lookupClass(o.getClassType(cpg).getClassName());
             Field[] fields = jc.getFields();
             Field f = null;
-            for (int i = 0; i < fields.length; i++) {
-                if (fields[i].getName().equals(field_name)) {
-                    f = fields[i];
+            for (Field field : fields) {
+                if (field.getName().equals(field_name)) {
+                    f = field;
                     break;
                 }
             }
@@ -957,9 +957,9 @@ public final class Pass3aVerifier extends PassVerifier {
             JavaClass jc = Repository.lookupClass(o.getClassType(cpg).getClassName());
             Field[] fields = jc.getFields();
             Field f = null;
-            for (int i = 0; i < fields.length; i++) {
-                if (fields[i].getName().equals(field_name)) {
-                    f = fields[i];
+            for (Field field : fields) {
+                if (field.getName().equals(field_name)) {
+                    f = field;
                     break;
                 }
             }
@@ -994,11 +994,11 @@ public final class Pass3aVerifier extends PassVerifier {
             JavaClass jc = Repository.lookupClass(classname);
             Method[] ms = jc.getMethods();
             Method m = null;
-            for (int i = 0; i < ms.length; i++) {
-                if ((ms[i].getName().equals(o.getMethodName(cpg))) &&
-                        (Type.getReturnType(ms[i].getSignature()).equals(o.getReturnType(cpg))) &&
-                        (objarrayequals(Type.getArgumentTypes(ms[i].getSignature()), o.getArgumentTypes(cpg)))) {
-                    m = ms[i];
+            for (Method m1 : ms) {
+                if ((m1.getName().equals(o.getMethodName(cpg))) &&
+                        (Type.getReturnType(m1.getSignature()).equals(o.getReturnType(cpg))) &&
+                        (objarrayequals(Type.getArgumentTypes(m1.getSignature()), o.getArgumentTypes(cpg)))) {
+                    m = m1;
                     break;
                 }
             }
@@ -1022,11 +1022,11 @@ public final class Pass3aVerifier extends PassVerifier {
             JavaClass jc = Repository.lookupClass(classname);
             Method[] ms = jc.getMethods();
             Method m = null;
-            for (int i = 0; i < ms.length; i++) {
-                if ((ms[i].getName().equals(o.getMethodName(cpg))) &&
-                        (Type.getReturnType(ms[i].getSignature()).equals(o.getReturnType(cpg))) &&
-                        (objarrayequals(Type.getArgumentTypes(ms[i].getSignature()), o.getArgumentTypes(cpg)))) {
-                    m = ms[i];
+            for (Method m1 : ms) {
+                if ((m1.getName().equals(o.getMethodName(cpg))) &&
+                        (Type.getReturnType(m1.getSignature()).equals(o.getReturnType(cpg))) &&
+                        (objarrayequals(Type.getArgumentTypes(m1.getSignature()), o.getArgumentTypes(cpg)))) {
+                    m = m1;
                     break;
                 }
             }
@@ -1050,11 +1050,11 @@ public final class Pass3aVerifier extends PassVerifier {
                             current = Repository.lookupClass(current.getSuperclassName());
 
                             Method[] meths = current.getMethods();
-                            for (int i = 0; i < meths.length; i++) {
-                                if ((meths[i].getName().equals(o.getMethodName(cpg))) &&
-                                        (Type.getReturnType(meths[i].getSignature()).equals(o.getReturnType(cpg))) &&
-                                        (objarrayequals(Type.getArgumentTypes(meths[i].getSignature()), o.getArgumentTypes(cpg)))) {
-                                    meth = meths[i];
+                            for (Method meth1 : meths) {
+                                if ((meth1.getName().equals(o.getMethodName(cpg))) &&
+                                        (Type.getReturnType(meth1.getSignature()).equals(o.getReturnType(cpg))) &&
+                                        (objarrayequals(Type.getArgumentTypes(meth1.getSignature()), o.getArgumentTypes(cpg)))) {
+                                    meth = meth1;
                                     break;
                                 }
                             }
@@ -1082,11 +1082,11 @@ public final class Pass3aVerifier extends PassVerifier {
             JavaClass jc = Repository.lookupClass(classname);
             Method[] ms = jc.getMethods();
             Method m = null;
-            for (int i = 0; i < ms.length; i++) {
-                if ((ms[i].getName().equals(o.getMethodName(cpg))) &&
-                        (Type.getReturnType(ms[i].getSignature()).equals(o.getReturnType(cpg))) &&
-                        (objarrayequals(Type.getArgumentTypes(ms[i].getSignature()), o.getArgumentTypes(cpg)))) {
-                    m = ms[i];
+            for (Method m1 : ms) {
+                if ((m1.getName().equals(o.getMethodName(cpg))) &&
+                        (Type.getReturnType(m1.getSignature()).equals(o.getReturnType(cpg))) &&
+                        (objarrayequals(Type.getArgumentTypes(m1.getSignature()), o.getArgumentTypes(cpg)))) {
+                    m = m1;
                     break;
                 }
             }
@@ -1113,11 +1113,11 @@ public final class Pass3aVerifier extends PassVerifier {
             JavaClass jc = Repository.lookupClass(classname);
             Method[] ms = jc.getMethods();
             Method m = null;
-            for (int i = 0; i < ms.length; i++) {
-                if ((ms[i].getName().equals(o.getMethodName(cpg))) &&
-                        (Type.getReturnType(ms[i].getSignature()).equals(o.getReturnType(cpg))) &&
-                        (objarrayequals(Type.getArgumentTypes(ms[i].getSignature()), o.getArgumentTypes(cpg)))) {
-                    m = ms[i];
+            for (Method m1 : ms) {
+                if ((m1.getName().equals(o.getMethodName(cpg))) &&
+                        (Type.getReturnType(m1.getSignature()).equals(o.getReturnType(cpg))) &&
+                        (objarrayequals(Type.getArgumentTypes(m1.getSignature()), o.getArgumentTypes(cpg)))) {
+                    m = m1;
                     break;
                 }
             }

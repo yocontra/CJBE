@@ -94,7 +94,7 @@ public class VerifierFactory {
      */
     public static Verifier getVerifier(String fully_qualified_classname) {
 
-        Verifier v = (Verifier) (hashMap.get(fully_qualified_classname));
+        Verifier v = hashMap.get(fully_qualified_classname);
         if (v == null) {
             v = new Verifier(fully_qualified_classname);
             //hashMap.put(fully_qualified_classname, v);
@@ -109,9 +109,8 @@ public class VerifierFactory {
      */
     private static void notify(String fully_qualified_classname) {
         // notify the observers
-        Iterator i = observers.iterator();
-        while (i.hasNext()) {
-            VerifierFactoryObserver vfo = (VerifierFactoryObserver) i.next();
+        for (Object observer : observers) {
+            VerifierFactoryObserver vfo = (VerifierFactoryObserver) observer;
             vfo.update(fully_qualified_classname);
         }
     }
@@ -125,7 +124,7 @@ public class VerifierFactory {
      */
     public static Verifier[] getVerifiers() {
         Verifier[] vs = new Verifier[hashMap.values().size()];
-        return (Verifier[]) (hashMap.values().toArray(vs));    // Because vs is big enough, vs is used to store the values into and returned!
+        return hashMap.values().toArray(vs);    // Because vs is big enough, vs is used to store the values into and returned!
     }
 
     /**

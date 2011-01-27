@@ -50,9 +50,9 @@ public abstract class AbstractStructureWithAttributes extends AbstractStructure 
      */
     public AttributeInfo findAttribute(Class attributeClass) {
         AttributeInfo foundAttribute = null;
-        for (int i = 0; i < attributes.length; i++) {
-            if (attributes[i].getClass() == attributeClass) {
-                foundAttribute = attributes[i];
+        for (AttributeInfo attribute : attributes) {
+            if (attribute.getClass() == attributeClass) {
+                foundAttribute = attribute;
                 break;
             }
         }

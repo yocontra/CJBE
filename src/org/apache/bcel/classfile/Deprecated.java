@@ -168,7 +168,7 @@ public final class Deprecated extends Attribute {
         Deprecated c = (Deprecated) clone();
 
         if (bytes != null)
-            c.bytes = (byte[]) bytes.clone();
+            c.bytes = bytes.clone();
 
         c.constant_pool = constant_pool;
         return c;

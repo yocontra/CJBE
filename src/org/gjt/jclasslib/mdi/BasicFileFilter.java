@@ -61,8 +61,8 @@ public class BasicFileFilter extends FileFilter {
         if (extensions == null)
             return true;
 
-        for (int i = 0; i < extensions.length; i++) {
-            if (file.isDirectory() || file.getName().endsWith(extensions[i]))
+        for (String extension : extensions) {
+            if (file.isDirectory() || file.getName().endsWith(extension))
                 return true;
         }
         return false;

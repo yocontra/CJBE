@@ -1317,7 +1317,7 @@ public class JAsmParser {
         try {
             long larg = Long.parseLong(instrElems[1]);
             return cpg.addLong(larg);
-        } catch (NumberFormatException nfei) {
+        } catch (NumberFormatException ignored) {
 
         }
 

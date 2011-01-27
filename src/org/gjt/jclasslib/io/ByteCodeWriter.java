@@ -38,9 +38,8 @@ public class ByteCodeWriter {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ByteCodeOutputStream bcos = new ByteCodeOutputStream(baos);
 
-        Iterator it = instructions.iterator();
-        while (it.hasNext()) {
-            writeNextInstruction(bcos, (AbstractInstruction) it.next());
+        for (Object instruction : instructions) {
+            writeNextInstruction(bcos, (AbstractInstruction) instruction);
         }
         bcos.close();
         return baos.toByteArray();

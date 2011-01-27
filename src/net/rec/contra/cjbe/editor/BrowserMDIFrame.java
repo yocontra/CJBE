@@ -281,7 +281,7 @@ public class BrowserMDIFrame extends BasicMDIFrame {
                 if (validClasspathEntry) {
                     config.addClasspathDirectory(currentDirectory.getPath());
                 }
-            } catch (InvalidByteCodeException e) {
+            } catch (InvalidByteCodeException ignored) {
             }
         }
         actionVerifyClass.setEnabled(true);
@@ -659,7 +659,7 @@ public class BrowserMDIFrame extends BasicMDIFrame {
             if (frame != null) {
                 try {
                     frame.setMaximum(true);
-                } catch (PropertyVetoException ex) {
+                } catch (PropertyVetoException ignored) {
                 }
             }
             setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
@@ -719,7 +719,7 @@ public class BrowserMDIFrame extends BasicMDIFrame {
                 new WindowState(findResult.getFileName()));
         try {
             frame.setMaximum(true);
-        } catch (PropertyVetoException ex) {
+        } catch (PropertyVetoException ignored) {
         }
         setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 
@@ -829,7 +829,7 @@ public class BrowserMDIFrame extends BasicMDIFrame {
         }
         try {
             Runtime.getRuntime().exec(commandLine);
-        } catch (IOException ex) {
+        } catch (IOException ignored) {
         }
     }
 
@@ -874,7 +874,7 @@ public class BrowserMDIFrame extends BasicMDIFrame {
             } else if (this == actionShowHelp) {
                 try {
                     doShowURL(new File("doc/help.html").getCanonicalFile().toURL().toExternalForm());
-                } catch (IOException e) {
+                } catch (IOException ignored) {
                 }
             } else if (this == actionAbout) {
                 doAbout();

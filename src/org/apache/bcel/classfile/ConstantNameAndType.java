@@ -92,7 +92,7 @@ public final class ConstantNameAndType extends Constant {
      * @throws IOException
      */
     ConstantNameAndType(DataInputStream file) throws IOException {
-        this((int) file.readUnsignedShort(), (int) file.readUnsignedShort());
+        this(file.readUnsignedShort(), file.readUnsignedShort());
     }
 
     /**

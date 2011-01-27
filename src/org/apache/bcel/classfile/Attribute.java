@@ -153,7 +153,7 @@ public abstract class Attribute implements Cloneable, Node, Serializable {
     * @throws  IOException
     * @throws  ClassFormatException
     */
-    public static final Attribute readAttribute(DataInputStream file,
+    public static Attribute readAttribute(DataInputStream file,
                                                 ConstantPool constant_pool)
             throws IOException, ClassFormatException {
         ConstantUtf8 c;
@@ -163,7 +163,7 @@ public abstract class Attribute implements Cloneable, Node, Serializable {
         byte tag = Constants.ATTR_UNKNOWN; // Unknown attribute
 
         // Get class name from constant pool via `name_index' indirection
-        name_index = (int) file.readUnsignedShort();
+        name_index = file.readUnsignedShort();
         c = (ConstantUtf8) constant_pool.getConstant(name_index,
                 Constants.CONSTANT_Utf8);
         name = c.getBytes();
@@ -182,7 +182,7 @@ public abstract class Attribute implements Cloneable, Node, Serializable {
         // Call proper constructor, depending on `tag'
         switch (tag) {
             case Constants.ATTR_UNKNOWN:
-                AttributeReader r = (AttributeReader) readers.get(name);
+                AttributeReader r = readers.get(name);
 
                 if (r != null)
                     return r.createAttribute(name_index, length, file, constant_pool);

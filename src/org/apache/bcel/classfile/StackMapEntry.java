@@ -208,7 +208,7 @@ public final class StackMapEntry implements Cloneable {
     public StackMapEntry copy() {
         try {
             return (StackMapEntry) clone();
-        } catch (CloneNotSupportedException e) {
+        } catch (CloneNotSupportedException ignored) {
         }
 
         return null;

@@ -102,6 +102,6 @@ public class ClassSet implements java.io.Serializable {
     }
 
     public String[] getClassNames() {
-        return (String[]) _map.keySet().toArray(new String[_map.keySet().size()]);
+        return _map.keySet().toArray(new String[_map.keySet().size()]);
     }
 }  

@@ -118,9 +118,8 @@ public abstract class FixedListDetailPane extends AbstractDetailPane implements 
         gRemainder.weightx = gRemainder.weighty = 1;
         gRemainder.fill = GridBagConstraints.BOTH;
 
-        Iterator it = detailPaneEntries.iterator();
-        while (it.hasNext()) {
-            DetailPaneEntry entry = (DetailPaneEntry) it.next();
+        for (DetailPaneEntry detailPaneEntry : detailPaneEntries) {
+            DetailPaneEntry entry = detailPaneEntry;
             if (entry == null) {
                 continue;
             }

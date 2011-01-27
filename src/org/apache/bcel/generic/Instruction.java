@@ -174,7 +174,7 @@ public abstract class Instruction implements Cloneable, Serializable {
      * @param file file to read from
      * @return instruction object being read
      */
-    public static final Instruction readInstruction(ByteSequence bytes)
+    public static Instruction readInstruction(ByteSequence bytes)
             throws IOException {
         boolean wide = false;
         short opcode = (short) bytes.readUnsignedByte();
@@ -219,7 +219,7 @@ public abstract class Instruction implements Cloneable, Serializable {
         return obj;
     }
 
-    private static final String className(short opcode) {
+    private static String className(short opcode) {
         String name = Constants.OPCODE_NAMES[opcode].toUpperCase();
 
         /* ICONST_0, etc. will be shortened to ICONST, etc., since ICONST_0 and the like
@@ -325,7 +325,6 @@ public abstract class Instruction implements Cloneable, Serializable {
      * @return true if that is an Instruction and has the same opcode
      */
     public boolean equals(Object that) {
-        return (that instanceof Instruction) ?
-                cmp.equals(this, (Instruction) that) : false;
+        return (that instanceof Instruction) && cmp.equals(this, (Instruction) that);
     }
 }

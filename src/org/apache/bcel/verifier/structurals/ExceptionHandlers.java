@@ -80,11 +80,11 @@ public class ExceptionHandlers {
     public ExceptionHandlers(MethodGen mg) {
         exceptionhandlers = new Hashtable<InstructionHandle, HashSet>();
         CodeExceptionGen[] cegs = mg.getExceptionHandlers();
-        for (int i = 0; i < cegs.length; i++) {
-            ExceptionHandler eh = new ExceptionHandler(cegs[i].getCatchType(), cegs[i].getHandlerPC());
-            for (InstructionHandle ih = cegs[i].getStartPC(); ih != cegs[i].getEndPC().getNext(); ih = ih.getNext()) {
+        for (CodeExceptionGen ceg : cegs) {
+            ExceptionHandler eh = new ExceptionHandler(ceg.getCatchType(), ceg.getHandlerPC());
+            for (InstructionHandle ih = ceg.getStartPC(); ih != ceg.getEndPC().getNext(); ih = ih.getNext()) {
                 HashSet<ExceptionHandler> hs;
-                hs = (HashSet) exceptionhandlers.get(ih);
+                hs = exceptionhandlers.get(ih);
                 if (hs == null) {
                     hs = new HashSet<ExceptionHandler>();
                     exceptionhandlers.put(ih, hs);
@@ -99,7 +99,7 @@ public class ExceptionHandlers {
      * handlers that protect the instruction ih.
      */
     public ExceptionHandler[] getExceptionHandlers(InstructionHandle ih) {
-        HashSet hs = (HashSet) exceptionhandlers.get(ih);
+        HashSet hs = exceptionhandlers.get(ih);
         if (hs == null) return new ExceptionHandler[0];
         else {
             ExceptionHandler[] ret = new ExceptionHandler[hs.size()];

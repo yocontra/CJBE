@@ -135,9 +135,9 @@ public class BasicMDIFrame extends JFrame {
         java.util.List openFrames = desktopManager.getOpenFrames();
         List<MDIConfig.InternalFrameDesc> internalFrameDescs = new ArrayList<MDIConfig.InternalFrameDesc>(openFrames.size());
 
-        for (int i = 0; i < openFrames.size(); i++) {
+        for (Object openFrame : openFrames) {
 
-            BasicInternalFrame internalFrame = (BasicInternalFrame) openFrames.get(i);
+            BasicInternalFrame internalFrame = (BasicInternalFrame) openFrame;
 
             Rectangle bounds = internalFrame.getNormalBounds();
             MDIConfig.InternalFrameDesc internalFrameDesc = new MDIConfig.InternalFrameDesc();
@@ -170,9 +170,8 @@ public class BasicMDIFrame extends JFrame {
     protected void readMDIConfig(MDIConfig config) {
 
         boolean anyFrameMaximized = false;
-        Iterator it = config.getInternalFrameDescs().iterator();
-        while (it.hasNext()) {
-            MDIConfig.InternalFrameDesc internalFrameDesc = (MDIConfig.InternalFrameDesc) it.next();
+        for (Object o : config.getInternalFrameDescs()) {
+            MDIConfig.InternalFrameDesc internalFrameDesc = (MDIConfig.InternalFrameDesc) o;
 
 
             Constructor frameConstructor;
@@ -215,7 +214,7 @@ public class BasicMDIFrame extends JFrame {
                 } else if (internalFrameDesc.isIconified()) {
                     frame.setIcon(true);
                 }
-            } catch (PropertyVetoException ex) {
+            } catch (PropertyVetoException ignored) {
             }
 
             if (internalFrameDesc == config.getActiveFrameDesc()) {

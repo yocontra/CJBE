@@ -52,8 +52,8 @@ public class ArrayElementValue extends ElementValue {
 
     protected int getSpecificLength() {
         int length = INITIAL_LENGTH;
-        for (int i = 0; i < elementValueEntries.length; i++) {
-            length += elementValueEntries[i].getLength();
+        for (ElementValue elementValueEntry : elementValueEntries) {
+            length += elementValueEntry.getLength();
         }
         return length;
     }

@@ -2,10 +2,131 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bc4fe1b-ede6-4895-8838-f71b1604eb17" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BrowserDiagramPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BrowserDiagramPane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/AbstractDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/AbstractDetailPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserComponent.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserDetailPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserHistory.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserHistory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserTreePane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserTreePane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/RecentMenu.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/RecentMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParseException.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParseException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParser.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/BrowserConfig.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/BrowserConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathArchiveEntry.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathArchiveEntry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathEntry.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathEntry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathSetupDialog.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/classpath/ClasspathSetupDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/window/WindowState.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/config/window/WindowState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/ConstantPoolDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/ConstantPoolDetailPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/FixedListDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/FixedListDetailPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDisplay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CounterDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CounterDisplay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ExceptionTableDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ExceptionTableDetailPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/LineNumberView.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/LineNumberView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ClassElementOpener.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ClassElementOpener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/AccessFlags.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/AccessFlags.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Attribute.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Attribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ClassParser.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ClassParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Code.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Code.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/CodeException.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/CodeException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Constant.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Constant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantDouble.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantDouble.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantFloat.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantFloat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantInteger.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantInteger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantLong.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantLong.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantNameAndType.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantNameAndType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantPool.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantPool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantString.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantString.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantValue.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ConstantValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Deprecated.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Deprecated.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/DescendingVisitor.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/DescendingVisitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ExceptionTable.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/ExceptionTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/FieldOrMethod.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/FieldOrMethod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/InnerClass.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/InnerClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/JavaClass.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/JavaClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/LineNumber.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/LineNumber.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/LocalVariable.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/LocalVariable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Signature.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Signature.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/StackMapEntry.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/StackMapEntry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/StackMapType.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/StackMapType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Synthetic.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Synthetic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Unknown.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Unknown.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Utility.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/classfile/Utility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/BIPUSH.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/BIPUSH.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/BasicType.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/BasicType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/BranchHandle.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/BranchHandle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/BranchInstruction.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/BranchInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/ClassGen.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/ClassGen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/ConstantPoolGen.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/ConstantPoolGen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/DCONST.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/DCONST.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/FCONST.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/FCONST.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/FieldGen.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/FieldGen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/ICONST.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/ICONST.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/IINC.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/IINC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/Instruction.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/Instruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/InstructionComparator.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/InstructionComparator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/InstructionFactory.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/InstructionFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/InstructionHandle.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/InstructionHandle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/InstructionList.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/InstructionList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/LCONST.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/LCONST.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/LDC.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/LDC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/LDC2_W.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/LDC2_W.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/LocalVariableInstruction.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/LocalVariableInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/MethodGen.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/MethodGen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/ObjectType.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/ObjectType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/RET.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/RET.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/ReferenceType.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/ReferenceType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/ReturnaddressType.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/ReturnaddressType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/SIPUSH.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/SIPUSH.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/SWITCH.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/SWITCH.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/Select.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/Select.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/generic/Type.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/generic/Type.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/AttributeHTML.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/AttributeHTML.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/BCELFactory.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/BCELFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/BCELifier.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/BCELifier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/Class2HTML.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/Class2HTML.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassLoader.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassLoaderRepository.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassLoaderRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassPath.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassPath.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassQueue.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassQueue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassSet.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassSet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassStack.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassStack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassVector.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassVector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/CodeHTML.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/CodeHTML.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/ConstantHTML.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/ConstantHTML.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/MethodHTML.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/MethodHTML.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/SyntheticRepository.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/SyntheticRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/PassVerifier.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/PassVerifier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/Verifier.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/Verifier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/VerifierFactory.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/VerifierFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/VerifierFactoryListModel.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/VerifierFactoryListModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/VerifyDialog.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/VerifyDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/statics/IntList.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/statics/IntList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/statics/LocalVariableInfo.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/statics/LocalVariableInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/statics/Pass2Verifier.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/statics/Pass2Verifier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/statics/Pass3aVerifier.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/statics/Pass3aVerifier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/ControlFlowGraph.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/ControlFlowGraph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/ExceptionHandlers.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/ExceptionHandlers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/GenericArray.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/GenericArray.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/InstConstraintVisitor.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/InstConstraintVisitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/LocalVariables.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/LocalVariables.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/OperandStack.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/OperandStack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/Pass3bVerifier.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/Pass3bVerifier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/Subroutines.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/Subroutines.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/UninitializedObjectType.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/UninitializedObjectType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/bytecode/LookupSwitchInstruction.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/bytecode/LookupSwitchInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/io/ByteCodeWriter.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/io/ByteCodeWriter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/io/ClassFileReader.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/io/ClassFileReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/mdi/BasicDesktopManager.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/mdi/BasicDesktopManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/mdi/BasicFileFilter.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/mdi/BasicFileFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/mdi/BasicMDIFrame.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/mdi/BasicMDIFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/AbstractStructureWithAttributes.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/AbstractStructureWithAttributes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/attributes/RuntimeAnnotationsAttribute.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/attributes/RuntimeAnnotationsAttribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/elementvalues/AnnotationElementValue.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/elementvalues/AnnotationElementValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/elementvalues/ArrayElementValue.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/elementvalues/ArrayElementValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/util/ExtendedJLabel.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/util/ExtendedJLabel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/gjt/jclasslib/util/ProgressDialog.java" afterPath="$PROJECT_DIR$/src/org/gjt/jclasslib/util/ProgressDialog.java" />
     </list>
     <ignored path="JBE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,7 +193,61 @@
       <file leaf-file-name="DiagramDisplay.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="49" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0">
+            <state line="22" column="92" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractDetailPane.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/AbstractDetailPane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="102" column="7" selection-start="2817" selection-end="2817" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransitiveHull.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/verifier/TransitiveHull.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="8" selection-start="3503" selection-end="3503" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JavaClass.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/classfile/JavaClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="476" column="50" selection-start="15802" selection-end="15802" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BCELifier.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/util/BCELifier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="13" selection-start="3503" selection-end="3503" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicMDIFrame.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/mdi/BasicMDIFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="193" column="35" selection-start="6219" selection-end="6219" vertical-scroll-proportion="0.44545454">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocalVariables.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/LocalVariables.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="209" column="19" selection-start="8406" selection-end="8406" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,10 +262,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrowserDiagramPane.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BrowserDiagramPane.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BrowserDiagramPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="14" selection-start="3343" selection-end="3343" vertical-scroll-proportion="0.64054054">
+            <state line="84" column="98" selection-start="3314" selection-end="3314" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,8 +296,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/cjbe.bat" />
-        <option value="$PROJECT_DIR$/src/net/rec/cs/jbe/viewer/BrowserApplication.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/jbe/viewer/BrowserApplication.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/jbe/editor/BrowserApplication.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserAboutDialog.java" />
@@ -137,6 +310,8 @@
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BrowserDiagramPane.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/LocalVariables.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/bcel/classfile/JavaClass.java" />
       </list>
     </option>
   </component>
@@ -149,6 +324,22 @@
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
     <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id>Inspections</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Packaging issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="true" id="Add" />
@@ -505,11 +696,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.6720779" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3292683" sideWeight="0.66883117" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935064" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33116883" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -548,36 +739,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CounterDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="73" selection-start="872" selection-end="872" vertical-scroll-proportion="-0.6393728" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDetailPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="73" selection-start="1484" selection-end="1484" vertical-scroll-proportion="0.36712328" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="44" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.48295453" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="35" selection-start="896" selection-end="896" vertical-scroll-proportion="0.23896104" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="50" selection-start="854" selection-end="854" vertical-scroll-proportion="-0.21774194" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/soot.jar!/soot/jbco/gui/JBCOViewer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="0" selection-start="2940" selection-end="2940" vertical-scroll-proportion="0.7861111" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="125" column="45" selection-start="3926" selection-end="3926" vertical-scroll-proportion="0.1155914" />
@@ -622,19 +783,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BrowserDiagramPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="98" selection-start="3314" selection-end="3314" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="49" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0">
+        <state line="22" column="92" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BrowserDiagramPane.java">
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/AbstractDetailPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="14" selection-start="3343" selection-end="3343" vertical-scroll-proportion="0.64054054">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="102" column="7" selection-start="2817" selection-end="2817" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/verifier/TransitiveHull.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="8" selection-start="3503" selection-end="3503" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/LocalVariables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="209" column="19" selection-start="8406" selection-end="8406" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/classfile/JavaClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="476" column="50" selection-start="15802" selection-end="15802" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/util/BCELifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="13" selection-start="3503" selection-end="3503" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/mdi/BasicMDIFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="193" column="35" selection-start="6219" selection-end="6219" vertical-scroll-proportion="0.44545454">
+          <folding />
         </state>
       </provider>
     </entry>

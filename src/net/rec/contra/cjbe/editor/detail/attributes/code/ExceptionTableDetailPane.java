@@ -174,10 +174,7 @@ public class ExceptionTableDetailPane extends AbstractAttributeListDetailPane {
         }
 
         public boolean isCellEditable(int rowIndex, int columnIndex) {
-            if (columnIndex == DELETE_BUTTON_COLUMN_INDEX)
-                return true;
-            else
-                return false;
+            return columnIndex == DELETE_BUTTON_COLUMN_INDEX;
         }
     }
 

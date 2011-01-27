@@ -145,6 +145,6 @@ public final class ConstantDouble extends Constant implements ConstantObject {
      * @return Double object
      */
     public Object getConstantValue(ConstantPool cp) {
-        return new Double(bytes);
+        return bytes;
     }
 }

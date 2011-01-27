@@ -196,7 +196,7 @@ public class ConstantPool implements Cloneable, Node, Serializable {
         return str;
     }
 
-    private static final String escape(String str) {
+    private static String escape(String str) {
         int len = str.length();
         StringBuffer buf = new StringBuffer(len + 5);
         char[] ch = str.toCharArray();
@@ -390,7 +390,7 @@ public class ConstantPool implements Cloneable, Node, Serializable {
 
         try {
             c = (ConstantPool) clone();
-        } catch (CloneNotSupportedException e) {
+        } catch (CloneNotSupportedException ignored) {
         }
 
         c.constant_pool = new Constant[constant_pool_count];

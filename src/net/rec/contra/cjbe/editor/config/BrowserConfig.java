@@ -147,9 +147,8 @@ public class BrowserConfig implements ClasspathComponent {
 
     public FindResult findClass(String className) {
 
-        Iterator it = classpath.iterator();
-        while (it.hasNext()) {
-            ClasspathEntry entry = (ClasspathEntry) it.next();
+        for (ClasspathEntry aClasspath : classpath) {
+            ClasspathEntry entry = aClasspath;
             FindResult findResult = entry.findClass(className);
             if (findResult != null) {
                 return findResult;
@@ -160,9 +159,8 @@ public class BrowserConfig implements ClasspathComponent {
 
     public void mergeClassesIntoTree(DefaultTreeModel model, boolean reset) {
 
-        Iterator it = classpath.iterator();
-        while (it.hasNext()) {
-            ClasspathEntry entry = (ClasspathEntry) it.next();
+        for (ClasspathEntry aClasspath : classpath) {
+            ClasspathEntry entry = aClasspath;
             if (reset || !mergedEntries.contains(entry)) {
                 entry.mergeClassesIntoTree(model, reset);
                 mergedEntries.add(entry);

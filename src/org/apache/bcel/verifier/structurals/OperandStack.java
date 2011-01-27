@@ -162,14 +162,14 @@ public class OperandStack {
      * iff i==0 the top element is returned. The element is not popped off the stack!
      */
     public Type peek(int i) {
-        return (Type) stack.get(size() - i - 1);
+        return stack.get(size() - i - 1);
     }
 
     /**
      * Returns the element on top of the stack. The element is popped off the stack.
      */
     public Type pop() {
-        Type e = (Type) stack.remove(size() - 1);
+        Type e = stack.remove(size() - 1);
         return e;
     }
 

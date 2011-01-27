@@ -109,7 +109,7 @@ public class ClassLoaderRepository
      */
     public JavaClass findClass(String className) {
         if (loadedClasses.containsKey(className)) {
-            return (JavaClass) loadedClasses.get(className);
+            return loadedClasses.get(className);
         } else {
             return null;
         }

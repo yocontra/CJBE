@@ -82,10 +82,7 @@ public class WindowState {
 
     public boolean equals(Object other) {
 
-        if (fileName == null || other == null || !(other instanceof WindowState)) {
-            return false;
-        }
-        return fileName.equals(((WindowState) other).fileName);
+        return !(fileName == null || other == null || !(other instanceof WindowState)) && fileName.equals(((WindowState) other).fileName);
     }
 
     public int hashCode() {

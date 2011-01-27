@@ -218,7 +218,7 @@ class BCELFactory extends EmptyVisitor {
         if (value instanceof String)
             embed = '"' + Utility.convertString(value.toString()) + '"';
         else if (value instanceof Character)
-            embed = "(char)0x" + Integer.toHexString(((Character) value).charValue());
+            embed = "(char)0x" + Integer.toHexString((Character) value);
 
         _out.println("il.append(new PUSH(_cp, " + embed + "));");
     }
@@ -320,8 +320,8 @@ class BCELFactory extends EmptyVisitor {
     }
 
     private void updateBranchTargets() {
-        for (Iterator i = branches.iterator(); i.hasNext();) {
-            BranchInstruction bi = (BranchInstruction) i.next();
+        for (Object branche : branches) {
+            BranchInstruction bi = (BranchInstruction) branche;
             BranchHandle bh = (BranchHandle) branch_map.get(bi);
             int pos = bh.getPosition();
             String name = bi.getName() + "_" + pos;
@@ -345,8 +345,7 @@ class BCELFactory extends EmptyVisitor {
     private void updateExceptionHandlers() {
         CodeExceptionGen[] handlers = _mg.getExceptionHandlers();
 
-        for (int i = 0; i < handlers.length; i++) {
-            CodeExceptionGen h = handlers[i];
+        for (CodeExceptionGen h : handlers) {
             String type = (h.getCatchType() == null) ?
                     "null" : BCELifier.printType(h.getCatchType());
 

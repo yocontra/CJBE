@@ -72,7 +72,7 @@ public abstract class LocalVariableInstruction extends Instruction
     private short c_tag = -1; // compact version, such as ILOAD_0
     private short canon_tag = -1; // canonical tag such as ILOAD
 
-    private final boolean wide() {
+    private boolean wide() {
         return n > Constants.MAX_BYTE;
     }
 

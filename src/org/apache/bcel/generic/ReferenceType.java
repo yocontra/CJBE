@@ -85,10 +85,8 @@ public abstract class ReferenceType extends Type {
      * true is returned in this case.
      */
     public boolean isCastableTo(Type t) {
-        if (this.equals(Type.NULL))
-            return true;        // If this is ever changed in isAssignmentCompatible()
+        return this.equals(Type.NULL) || isAssignmentCompatibleWith(t);
 
-        return isAssignmentCompatibleWith(t);
         /* Yes, it's true: It's the same definition.
         * See vmspec2 AASTORE / CHECKCAST definitions.
         */
@@ -178,7 +176,7 @@ public abstract class ReferenceType extends Type {
          * assignable to TC by these runtime rules.
          */
                 if (tc instanceof ReferenceType && sc instanceof ReferenceType &&
-                        ((ReferenceType) sc).isAssignmentCompatibleWith((ReferenceType) tc))
+                        ((ReferenceType) sc).isAssignmentCompatibleWith(tc))
                     return true;
             }
 
@@ -271,9 +269,9 @@ public abstract class ReferenceType extends Type {
         this_sups[0] = Repository.lookupClass(thiz.getClassName());
         t_sups[0] = Repository.lookupClass(other.getClassName());
 
-        for (int i = 0; i < t_sups.length; i++) {
+        for (JavaClass t_sup : t_sups) {
             for (int j = 0; j < this_sups.length; j++) {
-                if (this_sups[j].equals(t_sups[i])) return new ObjectType(this_sups[j].getClassName());
+                if (this_sups[j].equals(t_sup)) return new ObjectType(this_sups[j].getClassName());
             }
         }
 
@@ -338,9 +336,9 @@ public abstract class ReferenceType extends Type {
         this_sups[0] = Repository.lookupClass(thiz.getClassName());
         t_sups[0] = Repository.lookupClass(other.getClassName());
 
-        for (int i = 0; i < t_sups.length; i++) {
+        for (JavaClass t_sup : t_sups) {
             for (int j = 0; j < this_sups.length; j++) {
-                if (this_sups[j].equals(t_sups[i])) return new ObjectType(this_sups[j].getClassName());
+                if (this_sups[j].equals(t_sup)) return new ObjectType(this_sups[j].getClassName());
             }
         }
 

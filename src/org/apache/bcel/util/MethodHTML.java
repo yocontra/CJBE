@@ -84,8 +84,7 @@ final class MethodHTML implements org.apache.bcel.Constants {
         file.println("<HTML><BODY BGCOLOR=\"#C0C0C0\"><TABLE BORDER=0>");
         file.println("<TR><TH ALIGN=LEFT>Access&nbsp;flags</TH><TH ALIGN=LEFT>Type</TH>" +
                 "<TH ALIGN=LEFT>Field&nbsp;name</TH></TR>");
-        for (int i = 0; i < fields.length; i++)
-            writeField(fields[i]);
+        for (Field field : fields) writeField(field);
         file.println("</TABLE>");
 
         file.println("<TABLE BORDER=0><TR><TH ALIGN=LEFT>Access&nbsp;flags</TH>" +
@@ -124,7 +123,7 @@ final class MethodHTML implements org.apache.bcel.Constants {
 
         for (int i = 0; i < attributes.length; i++) {
             if (attributes[i].getTag() == ATTR_CONSTANT_VALUE) { // Default value
-                String str = ((ConstantValue) attributes[i]).toString();
+                String str = attributes[i].toString();
 
                 // Reference attribute in _attributes.html
                 file.print("<TD>= <A HREF=\"" + class_name + "_attributes.html#" +
@@ -136,7 +135,7 @@ final class MethodHTML implements org.apache.bcel.Constants {
         file.println("</TR>");
     }
 
-    private final void writeMethod(Method method, int method_number) throws IOException {
+    private void writeMethod(Method method, int method_number) throws IOException {
         // Get raw signature
         String signature = method.getSignature();
         // Get array of strings containing the argument types

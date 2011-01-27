@@ -79,7 +79,7 @@ public class IntList {
      * Adds an element to the list.
      */
     void add(int i) {
-        theList.add(new Integer(i));
+        theList.add(i);
     }
 
     /**
@@ -89,7 +89,7 @@ public class IntList {
         Integer[] ints = new Integer[theList.size()];
         theList.toArray(ints);
         for (int j = 0; j < ints.length; j++) {
-            if (i == ints[j].intValue()) return true;
+            if (i == ints[j]) return true;
         }
         return false;
     }

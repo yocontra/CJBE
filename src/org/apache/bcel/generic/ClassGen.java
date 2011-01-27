@@ -114,8 +114,7 @@ public class ClassGen extends AccessFlags implements Cloneable {
         superclass_name_index = cp.addClass(super_class_name);
 
         if (interfaces != null)
-            for (int i = 0; i < interfaces.length; i++)
-                addInterface(interfaces[i]);
+            for (String anInterface : interfaces) addInterface(anInterface);
     }
 
     /**
@@ -154,17 +153,13 @@ public class ClassGen extends AccessFlags implements Cloneable {
         Field[] fields = clazz.getFields();
         String[] interfaces = clazz.getInterfaceNames();
 
-        for (int i = 0; i < interfaces.length; i++)
-            addInterface(interfaces[i]);
+        for (String anInterface : interfaces) addInterface(anInterface);
 
-        for (int i = 0; i < attributes.length; i++)
-            addAttribute(attributes[i]);
+        for (Attribute attribute : attributes) addAttribute(attribute);
 
-        for (int i = 0; i < methods.length; i++)
-            addMethod(methods[i]);
+        for (Method method : methods) addMethod(method);
 
-        for (int i = 0; i < fields.length; i++)
-            addField(fields[i]);
+        for (Field field : fields) addField(field);
     }
 
     /**
@@ -289,8 +284,8 @@ public class ClassGen extends AccessFlags implements Cloneable {
      * @return field object with given name, or null
      */
     public Field containsField(String name) {
-        for (Iterator e = field_vec.iterator(); e.hasNext();) {
-            Field f = (Field) e.next();
+        for (Object aField_vec : field_vec) {
+            Field f = (Field) aField_vec;
             if (f.getName().equals(name))
                 return f;
         }
@@ -302,8 +297,8 @@ public class ClassGen extends AccessFlags implements Cloneable {
      * @return method object with given name and signature, or null
      */
     public Method containsMethod(String name, String signature) {
-        for (Iterator e = method_vec.iterator(); e.hasNext();) {
-            Method m = (Method) e.next();
+        for (Object aMethod_vec : method_vec) {
+            Method m = (Method) aMethod_vec;
             if (m.getName().equals(name) && m.getSignature().equals(signature))
                 return m;
         }
@@ -400,8 +395,7 @@ public class ClassGen extends AccessFlags implements Cloneable {
 
     public void setMethods(Method[] methods) {
         method_vec.clear();
-        for (int m = 0; m < methods.length; m++)
-            addMethod(methods[m]);
+        for (Method method : methods) addMethod(method);
     }
 
     public void setMethodAt(Method method, int pos) {
@@ -409,7 +403,7 @@ public class ClassGen extends AccessFlags implements Cloneable {
     }
 
     public Method getMethodAt(int pos) {
-        return (Method) method_vec.get(pos);
+        return method_vec.get(pos);
     }
 
     public String[] getInterfaceNames() {
@@ -425,7 +419,7 @@ public class ClassGen extends AccessFlags implements Cloneable {
         int[] interfaces = new int[size];
 
         for (int i = 0; i < size; i++)
-            interfaces[i] = cp.addClass((String) interface_vec.get(i));
+            interfaces[i] = cp.addClass(interface_vec.get(i));
 
         return interfaces;
     }
@@ -497,8 +491,7 @@ public class ClassGen extends AccessFlags implements Cloneable {
      */
     public void update() {
         if (observers != null)
-            for (Iterator e = observers.iterator(); e.hasNext();)
-                ((ClassObserver) e.next()).notify(this);
+            for (Object observer : observers) ((ClassObserver) observer).notify(this);
     }
 
     public Object clone() {

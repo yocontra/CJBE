@@ -82,7 +82,7 @@ public class RecentMenu extends JMenu implements ActionListener {
             if (recentWorkspaces.size() > RECENT_PROJECTS_MAX_SIZE) {
                 recentWorkspaces.removeLast();
             }
-        } catch (IOException e) {
+        } catch (IOException ignored) {
         }
     }
 
@@ -99,15 +99,14 @@ public class RecentMenu extends JMenu implements ActionListener {
         Preferences recentNode = preferences.node(SETTINGS_RECENT_WORKSPACES);
         try {
             String[] keys = recentNode.keys();
-            for (int i = 0; i < keys.length; i++) {
-                String key = keys[i];
+            for (String key : keys) {
                 String fileName = recentNode.get(key, null);
                 if (fileName != null) {
                     numberToFile.put(new Integer(key), fileName);
                 }
             }
             recentWorkspaces.addAll(numberToFile.values());
-        } catch (BackingStoreException ex) {
+        } catch (BackingStoreException ignored) {
         }
     }
 
@@ -121,12 +120,11 @@ public class RecentMenu extends JMenu implements ActionListener {
         Preferences recentNode = preferences.node(SETTINGS_RECENT_WORKSPACES);
         try {
             recentNode.clear();
-        } catch (BackingStoreException e) {
+        } catch (BackingStoreException ignored) {
         }
         int count = 0;
-        Iterator it = recentWorkspaces.iterator();
-        while (it.hasNext()) {
-            String fileName = (String) it.next();
+        for (String recentWorkspace : recentWorkspaces) {
+            String fileName = recentWorkspace;
             recentNode.put(String.valueOf(count++), fileName);
         }
     }
@@ -135,9 +133,8 @@ public class RecentMenu extends JMenu implements ActionListener {
 
         removeAll();
         if (recentWorkspaces.size() > 0) {
-            Iterator it = recentWorkspaces.iterator();
-            while (it.hasNext()) {
-                String fileName = (String) it.next();
+            for (String recentWorkspace : recentWorkspaces) {
+                String fileName = recentWorkspace;
                 JMenuItem menuItem = new JMenuItem(fileName);
                 menuItem.addActionListener(this);
                 add(menuItem);

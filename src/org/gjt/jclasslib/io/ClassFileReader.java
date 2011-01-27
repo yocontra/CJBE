@@ -43,8 +43,8 @@ public class ClassFileReader {
 
         String relativePath = packageName.replace('.', File.separatorChar) + (packageName.length() == 0 ? "" : File.separator) + className + ".class";
         String jarRelativePath = relativePath.replace(File.separatorChar, '/');
-        for (int i = 0; i < classPath.length; i++) {
-            File currentClassPathEntry = new File(classPath[i]);
+        for (String aClassPath : classPath) {
+            File currentClassPathEntry = new File(aClassPath);
             if (!currentClassPathEntry.exists()) {
                 continue;
             }

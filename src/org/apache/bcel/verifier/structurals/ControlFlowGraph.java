@@ -146,7 +146,7 @@ public class ControlFlowGraph {
 
             InstructionContext jsr = lastExecutionJSR();
 
-            org = (Frame) outFrames.get(jsr);
+            org = outFrames.get(jsr);
 
             if (org == null) {
                 throw new AssertionViolatedException("outFrame not set! This:\n" + this + "\nExecutionChain: " + getExecutionChain() + "\nOutFrames: '" + outFrames + "'.");
@@ -182,7 +182,7 @@ public class ControlFlowGraph {
                 throw new AssertionViolatedException("Huh?! Am I '" + this + "' part of a subroutine or not?");
             }
 
-            Frame inF = (Frame) inFrames.get(lastExecutionJSR());
+            Frame inF = inFrames.get(lastExecutionJSR());
             if (inF == null) {// no incoming frame was set, so set it.
                 inFrames.put(lastExecutionJSR(), inFrame);
                 inF = inFrame;
@@ -242,7 +242,7 @@ public class ControlFlowGraph {
          */
         private boolean mergeInFrames(Frame inFrame) {
             // TODO: Can be performance-improved.
-            Frame inF = (Frame) inFrames.get(lastExecutionJSR());
+            Frame inF = inFrames.get(lastExecutionJSR());
             OperandStack oldstack = inF.getStack().getClone();
             LocalVariables oldlocals = inF.getLocals().getClone();
             try {
@@ -252,12 +252,8 @@ public class ControlFlowGraph {
                 extendMessageWithFlow(sce);
                 throw sce;
             }
-            if (oldstack.equals(inF.getStack()) &&
-                    oldlocals.equals(inF.getLocals())) {
-                return false;
-            } else {
-                return true;
-            }
+            return !(oldstack.equals(inF.getStack()) &&
+                    oldlocals.equals(inF.getLocals()));
         }
 
         /**
@@ -422,8 +418,8 @@ public class ControlFlowGraph {
         exceptionhandlers = new ExceptionHandlers(method_gen);
 
         InstructionHandle[] instructionhandles = method_gen.getInstructionList().getInstructionHandles();
-        for (int i = 0; i < instructionhandles.length; i++) {
-            instructionContexts.put(instructionhandles[i], new InstructionContextImpl(instructionhandles[i]));
+        for (InstructionHandle instructionhandle : instructionhandles) {
+            instructionContexts.put(instructionhandle, new InstructionContextImpl(instructionhandle));
         }
 
         //this.method_gen = method_gen;
@@ -433,7 +429,7 @@ public class ControlFlowGraph {
      * Returns the InstructionContext of a given instruction.
      */
     public InstructionContext contextOf(InstructionHandle inst) {
-        InstructionContext ic = (InstructionContext) instructionContexts.get(inst);
+        InstructionContext ic = instructionContexts.get(inst);
         if (ic == null) {
             throw new AssertionViolatedException("InstructionContext requested for an InstructionHandle that's not known!");
         }
@@ -459,7 +455,7 @@ public class ControlFlowGraph {
      */
     public InstructionContext[] getInstructionContexts() {
         InstructionContext[] ret = new InstructionContext[instructionContexts.values().size()];
-        return (InstructionContext[]) instructionContexts.values().toArray(ret);
+        return instructionContexts.values().toArray(ret);
     }
 
     /**

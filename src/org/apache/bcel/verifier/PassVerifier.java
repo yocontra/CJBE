@@ -142,7 +142,7 @@ public abstract class PassVerifier {
         verify(); // create messages if not already done (cached!)
         String[] ret = new String[messages.size()];
         for (int i = 0; i < messages.size(); i++) {
-            ret[i] = (String) messages.get(i);
+            ret[i] = messages.get(i);
         }
         return ret;
     }

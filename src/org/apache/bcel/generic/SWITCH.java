@@ -85,8 +85,8 @@ public final class SWITCH implements CompoundInstruction {
      */
     public SWITCH(int[] match, InstructionHandle[] targets,
                   InstructionHandle target, int max_gap) {
-        this.match = (int[]) match.clone();
-        this.targets = (InstructionHandle[]) targets.clone();
+        this.match = match.clone();
+        this.targets = targets.clone();
 
         if ((match_length = match.length) < 2) // (almost) empty switch, or just default
             instruction = new TABLESWITCH(match, targets, target);
@@ -107,7 +107,7 @@ public final class SWITCH implements CompoundInstruction {
         this(match, targets, target, 1);
     }
 
-    private final void fillup(int max_gap, InstructionHandle target) {
+    private void fillup(int max_gap, InstructionHandle target) {
         int max_size = match_length + match_length * max_gap;
         int[] m_vec = new int[max_size];
         InstructionHandle[] t_vec = new InstructionHandle[max_size];
@@ -141,7 +141,7 @@ public final class SWITCH implements CompoundInstruction {
     /**
      * Sort match and targets array with QuickSort.
      */
-    private final void sort(int l, int r) {
+    private void sort(int l, int r) {
         int i = l, j = r;
         int h, m = match[(l + r) / 2];
         InstructionHandle h2;
@@ -169,7 +169,7 @@ public final class SWITCH implements CompoundInstruction {
     /**
      * @return match is sorted in ascending order with no gap bigger than max_gap?
      */
-    private final boolean matchIsOrdered(int max_gap) {
+    private boolean matchIsOrdered(int max_gap) {
         for (int i = 1; i < match_length; i++)
             if (match[i] - match[i - 1] > max_gap)
                 return false;

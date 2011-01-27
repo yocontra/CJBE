@@ -127,7 +127,7 @@ public class ProgressDialog extends JDialog {
                     public void run() {
                         try {
                             task.join();
-                        } catch (InterruptedException e) {
+                        } catch (InterruptedException ignored) {
                         }
                         SwingUtilities.invokeLater(new Runnable() {
                             public void run() {

@@ -96,10 +96,10 @@ public class LDC2_W extends CPInstruction
 
         switch (c.getTag()) {
             case org.apache.bcel.Constants.CONSTANT_Long:
-                return new Long(((org.apache.bcel.classfile.ConstantLong) c).getBytes());
+                return ((org.apache.bcel.classfile.ConstantLong) c).getBytes();
 
             case org.apache.bcel.Constants.CONSTANT_Double:
-                return new Double(((org.apache.bcel.classfile.ConstantDouble) c).getBytes());
+                return ((org.apache.bcel.classfile.ConstantDouble) c).getBytes();
 
             default: // Never reached
                 throw new RuntimeException("Unknown or invalid constant type at " + index);

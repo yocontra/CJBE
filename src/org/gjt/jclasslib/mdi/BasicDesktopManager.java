@@ -132,9 +132,8 @@ public class BasicDesktopManager extends DefaultDesktopManager
      */
     public BasicInternalFrame getOpenFrame(Object initParam) {
 
-        Iterator it = openFrames.iterator();
-        while (it.hasNext()) {
-            BasicInternalFrame frame = (BasicInternalFrame) it.next();
+        for (Object openFrame : openFrames) {
+            BasicInternalFrame frame = (BasicInternalFrame) openFrame;
             if (frame.getInitParam().equals(initParam)) {
                 return frame;
             }
@@ -146,14 +145,13 @@ public class BasicDesktopManager extends DefaultDesktopManager
      * Show all internal frames.
      */
     public void showAll() {
-        Iterator it = openFrames.iterator();
-        while (it.hasNext()) {
-            ((BasicInternalFrame) it.next()).setVisible(true);
+        for (Object openFrame : openFrames) {
+            ((BasicInternalFrame) openFrame).setVisible(true);
         }
         if (activeFrame != null) {
             try {
                 activeFrame.setSelected(true);
-            } catch (PropertyVetoException ex) {
+            } catch (PropertyVetoException ignored) {
             }
         }
         checkSize();
@@ -256,9 +254,8 @@ public class BasicDesktopManager extends DefaultDesktopManager
 
         Rectangle currentBounds;
         JInternalFrame currentFrame;
-        Iterator it = openFrames.iterator();
-        while (it.hasNext()) {
-            currentFrame = (JInternalFrame) it.next();
+        for (Object openFrame : openFrames) {
+            currentFrame = (JInternalFrame) openFrame;
             normalizeFrame(currentFrame);
             currentBounds = getNextInternalFrameBounds();
             resizeFrame(currentFrame,
@@ -268,7 +265,7 @@ public class BasicDesktopManager extends DefaultDesktopManager
                     currentBounds.height);
             try {
                 currentFrame.setSelected(true);
-            } catch (PropertyVetoException ex) {
+            } catch (PropertyVetoException ignored) {
             }
         }
         checkSize();
@@ -284,7 +281,7 @@ public class BasicDesktopManager extends DefaultDesktopManager
                 return;
             }
 
-            boolean isMaximum = ((Boolean) changeEvent.getNewValue()).booleanValue();
+            boolean isMaximum = (Boolean) changeEvent.getNewValue();
             if (isMaximum) {
                 resetSize();
             }
@@ -296,9 +293,8 @@ public class BasicDesktopManager extends DefaultDesktopManager
 
     public void activateFrame(JInternalFrame frame) {
         super.activateFrame(frame);
-        Iterator it = frameToMenuItem.values().iterator();
-        while (it.hasNext()) {
-            JCheckBoxMenuItem menuItem = (JCheckBoxMenuItem) it.next();
+        for (Object o : frameToMenuItem.values()) {
+            JCheckBoxMenuItem menuItem = (JCheckBoxMenuItem) o;
             menuItem.setSelected(false);
 
         }
@@ -347,8 +343,7 @@ public class BasicDesktopManager extends DefaultDesktopManager
 
         Dimension size = new Dimension();
         JInternalFrame[] frames = desktopPane.getAllFrames();
-        for (int i = 0; i < frames.length; i++) {
-            JInternalFrame frame = frames[i];
+        for (JInternalFrame frame : frames) {
             size.width = Math.max(size.width, frame.getX() + frame.getWidth());
             size.height = Math.max(size.height, frame.getY() + frame.getHeight());
         }
@@ -410,7 +405,7 @@ public class BasicDesktopManager extends DefaultDesktopManager
             if (frame.isMaximum()) {
                 frame.setMaximum(false);
             }
-        } catch (PropertyVetoException ex) {
+        } catch (PropertyVetoException ignored) {
         }
     }
 
@@ -442,7 +437,7 @@ public class BasicDesktopManager extends DefaultDesktopManager
             }
             nextFrame.setSelected(true);
             scrollToVisible(nextFrame);
-        } catch (PropertyVetoException ex) {
+        } catch (PropertyVetoException ignored) {
         }
     }
 
@@ -465,13 +460,13 @@ public class BasicDesktopManager extends DefaultDesktopManager
 
         try {
             JInternalFrame[] frames = desktopPane.getAllFrames();
-            for (int i = 0; i < frames.length; i++) {
-                if (frames[i] == source) {
+            for (JInternalFrame frame : frames) {
+                if (frame == source) {
                     continue;
                 }
                 try {
-                    frames[i].setMaximum(isMaximum);
-                } catch (PropertyVetoException ex) {
+                    frame.setMaximum(isMaximum);
+                } catch (PropertyVetoException ignored) {
                 }
             }
         } finally {
@@ -499,7 +494,7 @@ public class BasicDesktopManager extends DefaultDesktopManager
                     frame.setSelected(true);
                 }
                 scrollToVisible(frame);
-            } catch (PropertyVetoException ex) {
+            } catch (PropertyVetoException ignored) {
             }
         }
 

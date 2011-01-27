@@ -144,9 +144,7 @@ public class LineNumberView extends JComponent {
             }
         }
         int elems2[] = new int[pages - 1];
-        for (int i = 0; i < pages - 1; i++) {
-            elems2[i] = elems[i];
-        }
+        System.arraycopy(elems, 0, elems2, 0, pages - 1);
         return elems2;
     }
 

@@ -92,10 +92,8 @@ public class ReturnaddressType extends Type {
      * Returns if the two Returnaddresses refer to the same target.
      */
     public boolean equals(Object rat) {
-        if (!(rat instanceof ReturnaddressType))
-            return false;
+        return rat instanceof ReturnaddressType && ((ReturnaddressType) rat).returnTarget.equals(this.returnTarget);
 
-        return ((ReturnaddressType) rat).returnTarget.equals(this.returnTarget);
     }
 
     /**

@@ -103,7 +103,7 @@ public class SyntheticRepository implements Repository {
     }
 
     public static SyntheticRepository getInstance(ClassPath classPath) {
-        SyntheticRepository rep = (SyntheticRepository) _instances.get(classPath);
+        SyntheticRepository rep = _instances.get(classPath);
 
         if (rep == null) {
             rep = new SyntheticRepository(classPath);
@@ -132,7 +132,7 @@ public class SyntheticRepository implements Repository {
      * Find an already defined (cached) JavaClass object by name.
      */
     public JavaClass findClass(String className) {
-        return (JavaClass) _loadedClasses.get(className);
+        return _loadedClasses.get(className);
     }
 
     /**

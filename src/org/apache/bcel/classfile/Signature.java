@@ -186,7 +186,7 @@ public final class Signature extends Attribute {
     }
 
 
-    private static final void matchIdent(MyByteArrayInputStream in, StringBuffer buf) {
+    private static void matchIdent(MyByteArrayInputStream in, StringBuffer buf) {
         int ch;
 
         if ((ch = in.read()) == -1)
@@ -238,7 +238,7 @@ public final class Signature extends Attribute {
             in.unread();
     }
 
-    private static final void matchGJIdent(MyByteArrayInputStream in,
+    private static void matchGJIdent(MyByteArrayInputStream in,
                                            StringBuffer buf) {
         int ch;
 
@@ -273,7 +273,6 @@ public final class Signature extends Attribute {
             matchGJIdent(in, buf);
         } else if (ch == ')') {
             in.unread();
-            return;
         } else if (ch != ';')
             throw new RuntimeException("Illegal signature: " + in.getData() + " read " +
                     (char) ch);
@@ -288,11 +287,11 @@ public final class Signature extends Attribute {
         return buf.toString();
     }
 
-    public static final boolean isFormalParameterList(String s) {
+    public static boolean isFormalParameterList(String s) {
         return s.startsWith("<") && (s.indexOf(':') > 0);
     }
 
-    public static final boolean isActualParameterList(String s) {
+    public static boolean isActualParameterList(String s) {
         return s.startsWith("L") && s.endsWith(">;");
     }
 

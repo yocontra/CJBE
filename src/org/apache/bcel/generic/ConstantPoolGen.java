@@ -199,7 +199,7 @@ public class ConstantPoolGen implements java.io.Serializable {
      * @return index on success, -1 otherwise
      */
     public int lookupString(String str) {
-        Index index = (Index) string_table.get(str);
+        Index index = string_table.get(str);
         return (index != null) ? index.index : -1;
     }
 
@@ -238,7 +238,7 @@ public class ConstantPoolGen implements java.io.Serializable {
      * @return index on success, -1 otherwise
      */
     public int lookupClass(String str) {
-        Index index = (Index) class_table.get(str.replace('.', '/'));
+        Index index = class_table.get(str.replace('.', '/'));
         return (index != null) ? index.index : -1;
     }
 
@@ -380,7 +380,7 @@ public class ConstantPoolGen implements java.io.Serializable {
      * @return index on success, -1 otherwise
      */
     public int lookupUtf8(String n) {
-        Index index = (Index) utf8_table.get(n);
+        Index index = utf8_table.get(n);
 
         return (index != null) ? index.index : -1;
     }
@@ -499,7 +499,7 @@ public class ConstantPoolGen implements java.io.Serializable {
      * @return index on success, -1 otherwise
      */
     public int lookupNameAndType(String name, String signature) {
-        Index index = (Index) n_a_t_table.get(name + NAT_DELIM + signature);
+        Index index = n_a_t_table.get(name + NAT_DELIM + signature);
         return (index != null) ? index.index : -1;
     }
 
@@ -539,7 +539,7 @@ public class ConstantPoolGen implements java.io.Serializable {
      * @return index on success, -1 otherwise
      */
     public int lookupMethodref(String class_name, String method_name, String signature) {
-        Index index = (Index) cp_table.get(class_name + METHODREF_DELIM + method_name +
+        Index index = cp_table.get(class_name + METHODREF_DELIM + method_name +
                 METHODREF_DELIM + signature);
         return (index != null) ? index.index : -1;
     }
@@ -589,7 +589,7 @@ public class ConstantPoolGen implements java.io.Serializable {
      * @return index on success, -1 otherwise
      */
     public int lookupInterfaceMethodref(String class_name, String method_name, String signature) {
-        Index index = (Index) cp_table.get(class_name + IMETHODREF_DELIM + method_name +
+        Index index = cp_table.get(class_name + IMETHODREF_DELIM + method_name +
                 IMETHODREF_DELIM + signature);
         return (index != null) ? index.index : -1;
     }
@@ -639,7 +639,7 @@ public class ConstantPoolGen implements java.io.Serializable {
      * @return index on success, -1 otherwise
      */
     public int lookupFieldref(String class_name, String field_name, String signature) {
-        Index index = (Index) cp_table.get(class_name + FIELDREF_DELIM + field_name +
+        Index index = cp_table.get(class_name + FIELDREF_DELIM + field_name +
                 FIELDREF_DELIM + signature);
         return (index != null) ? index.index : -1;
     }

@@ -166,7 +166,7 @@ public final class LineNumber implements Cloneable, Node, Serializable {
     public LineNumber copy() {
         try {
             return (LineNumber) clone();
-        } catch (CloneNotSupportedException e) {
+        } catch (CloneNotSupportedException ignored) {
         }
 
         return null;

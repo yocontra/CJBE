@@ -106,11 +106,11 @@ public class FieldGen extends FieldGenOrMethodGen {
 
         Attribute[] attrs = field.getAttributes();
 
-        for (int i = 0; i < attrs.length; i++) {
-            if (attrs[i] instanceof ConstantValue)
-                setValue(((ConstantValue) attrs[i]).getConstantValueIndex());
+        for (Attribute attr : attrs) {
+            if (attr instanceof ConstantValue)
+                setValue(((ConstantValue) attr).getConstantValueIndex());
             else
-                addAttribute(attrs[i]);
+                addAttribute(attr);
         }
     }
 
@@ -143,56 +143,56 @@ public class FieldGen extends FieldGenOrMethodGen {
         checkType(Type.LONG);
 
         if (l != 0L)
-            value = new Long(l);
+            value = l;
     }
 
     public void setInitValue(int i) {
         checkType(Type.INT);
 
         if (i != 0)
-            value = new Integer(i);
+            value = i;
     }
 
     public void setInitValue(short s) {
         checkType(Type.SHORT);
 
         if (s != 0)
-            value = new Integer(s);
+            value = (int) s;
     }
 
     public void setInitValue(char c) {
         checkType(Type.CHAR);
 
         if (c != 0)
-            value = new Integer(c);
+            value = (int) c;
     }
 
     public void setInitValue(byte b) {
         checkType(Type.BYTE);
 
         if (b != 0)
-            value = new Integer(b);
+            value = (int) b;
     }
 
     public void setInitValue(boolean b) {
         checkType(Type.BOOLEAN);
 
         if (b)
-            value = new Integer(1);
+            value = 1;
     }
 
     public void setInitValue(float f) {
         checkType(Type.FLOAT);
 
         if (f != 0.0)
-            value = new Float(f);
+            value = f;
     }
 
     public void setInitValue(double d) {
         checkType(Type.DOUBLE);
 
         if (d != 0.0)
-            value = new Double(d);
+            value = d;
     }
 
     /**
@@ -247,16 +247,16 @@ public class FieldGen extends FieldGenOrMethodGen {
             case Constants.T_BYTE:
             case Constants.T_BOOLEAN:
             case Constants.T_SHORT:
-                return cp.addInteger(((Integer) value).intValue());
+                return cp.addInteger((Integer) value);
 
             case Constants.T_FLOAT:
-                return cp.addFloat(((Float) value).floatValue());
+                return cp.addFloat((Float) value);
 
             case Constants.T_DOUBLE:
-                return cp.addDouble(((Double) value).doubleValue());
+                return cp.addDouble((Double) value);
 
             case Constants.T_LONG:
-                return cp.addLong(((Long) value).longValue());
+                return cp.addLong((Long) value);
 
             case Constants.T_REFERENCE:
                 return cp.addString(((String) value));
@@ -297,8 +297,7 @@ public class FieldGen extends FieldGenOrMethodGen {
      */
     public void update() {
         if (observers != null)
-            for (Iterator e = observers.iterator(); e.hasNext();)
-                ((FieldObserver) e.next()).notify(this);
+            for (Object observer : observers) ((FieldObserver) observer).notify(this);
     }
 
     public String getInitValue() {

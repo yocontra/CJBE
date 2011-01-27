@@ -105,8 +105,8 @@ public class AnnotationElementValue extends ElementValue {
 
     protected int getSpecificLength() {
         int length = INITIAL_LENGTH;
-        for (int i = 0; i < elementValuePairEntries.length; i++) {
-            length += elementValuePairEntries[i].getLength();
+        for (ElementValuePair elementValuePairEntry : elementValuePairEntries) {
+            length += elementValuePairEntry.getLength();
         }
         return length;
     }

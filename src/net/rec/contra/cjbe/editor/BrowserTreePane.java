@@ -66,7 +66,7 @@ public class BrowserTreePane extends JPanel {
      * @return the tree path.
      */
     public TreePath getPathForCategory(String category) {
-        return (TreePath) categoryToPath.get(category);
+        return categoryToPath.get(category);
     }
 
     /**
@@ -77,7 +77,7 @@ public class BrowserTreePane extends JPanel {
      */
     public void showMethod(String methodName, String methodSignature) {
 
-        TreePath methodsPath = (TreePath) categoryToPath.get(BrowserTreeNode.NODE_METHOD);
+        TreePath methodsPath = categoryToPath.get(BrowserTreeNode.NODE_METHOD);
         if (methodsPath == null) {
             return;
         }
@@ -99,7 +99,7 @@ public class BrowserTreePane extends JPanel {
                     tree.setSelectionPath(path);
                     return;
                 }
-            } catch (InvalidByteCodeException ex) {
+            } catch (InvalidByteCodeException ignored) {
             }
         }
     }

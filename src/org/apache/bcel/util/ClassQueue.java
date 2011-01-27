@@ -78,7 +78,7 @@ public class ClassQueue implements java.io.Serializable {
     }
 
     public JavaClass dequeue() {
-        return (JavaClass) vec.removeFirst();
+        return vec.removeFirst();
     }
 
     public boolean empty() {

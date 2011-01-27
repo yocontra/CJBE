@@ -124,11 +124,11 @@ public final class Pass3bVerifier extends PassVerifier {
         }
 
         public InstructionContext getIC(int i) {
-            return (InstructionContext) ics.get(i);
+            return ics.get(i);
         }
 
         public ArrayList getEC(int i) {
-            return (ArrayList) ecs.get(i);
+            return ecs.get(i);
         }
 
         public int size() {
@@ -180,7 +180,7 @@ public final class Pass3bVerifier extends PassVerifier {
         while (!icq.isEmpty()) {
             InstructionContext u;
             ArrayList ec;
-            if (!DEBUG) {
+            if (false) {
                 int r = random.nextInt(icq.size());
                 u = icq.getIC(r);
                 ec = icq.getEC(r);
@@ -238,8 +238,7 @@ public final class Pass3bVerifier extends PassVerifier {
 
                 // Normal successors. Add them to the queue of successors.
                 InstructionContext[] succs = u.getSuccessors();
-                for (int s = 0; s < succs.length; s++) {
-                    InstructionContext v = succs[s];
+                for (InstructionContext v : succs) {
                     if (v.execute(u.getOutFrame(oldchain), newchain, icv, ev)) {
                         icq.add(v, (ArrayList) newchain.clone());
                     }
@@ -249,8 +248,8 @@ public final class Pass3bVerifier extends PassVerifier {
             // Exception Handlers. Add them to the queue of successors.
             // [subroutines are never protected; mandated by JustIce]
             ExceptionHandler[] exc_hds = u.getExceptionHandlers();
-            for (int s = 0; s < exc_hds.length; s++) {
-                InstructionContext v = cfg.contextOf(exc_hds[s].getHandlerStart());
+            for (ExceptionHandler exc_hd : exc_hds) {
+                InstructionContext v = cfg.contextOf(exc_hd.getHandlerStart());
                 // TODO: the "oldchain" and "newchain" is used to determine the subroutine
                 // we're in (by searching for the last JSR) by the InstructionContext
                 // implementation. Therefore, we should not use this chain mechanism
@@ -261,7 +260,7 @@ public final class Pass3bVerifier extends PassVerifier {
                 // by using an empty chain for the exception handlers.
                 //if (v.execute(new Frame(u.getOutFrame(oldchain).getLocals(), new OperandStack (u.getOutFrame().getStack().maxStack(), (exc_hds[s].getExceptionType()==null? Type.THROWABLE : exc_hds[s].getExceptionType())) ), newchain), icv, ev){
                 //icq.add(v, (ArrayList) newchain.clone());
-                if (v.execute(new Frame(u.getOutFrame(oldchain).getLocals(), new OperandStack(u.getOutFrame(oldchain).getStack().maxStack(), (exc_hds[s].getExceptionType() == null ? Type.THROWABLE : exc_hds[s].getExceptionType()))), new ArrayList(), icv, ev)) {
+                if (v.execute(new Frame(u.getOutFrame(oldchain).getLocals(), new OperandStack(u.getOutFrame(oldchain).getStack().maxStack(), (exc_hd.getExceptionType() == null ? Type.THROWABLE : exc_hd.getExceptionType()))), new ArrayList(), icv, ev)) {
                     icq.add(v, new ArrayList());
                 }
             }

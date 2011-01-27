@@ -62,5 +62,5 @@ package org.apache.bcel.verifier.structurals;
  * @author <A HREF="http://www.inf.fu-berlin.de/~ehaase"/>Enver Haase</A>
  * @version $Id: GenericArray.java,v 1.1 2005/12/16 14:11:30 andos Exp $
  */
-public class GenericArray extends java.lang.Object implements java.lang.Cloneable, java.io.Serializable {
+public class GenericArray implements java.lang.Cloneable, java.io.Serializable {
 }

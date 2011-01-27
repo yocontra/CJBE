@@ -233,19 +233,19 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
             supidx = jc.getSuperclassNameIndex();
 
             Method[] methods = jc.getMethods();
-            for (int i = 0; i < methods.length; i++) {
-                String name_and_sig = (methods[i].getName() + methods[i].getSignature());
+            for (Method method : methods) {
+                String name_and_sig = (method.getName() + method.getSignature());
 
                 if (hashmap.containsKey(name_and_sig)) {
-                    if (methods[i].isFinal()) {
+                    if (method.isFinal()) {
                         throw new ClassConstraintException("Method '" + name_and_sig + "' in class '" + hashmap.get(name_and_sig) + "' overrides the final (not-overridable) definition in class '" + jc.getClassName() + "'.");
                     } else {
-                        if (!methods[i].isStatic()) { // static methods don't inherit
+                        if (!method.isStatic()) { // static methods don't inherit
                             hashmap.put(name_and_sig, jc.getClassName());
                         }
                     }
                 } else {
-                    if (!methods[i].isStatic()) { // static methods don't inherit
+                    if (!method.isStatic()) { // static methods don't inherit
                         hashmap.put(name_and_sig, jc.getClassName());
                     }
                 }
@@ -347,29 +347,29 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
             // This is a costly check; existing verifiers don't do it!
             boolean hasInnerClass = new InnerClassDetector(jc).innerClassReferenced();
 
-            for (int i = 0; i < atts.length; i++) {
-                if ((!(atts[i] instanceof SourceFile)) &&
-                        (!(atts[i] instanceof Deprecated)) &&
-                        (!(atts[i] instanceof InnerClasses)) &&
-                        (!(atts[i] instanceof Synthetic))) {
-                    addMessage("Attribute '" + tostring(atts[i]) + "' as an attribute of the ClassFile structure '" + tostring(obj) + "' is unknown and will therefore be ignored.");
+            for (Attribute att : atts) {
+                if ((!(att instanceof SourceFile)) &&
+                        (!(att instanceof Deprecated)) &&
+                        (!(att instanceof InnerClasses)) &&
+                        (!(att instanceof Synthetic))) {
+                    addMessage("Attribute '" + tostring(att) + "' as an attribute of the ClassFile structure '" + tostring(obj) + "' is unknown and will therefore be ignored.");
                 }
 
-                if (atts[i] instanceof SourceFile) {
-                    if (foundSourceFile == false) foundSourceFile = true;
+                if (att instanceof SourceFile) {
+                    if (!foundSourceFile) foundSourceFile = true;
                     else
                         throw new ClassConstraintException("A ClassFile structure (like '" + tostring(obj) + "') may have no more than one SourceFile attribute."); //vmspec2 4.7.7
                 }
 
-                if (atts[i] instanceof InnerClasses) {
-                    if (foundInnerClasses == false) foundInnerClasses = true;
+                if (att instanceof InnerClasses) {
+                    if (!foundInnerClasses) foundInnerClasses = true;
                     else {
                         if (hasInnerClass) {
                             throw new ClassConstraintException("A Classfile structure (like '" + tostring(obj) + "') must have exactly one InnerClasses attribute if at least one Inner Class is referenced (which is the case). More than one InnerClasses attribute was found.");
                         }
                     }
                     if (!hasInnerClass) {
-                        addMessage("No referenced Inner Class found, but InnerClasses attribute '" + tostring(atts[i]) + "' found. Strongly suggest removal of that attribute.");
+                        addMessage("No referenced Inner Class found, but InnerClasses attribute '" + tostring(att) + "' found. Strongly suggest removal of that attribute.");
                     }
                 }
 
@@ -531,14 +531,14 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
             field_names.add(name);
 
             Attribute[] atts = obj.getAttributes();
-            for (int i = 0; i < atts.length; i++) {
-                if ((!(atts[i] instanceof ConstantValue)) &&
-                        (!(atts[i] instanceof Synthetic)) &&
-                        (!(atts[i] instanceof Deprecated))) {
-                    addMessage("Attribute '" + tostring(atts[i]) + "' as an attribute of Field '" + tostring(obj) + "' is unknown and will therefore be ignored.");
+            for (Attribute att : atts) {
+                if ((!(att instanceof ConstantValue)) &&
+                        (!(att instanceof Synthetic)) &&
+                        (!(att instanceof Deprecated))) {
+                    addMessage("Attribute '" + tostring(att) + "' as an attribute of Field '" + tostring(obj) + "' is unknown and will therefore be ignored.");
                 }
-                if (!(atts[i] instanceof ConstantValue)) {
-                    addMessage("Attribute '" + tostring(atts[i]) + "' as an attribute of Field '" + tostring(obj) + "' is not a ConstantValue and is therefore only of use for debuggers and such.");
+                if (!(att instanceof ConstantValue)) {
+                    addMessage("Attribute '" + tostring(att) + "' as an attribute of Field '" + tostring(obj) + "' is not a ConstantValue and is therefore only of use for debuggers and such.");
                 }
             }
         }
@@ -581,8 +581,8 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
                 }
             }
 
-            for (int i = 0; i < ts.length; i++) {
-                act = ts[i];
+            for (Type t1 : ts) {
+                act = t1;
                 if (act instanceof ArrayType) act = ((ArrayType) act).getBasicType();
                 if (act instanceof ObjectType) {
                     Verifier v = VerifierFactory.getVerifier(((ObjectType) act).getClassName());
@@ -676,21 +676,21 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
 
             Attribute[] atts = obj.getAttributes();
             int num_code_atts = 0;
-            for (int i = 0; i < atts.length; i++) {
-                if ((!(atts[i] instanceof Code)) &&
-                        (!(atts[i] instanceof ExceptionTable)) &&
-                        (!(atts[i] instanceof Synthetic)) &&
-                        (!(atts[i] instanceof Deprecated))) {
-                    addMessage("Attribute '" + tostring(atts[i]) + "' as an attribute of Method '" + tostring(obj) + "' is unknown and will therefore be ignored.");
+            for (Attribute att : atts) {
+                if ((!(att instanceof Code)) &&
+                        (!(att instanceof ExceptionTable)) &&
+                        (!(att instanceof Synthetic)) &&
+                        (!(att instanceof Deprecated))) {
+                    addMessage("Attribute '" + tostring(att) + "' as an attribute of Method '" + tostring(obj) + "' is unknown and will therefore be ignored.");
                 }
-                if ((!(atts[i] instanceof Code)) &&
-                        (!(atts[i] instanceof ExceptionTable))) {
-                    addMessage("Attribute '" + tostring(atts[i]) + "' as an attribute of Method '" + tostring(obj) + "' is neither Code nor Exceptions and is therefore only of use for debuggers and such.");
+                if ((!(att instanceof Code)) &&
+                        (!(att instanceof ExceptionTable))) {
+                    addMessage("Attribute '" + tostring(att) + "' as an attribute of Method '" + tostring(obj) + "' is neither Code nor Exceptions and is therefore only of use for debuggers and such.");
                 }
-                if ((atts[i] instanceof Code) && (obj.isNative() || obj.isAbstract())) {
-                    throw new ClassConstraintException("Native or abstract methods like '" + tostring(obj) + "' must not have a Code attribute like '" + tostring(atts[i]) + "'."); //vmspec2 page120, 4.7.3
+                if ((att instanceof Code) && (obj.isNative() || obj.isAbstract())) {
+                    throw new ClassConstraintException("Native or abstract methods like '" + tostring(obj) + "' must not have a Code attribute like '" + tostring(att) + "'."); //vmspec2 page120, 4.7.3
                 }
-                if (atts[i] instanceof Code) num_code_atts++;
+                if (att instanceof Code) num_code_atts++;
             }
             if (!obj.isNative() && !obj.isAbstract() && num_code_atts != 1) {
                 throw new ClassConstraintException("Non-native, non-abstract methods like '" + tostring(obj) + "' must have exactly one Code attribute (found: " + num_code_atts + ").");
@@ -754,20 +754,20 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
 
             InnerClass[] ics = obj.getInnerClasses();
 
-            for (int i = 0; i < ics.length; i++) {
-                checkIndex(obj, ics[i].getInnerClassIndex(), CONST_Class);
-                int outer_idx = ics[i].getOuterClassIndex();
+            for (InnerClass ic : ics) {
+                checkIndex(obj, ic.getInnerClassIndex(), CONST_Class);
+                int outer_idx = ic.getOuterClassIndex();
                 if (outer_idx != 0) {
                     checkIndex(obj, outer_idx, CONST_Class);
                 }
-                int innername_idx = ics[i].getInnerNameIndex();
+                int innername_idx = ic.getInnerNameIndex();
                 if (innername_idx != 0) {
                     checkIndex(obj, innername_idx, CONST_Utf8);
                 }
-                int acc = ics[i].getInnerAccessFlags();
+                int acc = ic.getInnerAccessFlags();
                 acc = acc & (~(ACC_PUBLIC | ACC_PRIVATE | ACC_PROTECTED | ACC_STATIC | ACC_FINAL | ACC_INTERFACE | ACC_ABSTRACT));
                 if (acc != 0) {
-                    addMessage("Unknown access flag for inner class '" + tostring(ics[i]) + "' set (InnerClasses attribute '" + tostring(obj) + "').");
+                    addMessage("Unknown access flag for inner class '" + tostring(ic) + "' set (InnerClasses attribute '" + tostring(obj) + "').");
                 }
             }
             // Semantical consistency is not yet checked by Sun, see vmspec2 4.7.5.
@@ -979,10 +979,10 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
 
             int[] exc_indices = obj.getExceptionIndexTable();
 
-            for (int i = 0; i < exc_indices.length; i++) {
-                checkIndex(obj, exc_indices[i], CONST_Class);
+            for (int exc_indice : exc_indices) {
+                checkIndex(obj, exc_indice, CONST_Class);
 
-                ConstantClass cc = (ConstantClass) (cp.getConstant(exc_indices[i]));
+                ConstantClass cc = (ConstantClass) (cp.getConstant(exc_indice));
                 checkIndex(cc, cc.getNameIndex(), CONST_Utf8); // cannot be sure this ConstantClass has already been visited (checked)!
                 String cname = ((ConstantUtf8) cp.getConstant(cc.getNameIndex())).getBytes().replace('/', '.'); //convert internal notation on-the-fly to external notation
 
@@ -1219,7 +1219,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
      * This method returns true if and only if the supplied String
      * represents a valid Java class name.
      */
-    private static final boolean validClassName(String name) {
+    private static boolean validClassName(String name) {
         /*
          * TODO: implement.
 		 * Are there any restrictions?
@@ -1276,8 +1276,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
      */
     private static boolean validInterfaceMethodName(String name) {
         // I guess we should assume special names forbidden here.
-        if (name.startsWith("<")) return false;
-        return validJavaLangMethodName(name);
+        return !name.startsWith("<") && validJavaLangMethodName(name);
     }
 
     /**

@@ -165,7 +165,7 @@ public abstract class Type implements java.io.Serializable {
      * @param signature signature string such as Ljava/lang/String;
      * @return type object
      */
-    public static final Type getType(String signature)
+    public static Type getType(String signature)
             throws StringIndexOutOfBoundsException {
         byte type = Utility.typeOfSignature(signature);
 
@@ -291,8 +291,8 @@ public abstract class Type implements java.io.Serializable {
         StringBuffer sb = new StringBuffer("(");
         Class[] params = meth.getParameterTypes(); // avoid clone
 
-        for (int j = 0; j < params.length; j++) {
-            sb.append(getType(params[j]).getSignature());
+        for (Class param : params) {
+            sb.append(getType(param).getSignature());
         }
 
         sb.append(")");

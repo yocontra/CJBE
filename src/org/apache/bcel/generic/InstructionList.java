@@ -902,8 +902,8 @@ public class InstructionList implements Serializable {
                     if (i instanceof Select) {
                         InstructionHandle[] targets = ((Select) i).getTargets();
 
-                        for (int j = 0; j < targets.length; j++) {
-                            inst = targets[j].instruction;
+                        for (InstructionHandle target : targets) {
+                            inst = target.instruction;
                             if (!contains(inst))
                                 throw new ClassGenException("Branch target of " +
                                         Constants.OPCODE_NAMES[i.opcode] + ":" +
@@ -1121,14 +1121,14 @@ public class InstructionList implements Serializable {
                 InstructionHandle itarget = bi.getTarget(); // old target
 
                 // New target is in hash map
-                bc.setTarget((InstructionHandle) map.get(itarget));
+                bc.setTarget(map.get(itarget));
 
                 if (bi instanceof Select) { // Either LOOKUPSWITCH or TABLESWITCH
                     InstructionHandle[] itargets = ((Select) bi).getTargets();
                     InstructionHandle[] ctargets = ((Select) bc).getTargets();
 
                     for (int j = 0; j < itargets.length; j++) { // Update all targets
-                        ctargets[j] = (InstructionHandle) map.get(itargets[j]);
+                        ctargets[j] = map.get(itargets[j]);
                     }
                 }
             }
@@ -1247,15 +1247,15 @@ public class InstructionList implements Serializable {
     public void redirectLocalVariables(LocalVariableGen[] lg,
                                        InstructionHandle old_target,
                                        InstructionHandle new_target) {
-        for (int i = 0; i < lg.length; i++) {
-            InstructionHandle start = lg[i].getStart();
-            InstructionHandle end = lg[i].getEnd();
+        for (LocalVariableGen aLg : lg) {
+            InstructionHandle start = aLg.getStart();
+            InstructionHandle end = aLg.getEnd();
 
             if (start == old_target)
-                lg[i].setStart(new_target);
+                aLg.setStart(new_target);
 
             if (end == old_target)
-                lg[i].setEnd(new_target);
+                aLg.setEnd(new_target);
         }
     }
 
@@ -1270,15 +1270,15 @@ public class InstructionList implements Serializable {
     public void redirectExceptionHandlers(CodeExceptionGen[] exceptions,
                                           InstructionHandle old_target,
                                           InstructionHandle new_target) {
-        for (int i = 0; i < exceptions.length; i++) {
-            if (exceptions[i].getStartPC() == old_target)
-                exceptions[i].setStartPC(new_target);
+        for (CodeExceptionGen exception : exceptions) {
+            if (exception.getStartPC() == old_target)
+                exception.setStartPC(new_target);
 
-            if (exceptions[i].getEndPC() == old_target)
-                exceptions[i].setEndPC(new_target);
+            if (exception.getEndPC() == old_target)
+                exception.setEndPC(new_target);
 
-            if (exceptions[i].getHandlerPC() == old_target)
-                exceptions[i].setHandlerPC(new_target);
+            if (exception.getHandlerPC() == old_target)
+                exception.setHandlerPC(new_target);
         }
     }
 
@@ -1309,8 +1309,7 @@ public class InstructionList implements Serializable {
      */
     public void update() {
         if (observers != null)
-            for (Iterator e = observers.iterator(); e.hasNext();)
-                ((InstructionListObserver) e.next()).notify(this);
+            for (Object observer : observers) ((InstructionListObserver) observer).notify(this);
     }
 }
 

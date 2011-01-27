@@ -58,6 +58,8 @@ import org.apache.bcel.Repository;
 import org.apache.bcel.classfile.JavaClass;
 
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * A class for simple graphical class file verification.
@@ -137,10 +139,8 @@ public class VerifyDialog extends javax.swing.JDialog {
                 connEtoC4(e);
         }
 
-        ;
     }
 
-    ;
     /**
      * Machine-generated.
      */
@@ -552,19 +552,18 @@ public class VerifyDialog extends javax.swing.JDialog {
     public static void main(java.lang.String[] args) {
         classes_to_verify = args.length;
 
-        for (int i = 0; i < args.length; i++) {
+        for (String arg : args) {
 
             try {
                 VerifyDialog aVerifyDialog;
-                aVerifyDialog = new VerifyDialog(args[i]);
+                aVerifyDialog = new VerifyDialog(arg);
                 aVerifyDialog.setModal(true);
-                aVerifyDialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    public void windowClosing(java.awt.event.WindowEvent e) {
+                aVerifyDialog.addWindowListener(new WindowAdapter() {
+                    public void windowClosing(WindowEvent e) {
                         classes_to_verify--;
                         if (classes_to_verify == 0) System.exit(0);
                     }
 
-                    ;
                 });
                 aVerifyDialog.setVisible(true);
             } catch (Throwable exception) {

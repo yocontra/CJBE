@@ -124,7 +124,7 @@ public class BrowserHistory {
 
         if (historyPointer >= 0) {
 
-            BrowserHistoryEntry currentEntry = (BrowserHistoryEntry) history.get(historyPointer);
+            BrowserHistoryEntry currentEntry = history.get(historyPointer);
             if (currentEntry.getTreePath().equals(newEntry.getTreePath())) {
                 if (newEntry.getOffset() == null) {
                     // Ignore history event, since it is more unspecific than the current one
@@ -155,7 +155,7 @@ public class BrowserHistory {
 
     private void syncWithHistory() {
 
-        BrowserHistoryEntry entry = (BrowserHistoryEntry) history.get(historyPointer);
+        BrowserHistoryEntry entry = history.get(historyPointer);
 
         JTree tree = services.getBrowserComponent().getTreePane().getTree();
 
@@ -173,7 +173,7 @@ public class BrowserHistory {
             codeAttributeDetailPane.selectByteCodeDetailPane();
 
             codeAttributeDetailPane.getCodeAttributeByteCodeDetailPane().
-                    scrollToOffset(offset.intValue());
+                    scrollToOffset(offset);
         }
 
         updateActions();

@@ -77,11 +77,11 @@ public class ClassStack implements java.io.Serializable {
     }
 
     public JavaClass pop() {
-        return (JavaClass) stack.pop();
+        return stack.pop();
     }
 
     public JavaClass top() {
-        return (JavaClass) stack.peek();
+        return stack.peek();
     }
 
     public boolean empty() {

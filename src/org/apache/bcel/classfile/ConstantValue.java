@@ -96,7 +96,7 @@ public final class ConstantValue extends Attribute {
      */
     ConstantValue(int name_index, int length, DataInputStream file,
                   ConstantPool constant_pool) throws IOException {
-        this(name_index, length, (int) file.readUnsignedShort(), constant_pool);
+        this(name_index, length, file.readUnsignedShort(), constant_pool);
     }
 
     /**

@@ -98,8 +98,7 @@ public abstract class Select extends BranchInstruction implements
         super(opcode, target);
 
         this.targets = targets;
-        for (int i = 0; i < targets.length; i++)
-            notifyTarget(null, targets[i], this);
+        for (InstructionHandle target1 : targets) notifyTarget(null, target1, this);
 
         this.match = match;
 
@@ -116,8 +115,7 @@ public abstract class Select extends BranchInstruction implements
 
     public void setMatchesTargets(int[] match, InstructionHandle[] targets) {
         this.targets = targets;
-        for (int i = 0; i < targets.length; i++)
-            notifyTarget(null, targets[i], this);
+        for (InstructionHandle target1 : targets) notifyTarget(null, target1, this);
 
         this.match = match;
 
@@ -259,8 +257,8 @@ public abstract class Select extends BranchInstruction implements
         if (target == ih)
             return true;
 
-        for (int i = 0; i < targets.length; i++)
-            if (targets[i] == ih)
+        for (InstructionHandle target1 : targets)
+            if (target1 == ih)
                 return true;
 
         return false;
@@ -272,8 +270,7 @@ public abstract class Select extends BranchInstruction implements
     void dispose() {
         super.dispose();
 
-        for (int i = 0; i < targets.length; i++)
-            targets[i].removeTargeter(this);
+        for (InstructionHandle target1 : targets) target1.removeTargeter(this);
     }
 
     /**

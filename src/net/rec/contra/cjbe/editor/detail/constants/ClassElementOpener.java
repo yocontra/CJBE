@@ -116,7 +116,7 @@ public class ClassElementOpener implements ActionListener {
                 if (((ConstantClassInfo) cpInfo).getName().equals(detailPane.getBrowserServices().getClassFile().getThisClassName())) {
                     buttonText = null;
                 }
-            } catch (InvalidByteCodeException e) {
+            } catch (InvalidByteCodeException ignored) {
             }
         } else if (cpInfo instanceof ConstantFieldrefInfo) {
             buttonText = "Show field";

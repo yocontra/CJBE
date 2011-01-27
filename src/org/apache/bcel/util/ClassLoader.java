@@ -130,12 +130,12 @@ public class ClassLoader extends java.lang.ClassLoader {
 
         /* First try: lookup hash table.
         */
-        if ((cl = (Class) classes.get(class_name)) == null) {
+        if ((cl = classes.get(class_name)) == null) {
             /* Second try: Load system class using system class loader. You better
             * don't mess around with them.
             */
-            for (int i = 0; i < ignored_packages.length; i++) {
-                if (class_name.startsWith(ignored_packages[i])) {
+            for (String ignored_package : ignored_packages) {
+                if (class_name.startsWith(ignored_package)) {
                     cl = deferTo.loadClass(class_name);
                     break;
                 }

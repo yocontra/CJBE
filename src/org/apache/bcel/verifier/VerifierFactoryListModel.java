@@ -31,9 +31,9 @@ public class VerifierFactoryListModel implements org.apache.bcel.verifier.Verifi
             cache.add(verifiers[i].getClassName());
         }
 
-        for (int i = 0; i < size; i++) {
+        for (ListDataListener listener : listeners) {
             ListDataEvent e = new ListDataEvent(this, ListDataEvent.CONTENTS_CHANGED, 0, num_of_verifiers - 1);
-            ((javax.swing.event.ListDataListener) (listeners.get(i))).contentsChanged(e);
+            ((ListDataListener) listener).contentsChanged(e);
         }
     }
 

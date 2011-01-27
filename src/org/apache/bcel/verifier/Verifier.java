@@ -54,6 +54,7 @@ package org.apache.bcel.verifier;
  * <http://www.apache.org/>.
  */
 
+import org.apache.bcel.Repository;
 import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.verifier.statics.Pass1Verifier;
 import org.apache.bcel.verifier.statics.Pass2Verifier;
@@ -129,7 +130,7 @@ public class Verifier {
     public VerificationResult doPass3a(int method_no) {
         String key = Integer.toString(method_no);
         Pass3aVerifier p3av;
-        p3av = (Pass3aVerifier) (p3avs.get(key));
+        p3av = p3avs.get(key);
         if (p3avs.get(key) == null) {
             p3av = new Pass3aVerifier(this, method_no);
             p3avs.put(key, p3av);
@@ -143,7 +144,7 @@ public class Verifier {
     public VerificationResult doPass3b(int method_no) {
         String key = Integer.toString(method_no);
         Pass3bVerifier p3bv;
-        p3bv = (Pass3bVerifier) (p3bvs.get(key));
+        p3bv = p3bvs.get(key);
         if (p3bvs.get(key) == null) {
             p3bv = new Pass3bVerifier(this, method_no);
             p3bvs.put(key, p3bv);
@@ -195,48 +196,46 @@ public class Verifier {
 
         if (p1v != null) {
             String[] p1m = p1v.getMessages();
-            for (int i = 0; i < p1m.length; i++) {
-                messages.add("Pass 1: " + p1m[i]);
+            for (String aP1m : p1m) {
+                messages.add("Pass 1: " + aP1m);
             }
         }
         if (p2v != null) {
             String[] p2m = p2v.getMessages();
-            for (int i = 0; i < p2m.length; i++) {
-                messages.add("Pass 2: " + p2m[i]);
+            for (String aP2m : p2m) {
+                messages.add("Pass 2: " + aP2m);
             }
         }
-        Iterator p3as = p3avs.values().iterator();
-        while (p3as.hasNext()) {
-            Pass3aVerifier pv = (Pass3aVerifier) p3as.next();
+        for (Pass3aVerifier pass3aVerifier : p3avs.values()) {
+            Pass3aVerifier pv = pass3aVerifier;
             String[] p3am = pv.getMessages();
             int meth = pv.getMethodNo();
-            for (int i = 0; i < p3am.length; i++) {
+            for (String aP3am : p3am) {
                 messages.add("Pass 3a, method " + meth +
                         " ('" +
-                        org.apache.bcel.Repository
+                        Repository
                                 .lookupClass(classname)
                                 .getMethods()[meth] +
-                        "'): " + p3am[i]);
+                        "'): " + aP3am);
             }
         }
-        Iterator p3bs = p3bvs.values().iterator();
-        while (p3bs.hasNext()) {
-            Pass3bVerifier pv = (Pass3bVerifier) p3bs.next();
+        for (Pass3bVerifier pass3bVerifier : p3bvs.values()) {
+            Pass3bVerifier pv = pass3bVerifier;
             String[] p3bm = pv.getMessages();
             int meth = pv.getMethodNo();
-            for (int i = 0; i < p3bm.length; i++) {
+            for (String aP3bm : p3bm) {
                 messages.add("Pass 3b, method " + meth +
                         " ('" +
-                        org.apache.bcel.Repository.
+                        Repository.
                                 lookupClass(classname).
                                 getMethods()[meth] +
-                        "'): " + p3bm[i]);
+                        "'): " + aP3bm);
             }
         }
 
         String[] ret = new String[messages.size()];
         for (int i = 0; i < messages.size(); i++) {
-            ret[i] = (String) messages.get(i);
+            ret[i] = messages.get(i);
         }
 
         return ret;
@@ -289,8 +288,8 @@ public class Verifier {
             System.out.println("Warnings:");
             String[] warnings = v.getMessages();
             if (warnings.length == 0) System.out.println("<none>");
-            for (int j = 0; j < warnings.length; j++) {
-                System.out.println(warnings[j]);
+            for (String warning : warnings) {
+                System.out.println(warning);
             }
 
             System.out.println("\n");

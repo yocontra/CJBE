@@ -101,7 +101,7 @@ final class CodeHTML implements org.apache.bcel.Constants {
      * @param stream data input stream
      * @return String representation of byte code
      */
-    private final String codeToHTML(ByteSequence bytes, int method_number)
+    private String codeToHTML(ByteSequence bytes, int method_number)
             throws IOException {
         short opcode = (short) bytes.readUnsignedByte();
         StringBuffer buf;
@@ -147,9 +147,9 @@ final class CodeHTML implements org.apache.bcel.Constants {
                 buf.append("<TH>default</TH></TR>\n<TR>");
 
                 // Print target and default indices in second row
-                for (int i = 0; i < jump_table.length; i++)
+                for (int aJump_table : jump_table)
                     buf.append("<TD><A HREF=\"#code" + method_number + "@" +
-                            jump_table[i] + "\">" + jump_table[i] + "</A></TD>");
+                            aJump_table + "\">" + aJump_table + "</A></TD>");
                 buf.append("<TD><A HREF=\"#code" + method_number + "@" +
                         default_offset + "\">" + default_offset + "</A></TD></TR>\n</TABLE>\n");
 
@@ -204,7 +204,7 @@ final class CodeHTML implements org.apache.bcel.Constants {
             case IF_ICMPNE:
             case JSR:
 
-                index = (int) (bytes.getIndex() + bytes.readShort() - 1);
+                index = bytes.getIndex() + bytes.readShort() - 1;
 
                 buf.append("<A HREF=\"#code" + method_number + "@" + index + "\">" + index + "</A>");
                 break;
@@ -428,7 +428,7 @@ final class CodeHTML implements org.apache.bcel.Constants {
      * Find all target addresses in code, so that they can be marked
      * with &lt;A NAME = ...&gt;. Target addresses are kept in an BitSet object.
      */
-    private final void findGotos(ByteSequence bytes, Method method, Code code)
+    private void findGotos(ByteSequence bytes, Method method, Code code)
             throws IOException {
         int index;
         goto_set = new BitSet(bytes.available());
@@ -450,13 +450,13 @@ final class CodeHTML implements org.apache.bcel.Constants {
 
             // Look for local variables and their range
             Attribute[] attributes = code.getAttributes();
-            for (int i = 0; i < attributes.length; i++) {
-                if (attributes[i].getTag() == ATTR_LOCAL_VARIABLE_TABLE) {
-                    LocalVariable[] vars = ((LocalVariableTable) attributes[i]).getLocalVariableTable();
+            for (Attribute attribute : attributes) {
+                if (attribute.getTag() == ATTR_LOCAL_VARIABLE_TABLE) {
+                    LocalVariable[] vars = ((LocalVariableTable) attribute).getLocalVariableTable();
 
-                    for (int j = 0; j < vars.length; j++) {
-                        int start = vars[j].getStartPC();
-                        int end = (int) (start + vars[j].getLength());
+                    for (LocalVariable var : vars) {
+                        int start = var.getStartPC();
+                        int end = (int) (start + var.getLength());
                         goto_set.set(start);
                         goto_set.set(end);
                     }

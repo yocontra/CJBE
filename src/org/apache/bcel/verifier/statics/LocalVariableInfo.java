@@ -104,7 +104,7 @@ public class LocalVariableInfo {
      * variable slot at the given bytecode offset.
      */
     public Type getType(int offset) {
-        return (Type) types.get(Integer.toString(offset));
+        return types.get(Integer.toString(offset));
     }
 
     /**
@@ -116,7 +116,7 @@ public class LocalVariableInfo {
      * variable slot at the given bytecode offset.
      */
     public String getName(int offset) {
-        return (String) (names.get(Integer.toString(offset)));
+        return names.get(Integer.toString(offset));
     }
 
     /**

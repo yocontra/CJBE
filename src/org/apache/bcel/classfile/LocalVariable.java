@@ -271,7 +271,7 @@ public final class LocalVariable
     public LocalVariable copy() {
         try {
             return (LocalVariable) clone();
-        } catch (CloneNotSupportedException e) {
+        } catch (CloneNotSupportedException ignored) {
         }
 
         return null;

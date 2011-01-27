@@ -134,14 +134,11 @@ public class ClassPath implements Serializable {
     }
 
     public boolean equals(Object o) {
-        if (o instanceof ClassPath) {
-            return class_path.equals(((ClassPath) o).class_path);
-        }
+        return o instanceof ClassPath && class_path.equals(((ClassPath) o).class_path);
 
-        return false;
     }
 
-    private static final void getPathComponents(String path,
+    private static void getPathComponents(String path,
                                                 ArrayList<String> list) {
         if (path != null) {
             StringTokenizer tok = new StringTokenizer(path, File.pathSeparator);
@@ -162,7 +159,7 @@ public class ClassPath implements Serializable {
      *
      * @return class path as used by default by BCEL
      */
-    public static final String getClassPath() {
+    public static String getClassPath() {
         String class_path = System.getProperty("java.class.path");
         String boot_path = System.getProperty("sun.boot.class.path");
         String ext_path = System.getProperty("java.ext.dirs");
@@ -175,8 +172,8 @@ public class ClassPath implements Serializable {
         ArrayList<String> dirs = new ArrayList<String>();
         getPathComponents(ext_path, dirs);
 
-        for (Iterator e = dirs.iterator(); e.hasNext();) {
-            File ext_dir = new File((String) e.next());
+        for (Object dir : dirs) {
+            File ext_dir = new File((String) dir);
             String[] extensions = ext_dir.list(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
                     name = name.toLowerCase();
@@ -185,8 +182,7 @@ public class ClassPath implements Serializable {
             });
 
             if (extensions != null)
-                for (int i = 0; i < extensions.length; i++)
-                    list.add(ext_path + File.separatorChar + extensions[i]);
+                for (String extension : extensions) list.add(ext_path + File.separatorChar + extension);
         }
 
         StringBuffer buf = new StringBuffer();
@@ -228,7 +224,7 @@ public class ClassPath implements Serializable {
 
         try {
             is = getClass().getClassLoader().getResourceAsStream(name + suffix);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
 
         if (is != null)
@@ -244,10 +240,10 @@ public class ClassPath implements Serializable {
      */
     public ClassFile getClassFile(String name, String suffix)
             throws IOException {
-        for (int i = 0; i < paths.length; i++) {
+        for (PathEntry path : paths) {
             ClassFile cf;
 
-            if ((cf = paths[i].getClassFile(name, suffix)) != null)
+            if ((cf = path.getClassFile(name, suffix)) != null)
                 return cf;
         }
 

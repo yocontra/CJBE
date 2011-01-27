@@ -240,12 +240,12 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
     private void _visitStackAccessor(Instruction o) {
         int consume = o.consumeStack(cpg); // Stack values are always consumed first; then produced.
         if (consume > stack().slotsUsed()) {
-            constraintViolated((Instruction) o, "Cannot consume " + consume + " stack slots: only " + stack().slotsUsed() + " slot(s) left on stack!\nStack:\n" + stack());
+            constraintViolated(o, "Cannot consume " + consume + " stack slots: only " + stack().slotsUsed() + " slot(s) left on stack!\nStack:\n" + stack());
         }
 
-        int produce = o.produceStack(cpg) - ((Instruction) o).consumeStack(cpg); // Stack values are always consumed first; then produced.
+        int produce = o.produceStack(cpg) - o.consumeStack(cpg); // Stack values are always consumed first; then produced.
         if (produce + stack().slotsUsed() > stack().maxStack()) {
-            constraintViolated((Instruction) o, "Cannot produce " + produce + " stack slots: only " + (stack().maxStack() - stack().slotsUsed()) + " free stack slot(s) left.\nStack:\n" + stack());
+            constraintViolated(o, "Cannot produce " + produce + " stack slots: only " + (stack().maxStack() - stack().slotsUsed()) + " free stack slot(s) left.\nStack:\n" + stack());
         }
     }
 
@@ -319,7 +319,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
             Verifier v = VerifierFactory.getVerifier(name);
             VerificationResult vr = v.doPass2();
             if (vr.getStatus() != VerificationResult.VERIFIED_OK) {
-                constraintViolated((Instruction) o, "Class '" + name + "' is referenced, but cannot be loaded and resolved: '" + vr + "'.");
+                constraintViolated(o, "Class '" + name + "' is referenced, but cannot be loaded and resolved: '" + vr + "'.");
             }
         }
     }
@@ -424,7 +424,6 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
         }
         if (o instanceof ARETURN) {
             if (stack().peek() == Type.NULL) {
-                return;
             } else {
                 if (!(stack().peek() instanceof ReferenceType)) {
                     constraintViolated(o, "Reference type expected on top of stack, but is: '" + stack().peek() + "'.");
@@ -491,7 +490,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
             if (!(((ArrayType) arrayref).getElementType() instanceof ReferenceType)) {
                 constraintViolated(o, "The 'arrayref' does not refer to an array with elements of a ReferenceType but to an array of " + ((ArrayType) arrayref).getElementType() + ".");
             }
-            if (!((ReferenceType) value).isAssignmentCompatibleWith((ReferenceType) ((ArrayType) arrayref).getElementType())) {
+            if (!((ReferenceType) value).isAssignmentCompatibleWith(((ArrayType) arrayref).getElementType())) {
                 constraintViolated(o, "The type of 'value' ('" + value + "') is not assignment compatible to the components of the array 'arrayref' refers to. ('" + ((ArrayType) arrayref).getElementType() + "')");
             }
         }
@@ -895,7 +894,6 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
             constraintViolated(o, "Stack top type must be of size 1, but is '" + stack().peek() + "' of size '" + stack().peek().getSize() + "'.");
         }
         if (stack().peek(1).getSize() == 2) {
-            return; // Form 2, okay.
         } else {   //stack().peek(1).getSize == 1.
             if (stack().peek(2).getSize() != 1) {
                 constraintViolated(o, "If stack top's size is 1 and stack next-to-top's size is 1, stack next-to-next-to-top's size must also be 1, but is: '" + stack().peek(2) + "' of size '" + stack().peek(2).getSize() + "'.");
@@ -908,7 +906,6 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
      */
     public void visitDUP2(DUP2 o) {
         if (stack().peek().getSize() == 2) {
-            return; // Form 2, okay.
         } else { //stack().peek().getSize() == 1.
             if (stack().peek(1).getSize() != 1) {
                 constraintViolated(o, "If stack top's size is 1, then stack next-to-top's size must also be 1. But it is '" + stack().peek(1) + "' of size '" + stack().peek(1).getSize() + "'.");
@@ -924,7 +921,6 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
             if (stack().peek(1).getSize() != 1) {
                 constraintViolated(o, "If stack top's size is 2, then stack next-to-top's size must be 1. But it is '" + stack().peek(1) + "' of size '" + stack().peek(1).getSize() + "'.");
             } else {
-                return; // Form 2
             }
         } else { // stack top is of size 1
             if (stack().peek(1).getSize() != 1) {
@@ -1170,9 +1166,9 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
         JavaClass jc = Repository.lookupClass(o.getClassType(cpg).getClassName());
         Field[] fields = jc.getFields();
         Field f = null;
-        for (int i = 0; i < fields.length; i++) {
-            if (fields[i].getName().equals(field_name)) {
-                f = fields[i];
+        for (Field field : fields) {
+            if (field.getName().equals(field_name)) {
+                f = field;
                 break;
             }
         }
@@ -1637,7 +1633,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
             Verifier v = VerifierFactory.getVerifier(name);
             VerificationResult vr = v.doPass2();
             if (vr.getStatus() != VerificationResult.VERIFIED_OK) {
-                constraintViolated((Instruction) o, "Class '" + name + "' is referenced, but cannot be loaded and resolved: '" + vr + "'.");
+                constraintViolated(o, "Class '" + name + "' is referenced, but cannot be loaded and resolved: '" + vr + "'.");
             }
         }
 
@@ -1719,7 +1715,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
             Verifier v = VerifierFactory.getVerifier(name);
             VerificationResult vr = v.doPass2();
             if (vr.getStatus() != VerificationResult.VERIFIED_OK) {
-                constraintViolated((Instruction) o, "Class '" + name + "' is referenced, but cannot be loaded and resolved: '" + vr + "'.");
+                constraintViolated(o, "Class '" + name + "' is referenced, but cannot be loaded and resolved: '" + vr + "'.");
             }
         }
 
@@ -1797,7 +1793,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
             Verifier v = VerifierFactory.getVerifier(name);
             VerificationResult vr = v.doPass2();
             if (vr.getStatus() != VerificationResult.VERIFIED_OK) {
-                constraintViolated((Instruction) o, "Class '" + name + "' is referenced, but cannot be loaded and resolved: '" + vr + "'.");
+                constraintViolated(o, "Class '" + name + "' is referenced, but cannot be loaded and resolved: '" + vr + "'.");
             }
         }
 
@@ -1841,7 +1837,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
             Verifier v = VerifierFactory.getVerifier(name);
             VerificationResult vr = v.doPass2();
             if (vr.getStatus() != VerificationResult.VERIFIED_OK) {
-                constraintViolated((Instruction) o, "Class '" + name + "' is referenced, but cannot be loaded and resolved: '" + vr + "'.");
+                constraintViolated(o, "Class '" + name + "' is referenced, but cannot be loaded and resolved: '" + vr + "'.");
             }
         }
 
@@ -2422,9 +2418,9 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
         JavaClass jc = Repository.lookupClass(o.getClassType(cpg).getClassName());
         Field[] fields = jc.getFields();
         Field f = null;
-        for (int i = 0; i < fields.length; i++) {
-            if (fields[i].getName().equals(field_name)) {
-                f = fields[i];
+        for (Field field : fields) {
+            if (field.getName().equals(field_name)) {
+                f = field;
                 break;
             }
         }
@@ -2496,9 +2492,9 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
         JavaClass jc = Repository.lookupClass(o.getClassType(cpg).getClassName());
         Field[] fields = jc.getFields();
         Field f = null;
-        for (int i = 0; i < fields.length; i++) {
-            if (fields[i].getName().equals(field_name)) {
-                f = fields[i];
+        for (Field field : fields) {
+            if (field.getName().equals(field_name)) {
+                f = field;
                 break;
             }
         }

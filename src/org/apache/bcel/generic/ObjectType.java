@@ -97,8 +97,7 @@ public final class ObjectType extends ReferenceType {
      * @return true if both type objects refer to the same class.
      */
     public boolean equals(Object type) {
-        return (type instanceof ObjectType) ?
-                ((ObjectType) type).class_name.equals(class_name) : false;
+        return (type instanceof ObjectType) && ((ObjectType) type).class_name.equals(class_name);
     }
 
     /**
@@ -107,10 +106,7 @@ public final class ObjectType extends ReferenceType {
      */
     public boolean referencesClass() {
         JavaClass jc = Repository.lookupClass(class_name);
-        if (jc == null)
-            return false;
-        else
-            return jc.isClass();
+        return jc != null && jc.isClass();
     }
 
     /**
@@ -119,17 +115,12 @@ public final class ObjectType extends ReferenceType {
      */
     public boolean referencesInterface() {
         JavaClass jc = Repository.lookupClass(class_name);
-        if (jc == null)
-            return false;
-        else
-            return !jc.isClass();
+        return jc != null && !jc.isClass();
     }
 
     public boolean subclassOf(ObjectType superclass) {
-        if (this.referencesInterface() || superclass.referencesInterface())
-            return false;
+        return !(this.referencesInterface() || superclass.referencesInterface()) && Repository.instanceOf(this.class_name, superclass.class_name);
 
-        return Repository.instanceOf(this.class_name, superclass.class_name);
     }
 
     /**

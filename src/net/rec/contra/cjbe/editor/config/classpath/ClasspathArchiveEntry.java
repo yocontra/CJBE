@@ -36,7 +36,7 @@ public class ClasspathArchiveEntry extends ClasspathEntry {
                 FindResult findResult = new FindResult(this, file.getPath() + "!" + className);
                 return findResult;
             }
-        } catch (IOException e) {
+        } catch (IOException ignored) {
         }
 
         return null;
@@ -58,7 +58,7 @@ public class ClasspathArchiveEntry extends ClasspathEntry {
                     addEntry((stripClassSuffix(entry.getName())), model, reset);
                 }
             }
-        } catch (IOException ex) {
+        } catch (IOException ignored) {
         }
     }
 

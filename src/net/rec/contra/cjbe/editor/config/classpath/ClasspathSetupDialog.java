@@ -102,9 +102,8 @@ public class ClasspathSetupDialog extends JDialog
     private void updateList() {
 
         listModel.clear();
-        Iterator it = frame.getConfig().getClasspath().iterator();
-        while (it.hasNext()) {
-            listModel.addElement(it.next());
+        for (Object o : frame.getConfig().getClasspath()) {
+            listModel.addElement(o);
         }
     }
 
@@ -280,16 +279,14 @@ public class ClasspathSetupDialog extends JDialog
         BrowserConfig config = frame.getConfig();
         List oldEntries = new ArrayList(config.getClasspath());
 
-        Iterator itOld = oldEntries.iterator();
-        while (itOld.hasNext()) {
-            ClasspathEntry entry = (ClasspathEntry) itOld.next();
+        for (Object oldEntry : oldEntries) {
+            ClasspathEntry entry = (ClasspathEntry) oldEntry;
             if (!newEntries.contains(entry)) {
                 config.removeClasspathEntry(entry);
             }
         }
-        Iterator itNew = newEntries.iterator();
-        while (itNew.hasNext()) {
-            ClasspathEntry entry = (ClasspathEntry) itNew.next();
+        for (Object newEntry : newEntries) {
+            ClasspathEntry entry = (ClasspathEntry) newEntry;
             if (!oldEntries.contains(entry)) {
                 config.addClasspathEntry(entry);
             }

@@ -113,7 +113,7 @@ public class BIPUSH extends Instruction implements ConstantPushInstruction {
     }
 
     public Number getValue() {
-        return new Integer(b);
+        return (int) b;
     }
 
     /**

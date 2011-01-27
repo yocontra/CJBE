@@ -57,11 +57,8 @@ public abstract class ClasspathEntry implements ClasspathComponent {
         if (this == other) {
             return true;
         }
-        if (other.getClass() != getClass()) {
-            return false;
-        }
+        return other.getClass() == getClass() && fileName.equals(((ClasspathEntry) other).fileName);
 
-        return fileName.equals(((ClasspathEntry) other).fileName);
     }
 
     public int hashCode() {
@@ -107,7 +104,6 @@ public abstract class ClasspathEntry implements ClasspathComponent {
             ClassTreeNode childNode = (ClassTreeNode) parentNode.getChildAt(i);
             String childNodeName = childNode.toString();
             if (childNode.getChildCount() > 0 && !packageNode) {
-                continue;
             } else if (childNode.getChildCount() == 0 && packageNode) {
                 insertNode(newNode, parentNode, i, model, reset);
                 return newNode;

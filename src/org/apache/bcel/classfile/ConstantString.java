@@ -90,7 +90,7 @@ public final class ConstantString extends Constant implements ConstantObject {
      * @throws IOException
      */
     ConstantString(DataInputStream file) throws IOException {
-        this((int) file.readUnsignedShort());
+        this(file.readUnsignedShort());
     }
 
     /**

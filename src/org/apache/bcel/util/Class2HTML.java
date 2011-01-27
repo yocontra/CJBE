@@ -192,7 +192,7 @@ public class Class2HTML implements Constants {
                 "\" TARGET=ConstantPool>" + str + "</A>";
     }
 
-    static final String referenceType(String type) {
+    static String referenceType(String type) {
         String short_type = Utility.compactClassName(type);
         short_type = Utility.compactClassName(short_type, class_package + ".", true);
 
@@ -233,7 +233,7 @@ public class Class2HTML implements Constants {
                         buf.append(ch);
                 }
             }
-        } catch (StringIndexOutOfBoundsException e) {
+        } catch (StringIndexOutOfBoundsException ignored) {
         } // Never occurs
 
         return buf.toString();

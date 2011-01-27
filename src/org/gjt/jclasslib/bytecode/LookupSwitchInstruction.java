@@ -105,8 +105,8 @@ public class LookupSwitchInstruction extends PaddedInstruction {
         out.writeInt(numberOfPairs);
 
         MatchOffsetPair currentMatchOffsetPair;
-        for (int i = 0; i < numberOfPairs; i++) {
-            currentMatchOffsetPair = (MatchOffsetPair) matchOffsetPairs.get(i);
+        for (Object matchOffsetPair : matchOffsetPairs) {
+            currentMatchOffsetPair = (MatchOffsetPair) matchOffsetPair;
             out.writeInt(currentMatchOffsetPair.getMatch());
             out.writeInt(currentMatchOffsetPair.getOffset());
         }

@@ -245,7 +245,7 @@ public class BrowserComponent extends JComponent
                     browserPath.addPathComponent(new IndexHolder(attributeNode.getIndex()));
                 }
             }
-        } catch (InvalidByteCodeException ex) {
+        } catch (InvalidByteCodeException ignored) {
         }
     }
 

@@ -83,7 +83,7 @@ final class AttributeHTML implements org.apache.bcel.Constants {
         file.println("<HTML><BODY BGCOLOR=\"#C0C0C0\"><TABLE BORDER=0>");
     }
 
-    private final String codeLink(int link, int method_number) {
+    private String codeLink(int link, int method_number) {
         return "<A HREF=\"" + class_name + "_code.html#code" +
                 method_number + "@" + link + "\" TARGET=Code>" +
                 link + "</A>";
@@ -173,9 +173,9 @@ final class AttributeHTML implements org.apache.bcel.Constants {
 
                 file.print("<UL>");
 
-                for (int i = 0; i < indices.length; i++)
-                    file.print("<LI><A HREF=\"" + class_name + "_cp.html#cp" + indices[i] +
-                            "\" TARGET=\"ConstantPool\">Exception class index(" + indices[i] + ")</A>\n");
+                for (int indice : indices)
+                    file.print("<LI><A HREF=\"" + class_name + "_cp.html#cp" + indice +
+                            "\" TARGET=\"ConstantPool\">Exception class index(" + indice + ")</A>\n");
 
                 file.print("</UL>\n");
                 break;
@@ -200,15 +200,15 @@ final class AttributeHTML implements org.apache.bcel.Constants {
                 // List name, range and type
                 file.print("<UL>");
 
-                for (int i = 0; i < vars.length; i++) {
-                    index = vars[i].getSignatureIndex();
+                for (LocalVariable var : vars) {
+                    index = var.getSignatureIndex();
                     String signature = ((ConstantUtf8) constant_pool.getConstant(index, CONSTANT_Utf8)).getBytes();
                     signature = Utility.signatureToString(signature, false);
-                    int start = vars[i].getStartPC();
-                    int end = (start + vars[i].getLength());
+                    int start = var.getStartPC();
+                    int end = (start + var.getLength());
 
                     file.println("<LI>" + Class2HTML.referenceType(signature) +
-                            "&nbsp;<B>" + vars[i].getName() + "</B> in slot %" + vars[i].getIndex() +
+                            "&nbsp;<B>" + var.getName() + "</B> in slot %" + var.getIndex() +
                             "<BR>Valid from lines " +
                             "<A HREF=\"" + class_name + "_code.html#code" + method_number + "@" + start + "\" TARGET=Code>" +
                             start + "</A> to " +
@@ -225,21 +225,21 @@ final class AttributeHTML implements org.apache.bcel.Constants {
                 // List inner classes
                 file.print("<UL>");
 
-                for (int i = 0; i < classes.length; i++) {
+                for (InnerClass aClass : classes) {
                     String name, access;
 
-                    index = classes[i].getInnerNameIndex();
+                    index = aClass.getInnerNameIndex();
                     if (index > 0)
                         name = ((ConstantUtf8) constant_pool.getConstant(index, CONSTANT_Utf8)).getBytes();
                     else
                         name = "&lt;anonymous&gt;";
 
-                    access = Utility.accessToString(classes[i].getInnerAccessFlags());
+                    access = Utility.accessToString(aClass.getInnerAccessFlags());
 
                     file.print("<LI><FONT COLOR=\"#FF0000\">" + access + "</FONT> " +
-                            constant_html.referenceConstant(classes[i].getInnerClassIndex()) +
+                            constant_html.referenceConstant(aClass.getInnerClassIndex()) +
                             " in&nbsp;class " +
-                            constant_html.referenceConstant(classes[i].getOuterClassIndex()) +
+                            constant_html.referenceConstant(aClass.getOuterClassIndex()) +
                             " named " + name + "</LI>\n");
                 }
 
