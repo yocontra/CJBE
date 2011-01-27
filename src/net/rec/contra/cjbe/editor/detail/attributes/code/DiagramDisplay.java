@@ -25,20 +25,15 @@ public class DiagramDisplay extends JEditorPane {
         try {
             this.setEditable(false);
             Scene tz = Scene.v();
-            //tz.addBasicClass(classFile.getThisClassName(), SootClass.SIGNATURES);
-            tz.setPhantomRefs(true);
-            //tz.loadNecessaryClasses();
-            //tz.loadDynamicClasses();
             tz.setSootClassPath(System.getProperty("java.class.path") + ";" + internalFrame.getClassPathString());
-            klass = tz.loadClassAndSupport(classFile.getThisClassName());
-            thisMethod = (SootMethod) klass.getMethods().toArray()[methodIndex];
-            mBody = thisMethod.retrieveActiveBody();
-            cGraph = new CompleteUnitGraph(mBody);
+            tz.setPhantomRefs(true);
+            this.klass = tz.loadClassAndSupport(classFile.getThisClassName());
+            this.thisMethod = (SootMethod) klass.getMethods().toArray()[methodIndex];
+            this.mBody = thisMethod.retrieveActiveBody();
+            this.cGraph = new CompleteUnitGraph(mBody);
         } catch (Exception e) {
-            System.out.println(e);
-            System.out.println("MAKE SURE CLASSPATH CONTAINS ALL DEPENDENCIES");
-            System.out.println("Skipping analysis...");
-            setText("Error: " + e + "\nControl Flow Analysis Unavailable.");
+            e.printStackTrace();
+            setText("Error: " + e + "\nControl Flow Analysis Unavailable.\nMake sure your classpath has all necessary dependencies.");
             return;
         }
         Iterator<Unit> it = cGraph.iterator();

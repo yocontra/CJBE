@@ -199,6 +199,7 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
         byteCodePane.show(treePath);
         quantPane.show(treePath);
         codeEditPane.show(treePath);
+        diagramPane.show(treePath);
         internalFrame.setReloading(false);
 
     }

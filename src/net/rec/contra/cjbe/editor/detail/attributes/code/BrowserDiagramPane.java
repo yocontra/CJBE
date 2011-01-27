@@ -7,7 +7,6 @@ import net.rec.contra.cjbe.editor.AbstractDetailPane;
 import net.rec.contra.cjbe.editor.BrowserInternalFrame;
 import net.rec.contra.cjbe.editor.BrowserServices;
 import net.rec.contra.cjbe.editor.BrowserTreeNode;
-import net.rec.contra.cjbe.editor.codeedit.CodeGenerator;
 import org.gjt.jclasslib.structures.ClassFile;
 import org.gjt.jclasslib.structures.MethodInfo;
 import org.gjt.jclasslib.structures.attributes.CodeAttribute;
@@ -48,7 +47,7 @@ public class BrowserDiagramPane extends AbstractDetailPane implements FocusListe
 
     private void addEditPane(String methodIndex, ClassFile classFile) {
         DiagramDisplay editArea = new DiagramDisplay(Integer.parseInt(methodIndex), classFile, internalFrame);
-
+        //System.out.println(methodIndex);
         //Scrollbar
         JScrollPane scroll = new JScrollPane(editArea);
         scroll.setRowHeaderView(new LineNumberView(editArea));
@@ -68,20 +67,16 @@ public class BrowserDiagramPane extends AbstractDetailPane implements FocusListe
         String methodIndex = Integer.toString(((BrowserTreeNode) treePath.getParentPath().getLastPathComponent()).getIndex());
         CardLayout cl = (CardLayout) this.getLayout();
         cl.show(this, methodIndex);
-
     }
 
     private void updateEditPanes() {
         internalFrame = (BrowserInternalFrame) services;
         ClassFile classFile = services.getClassFile();
         MethodInfo[] methods = classFile.getMethods();
-        CodeGenerator cg = new CodeGenerator();
         for (int i = 0; i < methods.length; i++) {
             String methodIndex = Integer.toString(i);
-            byte[] code = null;
             for (int j = 0; j < methods[i].getAttributes().length; j++) {
                 if (methods[i].getAttributes()[j] instanceof CodeAttribute) {
-                    code = ((CodeAttribute) methods[i].getAttributes()[j]).getCode();
                     addEditPane(methodIndex, classFile);
                     break;
                 }
@@ -89,8 +84,7 @@ public class BrowserDiagramPane extends AbstractDetailPane implements FocusListe
             if (editPanes.get(methodIndex) == null) {
                 addEditPane(methodIndex, classFile);
             }
-            editPanes.get(methodIndex).setText(cg.makeMethod(
-                    code, classFile));
+            //editPanes.get(methodIndex).setText("dfgh");
         }
 
 
