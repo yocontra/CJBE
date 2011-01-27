@@ -89,7 +89,7 @@ public class ICONST extends Instruction
     }
 
     public Number getValue() {
-        return value;
+        return Integer.valueOf(value);
     }
 
     /**

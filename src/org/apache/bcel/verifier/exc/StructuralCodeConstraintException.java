@@ -70,6 +70,7 @@ package org.apache.bcel.verifier.exc;
 public class StructuralCodeConstraintException extends CodeConstraintException {
     /**
      * Constructs a new StructuralCodeConstraintException with the specified error message.
+     * @param message
      */
     public StructuralCodeConstraintException(String message) {
         super(message);

@@ -33,7 +33,7 @@ public class CounterDisplay extends JPanel {
 
         STYLE = new HashMap<TextAttribute, Object>(3);
         STYLE.put(TextAttribute.FAMILY, baseFont.getFamily());
-        STYLE.put(TextAttribute.SIZE, (float) baseFont.getSize() - 2);
+        STYLE.put(TextAttribute.SIZE, Float.valueOf((float) baseFont.getSize() - 2));
         STYLE.put(TextAttribute.FOREGROUND, new Color(92, 92, 92));
     }
 

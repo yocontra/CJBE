@@ -89,6 +89,7 @@ public abstract class Select extends BranchInstruction implements
      * (Match, target) pairs for switch. `Match' and `targets' must have the
      * same length of course.
      *
+     * @param opcode
      * @param match   array of matching values
      * @param targets instruction targets
      * @param target  default instruction target
@@ -203,8 +204,7 @@ public abstract class Select extends BranchInstruction implements
                 if (targets[i] != null)
                     s = targets[i].getInstruction().toString();
 
-                buf.append("(" + match[i] + ", " + s + " = {" + indices[i]
-                        + "})");
+                buf.append("(").append(match[i]).append(", ").append(s).append(" = {").append(indices[i]).append("})");
             }
         } else
             buf.append(" ...");
@@ -214,6 +214,8 @@ public abstract class Select extends BranchInstruction implements
 
     /**
      * Set branch target for `i'th case
+     * @param i
+     * @param target
      */
     public void setTarget(int i, InstructionHandle target) {
         notifyTarget(targets[i], target, this);
@@ -222,6 +224,7 @@ public abstract class Select extends BranchInstruction implements
 
     /**
      * Set branch target for `i'th case
+     * @param target
      */
     public void setDefaultTarget(InstructionHandle target) {
         super.setTarget(target);

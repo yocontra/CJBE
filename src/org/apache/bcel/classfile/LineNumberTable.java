@@ -152,6 +152,7 @@ public final class LineNumberTable extends Attribute {
 
     /**
      * @param line_number_table.
+     * @param line_number_table
      */
     public final void setLineNumberTable(LineNumber[] line_number_table) {
         this.line_number_table = line_number_table;

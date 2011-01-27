@@ -140,6 +140,8 @@ public final class SWITCH implements CompoundInstruction {
 
     /**
      * Sort match and targets array with QuickSort.
+     * @param l
+     * @param r
      */
     private void sort(int l, int r) {
         int i = l, j = r;
@@ -167,6 +169,7 @@ public final class SWITCH implements CompoundInstruction {
     }
 
     /**
+     * @param max_gap
      * @return match is sorted in ascending order with no gap bigger than max_gap?
      */
     private boolean matchIsOrdered(int max_gap) {

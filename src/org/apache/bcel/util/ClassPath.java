@@ -82,6 +82,7 @@ public class ClassPath implements Serializable {
 
     /**
      * Search for classes in given path.
+     * @param class_path
      */
     public ClassPath(String class_path) {
         this.class_path = class_path;
@@ -279,6 +280,7 @@ public class ClassPath implements Serializable {
     }
 
     /**
+     * @param name
      * @return byte array for class
      */
     public byte[] getBytes(String name) throws IOException {

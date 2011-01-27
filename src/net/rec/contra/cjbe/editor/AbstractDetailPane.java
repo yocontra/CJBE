@@ -71,6 +71,7 @@ public abstract class AbstractDetailPane extends JPanel {
     /**
      * Show the detail pane for a specific tree node
      * selected in <tt>BrowserTreePane</tt>.
+     * @param treePath
      */
 
     public abstract void show(TreePath treePath);

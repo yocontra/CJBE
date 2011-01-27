@@ -77,6 +77,7 @@ public abstract class ConstantCP extends Constant {
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public ConstantCP(ConstantCP c) {
         this(c.getTag(), c.getClassIndex(), c.getNameAndTypeIndex());
@@ -94,6 +95,7 @@ public abstract class ConstantCP extends Constant {
     }
 
     /**
+     * @param tag
      * @param class_index         Reference to the class containing the field
      * @param name_and_type_index and the field signature
      */
@@ -138,6 +140,7 @@ public abstract class ConstantCP extends Constant {
     }
 
     /**
+     * @param cp
      * @return Class this field belongs to.
      */
     public String getClass(ConstantPool cp) {

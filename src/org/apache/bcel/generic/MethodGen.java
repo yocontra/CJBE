@@ -211,8 +211,8 @@ public class MethodGen extends FieldGenOrMethodGen {
         setConstantPool(cp);
 
         boolean abstract_ = isAbstract() || isNative();
-        InstructionHandle start = null;
-        InstructionHandle end = null;
+        InstructionHandle start;
+        InstructionHandle end;
 
         if (!abstract_) {
             start = il.getStart();
@@ -395,6 +395,7 @@ public class MethodGen extends FieldGenOrMethodGen {
     /**
      * Remove a local variable, its slot will not be reused, if you do not use
      * addLocalVariable with an explicit index argument.
+     * @param l
      */
     public void removeLocalVariable(LocalVariableGen l) {
         variable_vec.remove(l);
@@ -409,6 +410,9 @@ public class MethodGen extends FieldGenOrMethodGen {
 
     /**
      * Sort local variables by index
+     * @param vars
+     * @param l
+     * @param r
      */
     private static void sort(LocalVariableGen[] vars, int l, int r) {
         int i = l, j = r;
@@ -462,6 +466,7 @@ public class MethodGen extends FieldGenOrMethodGen {
     }
 
     /**
+     * @param cp
      * @return `LocalVariableTable' attribute of all the local variables of this
      *         method.
      */
@@ -481,6 +486,7 @@ public class MethodGen extends FieldGenOrMethodGen {
      * Give an instruction a line number corresponding to the source code line.
      *
      * @param ih instruction to tag
+     * @param src_line
      * @return new line number object
      * @see LineNumber
      */
@@ -492,6 +498,7 @@ public class MethodGen extends FieldGenOrMethodGen {
 
     /**
      * Remove a line number.
+     * @param l
      */
     public void removeLineNumber(LineNumberGen l) {
         line_number_vec.remove(l);
@@ -514,6 +521,7 @@ public class MethodGen extends FieldGenOrMethodGen {
     }
 
     /**
+     * @param cp
      * @return `LineNumberTable' attribute of all the local variables of this
      *         method.
      */
@@ -558,6 +566,7 @@ public class MethodGen extends FieldGenOrMethodGen {
 
     /**
      * Remove an exception handler.
+     * @param c
      */
     public void removeExceptionHandler(CodeExceptionGen c) {
         exception_vec.remove(c);
@@ -608,6 +617,7 @@ public class MethodGen extends FieldGenOrMethodGen {
 
     /**
      * Remove an exception.
+     * @param c
      */
     public void removeException(String c) {
         throws_vec.remove(c);
@@ -630,6 +640,7 @@ public class MethodGen extends FieldGenOrMethodGen {
     }
 
     /**
+     * @param cp
      * @return `Exceptions' attribute of all the exceptions thrown by this
      *         method.
      */
@@ -661,6 +672,7 @@ public class MethodGen extends FieldGenOrMethodGen {
 
     /**
      * Remove a code attribute.
+     * @param a
      */
     public void removeCodeAttribute(Attribute a) {
         code_attrs_vec.remove(a);
@@ -799,8 +811,7 @@ public class MethodGen extends FieldGenOrMethodGen {
                             InstructionTargeter[] targeters = target
                                     .getTargeters();
 
-                            for (int j = 0; j < targeters.length; j++)
-                                targeters[j].updateTarget(target, next);
+                            for (InstructionTargeter targeter : targeters) targeter.updateTarget(target, next);
                         }
                     }
                 }
@@ -810,6 +821,7 @@ public class MethodGen extends FieldGenOrMethodGen {
 
     /**
      * Set maximum number of local variables.
+     * @param m
      */
     public void setMaxLocals(int m) {
         max_locals = m;
@@ -821,6 +833,7 @@ public class MethodGen extends FieldGenOrMethodGen {
 
     /**
      * Set maximum stack size for this method.
+     * @param m
      */
     public void setMaxStack(int m) {
         max_stack = m;
@@ -935,6 +948,7 @@ public class MethodGen extends FieldGenOrMethodGen {
     /**
      * Do not/Do produce attributes code attributesLineNumberTable and
      * LocalVariableTable, like javac -O
+     * @param flag
      */
     public void stripAttributes(boolean flag) {
         strip_attributes = flag;
@@ -989,6 +1003,9 @@ public class MethodGen extends FieldGenOrMethodGen {
      * Computes stack usage of an instruction list by performing control flow
      * analysis.
      *
+     * @param cp
+     * @param il
+     * @param et
      * @return maximum stack depth used by method
      */
     public static int getMaxStack(ConstantPoolGen cp, InstructionList il,
@@ -1072,6 +1089,7 @@ public class MethodGen extends FieldGenOrMethodGen {
 
     /**
      * Add observer for this object.
+     * @param o
      */
     public void addObserver(MethodObserver o) {
         if (observers == null)
@@ -1082,6 +1100,7 @@ public class MethodGen extends FieldGenOrMethodGen {
 
     /**
      * Remove observer for this object.
+     * @param o
      */
     public void removeObserver(MethodObserver o) {
         if (observers != null)
@@ -1114,13 +1133,15 @@ public class MethodGen extends FieldGenOrMethodGen {
         StringBuffer buf = new StringBuffer(signature);
 
         if (throws_vec.size() > 0) {
-            for (Object aThrows_vec : throws_vec) buf.append("\n\t\tthrows " + aThrows_vec);
+            for (Object aThrows_vec : throws_vec) buf.append("\n\t\tthrows ").append(aThrows_vec);
         }
 
         return buf.toString();
     }
 
     /**
+     * @param class_name
+     * @param cp
      * @return deep copy of this method
      */
     public MethodGen copy(String class_name, ConstantPoolGen cp) {

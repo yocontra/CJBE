@@ -79,6 +79,7 @@ public final class ConstantValue extends Attribute {
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use clone() for a physical copy.
+     * @param c
      */
     public ConstantValue(ConstantValue c) {
         this(c.getNameIndex(), c.getLength(), c.getConstantValueIndex(),
@@ -143,6 +144,7 @@ public final class ConstantValue extends Attribute {
 
     /**
      * @param constantvalue_index.
+     * @param constantvalue_index
      */
     public final void setConstantValueIndex(int constantvalue_index) {
         this.constantvalue_index = constantvalue_index;

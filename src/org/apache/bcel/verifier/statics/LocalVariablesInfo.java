@@ -75,6 +75,7 @@ public class LocalVariablesInfo {
 
     /**
      * The constructor.
+     * @param max_locals
      */
     LocalVariablesInfo(int max_locals) {
         localVariableInfos = new LocalVariableInfo[max_locals];
@@ -85,6 +86,7 @@ public class LocalVariablesInfo {
 
     /**
      * Returns the LocalVariableInfo for the given slot.
+     * @param slot
      */
     public LocalVariableInfo getLocalVariableInfo(int slot) {
         if (slot < 0 || slot >= localVariableInfos.length) {
@@ -97,6 +99,11 @@ public class LocalVariablesInfo {
      * Adds information about the local variable in slot 'slot'. Automatically
      * adds information for slot+1 if 't' is Type.LONG or Type.DOUBLE.
      *
+     * @param slot
+     * @param name
+     * @param startpc
+     * @param length
+     * @param t
      * @throws LocalVariableInfoInconsistentException
      *          if the new information conflicts
      *          with already gathered information.

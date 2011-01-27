@@ -126,7 +126,7 @@ public class ClassLoader extends java.lang.ClassLoader {
 
     protected Class loadClass(String class_name, boolean resolve)
             throws ClassNotFoundException {
-        Class cl = null;
+        Class cl;
 
         /* First try: lookup hash table.
         */
@@ -142,7 +142,7 @@ public class ClassLoader extends java.lang.ClassLoader {
             }
 
             if (cl == null) {
-                JavaClass clazz = null;
+                JavaClass clazz;
 
                 /* Third try: Special request?
          */
@@ -174,6 +174,7 @@ public class ClassLoader extends java.lang.ClassLoader {
     /**
      * Override this method if you want to alter a class before it gets actually
      * loaded. Does nothing by default.
+     * @param clazz
      */
     protected JavaClass modifyClass(JavaClass clazz) {
         return clazz;
@@ -197,7 +198,7 @@ public class ClassLoader extends java.lang.ClassLoader {
         int index = class_name.indexOf("$$BCEL$$");
         String real_name = class_name.substring(index + 8);
 
-        JavaClass clazz = null;
+        JavaClass clazz;
         try {
             byte[] bytes = Utility.decode(real_name, true);
             ClassParser parser = new ClassParser(new ByteArrayInputStream(bytes), "foo");

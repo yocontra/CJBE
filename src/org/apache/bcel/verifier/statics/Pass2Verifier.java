@@ -101,6 +101,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
     /**
      * Should only be instantiated by a Verifier.
      *
+     * @param owner
      * @see Verifier
      */
     public Pass2Verifier(Verifier owner) {
@@ -115,6 +116,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
      * The method number method_nr is the method you get using
      * <B>Repository.lookupClass(myOwner.getClassname()).getMethods()[method_nr];</B>.
      * You should not add own information. Leave that to JustIce.
+     * @param method_nr
      */
     public LocalVariablesInfo getLocalVariablesInfo(int method_nr) {
         if (this.verify() != VerificationResult.VR_OK) return null; // It's cached, don't worry.
@@ -835,7 +837,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
                 throw new ClassConstraintException("The Code attribute '" + tostring(obj) + "' is not correctly named 'Code' but '" + name + "'.");
             }
 
-            Method m = null; // satisfy compiler
+            Method m; // satisfy compiler
             if (!(carrier.predecessor() instanceof Method)) {
                 addMessage("Code attribute '" + tostring(obj) + "' is not declared in a method_info structure but in '" + carrier.predecessor() + "'. Ignored.");
                 return;
@@ -850,8 +852,8 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
 
             //In JustIce, the check for correct offsets into the code array is delayed to Pass 3a.
             CodeException[] exc_table = obj.getExceptionTable();
-            for (int i = 0; i < exc_table.length; i++) {
-                int exc_index = exc_table[i].getCatchType();
+            for (CodeException anExc_table : exc_table) {
+                int exc_index = anExc_table.getCatchType();
                 if (exc_index != 0) { // if 0, it catches all Throwables
                     checkIndex(obj, exc_index, CONST_Class);
                     ConstantClass cc = (ConstantClass) (cp.getConstant(exc_index));
@@ -862,7 +864,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
                     VerificationResult vr = v.doPass1();
 
                     if (vr != VerificationResult.VR_OK) {
-                        throw new ClassConstraintException("Code attribute '" + tostring(obj) + "' (method '" + m + "') has an exception_table entry '" + tostring(exc_table[i]) + "' that references '" + cname + "' as an Exception but it does not pass verification pass 1: " + vr);
+                        throw new ClassConstraintException("Code attribute '" + tostring(obj) + "' (method '" + m + "') has an exception_table entry '" + tostring(anExc_table) + "' that references '" + cname + "' as an Exception but it does not pass verification pass 1: " + vr);
                     } else {
                         // We cannot safely trust any other "instanceof" mechanism. We need to transitively verify
                         // the ancestor hierarchy.
@@ -875,13 +877,13 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
                             v = VerifierFactory.getVerifier(e.getSuperclassName());
                             vr = v.doPass1();
                             if (vr != VerificationResult.VR_OK) {
-                                throw new ClassConstraintException("Code attribute '" + tostring(obj) + "' (method '" + m + "') has an exception_table entry '" + tostring(exc_table[i]) + "' that references '" + cname + "' as an Exception but '" + e.getSuperclassName() + "' in the ancestor hierachy does not pass verification pass 1: " + vr);
+                                throw new ClassConstraintException("Code attribute '" + tostring(obj) + "' (method '" + m + "') has an exception_table entry '" + tostring(anExc_table) + "' that references '" + cname + "' as an Exception but '" + e.getSuperclassName() + "' in the ancestor hierachy does not pass verification pass 1: " + vr);
                             } else {
                                 e = Repository.lookupClass(e.getSuperclassName());
                             }
                         }
                         if (e != t)
-                            throw new ClassConstraintException("Code attribute '" + tostring(obj) + "' (method '" + m + "') has an exception_table entry '" + tostring(exc_table[i]) + "' that references '" + cname + "' as an Exception but it is not a subclass of '" + t.getClassName() + "'.");
+                            throw new ClassConstraintException("Code attribute '" + tostring(obj) + "' (method '" + m + "') has an exception_table entry '" + tostring(anExc_table) + "' that references '" + cname + "' as an Exception but it is not a subclass of '" + t.getClassName() + "'.");
                     }
                 }
             }
@@ -1218,6 +1220,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
     /**
      * This method returns true if and only if the supplied String
      * represents a valid Java class name.
+     * @param name
      */
     private static boolean validClassName(String name) {
         /*
@@ -1234,6 +1237,8 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
      * Java programming language, but the special name for
      * the instance initialization method is allowed and the special name
      * for the class/interface initialization method may be allowed.
+     * @param name
+     * @param allowStaticInit
      */
     private static boolean validMethodName(String name, boolean allowStaticInit) {
         if (validJavaLangMethodName(name)) return true;
@@ -1249,6 +1254,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
      * This method returns true if and only if the supplied String
      * represents a valid method name that may be referenced by
      * ConstantMethodref objects.
+     * @param name
      */
     private static boolean validClassMethodName(String name) {
         return validMethodName(name, false);
@@ -1259,6 +1265,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
      * represents a valid Java programming language method name stored as a simple
      * (non-qualified) name.
      * Conforming to: The Java Virtual Machine Specification, Second Edition, �2.7, �2.7.1, �2.2.
+     * @param name
      */
     private static boolean validJavaLangMethodName(String name) {
         if (!Character.isJavaIdentifierStart(name.charAt(0))) return false;
@@ -1273,6 +1280,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
      * This method returns true if and only if the supplied String
      * represents a valid Java interface method name that may be
      * referenced by ConstantInterfaceMethodref objects.
+     * @param name
      */
     private static boolean validInterfaceMethodName(String name) {
         // I guess we should assume special names forbidden here.
@@ -1282,6 +1290,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
     /**
      * This method returns true if and only if the supplied String
      * represents a valid Java identifier (so-called simple name).
+     * @param name
      */
     private static boolean validJavaIdentifier(String name) {
         // vmspec2 2.7, vmspec2 2.2
@@ -1296,6 +1305,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
     /**
      * This method returns true if and only if the supplied String
      * represents a valid Java field name.
+     * @param name
      */
     private static boolean validFieldName(String name) {
         // vmspec2 2.7, vmspec2 2.2
@@ -1331,6 +1341,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
 
         /**
          * Constructs an InnerClassDetector working on the JavaClass _jc.
+         * @param _jc
          */
         public InnerClassDetector(JavaClass _jc) {
             jc = _jc;
@@ -1362,6 +1373,7 @@ public final class Pass2Verifier extends PassVerifier implements Constants {
 
     /**
      * This method is here to save typing work and improve code readability.
+     * @param n
      */
     private static String tostring(Node n) {
         return new StringRepresentation(n).toString();

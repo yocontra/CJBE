@@ -74,6 +74,7 @@ public class LocalVariables {
 
     /**
      * Creates a new LocalVariables object.
+     * @param maxLocals
      */
     public LocalVariables(int maxLocals) {
         locals = new Type[maxLocals];
@@ -95,6 +96,7 @@ public class LocalVariables {
 
     /**
      * Returns the type of the local variable slot i.
+     * @param i
      */
     public Type get(int i) {
         return locals[i];
@@ -118,6 +120,8 @@ public class LocalVariables {
 
     /**
      * Sets a new Type for the given local variable slot.
+     * @param i
+     * @param type
      */
     public void set(int i, Type type) {
         if (type == Type.BYTE || type == Type.SHORT || type == Type.BOOLEAN || type == Type.CHAR) {
@@ -145,6 +149,7 @@ public class LocalVariables {
     /**
      * Merges two local variables sets as described in the Java Virtual Machine Specification,
      * Second Edition, section 4.9.2, page 146.
+     * @param lv
      */
     public void merge(LocalVariables lv) {
 
@@ -160,6 +165,8 @@ public class LocalVariables {
     /**
      * Merges a single local variable.
      *
+     * @param lv
+     * @param i
      * @see #merge(LocalVariables)
      */
     private void merge(LocalVariables lv, int i) {
@@ -217,6 +224,7 @@ public class LocalVariables {
     /**
      * Replaces all occurences of u in this local variables set
      * with an "initialized" ObjectType.
+     * @param u
      */
     public void initializeObject(UninitializedObjectType u) {
         for (int i = 0; i < locals.length; i++) {

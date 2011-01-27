@@ -125,6 +125,7 @@ public abstract class PassVerifier {
      * BCEL's class file verifier "JustIce" and should not be used from
      * the outside.
      *
+     * @param message
      * @see #getMessages()
      */
     public void addMessage(String message) {

@@ -156,6 +156,7 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param owner
      */
     public VerifyDialog(java.awt.Dialog owner) {
         super(owner);
@@ -163,6 +164,8 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param owner
+     * @param title
      */
     public VerifyDialog(java.awt.Dialog owner, String title) {
         super(owner, title);
@@ -170,6 +173,9 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param owner
+     * @param title
+     * @param modal
      */
     public VerifyDialog(java.awt.Dialog owner, String title, boolean modal) {
         super(owner, title, modal);
@@ -177,6 +183,8 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param owner
+     * @param modal
      */
     public VerifyDialog(java.awt.Dialog owner, boolean modal) {
         super(owner, modal);
@@ -184,6 +192,7 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param owner
      */
     public VerifyDialog(java.awt.Frame owner) {
         super(owner);
@@ -191,6 +200,8 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param owner
+     * @param title
      */
     public VerifyDialog(java.awt.Frame owner, String title) {
         super(owner, title);
@@ -198,6 +209,9 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param owner
+     * @param title
+     * @param modal
      */
     public VerifyDialog(java.awt.Frame owner, String title, boolean modal) {
         super(owner, title, modal);
@@ -205,6 +219,8 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param owner
+     * @param modal
      */
     public VerifyDialog(java.awt.Frame owner, boolean modal) {
         super(owner, modal);
@@ -230,6 +246,7 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param arg1
      */
     private void connEtoC1(java.awt.event.ActionEvent arg1) {
         try {
@@ -247,6 +264,7 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param arg1
      */
     private void connEtoC2(java.awt.event.ActionEvent arg1) {
         try {
@@ -264,6 +282,7 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param arg1
      */
     private void connEtoC3(java.awt.event.ActionEvent arg1) {
         try {
@@ -281,6 +300,7 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param arg1
      */
     private void connEtoC4(java.awt.event.ActionEvent arg1) {
         try {
@@ -298,6 +318,7 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param actionEvent
      */
     public void flushButton_ActionPerformed(java.awt.event.ActionEvent actionEvent) {
         VerifierFactory.getVerifier(class_name).flush();
@@ -498,6 +519,7 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param exception
      */
     private void handleException(java.lang.Throwable exception) {
 
@@ -576,6 +598,7 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param actionEvent
      */
     public void pass1Button_ActionPerformed(java.awt.event.ActionEvent actionEvent) {
         Verifier v = VerifierFactory.getVerifier(class_name);
@@ -592,6 +615,7 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param actionEvent
      */
     public void pass2Button_ActionPerformed(java.awt.event.ActionEvent actionEvent) {
         pass1Button_ActionPerformed(actionEvent);
@@ -614,6 +638,7 @@ public class VerifyDialog extends javax.swing.JDialog {
 
     /**
      * Machine-generated.
+     * @param actionEvent
      */
     public void pass4Button_ActionPerformed(java.awt.event.ActionEvent actionEvent) {
 

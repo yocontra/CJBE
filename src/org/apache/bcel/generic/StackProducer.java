@@ -63,6 +63,7 @@ package org.apache.bcel.generic;
  */
 public interface StackProducer {
     /**
+     * @param cpg
      * @return how many words are produced on stack
      */
     public int produceStack(ConstantPoolGen cpg);

@@ -77,19 +77,21 @@ public class IntList {
 
     /**
      * Adds an element to the list.
+     * @param i
      */
     void add(int i) {
-        theList.add(i);
+        theList.add(Integer.valueOf(i));
     }
 
     /**
      * Checks if the specified int is already in the list.
+     * @param i
      */
     boolean contains(int i) {
         Integer[] ints = new Integer[theList.size()];
         theList.toArray(ints);
-        for (int j = 0; j < ints.length; j++) {
-            if (i == ints[j]) return true;
+        for (Integer anInt : ints) {
+            if (i == anInt) return true;
         }
         return false;
     }

@@ -455,6 +455,7 @@ public class InstructionList implements Serializable {
      * Consumes argument list, i.e., it becomes empty.
      *
      * @param i  where to append the instruction list
+     * @param ih
      * @param il Instruction list to insert
      * @return instruction handle of the first inserted instruction
      */
@@ -753,7 +754,7 @@ public class InstructionList implements Serializable {
 
             if (ih.hasTargeters()) { // Still got targeters?
                 target_vec.add(ih);
-                buf.append(ih.toString(true) + " ");
+                buf.append(ih.toString(true)).append(" ");
                 ih.next = ih.prev = null;
             } else
                 ih.dispose();
@@ -1030,7 +1031,7 @@ public class InstructionList implements Serializable {
         StringBuffer buf = new StringBuffer();
 
         for (InstructionHandle ih = start; ih != null; ih = ih.next) {
-            buf.append(ih.toString(verbose) + "\n");
+            buf.append(ih.toString(verbose)).append("\n");
         }
 
         return buf.toString();
@@ -1143,6 +1144,8 @@ public class InstructionList implements Serializable {
     /**
      * Replace all references to the old constant pool with references to the new
      * constant pool
+     * @param old_cp
+     * @param new_cp
      */
     public void replaceConstantPool(ConstantPoolGen old_cp, ConstantPoolGen new_cp) {
         for (InstructionHandle ih = start; ih != null; ih = ih.next) {
@@ -1286,6 +1289,7 @@ public class InstructionList implements Serializable {
 
     /**
      * Add observer for this object.
+     * @param o
      */
     public void addObserver(InstructionListObserver o) {
         if (observers == null)
@@ -1296,6 +1300,7 @@ public class InstructionList implements Serializable {
 
     /**
      * Remove observer for this object.
+     * @param o
      */
     public void removeObserver(InstructionListObserver o) {
         if (observers != null)

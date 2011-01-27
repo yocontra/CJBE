@@ -23,7 +23,7 @@ public class DiagramDisplay extends JEditorPane {
     DiagramDisplay(int methodIndex, ClassFile classFile, BrowserInternalFrame internalFrame) {
         this.internalFrame = internalFrame;
         try {
-            this.setEditable(false);
+            setEditable(false);
             Scene tz = Scene.v();
             tz.setSootClassPath(System.getProperty("java.class.path") + ";" + internalFrame.getClassPathString());
             tz.setPhantomRefs(true);
@@ -42,9 +42,8 @@ public class DiagramDisplay extends JEditorPane {
             pageText += it.next().toString();
             if(it.hasNext()) pageText += "\n";
         }
-        setFont(new Font("monospaced", Font.PLAIN, 14));
+        setFont(new Font("monospaced", Font.PLAIN, 12));
         setCaretPosition(0);
-        setEditable(true);
         if(!pageText.equals("")){
             setText(pageText);
         } else {

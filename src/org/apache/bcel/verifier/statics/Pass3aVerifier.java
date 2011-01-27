@@ -100,6 +100,8 @@ public final class Pass3aVerifier extends PassVerifier {
 
     /**
      * Should only be instantiated by a Verifier.
+     * @param owner
+     * @param method_no
      */
     public Pass3aVerifier(Verifier owner, int method_no) {
         myOwner = owner;
@@ -200,10 +202,10 @@ public final class Pass3aVerifier extends PassVerifier {
             IntList offsets = new IntList();
             lineNumber_loop:
             for (LineNumber lineNumber : lineNumbers) { // may appear in any order.
-                for (int j = 0; j < instructionPositions.length; j++) {
+                for (int instructionPosition : instructionPositions) {
                     // TODO: Make this a binary search! The instructionPositions array is naturally ordered!
                     int offset = lineNumber.getStartPC();
-                    if (instructionPositions[j] == offset) {
+                    if (instructionPosition == offset) {
                         if (offsets.contains(offset)) {
                             addMessage("LineNumberTable attribute '" + code.getLineNumberTable() + "' refers to the same code offset ('" + offset + "') more than once which is violating the semantics [but is sometimes produced by IBM's 'jikes' compiler].");
                         } else {
@@ -378,6 +380,8 @@ public final class Pass3aVerifier extends PassVerifier {
 
     /**
      * A small utility method returning if a given int i is in the given int[] ints.
+     * @param ints
+     * @param i
      */
     private static boolean contains(int[] ints, int i) {
         for (int anInt : ints) {
@@ -405,6 +409,7 @@ public final class Pass3aVerifier extends PassVerifier {
 
         /**
          * The only Constructor.
+         * @param cpg
          */
         InstOperandConstraintVisitor(ConstantPoolGen cpg) {
             this.cpg = cpg;
@@ -420,6 +425,8 @@ public final class Pass3aVerifier extends PassVerifier {
 
         /**
          * A utility method to always raise an exeption.
+         * @param i
+         * @param message
          */
         private void constraintViolated(Instruction i, String message) {
             throw new StaticCodeInstructionOperandConstraintException("Instruction " + i + " constraint violated: " + message);
@@ -428,6 +435,8 @@ public final class Pass3aVerifier extends PassVerifier {
         /**
          * A utility method to raise an exception if the index is not
          * a valid constant pool index.
+         * @param i
+         * @param idx
          */
         private void indexValid(Instruction i, int idx) {
             if (idx < 0 || idx >= cpg.getSize()) {
@@ -1137,6 +1146,8 @@ public final class Pass3aVerifier extends PassVerifier {
          * A utility method like equals(Object) for arrays.
          * The equality of the elements is based on their equals(Object)
          * method instead of their object identity.
+         * @param o
+         * @param p
          */
         private boolean objarrayequals(Object[] o, Object[] p) {
             if (o.length != p.length) {

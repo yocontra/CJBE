@@ -42,7 +42,6 @@ public abstract class FixedListDetailPane extends AbstractDetailPane implements 
 
     private java.util.List<DetailPaneEntry> detailPaneEntries;
     private JScrollPane scrollPane;
-    private JButton deleteBtn;
     private BrowserInternalFrame internalFrame;
     private TreePath treePath;
 
@@ -166,7 +165,7 @@ public abstract class FixedListDetailPane extends AbstractDetailPane implements 
         } else if (this instanceof InterfaceDetailPane) {
             buttonText = "Delete interface";
         }
-        deleteBtn = new JButton(buttonText);
+        JButton deleteBtn = new JButton(buttonText);
         deleteBtn.addActionListener(this);
         GridBagConstraints gc = new GridBagConstraints();
         gc.weightx = 1;

@@ -74,6 +74,7 @@ public class LocalVariableInfoInconsistentException extends ClassConstraintExcep
 
     /**
      * Constructs a new LocalVariableInfoInconsistentException with the specified error message.
+     * @param message
      */
     public LocalVariableInfoInconsistentException(String message) {
         super(message);

@@ -218,7 +218,7 @@ class BCELFactory extends EmptyVisitor {
         if (value instanceof String)
             embed = '"' + Utility.convertString(value.toString()) + '"';
         else if (value instanceof Character)
-            embed = "(char)0x" + Integer.toHexString((Character) value);
+            embed = "(char)0x" + Integer.toHexString(((Character) value).charValue());
 
         _out.println("il.append(new PUSH(_cp, " + embed + "));");
     }

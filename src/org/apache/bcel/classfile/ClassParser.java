@@ -125,6 +125,7 @@ public final class ClassParser {
     /**
      * Parse class from given .class file in a ZIP-archive
      *
+     * @param zip_file
      * @param file_name file name
      * @throws IOException
      */

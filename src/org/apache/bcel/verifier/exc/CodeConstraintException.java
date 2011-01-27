@@ -72,6 +72,7 @@ public abstract class CodeConstraintException extends VerificationException {
 
     /**
      * Constructs a new CodeConstraintException with the specified error message.
+     * @param message
      */
     CodeConstraintException(String message) {
         super(message);

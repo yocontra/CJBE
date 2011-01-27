@@ -76,6 +76,7 @@ public abstract class InvokeInstruction extends FieldOrMethod
     }
 
     /**
+     * @param opcode
      * @param index to constant pool
      */
     protected InvokeInstruction(short opcode, int index) {
@@ -134,6 +135,7 @@ public abstract class InvokeInstruction extends FieldOrMethod
     }
 
     /**
+     * @param cpg
      * @return name of referenced method.
      */
     public String getMethodName(ConstantPoolGen cpg) {
@@ -141,6 +143,7 @@ public abstract class InvokeInstruction extends FieldOrMethod
     }
 
     /**
+     * @param cpg
      * @return return type of referenced method.
      */
     public Type getReturnType(ConstantPoolGen cpg) {
@@ -148,6 +151,7 @@ public abstract class InvokeInstruction extends FieldOrMethod
     }
 
     /**
+     * @param cpg
      * @return argument types of referenced method.
      */
     public Type[] getArgumentTypes(ConstantPoolGen cpg) {

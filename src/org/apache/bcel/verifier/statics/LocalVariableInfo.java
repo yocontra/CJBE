@@ -82,6 +82,8 @@ public class LocalVariableInfo {
     /**
      * Adds a name of a local variable and a certain slot to our 'names'
      * (Hashtable) database.
+     * @param offset
+     * @param name
      */
     private void setName(int offset, String name) {
         names.put(((Integer.toString(offset))), name);
@@ -90,6 +92,8 @@ public class LocalVariableInfo {
     /**
      * Adds a type of a local variable and a certain slot to our 'types'
      * (Hashtable) database.
+     * @param offset
+     * @param t
      */
     private void setType(int offset, Type t) {
         types.put(((Integer.toString(offset))), t);
@@ -102,6 +106,7 @@ public class LocalVariableInfo {
      * might be wrong.
      * May return 'null' if nothing is known about the type of this local
      * variable slot at the given bytecode offset.
+     * @param offset
      */
     public Type getType(int offset) {
         return types.get(Integer.toString(offset));
@@ -114,6 +119,7 @@ public class LocalVariableInfo {
      * might be wrong.
      * May return 'null' if nothing is known about the type of this local
      * variable slot at the given bytecode offset.
+     * @param offset
      */
     public String getName(int offset) {
         return names.get(Integer.toString(offset));
@@ -122,6 +128,10 @@ public class LocalVariableInfo {
     /**
      * Adds some information about this local variable (slot).
      *
+     * @param name
+     * @param startpc
+     * @param length
+     * @param t
      * @throws LocalVariableInfoInconsistentException
      *          if the new information conflicts
      *          with already gathered information.
@@ -135,6 +145,9 @@ public class LocalVariableInfo {
     /**
      * Adds information about name and type for a given offset.
      *
+     * @param offset
+     * @param name
+     * @param t
      * @throws LocalVariableInfoInconsistentException
      *          if the new information conflicts
      *          with already gathered information.

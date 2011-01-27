@@ -84,6 +84,7 @@ public interface InstructionContext {
      * Nothing in the InstructionContext object depends
      * on the value of the tag. JustIce does not use it.
      *
+     * @param tag
      * @see #getTag()
      */
     public void setTag(int tag);
@@ -102,6 +103,10 @@ public interface InstructionContext {
      * They should use getInstruction().accept(Visitor),
      * possibly in conjunction with the ExecutionVisitor.
      *
+     * @param inFrame
+     * @param executionPredecessors
+     * @param icv
+     * @param ev
      * @return true -  if and only if the "outgoing" frame situation
      *         changed from the one before execute()ing.
      * @see ControlFlowGraph
@@ -115,6 +120,7 @@ public interface InstructionContext {
      * therefore <B>it has to be calculated by execute(Frame, ArrayList)
      * first.</B>
      *
+     * @param executionPredecessors
      * @see #execute(Frame, ArrayList, InstConstraintVisitor, ExecutionVisitor)
      */
     Frame getOutFrame(ArrayList executionPredecessors);

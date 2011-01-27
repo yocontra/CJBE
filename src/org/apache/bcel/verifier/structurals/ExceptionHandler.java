@@ -78,6 +78,8 @@ public class ExceptionHandler {
 
     /**
      * Leave instance creation to JustIce.
+     * @param catch_type
+     * @param handler_pc
      */
     ExceptionHandler(ObjectType catch_type, InstructionHandle handler_pc) {
         catchtype = catch_type;

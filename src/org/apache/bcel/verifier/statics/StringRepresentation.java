@@ -86,6 +86,7 @@ public class StringRepresentation extends org.apache.bcel.classfile.EmptyVisitor
     /**
      * Creates a new StringRepresentation object which is the representation of n.
      *
+     * @param n
      * @see #toString()
      */
     public StringRepresentation(Node n) {
@@ -111,6 +112,7 @@ public class StringRepresentation extends org.apache.bcel.classfile.EmptyVisitor
      * Returns the String representation of the Node object obj;
      * this is obj.toString() if it does not throw any RuntimeException,
      * or else it is a string derived only from obj's class name.
+     * @param obj
      */
     private String toString(Node obj) {
         String ret;

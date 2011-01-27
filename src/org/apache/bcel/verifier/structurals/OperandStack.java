@@ -84,6 +84,7 @@ public class OperandStack {
 
     /**
      * Creates an empty stack with a maximum of maxStack slots.
+     * @param maxStack
      */
     public OperandStack(int maxStack) {
         this.maxStack = maxStack;
@@ -92,6 +93,8 @@ public class OperandStack {
     /**
      * Creates an otherwise empty stack with a maximum of maxStack slots and
      * the ObjectType 'obj' at the top.
+     * @param maxStack
+     * @param obj
      */
     public OperandStack(int maxStack, ObjectType obj) {
         this.maxStack = maxStack;
@@ -160,6 +163,7 @@ public class OperandStack {
     /**
      * Returns the element that's i elements below the top element; that means,
      * iff i==0 the top element is returned. The element is not popped off the stack!
+     * @param i
      */
     public Type peek(int i) {
         return stack.get(size() - i - 1);
@@ -175,6 +179,7 @@ public class OperandStack {
 
     /**
      * Pops i elements off the stack. ALWAYS RETURNS "null"!!!
+     * @param i
      */
     public Type pop(int i) {
         for (int j = 0; j < i; j++) {
@@ -185,6 +190,7 @@ public class OperandStack {
 
     /**
      * Pushes a Type object onto the stack.
+     * @param type
      */
     public void push(Type type) {
         if (type == null) throw new AssertionViolatedException("Cannot push NULL onto OperandStack.");
@@ -236,6 +242,7 @@ public class OperandStack {
      * Merges another stack state into this instance's stack state.
      * See the Java Virtual Machine Specification, Second Edition, page 146: 4.9.2
      * for details.
+     * @param s
      */
     public void merge(OperandStack s) {
         if ((slotsUsed() != s.slotsUsed()) || (size() != s.size()))
@@ -272,6 +279,7 @@ public class OperandStack {
     /**
      * Replaces all occurences of u in this OperandStack instance
      * with an "initialized" ObjectType.
+     * @param u
      */
     public void initializeObject(UninitializedObjectType u) {
         for (int i = 0; i < stack.size(); i++) {

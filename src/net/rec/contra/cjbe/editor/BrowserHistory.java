@@ -23,8 +23,6 @@ import java.util.ListIterator;
  */
 public class BrowserHistory {
 
-    private static int MAX_HISTORY_ENTRIES = 50;
-
     private BrowserServices services;
 
     private LinkedList<BrowserHistoryEntry> history = new LinkedList<BrowserHistoryEntry>();
@@ -108,6 +106,7 @@ public class BrowserHistory {
 
             eliminateForwardEntries();
 
+            int MAX_HISTORY_ENTRIES = 50;
             if (historyPointer > MAX_HISTORY_ENTRIES) {
                 history.removeFirst();
                 historyPointer--;
@@ -173,7 +172,7 @@ public class BrowserHistory {
             codeAttributeDetailPane.selectByteCodeDetailPane();
 
             codeAttributeDetailPane.getCodeAttributeByteCodeDetailPane().
-                    scrollToOffset(offset);
+                    scrollToOffset(offset.intValue());
         }
 
         updateActions();

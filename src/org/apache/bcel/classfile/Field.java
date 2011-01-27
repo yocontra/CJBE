@@ -76,6 +76,7 @@ public final class Field extends FieldOrMethod {
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use clone() for a physical copy.
+     * @param c
      */
     public Field(Field c) {
         super(c);
@@ -85,6 +86,7 @@ public final class Field extends FieldOrMethod {
      * Construct object from file stream.
      *
      * @param file Input stream
+     * @param constant_pool
      */
     Field(DataInputStream file, ConstantPool constant_pool)
             throws IOException, ClassFormatException {
@@ -144,19 +146,20 @@ public final class Field extends FieldOrMethod {
         ConstantValue cv = getConstantValue();
 
         if (cv != null)
-            buf.append(" = " + cv);
+            buf.append(" = ").append(cv);
 
         for (int i = 0; i < attributes_count; i++) {
             Attribute a = attributes[i];
 
             if (!(a instanceof ConstantValue))
-                buf.append(" [" + a.toString() + "]");
+                buf.append(" [").append(a.toString()).append("]");
         }
 
         return buf.toString();
     }
 
     /**
+     * @param constant_pool
      * @return deep copy of this field
      */
     public final Field copy(ConstantPool constant_pool) {

@@ -78,6 +78,7 @@ public final class LineNumber implements Cloneable, Node, Serializable {
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public LineNumber(LineNumber c) {
         this(c.getStartPC(), c.getLineNumber());
@@ -141,6 +142,7 @@ public final class LineNumber implements Cloneable, Node, Serializable {
 
     /**
      * @param line_number.
+     * @param line_number
      */
     public final void setLineNumber(int line_number) {
         this.line_number = line_number;
@@ -148,6 +150,7 @@ public final class LineNumber implements Cloneable, Node, Serializable {
 
     /**
      * @param start_pc.
+     * @param start_pc
      */
     public final void setStartPC(int start_pc) {
         this.start_pc = start_pc;

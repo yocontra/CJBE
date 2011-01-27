@@ -25,7 +25,7 @@ public class CodeEditArea extends JEditorPane {
 
     CodeEditArea(byte[] code, ClassFile classFile, BrowserInternalFrame internalFrame) {
         this.internalFrame = internalFrame;
-        setFont(new Font("monospaced", Font.PLAIN, 14));
+        setFont(new Font("monospaced", Font.PLAIN, 12));
         setCaretPosition(0);
         setEditable(true);
         CodeGenerator cg = new CodeGenerator();

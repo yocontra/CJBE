@@ -80,6 +80,7 @@ public class LocalVariableTable extends Attribute {
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use copy() for a physical copy.
+     * @param c
      */
     public LocalVariableTable(LocalVariableTable c) {
         this(c.getNameIndex(), c.getLength(), c.getLocalVariableTable(),
@@ -151,6 +152,7 @@ public class LocalVariableTable extends Attribute {
     }
 
     /**
+     * @param index
      * @return first matching variable using index
      */
     public final LocalVariable getLocalVariable(int index) {

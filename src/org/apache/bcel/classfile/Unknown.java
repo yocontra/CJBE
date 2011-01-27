@@ -104,6 +104,7 @@ public final class Unknown extends Attribute {
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use clone() for a physical copy.
+     * @param c
      */
     public Unknown(Unknown c) {
         this(c.getNameIndex(), c.getLength(), c.getBytes(), c.getConstantPool());
@@ -186,6 +187,7 @@ public final class Unknown extends Attribute {
 
     /**
      * @param bytes.
+     * @param bytes
      */
     public final void setBytes(byte[] bytes) {
         this.bytes = bytes;

@@ -104,6 +104,7 @@ public class InstructionHandle implements java.io.Serializable {
     /**
      * Replace current instruction contained in this handle.
      * Old instruction is disposed using Instruction.dispose().
+     * @param i
      */
     public void setInstruction(Instruction i) { // Overridden in BranchHandle
         if (i == null)
@@ -122,6 +123,7 @@ public class InstructionHandle implements java.io.Serializable {
      * Temporarily swap the current instruction, without disturbing
      * anything. Meant to be used by a debugger, implementing
      * breakpoints. Current instruction is returned.
+     * @param i
      */
     public Instruction swapInstruction(Instruction i) {
         Instruction oldInstruction = instruction;
@@ -138,6 +140,7 @@ public class InstructionHandle implements java.io.Serializable {
 
     /**
      * Factory method.
+     * @param i
      */
     static InstructionHandle getInstructionHandle(Instruction i) {
         if (ih_list == null)
@@ -179,6 +182,7 @@ public class InstructionHandle implements java.io.Serializable {
     /**
      * Set the position, i.e., the byte code offset of the contained
      * instruction.
+     * @param pos
      */
     void setPosition(int pos) {
         i_position = pos;
@@ -215,6 +219,7 @@ public class InstructionHandle implements java.io.Serializable {
 
     /**
      * Denote this handle isn't referenced anymore by t.
+     * @param t
      */
     public void removeTargeter(InstructionTargeter t) {
         targeters.remove(t);
@@ -222,6 +227,7 @@ public class InstructionHandle implements java.io.Serializable {
 
     /**
      * Denote this handle is being referenced by t.
+     * @param t
      */
     public void addTargeter(InstructionTargeter t) {
         if (targeters == null)
@@ -248,6 +254,7 @@ public class InstructionHandle implements java.io.Serializable {
     }
 
     /**
+     * @param verbose
      * @return a (verbose) string representation of the contained instruction.
      */
     public String toString(boolean verbose) {

@@ -62,6 +62,7 @@ public class LineNumberView extends JComponent {
      * @param startLine        the line that changed, if there's only one
      * @param structureChanged if <tt>true</tt>, ignore the line number and update all the
      *                         line heights.
+     * @param text
      */
     public LineNumberView(JTextComponent text) {
         if (text == null) {
@@ -152,6 +153,7 @@ public class LineNumberView extends JComponent {
      * Get the height of a line from the JTextComponent.
      *
      * @param index the line number
+     * @param val
      * @param the   height, in pixels
      */
     private int getLineHeight(int index, int val) {
@@ -229,7 +231,7 @@ public class LineNumberView extends JComponent {
         int base = clip.y - textTopInset;
         int first = sizes.getIndex(base);
         int last = sizes.getIndex(base + clip.height);
-        String text = "";
+        String text;
 
         for (int i = first; i <= last; i++) {
             text = String.valueOf(i + 1);
@@ -295,6 +297,7 @@ public class LineNumberView extends JComponent {
         /**
          * If the edit was confined to a single line, invalidate that line's
          * height. Otherwise, invalidate them all.
+         * @param evt
          */
         private void update(DocumentEvent evt) {
             Element map = text.getDocument().getDefaultRootElement();

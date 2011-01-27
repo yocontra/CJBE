@@ -81,6 +81,7 @@ public final class InnerClasses extends Attribute {
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use clone() for a physical copy.
+     * @param c
      */
     public InnerClasses(InnerClasses c) {
         this(c.getNameIndex(), c.getLength(), c.getInnerClasses(),
@@ -155,6 +156,7 @@ public final class InnerClasses extends Attribute {
 
     /**
      * @param inner_classes.
+     * @param inner_classes
      */
     public final void setInnerClasses(InnerClass[] inner_classes) {
         this.inner_classes = inner_classes;
@@ -168,7 +170,7 @@ public final class InnerClasses extends Attribute {
         StringBuffer buf = new StringBuffer();
 
         for (int i = 0; i < number_of_classes; i++)
-            buf.append(inner_classes[i].toString(constant_pool) + "\n");
+            buf.append(inner_classes[i].toString(constant_pool)).append("\n");
 
         return buf.toString();
     }

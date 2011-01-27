@@ -426,6 +426,7 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
     }
 
     /**
+     * @param m
      * @return A org.apache.bcel.classfile.Method corresponding to
      *         java.lang.reflect.Method if any
      */
@@ -523,6 +524,7 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
 
     /**
      * Set File name of class, aka SourceFile attribute value
+     * @param file_name
      */
     public void setFileName(String file_name) {
         this.file_name = file_name;
@@ -565,6 +567,7 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
 
     /**
      * Set absolute path to file this class was read from.
+     * @param source_file_name
      */
     public void setSourceFileName(String source_file_name) {
         this.source_file_name = source_file_name;
@@ -611,12 +614,12 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
             buf.append('\n');
         }
 
-        buf.append("filename\t\t" + file_name + '\n');
-        buf.append("compiled from\t\t" + source_file_name + '\n');
-        buf.append("compiler version\t" + major + "." + minor + '\n');
-        buf.append("access flags\t\t" + access_flags + '\n');
-        buf.append("constant pool\t\t" + constant_pool.getLength() + " entries\n");
-        buf.append("ACC_SUPER flag\t\t" + isSuper() + "\n");
+        buf.append("filename\t\t").append(file_name).append('\n');
+        buf.append("compiled from\t\t").append(source_file_name).append('\n');
+        buf.append("compiler version\t").append(major).append(".").append(minor).append('\n');
+        buf.append("access flags\t\t").append(access_flags).append('\n');
+        buf.append("constant pool\t\t").append(constant_pool.getLength()).append(" entries\n");
+        buf.append("ACC_SUPER flag\t\t").append(isSuper()).append("\n");
 
         if (attributes.length > 0) {
             buf.append("\nAttribute(s):\n");
@@ -624,13 +627,13 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
         }
 
         if (fields.length > 0) {
-            buf.append("\n" + fields.length + " fields:\n");
-            for (Field field : fields) buf.append("\t" + field + '\n');
+            buf.append("\n").append(fields.length).append(" fields:\n");
+            for (Field field : fields) buf.append("\t").append(field).append('\n');
         }
 
         if (methods.length > 0) {
-            buf.append("\n" + methods.length + " methods:\n");
-            for (Method method : methods) buf.append("\t" + method + '\n');
+            buf.append("\n").append(methods.length).append(" methods:\n");
+            for (Method method : methods) buf.append("\t").append(method).append('\n');
         }
 
         return buf.toString();
@@ -641,7 +644,7 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
         StringBuffer buf = new StringBuffer();
 
         while (tok.hasMoreTokens())
-            buf.append("\t" + tok.nextToken() + "\n");
+            buf.append("\t").append(tok.nextToken()).append("\n");
 
         return buf.toString();
     }
@@ -704,6 +707,7 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
     /**
      * Sets the ClassRepository which loaded the JavaClass.
      * Should be called immediately after parsing is done.
+     * @param repository
      */
     public void setRepository(org.apache.bcel.util.Repository repository) {
         this.repository = repository;
@@ -712,6 +716,7 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
     /**
      * Equivalent to runtime "instanceof" operator.
      *
+     * @param super_class
      * @return true if this JavaClass is derived from teh super class
      */
     public final boolean instanceOf(JavaClass super_class) {
@@ -731,6 +736,7 @@ public class JavaClass extends AccessFlags implements Cloneable, Node {
     }
 
     /**
+     * @param inter
      * @return true, if clazz is an implementation of interface inter
      */
     public boolean implementationOf(JavaClass inter) {

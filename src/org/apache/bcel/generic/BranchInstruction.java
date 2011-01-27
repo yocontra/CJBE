@@ -84,6 +84,7 @@ public abstract class BranchInstruction extends Instruction implements Instructi
      * Common super constructor
      *
      * @param opcodee Instruction opcode
+     * @param opcode
      * @param target  instruction to branch to
      */
     protected BranchInstruction(short opcode, InstructionHandle target) {
@@ -224,6 +225,9 @@ public abstract class BranchInstruction extends Instruction implements Instructi
 
     /**
      * Used by BranchInstruction, LocalVariableGen, CodeExceptionGen
+     * @param old_ih
+     * @param new_ih
+     * @param t
      */
     static void notifyTarget(InstructionHandle old_ih, InstructionHandle new_ih,
                                    InstructionTargeter t) {

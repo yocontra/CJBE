@@ -110,7 +110,7 @@ public class SIPUSH extends Instruction implements ConstantPushInstruction {
     }
 
     public Number getValue() {
-        return (int) b;
+        return Integer.valueOf((int) b);
     }
 
     /**

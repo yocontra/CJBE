@@ -74,6 +74,7 @@ public abstract class NativeVerifier {
 
     /**
      * Works only on the first argument.
+     * @param args
      */
     public static void main(String[] args) {
         if (args.length != 1) {

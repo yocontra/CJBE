@@ -64,6 +64,7 @@ package org.apache.bcel.classfile;
  */
 public interface ConstantObject {
     /**
+     * @param cp
      * @return object representing the constant, e.g., Long for ConstantLong
      */
     public abstract Object getConstantValue(ConstantPool cp);

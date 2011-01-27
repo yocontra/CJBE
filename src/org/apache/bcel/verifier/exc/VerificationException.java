@@ -76,6 +76,7 @@ public abstract class VerificationException extends VerifierConstraintViolatedEx
 
     /**
      * Constructs a new VerificationException with the specified error message.
+     * @param message
      */
     VerificationException(String message) {
         super(message);

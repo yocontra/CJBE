@@ -124,6 +124,7 @@ public final class BranchHandle extends InstructionHandle {
 
     /**
      * Pass new target to instruction.
+     * @param ih
      */
     public void setTarget(InstructionHandle ih) {
         bi.setTarget(ih);
@@ -131,6 +132,8 @@ public final class BranchHandle extends InstructionHandle {
 
     /**
      * Update target of instruction.
+     * @param old_ih
+     * @param new_ih
      */
     public void updateTarget(InstructionHandle old_ih, InstructionHandle new_ih) {
         bi.updateTarget(old_ih, new_ih);

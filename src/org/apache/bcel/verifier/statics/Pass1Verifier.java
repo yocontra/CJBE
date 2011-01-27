@@ -98,6 +98,7 @@ public final class Pass1Verifier extends PassVerifier {
     /**
      * Should only be instantiated by a Verifier.
      *
+     * @param owner
      * @see org.apache.bcel.verifier.Verifier
      */
     public Pass1Verifier(Verifier owner) {

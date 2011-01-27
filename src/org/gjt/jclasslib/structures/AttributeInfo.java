@@ -59,7 +59,7 @@ public class AttributeInfo extends AbstractStructureWithAttributes {
             int attributeLength = in.readInt();
 
             ConstantUtf8Info cpInfoName = classFile.getConstantPoolUtf8Entry(attributeNameIndex);
-            String attributeName = null;
+            String attributeName;
 
             if (cpInfoName == null) {
                 return null;

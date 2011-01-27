@@ -131,6 +131,7 @@ public class BrowserTreeNode extends DefaultMutableTreeNode {
     /**
      * Get the type of the node as defined by the <tt>NODE_</tt> constants.
      *
+     * @param s
      * @return the type
      */
     public void setType(String s) {

@@ -69,29 +69,34 @@ import org.apache.bcel.classfile.JavaClass;
 public interface Repository extends java.io.Serializable {
     /**
      * Store the provided class under "clazz.getClassName()"
+     * @param clazz
      */
     public void storeClass(JavaClass clazz);
 
     /**
      * Remove class from repository
+     * @param clazz
      */
     public void removeClass(JavaClass clazz);
 
     /**
      * Find the class with the name provided, if the class
      * isn't there, return NULL.
+     * @param className
      */
     public JavaClass findClass(String className);
 
     /**
      * Find the class with the name provided, if the class
      * isn't there, make an attempt to load it.
+     * @param className
      */
     public JavaClass loadClass(String className)
             throws java.lang.ClassNotFoundException;
 
     /**
      * Find the JavaClass instance for the given run-time class object
+     * @param clazz
      */
     public JavaClass loadClass(Class clazz)
             throws java.lang.ClassNotFoundException;

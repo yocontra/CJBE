@@ -78,6 +78,7 @@ public class LineNumberGen
      * Create a line number.
      *
      * @param ih instruction handle to reference
+     * @param src_line
      */
     public LineNumberGen(InstructionHandle ih, int src_line) {
         setInstruction(ih);

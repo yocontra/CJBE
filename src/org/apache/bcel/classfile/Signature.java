@@ -79,6 +79,7 @@ public final class Signature extends Attribute {
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use clone() for a physical copy.
+     * @param c
      */
     public Signature(Signature c) {
         this(c.getNameIndex(), c.getLength(), c.getSignatureIndex(), c.getConstantPool());
@@ -101,6 +102,7 @@ public final class Signature extends Attribute {
     /**
      * @param name_index      Index in constant pool to CONSTANT_Utf8
      * @param length          Content length in bytes
+     * @param signature_index
      * @param constant_pool   Array of constants
      * @param Signature_index Index in constant pool to CONSTANT_Utf8
      */
@@ -142,6 +144,7 @@ public final class Signature extends Attribute {
 
     /**
      * @param Signature_index.
+     * @param signature_index
      */
     public final void setSignatureIndex(int signature_index) {
         this.signature_index = signature_index;

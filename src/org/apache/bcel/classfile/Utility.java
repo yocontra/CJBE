@@ -123,7 +123,7 @@ public abstract class Utility {
                 if (for_class && ((p == Constants.ACC_SUPER) || (p == Constants.ACC_INTERFACE)))
                     continue;
 
-                buf.append(Constants.ACCESS_NAMES[i] + " ");
+                buf.append(Constants.ACCESS_NAMES[i]).append(" ");
             }
         }
 
@@ -131,6 +131,7 @@ public abstract class Utility {
     }
 
     /**
+     * @param access_flags
      * @return "class" or "interface", depending on the ACC_INTERFACE flag
      */
     public static String classOrInterface(int access_flags) {
@@ -164,7 +165,7 @@ public abstract class Utility {
             for (int i = 0; stream.available() > 0; i++) {
                 if ((length < 0) || (i < length)) {
                     String indices = fillup(stream.getIndex() + ":", 6, true, ' ');
-                    buf.append(indices + codeToString(stream, constant_pool, verbose) + '\n');
+                    buf.append(indices).append(codeToString(stream, constant_pool, verbose)).append('\n');
                 }
             }
         } catch (IOException e) {
@@ -230,8 +231,7 @@ public abstract class Utility {
                 offset = bytes.getIndex() - 12 - no_pad_bytes - 1;
                 default_offset += offset;
 
-                buf.append("\tdefault = " + default_offset + ", low = " + low +
-                        ", high = " + high + "(");
+                buf.append("\tdefault = ").append(default_offset).append(", low = ").append(low).append(", high = ").append(high).append("(");
 
                 jump_table = new int[high - low + 1];
                 for (int i = 0; i < jump_table.length; i++) {
@@ -256,15 +256,14 @@ public abstract class Utility {
                 jump_table = new int[npairs];
                 default_offset += offset;
 
-                buf.append("\tdefault = " + default_offset + ", npairs = " + npairs +
-                        " (");
+                buf.append("\tdefault = ").append(default_offset).append(", npairs = ").append(npairs).append(" (");
 
                 for (int i = 0; i < npairs; i++) {
                     match[i] = bytes.readInt();
 
                     jump_table[i] = offset + bytes.readInt();
 
-                    buf.append("(" + match[i] + ", " + jump_table[i] + ")");
+                    buf.append("(").append(match[i]).append(", ").append(jump_table[i]).append(")");
 
                     if (i < npairs - 1)
                         buf.append(", ");
@@ -294,14 +293,14 @@ public abstract class Utility {
             case Constants.IF_ICMPLE:
             case Constants.IF_ICMPLT:
             case Constants.IF_ICMPNE:
-                buf.append("\t\t#" + ((bytes.getIndex() - 1) + bytes.readShort()));
+                buf.append("\t\t#").append((bytes.getIndex() - 1) + bytes.readShort());
                 break;
 
             /* 32-bit wide jumps
             */
             case Constants.GOTO_W:
             case Constants.JSR_W:
-                buf.append("\t\t#" + ((bytes.getIndex() - 1) + bytes.readInt()));
+                buf.append("\t\t#").append((bytes.getIndex() - 1) + bytes.readInt());
                 break;
 
             /* Index byte references local variable (register)
@@ -323,7 +322,7 @@ public abstract class Utility {
                 } else
                     vindex = bytes.readUnsignedByte();
 
-                buf.append("\t\t%" + vindex);
+                buf.append("\t\t%").append(vindex);
                 break;
 
             /*
@@ -339,7 +338,7 @@ public abstract class Utility {
             /* Array of basic type.
             */
             case Constants.NEWARRAY:
-                buf.append("\t\t<" + Constants.TYPE_NAMES[bytes.readByte()] + ">");
+                buf.append("\t\t<").append(Constants.TYPE_NAMES[bytes.readByte()]).append(">");
                 break;
 
             /* Access object/class fields.
@@ -349,9 +348,7 @@ public abstract class Utility {
             case Constants.PUTFIELD:
             case Constants.PUTSTATIC:
                 index = bytes.readUnsignedShort();
-                buf.append("\t\t" +
-                        constant_pool.constantToString(index, Constants.CONSTANT_Fieldref) +
-                        (verbose ? " (" + index + ")" : ""));
+                buf.append("\t\t").append(constant_pool.constantToString(index, Constants.CONSTANT_Fieldref)).append(verbose ? " (" + index + ")" : "");
                 break;
 
             /* Operands are references to classes in constant pool
@@ -361,9 +358,8 @@ public abstract class Utility {
                 buf.append("\t");
             case Constants.INSTANCEOF:
                 index = bytes.readUnsignedShort();
-                buf.append("\t<" + constant_pool.constantToString(index,
-                        Constants.CONSTANT_Class) +
-                        ">" + (verbose ? " (" + index + ")" : ""));
+                buf.append("\t<").append(constant_pool.constantToString(index,
+                        Constants.CONSTANT_Class)).append(">").append(verbose ? " (" + index + ")" : "");
                 break;
 
             /* Operands are references to methods in constant pool
@@ -372,19 +368,15 @@ public abstract class Utility {
             case Constants.INVOKESTATIC:
             case Constants.INVOKEVIRTUAL:
                 index = bytes.readUnsignedShort();
-                buf.append("\t" + constant_pool.constantToString(index,
-                        Constants.CONSTANT_Methodref) +
-                        (verbose ? " (" + index + ")" : ""));
+                buf.append("\t").append(constant_pool.constantToString(index,
+                        Constants.CONSTANT_Methodref)).append(verbose ? " (" + index + ")" : "");
                 break;
 
             case Constants.INVOKEINTERFACE:
                 index = bytes.readUnsignedShort();
                 int nargs = bytes.readUnsignedByte(); // historical, redundant
-                buf.append("\t" +
-                        constant_pool.constantToString(index,
-                                Constants.CONSTANT_InterfaceMethodref) +
-                        (verbose ? " (" + index + ")\t" : "") + nargs + "\t" +
-                        bytes.readUnsignedByte()); // Last byte is a reserved space
+                buf.append("\t").append(constant_pool.constantToString(index,
+                        Constants.CONSTANT_InterfaceMethodref)).append(verbose ? " (" + index + ")\t" : "").append(nargs).append("\t").append(bytes.readUnsignedByte()); // Last byte is a reserved space
                 break;
 
             /* Operands are references to items in constant pool
@@ -393,18 +385,15 @@ public abstract class Utility {
             case Constants.LDC2_W:
                 index = bytes.readUnsignedShort();
 
-                buf.append("\t\t" + constant_pool.constantToString
-                        (index, constant_pool.getConstant(index).getTag()) +
-                        (verbose ? " (" + index + ")" : ""));
+                buf.append("\t\t").append(constant_pool.constantToString
+                        (index, constant_pool.getConstant(index).getTag())).append(verbose ? " (" + index + ")" : "");
                 break;
 
             case Constants.LDC:
                 index = bytes.readUnsignedByte();
 
-                buf.append("\t\t" +
-                        constant_pool.constantToString
-                                (index, constant_pool.getConstant(index).getTag()) +
-                        (verbose ? " (" + index + ")" : ""));
+                buf.append("\t\t").append(constant_pool.constantToString
+                        (index, constant_pool.getConstant(index).getTag())).append(verbose ? " (" + index + ")" : "");
                 break;
 
             /* Array of references.
@@ -412,9 +401,8 @@ public abstract class Utility {
             case Constants.ANEWARRAY:
                 index = bytes.readUnsignedShort();
 
-                buf.append("\t\t<" + compactClassName(constant_pool.getConstantString
-                        (index, Constants.CONSTANT_Class), false) +
-                        ">" + (verbose ? " (" + index + ")" : ""));
+                buf.append("\t\t<").append(compactClassName(constant_pool.getConstantString
+                        (index, Constants.CONSTANT_Class), false)).append(">").append(verbose ? " (" + index + ")" : "");
                 break;
 
             /* Multidimensional array of references.
@@ -423,9 +411,8 @@ public abstract class Utility {
                 index = bytes.readUnsignedShort();
                 int dimensions = bytes.readUnsignedByte();
 
-                buf.append("\t<" + compactClassName(constant_pool.getConstantString
-                        (index, Constants.CONSTANT_Class), false) +
-                        ">\t" + dimensions + (verbose ? " (" + index + ")" : ""));
+                buf.append("\t<").append(compactClassName(constant_pool.getConstantString
+                        (index, Constants.CONSTANT_Class), false)).append(">\t").append(dimensions).append(verbose ? " (" + index + ")" : "");
             }
             break;
 
@@ -440,7 +427,7 @@ public abstract class Utility {
                     vindex = bytes.readUnsignedByte();
                     constant = bytes.readByte();
                 }
-                buf.append("\t\t%" + vindex + "\t" + constant);
+                buf.append("\t\t%").append(vindex).append("\t").append(constant);
                 break;
 
             default:
@@ -528,6 +515,8 @@ public abstract class Utility {
     }
 
     /**
+     * @param flag
+     * @param i
      * @return `flag' with bit `i' set to 1
      */
     public static int setBit(int flag, int i) {
@@ -535,6 +524,8 @@ public abstract class Utility {
     }
 
     /**
+     * @param flag
+     * @param i
      * @return `flag' with bit `i' set to 0
      */
     public static int clearBit(int flag, int i) {
@@ -543,6 +534,8 @@ public abstract class Utility {
     }
 
     /**
+     * @param flag
+     * @param i
      * @return true, if bit `i' in `flag' is set
      */
     public static boolean isSet(int flag, int i) {
@@ -574,7 +567,7 @@ public abstract class Utility {
 
         str = getSignature(ret);
 
-        buf.append(")" + str);
+        buf.append(")").append(str);
 
         return buf.toString();
     }
@@ -699,6 +692,8 @@ public abstract class Utility {
      * @param signature Method signature
      * @param name      Method name
      * @param access    Method access rights
+     * @param chopit
+     * @param vars
      * @return Java type declaration
      * @throws ClassFormatException
      */
@@ -727,9 +722,9 @@ public abstract class Utility {
                     LocalVariable l = vars.getLocalVariable(var_index);
 
                     if (l != null)
-                        buf.append(" " + l.getName());
+                        buf.append(" ").append(l.getName());
                 } else
-                    buf.append(" arg" + var_index);
+                    buf.append(" arg").append(var_index);
 
                 if ("double".equals(param_type) || "long".equals(param_type))
                     var_index += 2;
@@ -768,6 +763,7 @@ public abstract class Utility {
      *
      * @param str String to permute
      * @param old String to be replaced
+     * @param new_
      * @param new Replacement string
      * @return new String object
      */
@@ -969,7 +965,7 @@ public abstract class Utility {
         }
 
         if (!found) // Class name
-            buf.append('L' + type.replace('.', '/') + ';');
+            buf.append('L').append(type.replace('.', '/')).append(';');
 
         return buf.toString();
     }
@@ -1070,6 +1066,7 @@ public abstract class Utility {
 
     /**
      * Map opcode names to opcode numbers. E.g., return Constants.ALOAD for "aload"
+     * @param name
      */
     public static short searchOpcode(String name) {
         name = name.toLowerCase();
@@ -1084,6 +1081,7 @@ public abstract class Utility {
     /**
      * Convert (signed) byte to (unsigned) short value, i.e., all negative
      * values become positive.
+     * @param b
      */
     private static short byteToShort(byte b) {
         return (b < 0) ? (short) (256 + b) : (short) b;
@@ -1092,6 +1090,7 @@ public abstract class Utility {
     /**
      * Convert bytes into hexidecimal string
      *
+     * @param bytes
      * @return bytes as hexidecimal string, e.g. 00 FA 12 ...
      */
     public static String toHexString(byte[] bytes) {
@@ -1189,7 +1188,7 @@ public abstract class Utility {
 
         for (int i = 0; i < obj.length; i++) {
             if (obj[i] != null) {
-                buf.append((quote ? "\"" : "") + obj[i].toString() + (quote ? "\"" : ""));
+                buf.append(quote ? "\"" : "").append(obj[i].toString()).append(quote ? "\"" : "");
             } else {
                 buf.append("null");
             }
@@ -1206,6 +1205,7 @@ public abstract class Utility {
     }
 
     /**
+     * @param ch
      * @return true, if character is one of (a, ... z, A, ... Z, 0, ... 9, _)
      */
     public static boolean isJavaIdentifierPart(char ch) {
@@ -1259,6 +1259,7 @@ public abstract class Utility {
      * Decode a string back to a byte array.
      *
      * @param bytes      the byte array to convert
+     * @param s
      * @param uncompress use gzip to uncompress the stream of bytes
      */
     public static byte[] decode(String s, boolean uncompress) throws IOException {
@@ -1414,6 +1415,7 @@ public abstract class Utility {
 
     /**
      * Escape all occurences of newline chars '\n', quotes \", etc.
+     * @param label
      */
     public static String convertString(String label) {
         char[] ch = label.toCharArray();

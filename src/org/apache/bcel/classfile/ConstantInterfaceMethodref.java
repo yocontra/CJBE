@@ -73,6 +73,7 @@ public final class ConstantInterfaceMethodref extends ConstantCP {
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public ConstantInterfaceMethodref(ConstantInterfaceMethodref c) {
         super(Constants.CONSTANT_InterfaceMethodref, c.getClassIndex(), c.getNameAndTypeIndex());

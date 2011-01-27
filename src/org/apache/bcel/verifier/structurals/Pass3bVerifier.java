@@ -154,6 +154,8 @@ public final class Pass3bVerifier extends PassVerifier {
     /**
      * This class should only be instantiated by a Verifier.
      *
+     * @param owner
+     * @param method_no
      * @see org.apache.bcel.verifier.Verifier
      */
     public Pass3bVerifier(Verifier owner, int method_no) {
@@ -167,6 +169,11 @@ public final class Pass3bVerifier extends PassVerifier {
      * put [back] into the queue [as if they were unvisited].
      * The proof of termination is about the existence of a
      * fix point of frame merging.
+     * @param cfg
+     * @param start
+     * @param vanillaFrame
+     * @param icv
+     * @param ev
      */
     private void circulationPump(ControlFlowGraph cfg, InstructionContext start, Frame vanillaFrame, InstConstraintVisitor icv, ExecutionVisitor ev) {
         final Random random = new Random();
@@ -180,16 +187,9 @@ public final class Pass3bVerifier extends PassVerifier {
         while (!icq.isEmpty()) {
             InstructionContext u;
             ArrayList ec;
-            if (false) {
-                int r = random.nextInt(icq.size());
-                u = icq.getIC(r);
-                ec = icq.getEC(r);
-                icq.remove(r);
-            } else {
-                u = icq.getIC(0);
-                ec = icq.getEC(0);
-                icq.remove(0);
-            }
+            u = icq.getIC(0);
+            ec = icq.getEC(0);
+            icq.remove(0);
 
             ArrayList oldchain = (ArrayList) (ec.clone());
             ArrayList newchain = (ArrayList) (ec.clone());

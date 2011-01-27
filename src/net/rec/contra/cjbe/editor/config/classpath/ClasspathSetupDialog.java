@@ -309,8 +309,7 @@ public class ClasspathSetupDialog extends JDialog
         if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             frame.setClassesChooserPath(fileChooser.getCurrentDirectory().getAbsolutePath());
             File[] files = fileChooser.getSelectedFiles();
-            for (int i = 0; i < files.length; i++) {
-                File file = files[i];
+            for (File file : files) {
                 ClasspathEntry entry;
                 if (file.isDirectory()) {
                     entry = new ClasspathDirectoryEntry();

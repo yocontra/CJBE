@@ -73,6 +73,7 @@ public final class Utility {
 
     /**
      * This method returns the stack trace of a Throwable instance as a String.
+     * @param t
      */
     public static String getStackTrace(Throwable t) {
         StringWriter sw = new StringWriter();

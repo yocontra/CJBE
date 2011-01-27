@@ -80,6 +80,7 @@ public final class SourceFile extends Attribute {
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use clone() for a physical copy.
+     * @param c
      */
     public SourceFile(SourceFile c) {
         this(c.getNameIndex(), c.getLength(), c.getSourceFileIndex(),
@@ -150,6 +151,7 @@ public final class SourceFile extends Attribute {
 
     /**
      * @param sourcefile_index.
+     * @param sourcefile_index
      */
     public final void setSourceFileIndex(int sourcefile_index) {
         this.sourcefile_index = sourcefile_index;

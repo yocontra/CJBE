@@ -77,6 +77,7 @@ public final class AssertionViolatedException extends RuntimeException {
     /**
      * Constructs a new AssertionViolatedException with the specified error message preceded
      * by &quot;INTERNAL ERROR: &quot;.
+     * @param message
      */
     public AssertionViolatedException(String message) {
         super(message = "INTERNAL ERROR: " + message); // Thanks to Java, the constructor call here must be first.
@@ -88,6 +89,8 @@ public final class AssertionViolatedException extends RuntimeException {
      * 'old' error message. All of these three strings are allowed to be null, and null
      * is always replaced by the empty string (""). In particular, after invoking this
      * method, the error message of this object can no longer be null.
+     * @param pre
+     * @param post
      */
     public void extendMessage(String pre, String post) {
         if (pre == null) pre = "";
@@ -107,6 +110,7 @@ public final class AssertionViolatedException extends RuntimeException {
 
     /**
      * DO NOT USE. It's for experimental testing during development only.
+     * @param args
      */
     public static void main(String[] args) {
         AssertionViolatedException ave = new AssertionViolatedException("Oops!");

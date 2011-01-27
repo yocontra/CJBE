@@ -35,7 +35,6 @@ public class BrowserComponent extends JComponent
 
     // Visual Components
 
-    private JSplitPane splitPane;
     private BrowserTreePane treePane;
     private BrowserDetailPane detailPane;
 
@@ -82,6 +81,7 @@ public class BrowserComponent extends JComponent
     /**
      * Construct a <tt>BrowserPath</tt> object for the curently selected path in the tree.
      *
+     * @param oldCatName
      * @return the editor path
      */
     public BrowserPath getBrowserPath(String oldCatName) {
@@ -262,7 +262,7 @@ public class BrowserComponent extends JComponent
 
         detailPane = new BrowserDetailPane(services);
 
-        splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
+        JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
                 buildTreePane(),
                 detailPane);
 

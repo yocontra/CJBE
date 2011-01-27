@@ -97,6 +97,7 @@ public final class Code extends Attribute {
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use copy() for a physical copy.
+     * @param c
      */
     public Code(Code c) {
         this(c.getNameIndex(), c.getLength(), c.getMaxStack(), c.getMaxLocals(),
@@ -293,6 +294,7 @@ public final class Code extends Attribute {
 
     /**
      * @param attributes.
+     * @param attributes
      */
     public final void setAttributes(Attribute[] attributes) {
         this.attributes = attributes;
@@ -332,6 +334,7 @@ public final class Code extends Attribute {
     }
 
     /**
+     * @param verbose
      * @return String representation of code chunk.
      */
     public final String toString(boolean verbose) {
@@ -346,14 +349,14 @@ public final class Code extends Attribute {
             buf.append("\nException handler(s) = \n" + "From\tTo\tHandler\tType\n");
 
             for (int i = 0; i < exception_table_length; i++)
-                buf.append(exception_table[i].toString(constant_pool, verbose) + "\n");
+                buf.append(exception_table[i].toString(constant_pool, verbose)).append("\n");
         }
 
         if (attributes_count > 0) {
             buf.append("\nAttribute(s) = \n");
 
             for (int i = 0; i < attributes_count; i++)
-                buf.append(attributes[i].toString() + "\n");
+                buf.append(attributes[i].toString()).append("\n");
         }
 
         return buf.toString();

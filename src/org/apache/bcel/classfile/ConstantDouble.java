@@ -83,6 +83,7 @@ public final class ConstantDouble extends Constant implements ConstantObject {
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public ConstantDouble(ConstantDouble c) {
         this(c.getBytes());
@@ -129,6 +130,7 @@ public final class ConstantDouble extends Constant implements ConstantObject {
 
     /**
      * @param bytes.
+     * @param bytes
      */
     public final void setBytes(double bytes) {
         this.bytes = bytes;
@@ -145,6 +147,6 @@ public final class ConstantDouble extends Constant implements ConstantObject {
      * @return Double object
      */
     public Object getConstantValue(ConstantPool cp) {
-        return bytes;
+        return Double.valueOf(bytes);
     }
 }

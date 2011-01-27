@@ -72,6 +72,7 @@ public class ClassConstraintException extends VerificationException {
 
     /**
      * Constructs a new ClassConstraintException with the specified error message.
+     * @param message
      */
     public ClassConstraintException(String message) {
         super(message);

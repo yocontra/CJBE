@@ -109,7 +109,7 @@ public class ClassFile extends AbstractStructureWithAttributes {
     public int getConstantPoolIndex(CPInfo cpInfo) {
         Integer index = constantPoolEntryToIndex.get(cpInfo);
         if (index != null) {
-            return index;
+            return index.intValue();
         } else {
             return -1;
         }
@@ -125,7 +125,7 @@ public class ClassFile extends AbstractStructureWithAttributes {
     public void setConstantPool(CPInfo[] constantPool) {
         this.constantPool = constantPool;
         for (int i = 0; i < constantPool.length; i++) {
-            constantPoolEntryToIndex.put(constantPool[i], i);
+            constantPoolEntryToIndex.put(constantPool[i], Integer.valueOf(i));
         }
     }
 
@@ -141,7 +141,7 @@ public class ClassFile extends AbstractStructureWithAttributes {
         this.constantPool = enlargedConstantPool;
         for (int i = startIndex; i < constantPool.length; i++) {
             if (constantPool[i] != null) {
-                constantPoolEntryToIndex.put(constantPool[i], i);
+                constantPoolEntryToIndex.put(constantPool[i], Integer.valueOf(i));
             }
         }
     }
@@ -153,7 +153,7 @@ public class ClassFile extends AbstractStructureWithAttributes {
      * @param index the index
      */
     public void registerConstantPoolEntry(int index) {
-        constantPoolEntryToIndex.put(constantPool[index], index);
+        constantPoolEntryToIndex.put(constantPool[index], Integer.valueOf(index));
     }
 
     /**
@@ -572,7 +572,7 @@ public class ClassFile extends AbstractStructureWithAttributes {
                 // of the constant is not yet known
                 if (debug) debug("reading constant pool entry " + i);
                 constantPool[i] = CPInfo.create(in, this);
-                constantPoolEntryToIndex.put(constantPool[i], i);
+                constantPoolEntryToIndex.put(constantPool[i], Integer.valueOf(i));
                 if (constantPool[i] instanceof ConstantLargeNumeric) {
                     // CONSTANT_Double_info and CONSTANT_Long_info take 2 constant
                     // pool entries, the second entry is unusable (design mistake)

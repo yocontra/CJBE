@@ -33,8 +33,9 @@ public class ConstantAddPane extends AbstractDetailPane implements
 
     private JTextField mainText, sndText, thirdText;
 
-    private JLabel mainTextLabel, sndTextLabel, thirdTextLabel, buttonLabel,
-            dropdownLabel;
+    private JLabel mainTextLabel;
+    private JLabel sndTextLabel;
+    private JLabel thirdTextLabel;
 
     BrowserInternalFrame internalFrame;
 
@@ -55,8 +56,8 @@ public class ConstantAddPane extends AbstractDetailPane implements
         mainTextLabel = new JLabel();
         sndTextLabel = new JLabel();
         thirdTextLabel = new JLabel();
-        buttonLabel = new JLabel();
-        dropdownLabel = new JLabel("Constant type");
+        JLabel buttonLabel = new JLabel();
+        JLabel dropdownLabel = new JLabel("Constant type");
 
         dropdown.addItem("Class");
         dropdown.addItem("Method");

@@ -216,7 +216,7 @@ public class CodeGenerator {
                 instruction = (AbstractInstruction) instructions.get(i);
                 oldOffset = instruction.getOffset();
                 instruction.setOffset(i);
-                hm.put(oldOffset, instruction);
+                hm.put(Integer.valueOf(oldOffset), instruction);
                 if (instruction instanceof BranchInstruction) {
                     ((BranchInstruction) instruction).setBranchOffset(oldOffset
                             + ((BranchInstruction) instruction)

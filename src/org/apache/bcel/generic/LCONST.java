@@ -91,7 +91,7 @@ public class LCONST extends Instruction
     }
 
     public Number getValue() {
-        return value;
+        return Long.valueOf(value);
     }
 
     /**

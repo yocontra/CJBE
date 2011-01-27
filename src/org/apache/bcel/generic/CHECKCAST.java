@@ -81,6 +81,7 @@ public class CHECKCAST extends CPInstruction
      * Check whether object is of given type
      *
      * @param n index to class in constant pool
+     * @param index
      */
     public CHECKCAST(int index) {
         super(org.apache.bcel.Constants.CHECKCAST, index);

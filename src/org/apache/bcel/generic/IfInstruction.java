@@ -70,6 +70,8 @@ public abstract class IfInstruction extends BranchInstruction implements StackCo
 
     /**
      * @param instruction Target instruction to branch to
+     * @param opcode
+     * @param target
      */
     protected IfInstruction(short opcode, InstructionHandle target) {
         super(opcode, target);

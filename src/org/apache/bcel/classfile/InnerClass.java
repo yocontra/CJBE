@@ -77,6 +77,7 @@ public final class InnerClass implements Cloneable, Node {
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public InnerClass(InnerClass c) {
         this(c.getInnerClassIndex(), c.getOuterClassIndex(), c.getInnerNameIndex(),
@@ -162,6 +163,7 @@ public final class InnerClass implements Cloneable, Node {
 
     /**
      * @param inner_access_flags.
+     * @param inner_access_flags
      */
     public final void setInnerAccessFlags(int inner_access_flags) {
         this.inner_access_flags = inner_access_flags;
@@ -169,6 +171,7 @@ public final class InnerClass implements Cloneable, Node {
 
     /**
      * @param inner_class_index.
+     * @param inner_class_index
      */
     public final void setInnerClassIndex(int inner_class_index) {
         this.inner_class_index = inner_class_index;
@@ -176,6 +179,7 @@ public final class InnerClass implements Cloneable, Node {
 
     /**
      * @param inner_name_index.
+     * @param inner_name_index
      */
     public final void setInnerNameIndex(int inner_name_index) {
         this.inner_name_index = inner_name_index;
@@ -183,6 +187,7 @@ public final class InnerClass implements Cloneable, Node {
 
     /**
      * @param outer_class_index.
+     * @param outer_class_index
      */
     public final void setOuterClassIndex(int outer_class_index) {
         this.outer_class_index = outer_class_index;
@@ -197,6 +202,7 @@ public final class InnerClass implements Cloneable, Node {
     }
 
     /**
+     * @param constant_pool
      * @return Resolved string representation
      */
     public final String toString(ConstantPool constant_pool) {

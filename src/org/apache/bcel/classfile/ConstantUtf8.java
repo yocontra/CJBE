@@ -78,6 +78,7 @@ public final class ConstantUtf8 extends Constant {
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public ConstantUtf8(ConstantUtf8 c) {
         this(c.getBytes());
@@ -138,6 +139,7 @@ public final class ConstantUtf8 extends Constant {
 
     /**
      * @param bytes.
+     * @param bytes
      */
     public final void setBytes(String bytes) {
         this.bytes = bytes;

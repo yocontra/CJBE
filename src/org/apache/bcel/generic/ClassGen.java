@@ -253,6 +253,7 @@ public class ClassGen extends AccessFlags implements Cloneable {
      * Add an empty constructor to this class that does nothing but calling super().
      *
      * @param access rights for constructor
+     * @param access_flags
      */
     public void addEmptyConstructor(int access_flags) {
         InstructionList il = new InstructionList();
@@ -281,6 +282,7 @@ public class ClassGen extends AccessFlags implements Cloneable {
     }
 
     /**
+     * @param name
      * @return field object with given name, or null
      */
     public Field containsField(String name) {
@@ -294,6 +296,8 @@ public class ClassGen extends AccessFlags implements Cloneable {
     }
 
     /**
+     * @param name
+     * @param signature
      * @return method object with given name and signature, or null
      */
     public Method containsMethod(String name, String signature) {
@@ -327,6 +331,8 @@ public class ClassGen extends AccessFlags implements Cloneable {
     /**
      * Replace given method with new one. If the old one does not exist
      * add the new_ method to the class anyway.
+     * @param old
+     * @param new_
      */
     public void replaceMethod(Method old, Method new_) {
         if (new_ == null)
@@ -343,6 +349,8 @@ public class ClassGen extends AccessFlags implements Cloneable {
     /**
      * Replace given field with new one. If the old one does not exist
      * add the new_ field to the class anyway.
+     * @param old
+     * @param new_
      */
     public void replaceField(Field old, Field new_) {
         if (new_ == null)
@@ -468,6 +476,7 @@ public class ClassGen extends AccessFlags implements Cloneable {
 
     /**
      * Add observer for this object.
+     * @param o
      */
     public void addObserver(ClassObserver o) {
         if (observers == null)
@@ -478,6 +487,7 @@ public class ClassGen extends AccessFlags implements Cloneable {
 
     /**
      * Remove observer for this object.
+     * @param o
      */
     public void removeObserver(ClassObserver o) {
         if (observers != null)

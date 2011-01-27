@@ -80,6 +80,7 @@ public final class ConstantNameAndType extends Constant {
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public ConstantNameAndType(ConstantNameAndType c) {
         this(c.getNameIndex(), c.getSignatureIndex());
@@ -137,6 +138,7 @@ public final class ConstantNameAndType extends Constant {
     }
 
     /**
+     * @param cp
      * @return name
      */
     public final String getName(ConstantPool cp) {
@@ -151,6 +153,7 @@ public final class ConstantNameAndType extends Constant {
     }
 
     /**
+     * @param cp
      * @return signature
      */
     public final String getSignature(ConstantPool cp) {
@@ -159,6 +162,7 @@ public final class ConstantNameAndType extends Constant {
 
     /**
      * @param name_index.
+     * @param name_index
      */
     public final void setNameIndex(int name_index) {
         this.name_index = name_index;
@@ -166,6 +170,7 @@ public final class ConstantNameAndType extends Constant {
 
     /**
      * @param signature_index.
+     * @param signature_index
      */
     public final void setSignatureIndex(int signature_index) {
         this.signature_index = signature_index;

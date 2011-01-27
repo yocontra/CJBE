@@ -244,7 +244,7 @@ public class BCELifier extends org.apache.bcel.classfile.EmptyVisitor {
                 if ((pow == Constants.ACC_SYNCHRONIZED) && for_class)
                     buf.append("ACC_SUPER | ");
                 else
-                    buf.append("ACC_" + Constants.ACCESS_NAMES[i].toUpperCase() + " | ");
+                    buf.append("ACC_").append(Constants.ACCESS_NAMES[i].toUpperCase()).append(" | ");
             }
 
             pow <<= 1;
@@ -299,6 +299,7 @@ public class BCELifier extends org.apache.bcel.classfile.EmptyVisitor {
 
     /**
      * Default main method
+     * @param argv
      */
     public static void main(String[] argv) throws Exception {
         JavaClass java_class;

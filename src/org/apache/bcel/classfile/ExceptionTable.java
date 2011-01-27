@@ -84,6 +84,7 @@ public final class ExceptionTable extends Attribute {
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use copy() for a physical copy.
+     * @param c
      */
     public ExceptionTable(ExceptionTable c) {
         this(c.getNameIndex(), c.getLength(), c.getExceptionIndexTable(),
@@ -175,6 +176,7 @@ public final class ExceptionTable extends Attribute {
 
     /**
      * @param exception_index_table. Also redefines number_of_exceptions according to table length.
+     * @param exception_index_table
      */
     public final void setExceptionIndexTable(int[] exception_index_table) {
         this.exception_index_table = exception_index_table;

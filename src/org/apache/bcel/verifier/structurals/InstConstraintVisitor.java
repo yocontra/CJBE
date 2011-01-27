@@ -135,6 +135,8 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
      * that a constraint violation has occured. This is done by throwing an instance of a
      * StructuralCodeConstraintException.
      *
+     * @param violator
+     * @param description
      * @throws org.apache.bcel.verifier.exc.StructuralCodeConstraintException
      *          always.
      */
@@ -149,6 +151,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
      * using the instance.
      * Use this method for performance reasons.
      *
+     * @param f
      * @see #setConstantPoolGen(ConstantPoolGen cpg)
      * @see #setMethodGen(MethodGen mg)
      */
@@ -160,6 +163,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
     /**
      * Sets the ConstantPoolGen instance needed for constraint
      * checking prior to execution.
+     * @param cpg
      */
     public void setConstantPoolGen(ConstantPoolGen cpg) {
         this.cpg = cpg;
@@ -168,6 +172,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
     /**
      * Sets the MethodGen instance needed for constraint
      * checking prior to execution.
+     * @param mg
      */
     public void setMethodGen(MethodGen mg) {
         this.mg = mg;
@@ -176,6 +181,8 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
     /**
      * Assures index is of type INT.
      *
+     * @param o
+     * @param index
      * @throws org.apache.bcel.verifier.exc.StructuralCodeConstraintException
      *          if the above constraint is not satisfied.
      */
@@ -189,6 +196,8 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
      * Formally, this means (!(r instanceof UninitializedObjectType)), because
      * there are no uninitialized array types.
      *
+     * @param o
+     * @param r
      * @throws org.apache.bcel.verifier.exc.StructuralCodeConstraintException
      *          if the above constraint is not satisfied.
      */
@@ -200,6 +209,8 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
 
     /**
      * Assures value is of type INT.
+     * @param o
+     * @param value
      */
     private void valueOfInt(Instruction o, Type value) {
         if (!value.equals(Type.INT))
@@ -210,6 +221,8 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
      * Assures arrayref is of ArrayType or NULL;
      * returns true if and only if arrayref is non-NULL.
      *
+     * @param o
+     * @param arrayref
      * @throws org.apache.bcel.verifier.exc.StructuralCodeConstraintException
      *          if the above constraint is violated.
      */
@@ -233,6 +246,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
      * Unfortunately, as the superclasses and superinterfaces overlap, some instructions
      * cause this method to be called two or three times. [TODO: Fix this.]
      *
+     * @param o
      * @see #visitStackConsumer(StackConsumer o)
      * @see #visitStackProducer(StackProducer o)
      * @see #visitStackInstruction(StackInstruction o)
@@ -1754,7 +1768,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
         if (!(objref instanceof ReferenceType)) {
             constraintViolated(o, "Expecting a reference type as 'objectref' on the stack, not a '" + objref + "'.");
         }
-        String objref_classname = null;
+        String objref_classname;
         if (!(o.getMethodName(cpg).equals(Constants.CONSTRUCTOR_NAME))) {
             referenceTypeIsInitialized(o, (ReferenceType) objref);
             if (!(objref instanceof ObjectType)) {
@@ -2133,6 +2147,7 @@ public class InstConstraintVisitor extends EmptyVisitor implements org.apache.bc
 
     /**
      * Ensures the specific preconditions of the said instruction.
+     * @param o
      */
     public void visitLDC_W(LDC_W o) {
         // visitCPInstruction is called first.

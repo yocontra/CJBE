@@ -109,6 +109,8 @@ public class VerificationResult {
 
     /**
      * The usual constructor.
+     * @param status
+     * @param message
      */
     public VerificationResult(int status, String message) {
         numeric = status;

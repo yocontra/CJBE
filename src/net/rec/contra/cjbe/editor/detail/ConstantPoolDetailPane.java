@@ -104,7 +104,7 @@ public class ConstantPoolDetailPane extends AbstractDetailPane {
         int constantPoolIndex = ((BrowserTreeNode) treePath.getLastPathComponent()).getIndex();
         CPInfo constantPoolEntry = services.getClassFile().getConstantPool()[constantPoolIndex];
 
-        String paneName = null;
+        String paneName;
         if (constantPoolEntry instanceof ConstantUtf8Info) {
             paneName = SCREEN_CONSTANT_UTF8_INFO;
         } else if (constantPoolEntry instanceof ConstantClassInfo) {

@@ -75,6 +75,7 @@ public abstract class FieldOrMethod extends CPInstruction implements LoadClass {
     }
 
     /**
+     * @param opcode
      * @param index to constant pool
      */
     protected FieldOrMethod(short opcode, int index) {
@@ -82,6 +83,7 @@ public abstract class FieldOrMethod extends CPInstruction implements LoadClass {
     }
 
     /**
+     * @param cpg
      * @return signature of referenced method/field.
      */
     public String getSignature(ConstantPoolGen cpg) {

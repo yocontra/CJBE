@@ -74,7 +74,7 @@ public abstract class ElementValue extends AbstractStructure {
 
         int tagType = in.readUnsignedByte();
 
-        ElementValue entry = null;
+        ElementValue entry;
         switch (tagType) {
             case BOOL_TAG:
             case BYTE_TAG:

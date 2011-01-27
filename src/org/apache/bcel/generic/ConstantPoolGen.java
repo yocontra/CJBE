@@ -103,6 +103,7 @@ public class ConstantPoolGen implements java.io.Serializable {
      * Initialize with given array of constants.
      *
      * @param c array of given constants, new ones will be appended
+     * @param cs
      */
     public ConstantPoolGen(Constant[] cs) {
         if (cs.length > size) {
@@ -166,6 +167,7 @@ public class ConstantPoolGen implements java.io.Serializable {
 
     /**
      * Initialize with given constant pool.
+     * @param cp
      */
     public ConstantPoolGen(ConstantPool cp) {
         this(cp.getConstantPool());
@@ -275,6 +277,7 @@ public class ConstantPoolGen implements java.io.Serializable {
      *
      * @param str Class to add
      * @return index of entry
+     * @param type
      */
     public int addClass(ObjectType type) {
         return addClass(type.getClassName());
@@ -509,6 +512,8 @@ public class ConstantPoolGen implements java.io.Serializable {
      *
      * @param n NameAndType string to add
      * @return index of entry
+     * @param name
+     * @param signature
      */
     public int addNameAndType(String name, String signature) {
         int ret;
@@ -555,6 +560,9 @@ public class ConstantPoolGen implements java.io.Serializable {
      *
      * @param n Methodref string to add
      * @return index of entry
+     * @param class_name
+     * @param method_name
+     * @param signature
      */
     public int addMethodref(String class_name, String method_name, String signature) {
         int ret, class_index, name_and_type_index;
@@ -605,6 +613,9 @@ public class ConstantPoolGen implements java.io.Serializable {
      *
      * @param n InterfaceMethodref string to add
      * @return index of entry
+     * @param class_name
+     * @param method_name
+     * @param signature
      */
     public int addInterfaceMethodref(String class_name, String method_name, String signature) {
         int ret, class_index, name_and_type_index;
@@ -650,6 +661,9 @@ public class ConstantPoolGen implements java.io.Serializable {
      *
      * @param n Fieldref string to add
      * @return index of entry
+     * @param class_name
+     * @param field_name
+     * @param signature
      */
     public int addFieldref(String class_name, String field_name, String signature) {
         int ret;
@@ -720,13 +734,15 @@ public class ConstantPoolGen implements java.io.Serializable {
         StringBuffer buf = new StringBuffer();
 
         for (int i = 1; i < index; i++)
-            buf.append(i + ")" + constants[i] + "\n");
+            buf.append(i).append(")").append(constants[i]).append("\n");
 
         return buf.toString();
     }
 
     /**
      * Import constant from another ConstantPool and return new index.
+     * @param c
+     * @param cp
      */
     public int addConstant(Constant c, ConstantPoolGen cp) {
         Constant[] constants = cp.getConstantPool().getConstantPool();

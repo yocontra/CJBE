@@ -130,6 +130,7 @@ public abstract class FieldGenOrMethodGen extends AccessFlags implements
 
     /**
      * Remove an attribute.
+     * @param a
      */
     public void removeAttribute(Attribute a) {
         attribute_vec.remove(a);

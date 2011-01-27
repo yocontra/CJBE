@@ -80,6 +80,8 @@ public abstract class LocalVariableInstruction extends Instruction
      * Empty constructor needed for the Class.newInstance() statement in
      * Instruction.readInstruction(). Not to be used otherwise.
      * tag and length are defined in readInstruction and initFromFile, respectively.
+     * @param canon_tag
+     * @param c_tag
      */
     LocalVariableInstruction(short canon_tag, short c_tag) {
         super();

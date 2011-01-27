@@ -88,6 +88,7 @@ public final class LocalVariable
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use copy() for a physical copy.
+     * @param c
      */
     public LocalVariable(LocalVariable c) {
         this(c.getStartPC(), c.getLength(), c.getNameIndex(),
@@ -98,6 +99,7 @@ public final class LocalVariable
      * Construct object from file stream.
      *
      * @param file Input stream
+     * @param constant_pool
      * @throws IOException
      */
     LocalVariable(DataInputStream file, ConstantPool constant_pool)
@@ -222,6 +224,7 @@ public final class LocalVariable
 
     /**
      * @param length.
+     * @param length
      */
     public final void setLength(int length) {
         this.length = length;
@@ -229,6 +232,7 @@ public final class LocalVariable
 
     /**
      * @param name_index.
+     * @param name_index
      */
     public final void setNameIndex(int name_index) {
         this.name_index = name_index;
@@ -236,6 +240,7 @@ public final class LocalVariable
 
     /**
      * @param signature_index.
+     * @param signature_index
      */
     public final void setSignatureIndex(int signature_index) {
         this.signature_index = signature_index;
@@ -243,6 +248,7 @@ public final class LocalVariable
 
     /**
      * @param index.
+     * @param index
      */
     public final void setIndex(int index) {
         this.index = index;

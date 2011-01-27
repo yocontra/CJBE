@@ -83,6 +83,7 @@ public final class Synthetic extends Attribute {
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use copy() for a physical copy.
+     * @param c
      */
     public Synthetic(Synthetic c) {
         this(c.getNameIndex(), c.getLength(), c.getBytes(), c.getConstantPool());
@@ -154,6 +155,7 @@ public final class Synthetic extends Attribute {
 
     /**
      * @param bytes.
+     * @param bytes
      */
     public final void setBytes(byte[] bytes) {
         this.bytes = bytes;
@@ -166,7 +168,7 @@ public final class Synthetic extends Attribute {
         StringBuffer buf = new StringBuffer("Synthetic");
 
         if (length > 0)
-            buf.append(" " + Utility.toHexString(bytes));
+            buf.append(" ").append(Utility.toHexString(bytes));
 
         return buf.toString();
     }

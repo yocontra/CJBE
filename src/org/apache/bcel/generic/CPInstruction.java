@@ -84,6 +84,7 @@ public abstract class CPInstruction extends Instruction
     }
 
     /**
+     * @param opcode
      * @param index to constant pool
      */
     protected CPInstruction(short opcode, int index) {

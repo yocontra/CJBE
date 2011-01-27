@@ -86,6 +86,7 @@ public final class ConstantLong extends Constant implements ConstantObject {
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public ConstantLong(ConstantLong c) {
         this(c.getBytes());
@@ -132,6 +133,7 @@ public final class ConstantLong extends Constant implements ConstantObject {
 
     /**
      * @param bytes.
+     * @param bytes
      */
     public final void setBytes(long bytes) {
         this.bytes = bytes;
@@ -148,6 +150,6 @@ public final class ConstantLong extends Constant implements ConstantObject {
      * @return Long object
      */
     public Object getConstantValue(ConstantPool cp) {
-        return bytes;
+        return Long.valueOf(bytes);
     }
 }

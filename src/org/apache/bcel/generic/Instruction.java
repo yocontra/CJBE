@@ -126,6 +126,7 @@ public abstract class Instruction implements Cloneable, Serializable {
     }
 
     /**
+     * @param cp
      * @return mnemonic for instruction with sumbolic references resolved
      */
     public String toString(ConstantPool cp) {
@@ -173,12 +174,13 @@ public abstract class Instruction implements Cloneable, Serializable {
      *
      * @param file file to read from
      * @return instruction object being read
+     * @param bytes
      */
     public static Instruction readInstruction(ByteSequence bytes)
             throws IOException {
         boolean wide = false;
         short opcode = (short) bytes.readUnsignedByte();
-        Instruction obj = null;
+        Instruction obj;
 
         if (opcode == Constants.WIDE) { // Read next opcode after wide byte
             wide = true;
@@ -246,6 +248,7 @@ public abstract class Instruction implements Cloneable, Serializable {
      * effect on the stack depends on the constant pool entry they
      * reference.
      *
+     * @param cpg
      * @return Number of words consumed from stack by this instruction,
      *         or Constants.UNPREDICTABLE, if this can not be computed statically
      */
@@ -258,6 +261,7 @@ public abstract class Instruction implements Cloneable, Serializable {
      * effect on the stack depends on the constant pool entry they
      * reference.
      *
+     * @param cpg
      * @return Number of words produced onto stack by this instruction,
      *         or Constants.UNPREDICTABLE, if this can not be computed statically
      */
@@ -281,6 +285,7 @@ public abstract class Instruction implements Cloneable, Serializable {
 
     /**
      * Needed in readInstruction.
+     * @param opcode
      */
     private void setOpcode(short opcode) {
         this.opcode = opcode;
@@ -314,6 +319,7 @@ public abstract class Instruction implements Cloneable, Serializable {
 
     /**
      * Set comparator to be used for equals().
+     * @param c
      */
     public static void setComparator(InstructionComparator c) {
         cmp = c;

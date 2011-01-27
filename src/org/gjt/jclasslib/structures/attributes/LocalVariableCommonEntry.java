@@ -119,6 +119,7 @@ public abstract class LocalVariableCommonEntry extends AbstractStructure {
     /**
      * Set the index of this local variable.
      * Set the index of this local variable.
+     * @param index
      */
     final public void setIndex(int index) {
         this.index = index;

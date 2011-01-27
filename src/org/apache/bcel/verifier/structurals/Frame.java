@@ -85,6 +85,8 @@ public class Frame {
 
     /**
      *
+     * @param maxLocals
+     * @param maxStack
      */
     public Frame(int maxLocals, int maxStack) {
         locals = new LocalVariables(maxLocals);
@@ -93,6 +95,8 @@ public class Frame {
 
     /**
      *
+     * @param locals
+     * @param stack
      */
     public Frame(LocalVariables locals, OperandStack stack) {
         this.locals = locals;

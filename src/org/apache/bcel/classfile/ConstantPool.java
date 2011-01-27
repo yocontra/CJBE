@@ -137,6 +137,7 @@ public class ConstantPool implements Cloneable, Node, Serializable {
      *
      * @param constant Constant to be printed
      * @return String representation
+     * @param c
      */
     public String constantToString(Constant c)
             throws ClassFormatException {
@@ -356,6 +357,7 @@ public class ConstantPool implements Cloneable, Node, Serializable {
     }
 
     /**
+     * @param index
      * @param constant Constant to set
      */
     public void setConstant(int index, Constant constant) {
@@ -377,7 +379,7 @@ public class ConstantPool implements Cloneable, Node, Serializable {
         StringBuffer buf = new StringBuffer();
 
         for (int i = 1; i < constant_pool_count; i++)
-            buf.append(i + ")" + constant_pool[i] + "\n");
+            buf.append(i).append(")").append(constant_pool[i]).append("\n");
 
         return buf.toString();
     }

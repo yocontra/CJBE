@@ -79,6 +79,7 @@ public abstract class FieldOrMethod extends AccessFlags implements Cloneable, No
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use clone() for a physical copy.
+     * @param c
      */
     protected FieldOrMethod(FieldOrMethod c) {
         this(c.getAccessFlags(), c.getNameIndex(), c.getSignatureIndex(),
@@ -89,6 +90,7 @@ public abstract class FieldOrMethod extends AccessFlags implements Cloneable, No
      * Construct object from file stream.
      *
      * @param file Input stream
+     * @param constant_pool
      * @throws IOException
      * @throws ClassFormatException
      */
@@ -214,6 +216,7 @@ public abstract class FieldOrMethod extends AccessFlags implements Cloneable, No
     }
 
     /**
+     * @param constant_pool
      * @return deep copy of this field
      */
     protected FieldOrMethod copy_(ConstantPool constant_pool) {

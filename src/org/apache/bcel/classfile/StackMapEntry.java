@@ -80,6 +80,7 @@ public final class StackMapEntry implements Cloneable {
      * Construct object from file stream.
      *
      * @param file Input stream
+     * @param constant_pool
      * @throws IOException
      */
     StackMapEntry(DataInputStream file, ConstantPool constant_pool) throws IOException {

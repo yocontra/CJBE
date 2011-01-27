@@ -70,6 +70,7 @@ public final class ConstantFieldref extends ConstantCP {
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public ConstantFieldref(ConstantFieldref c) {
         super(Constants.CONSTANT_Fieldref, c.getClassIndex(), c.getNameAndTypeIndex());

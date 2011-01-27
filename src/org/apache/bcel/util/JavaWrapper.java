@@ -105,7 +105,7 @@ public class JavaWrapper {
      */
     public void runMain(String class_name, String[] argv) throws ClassNotFoundException {
         Class cl = loader.loadClass(class_name);
-        Method method = null;
+        Method method;
 
         try {
             method = cl.getMethod("main", new Class[]{argv.getClass()});
@@ -134,6 +134,7 @@ public class JavaWrapper {
     /**
      * Default main method used as wrapper, expects the fully qualified class name
      * of the real class as the first argument.
+     * @param argv
      */
     public static void main(String[] argv) throws Exception {
         /* Expects class name as first argument, other arguments are by-passed.

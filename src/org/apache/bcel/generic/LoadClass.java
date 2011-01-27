@@ -66,6 +66,7 @@ public interface LoadClass {
      * Returns the ObjectType of the referenced class or interface
      * that may be loaded and resolved.
      *
+     * @param cpg
      * @return object type that may be loaded or null if a primitive is
      *         referenced
      */
@@ -82,6 +83,7 @@ public interface LoadClass {
      * An example for this is an ANEWARRAY instruction that creates
      * an int[][].
      *
+     * @param cpg
      * @see #getLoadClassType(ConstantPoolGen)
      */
     public Type getType(ConstantPoolGen cpg);

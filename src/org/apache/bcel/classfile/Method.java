@@ -84,6 +84,7 @@ public final class Method extends FieldOrMethod {
     /**
      * Initialize from another object. Note that both objects use the same
      * references (shallow copy). Use clone() for a physical copy.
+     * @param c
      */
     public Method(Method c) {
         super(c);
@@ -93,6 +94,7 @@ public final class Method extends FieldOrMethod {
      * Construct object from file stream.
      *
      * @param file Input stream
+     * @param constant_pool
      * @throws IOException
      * @throws ClassFormatException
      */
@@ -202,20 +204,21 @@ public final class Method extends FieldOrMethod {
             Attribute a = attributes[i];
 
             if (!((a instanceof Code) || (a instanceof ExceptionTable)))
-                buf.append(" [" + a.toString() + "]");
+                buf.append(" [").append(a.toString()).append("]");
         }
 
         ExceptionTable e = getExceptionTable();
         if (e != null) {
             String str = e.toString();
             if (!str.equals(""))
-                buf.append("\n\t\tthrows " + str);
+                buf.append("\n\t\tthrows ").append(str);
         }
 
         return buf.toString();
     }
 
     /**
+     * @param constant_pool
      * @return deep copy of this method
      */
     public final Method copy(ConstantPool constant_pool) {

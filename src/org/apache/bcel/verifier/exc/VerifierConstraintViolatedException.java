@@ -83,6 +83,7 @@ public abstract class VerifierConstraintViolatedException extends RuntimeExcepti
 
     /**
      * Constructs a new VerifierConstraintViolatedException with the specified error message.
+     * @param message
      */
     VerifierConstraintViolatedException(String message) {
         super(message); // Not that important
@@ -95,6 +96,8 @@ public abstract class VerifierConstraintViolatedException extends RuntimeExcepti
      * 'old' error message. All of these three strings are allowed to be null, and null
      * is always replaced by the empty string (""). In particular, after invoking this
      * method, the error message of this object can no longer be null.
+     * @param pre
+     * @param post
      */
     public void extendMessage(String pre, String post) {
         if (pre == null) pre = "";

@@ -197,6 +197,7 @@ public class Subroutines {
 
         /**
          * Adds a new JSR or JSR_W that has this subroutine as its target.
+         * @param jsrInst
          */
         public void addEnteringJsrInstruction(InstructionHandle jsrInst) {
             if ((jsrInst == null) || (!(jsrInst.getInstruction() instanceof JsrInstruction))) {
@@ -250,7 +251,7 @@ public class Subroutines {
             HashSet<Integer> s = new HashSet<Integer>();
             int[] lvs = getAccessedLocalsIndices();
             for (int lv : lvs) {
-                s.add(lv);
+                s.add(Integer.valueOf(lv));
             }
             _getRecursivelyAccessedLocalsIndicesHelper(s, this.subSubs());
             int[] ret = new int[s.size()];
@@ -258,7 +259,7 @@ public class Subroutines {
             int j = -1;
             while (i.hasNext()) {
                 j++;
-                ret[j] = (Integer) i.next();
+                ret[j] = ((Integer) i.next()).intValue();
             }
             return ret;
         }
@@ -266,13 +267,15 @@ public class Subroutines {
         /**
          * A recursive helper method for getRecursivelyAccessedLocalsIndices().
          *
+         * @param s
+         * @param subs
          * @see #getRecursivelyAccessedLocalsIndices()
          */
         private void _getRecursivelyAccessedLocalsIndicesHelper(HashSet<Integer> s, Subroutine[] subs) {
             for (Subroutine sub : subs) {
                 int[] lvs = sub.getAccessedLocalsIndices();
-                for (int j = 0; j < lvs.length; j++) {
-                    s.add(new Integer(lvs[j]));
+                for (int lv : lvs) {
+                    s.add(lv);
                 }
                 if (sub.subSubs().length != 0) {
                     _getRecursivelyAccessedLocalsIndicesHelper(s, sub.subSubs());
@@ -295,14 +298,14 @@ public class Subroutines {
                 // RET is not a LocalVariableInstruction in the current version of BCEL.
                 if (ih.getInstruction() instanceof LocalVariableInstruction || ih.getInstruction() instanceof RET) {
                     int idx = ((IndexedInstruction) (ih.getInstruction())).getIndex();
-                    acc.add(idx);
+                    acc.add(Integer.valueOf(idx));
                     // LONG? DOUBLE?.
                     try {
                         // LocalVariableInstruction instances are typed without the need to look into
                         // the constant pool.
                         if (ih.getInstruction() instanceof LocalVariableInstruction) {
                             int s = ((LocalVariableInstruction) ih.getInstruction()).getType(null).getSize();
-                            if (s == 2) acc.add(idx + 1);
+                            if (s == 2) acc.add(Integer.valueOf(idx + 1));
                         }
                     } catch (RuntimeException re) {
                         throw new AssertionViolatedException("Oops. BCEL did not like NULL as a ConstantPoolGen object.");
@@ -315,7 +318,7 @@ public class Subroutines {
             int j = -1;
             while (i.hasNext()) {
                 j++;
-                ret[j] = (Integer) i.next();
+                ret[j] = ((Integer) i.next()).intValue();
             }
             return ret;
         }
@@ -377,8 +380,7 @@ public class Subroutines {
     /**
      * Constructor.
      *
-     * @param il A MethodGen object representing method to
-     *           create the Subroutine objects of.
+     * @param mg
      */
     public Subroutines(MethodGen mg) {
 
@@ -484,9 +486,9 @@ public class Subroutines {
         for (CodeExceptionGen handler : handlers) {
             InstructionHandle _protected = handler.getStartPC();
             while (_protected != handler.getEndPC().getNext()) {// Note the inclusive/inclusive notation of "generic API" exception handlers!
-                Enumeration subs = subroutines.elements();
-                while (subs.hasMoreElements()) {
-                    Subroutine sub = (Subroutine) subs.nextElement();
+                Iterator iterator = subroutines.values().iterator();
+                while (iterator.hasNext()) {
+                    Subroutine sub = (Subroutine) iterator.next();
                     if (sub != subroutines.get(all[0])) {    // We don't want to forbid top-level exception handlers.
                         if (sub.contains(_protected)) {
                             throw new StructuralCodeConstraintException("Subroutine instruction '" + _protected + "' is protected by an exception handler, '" + handler + "'. This is forbidden by the JustIce verifier due to its clear definition of subroutines.");
@@ -516,6 +518,8 @@ public class Subroutines {
      * recursively, even not through intermediate calls to other
      * subroutines.
      *
+     * @param sub
+     * @param set
      * @throws StructuralCodeConstraintException
      *          if the above constraint is not satisfied.
      */
@@ -525,7 +529,7 @@ public class Subroutines {
         for (Subroutine sub1 : subs) {
             int index = ((RET) (sub1.getLeavingRET().getInstruction())).getIndex();
 
-            if (!set.add(new Integer(index))) {
+            if (!set.add(index)) {
                 // Don't use toString() here because of possibly infinite recursive subSubs() calls then.
                 SubroutineImpl si = (SubroutineImpl) sub1;
                 throw new StructuralCodeConstraintException("Subroutine with local variable '" + si.localVariable + "', JSRs '" + si.theJSRs + "', RET '" + si.theRET + "' is called by a subroutine which uses the same local variable index as itself; maybe even a recursive call? JustIce's clean definition of a subroutine forbids both.");
@@ -543,6 +547,7 @@ public class Subroutines {
      * You must not use this to get the top-level instructions
      * modeled as a Subroutine object.
      *
+     * @param leader
      * @see #getTopLevel()
      */
     public Subroutine getSubroutine(InstructionHandle leader) {
@@ -567,6 +572,7 @@ public class Subroutines {
      * in so-called 'dead code', i.e. code that can never
      * be executed.
      *
+     * @param any
      * @see #getSubroutine(InstructionHandle)
      * @see #getTopLevel()
      */
@@ -599,6 +605,7 @@ public class Subroutines {
      * <B>in the same subroutine</B>. That means, a RET does not have any successors
      * as defined here. A JsrInstruction has its physical successor as its successor
      * (opposed to its target) as defined here.
+     * @param instruction
      */
     private static InstructionHandle[] getSuccessors(InstructionHandle instruction) {
         final InstructionHandle[] empty = new InstructionHandle[0];

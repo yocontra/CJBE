@@ -16,11 +16,10 @@ public class AttributeGeneralPane extends AbstractDetailPane implements
      *
      */
     private static final long serialVersionUID = 3907856125379924109L;
-    private BrowserInternalFrame internalFrame;
 
     public AttributeGeneralPane(BrowserServices services) {
         super(services);
-        internalFrame = (BrowserInternalFrame) services;
+        BrowserInternalFrame internalFrame = (BrowserInternalFrame) services;
     }
 
     public void show(TreePath treePath) {

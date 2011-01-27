@@ -83,6 +83,7 @@ public class BIPUSH extends Instruction implements ConstantPushInstruction {
 
     /**
      * Push byte on stack
+     * @param b
      */
     public BIPUSH(byte b) {
         super(org.apache.bcel.Constants.BIPUSH, (short) 2);
@@ -113,7 +114,7 @@ public class BIPUSH extends Instruction implements ConstantPushInstruction {
     }
 
     public Number getValue() {
-        return (int) b;
+        return Integer.valueOf((int) b);
     }
 
     /**

@@ -72,6 +72,7 @@ public abstract class FieldInstruction extends FieldOrMethod
     }
 
     /**
+     * @param opcode
      * @param index to constant pool
      */
     protected FieldInstruction(short opcode, int index) {
@@ -87,6 +88,7 @@ public abstract class FieldInstruction extends FieldOrMethod
     }
 
     /**
+     * @param cpg
      * @return size of field (1 or 2)
      */
     protected int getFieldSize(ConstantPoolGen cpg) {
@@ -101,6 +103,7 @@ public abstract class FieldInstruction extends FieldOrMethod
     }
 
     /**
+     * @param cpg
      * @return type of field
      */
     public Type getFieldType(ConstantPoolGen cpg) {
@@ -108,6 +111,7 @@ public abstract class FieldInstruction extends FieldOrMethod
     }
 
     /**
+     * @param cpg
      * @return name of referenced field.
      */
     public String getFieldName(ConstantPoolGen cpg) {

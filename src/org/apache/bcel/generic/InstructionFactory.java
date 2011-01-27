@@ -82,6 +82,7 @@ public class InstructionFactory
 
     /**
      * Initialize with ClassGen object
+     * @param cg
      */
     public InstructionFactory(ClassGen cg) {
         this(cg, cg.getConstantPool());
@@ -89,6 +90,7 @@ public class InstructionFactory
 
     /**
      * Initialize just with ConstantPoolGen object
+     * @param cp
      */
     public InstructionFactory(ConstantPoolGen cp) {
         this(null, cp);
@@ -287,6 +289,7 @@ public class InstructionFactory
 
     /**
      * Create typed return
+     * @param type
      */
     public static ReturnInstruction createReturn(Type type) {
         switch (type.getType()) {
@@ -403,6 +406,7 @@ public class InstructionFactory
      * Create binary operation for simple basic types, such as int and float.
      *
      * @param op operation, such as "+", "*", "<<", etc.
+     * @param type
      */
     public static ArithmeticInstruction createBinaryOperation(String op, Type type) {
         char first = op.toCharArray()[0];
@@ -457,6 +461,7 @@ public class InstructionFactory
     }
 
     /**
+     * @param type
      * @param index index of local variable
      */
     public static LocalVariableInstruction createStore(Type type, int index) {
@@ -482,6 +487,7 @@ public class InstructionFactory
     }
 
     /**
+     * @param type
      * @param index index of local variable
      */
     public static LocalVariableInstruction createLoad(Type type, int index) {
@@ -566,6 +572,8 @@ public class InstructionFactory
     /**
      * Create conversion operation for two stack operands, this may be an I2C, instruction, e.g.,
      * if the operands are basic types and CHECKCAST if they are reference types.
+     * @param src_type
+     * @param dest_type
      */
     public Instruction createCast(Type src_type, Type dest_type) {
         if ((src_type instanceof BasicType) && (dest_type instanceof BasicType)) {
@@ -581,7 +589,7 @@ public class InstructionFactory
             String name = "org.apache.bcel.generic." + short_names[src - Constants.T_CHAR] +
                     "2" + short_names[dest - Constants.T_CHAR];
 
-            Instruction i = null;
+            Instruction i;
             try {
                 i = (Instruction) java.lang.Class.forName(name).newInstance();
             } catch (Exception e) {
@@ -639,6 +647,8 @@ public class InstructionFactory
     /**
      * Create new array of given size and type.
      *
+     * @param t
+     * @param dim
      * @return an instruction that creates the corresponding array at runtime, i.e. is an AllocationInstruction
      */
     public Instruction createNewArray(Type t, short dim) {
@@ -663,6 +673,7 @@ public class InstructionFactory
 
     /**
      * Create "null" value for reference types, 0 for basic types like int
+     * @param type
      */
     public static Instruction createNull(Type type) {
         switch (type.getType()) {
@@ -692,6 +703,8 @@ public class InstructionFactory
     /**
      * Create branch instruction by given opcode, except LOOKUPSWITCH and TABLESWITCH.
      * For those you should use the SWITCH compound instruction.
+     * @param opcode
+     * @param target
      */
     public static BranchInstruction createBranchInstruction(short opcode, InstructionHandle target) {
         switch (opcode) {

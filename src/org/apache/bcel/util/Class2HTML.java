@@ -132,8 +132,8 @@ public class Class2HTML implements Constants {
     public static void main(String argv[]) {
         String[] file_name = new String[argv.length];
         int files = 0;
-        ClassParser parser = null;
-        JavaClass java_class = null;
+        ClassParser parser;
+        JavaClass java_class;
         String zip_file = null;
         char sep = System.getProperty("file.separator").toCharArray()[0];
         String dir = "." + sep; // Where to store HTML files
@@ -182,6 +182,7 @@ public class Class2HTML implements Constants {
     /**
      * Utility method that converts a class reference in the constant pool,
      * i.e., an index to a string.
+     * @param index
      */
     static String referenceClass(int index) {
         String str = constant_pool.getConstantString(index, CONSTANT_Class);

@@ -76,6 +76,7 @@ public class ExceptionHandlers {
 
     /**
      * Constructor. Creates a new ExceptionHandlers instance.
+     * @param mg
      */
     public ExceptionHandlers(MethodGen mg) {
         exceptionhandlers = new Hashtable<InstructionHandle, HashSet>();
@@ -97,6 +98,7 @@ public class ExceptionHandlers {
     /**
      * Returns all the ExceptionHandler instances representing exception
      * handlers that protect the instruction ih.
+     * @param ih
      */
     public ExceptionHandler[] getExceptionHandlers(InstructionHandle ih) {
         HashSet hs = exceptionhandlers.get(ih);

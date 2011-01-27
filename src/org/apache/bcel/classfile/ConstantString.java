@@ -78,6 +78,7 @@ public final class ConstantString extends Constant implements ConstantObject {
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public ConstantString(ConstantString c) {
         this(c.getStringIndex());
@@ -132,6 +133,7 @@ public final class ConstantString extends Constant implements ConstantObject {
 
     /**
      * @param string_index.
+     * @param string_index
      */
     public final void setStringIndex(int string_index) {
         this.string_index = string_index;
@@ -153,6 +155,7 @@ public final class ConstantString extends Constant implements ConstantObject {
     }
 
     /**
+     * @param cp
      * @return dereferenced string
      */
     public String getBytes(ConstantPool cp) {

@@ -131,6 +131,7 @@ public class FieldGen extends FieldGenOrMethodGen {
     /**
      * Set (optional) initial value of field, otherwise it will be set to
      * null/0/false by the JVM automatically.
+     * @param str
      */
     public void setInitValue(String str) {
         checkType(new ObjectType("java.lang.String"));
@@ -143,56 +144,56 @@ public class FieldGen extends FieldGenOrMethodGen {
         checkType(Type.LONG);
 
         if (l != 0L)
-            value = l;
+            value = Long.valueOf(l);
     }
 
     public void setInitValue(int i) {
         checkType(Type.INT);
 
         if (i != 0)
-            value = i;
+            value = Integer.valueOf(i);
     }
 
     public void setInitValue(short s) {
         checkType(Type.SHORT);
 
         if (s != 0)
-            value = (int) s;
+            value = Integer.valueOf((int) s);
     }
 
     public void setInitValue(char c) {
         checkType(Type.CHAR);
 
         if (c != 0)
-            value = (int) c;
+            value = Integer.valueOf((int) c);
     }
 
     public void setInitValue(byte b) {
         checkType(Type.BYTE);
 
         if (b != 0)
-            value = (int) b;
+            value = Integer.valueOf((int) b);
     }
 
     public void setInitValue(boolean b) {
         checkType(Type.BOOLEAN);
 
         if (b)
-            value = 1;
+            value = Integer.valueOf(1);
     }
 
     public void setInitValue(float f) {
         checkType(Type.FLOAT);
 
         if (f != 0.0)
-            value = f;
+            value = Float.valueOf(f);
     }
 
     public void setInitValue(double d) {
         checkType(Type.DOUBLE);
 
         if (d != 0.0)
-            value = d;
+            value = Double.valueOf(d);
     }
 
     /**
@@ -247,16 +248,16 @@ public class FieldGen extends FieldGenOrMethodGen {
             case Constants.T_BYTE:
             case Constants.T_BOOLEAN:
             case Constants.T_SHORT:
-                return cp.addInteger((Integer) value);
+                return cp.addInteger(((Integer) value).intValue());
 
             case Constants.T_FLOAT:
-                return cp.addFloat((Float) value);
+                return cp.addFloat(((Float) value).floatValue());
 
             case Constants.T_DOUBLE:
-                return cp.addDouble((Double) value);
+                return cp.addDouble(((Double) value).doubleValue());
 
             case Constants.T_LONG:
-                return cp.addLong((Long) value);
+                return cp.addLong(((Long) value).longValue());
 
             case Constants.T_REFERENCE:
                 return cp.addString(((String) value));
@@ -274,6 +275,7 @@ public class FieldGen extends FieldGenOrMethodGen {
 
     /**
      * Add observer for this object.
+     * @param o
      */
     public void addObserver(FieldObserver o) {
         if (observers == null)
@@ -284,6 +286,7 @@ public class FieldGen extends FieldGenOrMethodGen {
 
     /**
      * Remove observer for this object.
+     * @param o
      */
     public void removeObserver(FieldObserver o) {
         if (observers != null)
@@ -325,12 +328,13 @@ public class FieldGen extends FieldGenOrMethodGen {
         String value = getInitValue();
 
         if (value != null)
-            buf.append(" = " + value);
+            buf.append(" = ").append(value);
 
         return buf.toString();
     }
 
     /**
+     * @param cp
      * @return deep copy of this field
      */
     public FieldGen copy(ConstantPoolGen cp) {

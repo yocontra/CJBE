@@ -173,6 +173,7 @@ public final class CodeExceptionGen
 
     /**
      * Sets the type of the Exception to catch. Set 'null' for ANY.
+     * @param catch_type
      */
     public void setCatchType(ObjectType catch_type) {
         this.catch_type = catch_type;

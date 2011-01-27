@@ -31,10 +31,6 @@ import java.util.ListIterator;
 public class BasicDesktopManager extends DefaultDesktopManager
         implements VetoableChangeListener,
         InternalFrameListener {
-    private static int NEW_INTERNAL_X_OFFSET = 22;
-    private static int NEW_INTERNAL_Y_OFFSET = 22;
-    private static int NEW_INTERNAL_WIDTH = 600;
-    private static int NEW_INTERNAL_HEIGHT = 400;
 
     /**
      * Parent frame of this <tt>DesktopManager</tt>.
@@ -98,18 +94,22 @@ public class BasicDesktopManager extends DefaultDesktopManager
      */
     public Rectangle getNextInternalFrameBounds() {
 
+        int NEW_INTERNAL_X_OFFSET = 22;
+        int NEW_INTERNAL_HEIGHT = 400;
         if (newInternalY + NEW_INTERNAL_HEIGHT > desktopPane.getHeight()) {
             rollover++;
             newInternalY = 0;
             newInternalX = rollover * NEW_INTERNAL_X_OFFSET;
         }
 
+        int NEW_INTERNAL_WIDTH = 600;
         Rectangle nextBounds = new Rectangle(newInternalX,
                 newInternalY,
                 NEW_INTERNAL_WIDTH,
                 NEW_INTERNAL_HEIGHT);
 
         newInternalX += NEW_INTERNAL_X_OFFSET;
+        int NEW_INTERNAL_Y_OFFSET = 22;
         newInternalY += NEW_INTERNAL_Y_OFFSET;
 
         return nextBounds;
@@ -281,7 +281,7 @@ public class BasicDesktopManager extends DefaultDesktopManager
                 return;
             }
 
-            boolean isMaximum = (Boolean) changeEvent.getNewValue();
+            boolean isMaximum = ((Boolean) changeEvent.getNewValue()).booleanValue();
             if (isMaximum) {
                 resetSize();
             }

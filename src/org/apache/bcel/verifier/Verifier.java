@@ -126,6 +126,7 @@ public class Verifier {
 
     /**
      * Returns the VerificationResult for the given pass.
+     * @param method_no
      */
     public VerificationResult doPass3a(int method_no) {
         String key = Integer.toString(method_no);
@@ -140,6 +141,7 @@ public class Verifier {
 
     /**
      * Returns the VerificationResult for the given pass.
+     * @param method_no
      */
     public VerificationResult doPass3b(int method_no) {
         String key = Integer.toString(method_no);
@@ -156,6 +158,7 @@ public class Verifier {
     /**
      * Instantiation is done by the VerifierFactory.
      *
+     * @param fully_qualified_classname
      * @see VerifierFactory
      */
     Verifier(String fully_qualified_classname) {
@@ -250,6 +253,7 @@ public class Verifier {
      * must be somewhere in your CLASSPATH (refer to Sun's
      * documentation for questions about this) or you must have put the classes
      * into the BCEL Repository yourself (via 'addClass(JavaClass)').
+     * @param args
      */
     public static void main(String[] args) {
         System.out.println("JustIce by Enver Haase, (C) 2001-2002.\n<http://bcel.sourceforge.net>\n<http://jakarta.apache.org/bcel>\n");

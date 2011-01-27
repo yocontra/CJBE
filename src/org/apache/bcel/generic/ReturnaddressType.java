@@ -82,6 +82,7 @@ public class ReturnaddressType extends Type {
 
     /**
      * Creates a ReturnaddressType object with a target.
+     * @param returnTarget
      */
     public ReturnaddressType(InstructionHandle returnTarget) {
         super(Constants.T_ADDRESS, "<return address targeting " + returnTarget + ">");

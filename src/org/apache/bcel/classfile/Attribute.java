@@ -239,6 +239,7 @@ public abstract class Attribute implements Cloneable, Node, Serializable {
 
     /**
      * @param Attribute length in bytes.
+     * @param length
      */
     public final void setLength(int length) {
         this.length = length;
@@ -301,6 +302,7 @@ public abstract class Attribute implements Cloneable, Node, Serializable {
     }
 
     /**
+     * @param constant_pool
      * @return deep copy of this attribute
      */
     public abstract Attribute copy(ConstantPool constant_pool);

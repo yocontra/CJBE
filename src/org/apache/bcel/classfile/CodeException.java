@@ -88,6 +88,7 @@ public final class CodeException
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public CodeException(CodeException c) {
         this(c.getStartPC(), c.getEndPC(), c.getHandlerPC(), c.getCatchType());
@@ -177,6 +178,7 @@ public final class CodeException
 
     /**
      * @param catch_type.
+     * @param catch_type
      */
     public final void setCatchType(int catch_type) {
         this.catch_type = catch_type;
@@ -213,6 +215,8 @@ public final class CodeException
     }
 
     /**
+     * @param cp
+     * @param verbose
      * @return String representation.
      */
     public final String toString(ConstantPool cp, boolean verbose) {

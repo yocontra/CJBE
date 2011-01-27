@@ -83,6 +83,7 @@ public abstract class ReferenceType extends Type {
      * However, because e.g. CHECKCAST doesn't throw a
      * ClassCastException when casting a null reference to any Object,
      * true is returned in this case.
+     * @param t
      */
     public boolean isCastableTo(Type t) {
         return this.equals(Type.NULL) || isAssignmentCompatibleWith(t);
@@ -96,6 +97,7 @@ public abstract class ReferenceType extends Type {
      * Return true iff this is assignment compatible with another type t
      * as defined in the JVM specification; see the AASTORE definition
      * there.
+     * @param t
      */
     public boolean isAssignmentCompatibleWith(Type t) {
         if (!(t instanceof ReferenceType))
@@ -209,6 +211,7 @@ public abstract class ReferenceType extends Type {
      * If "this" or t is a ReferenceType referencing an interface, then Type.OBJECT is returned.
      * If not all of the two classes' superclasses cannot be found, "null" is returned.
      * See the JVM specification edition 2, "�4.9.2 The Bytecode Verifier".
+     * @param t
      */
     public ReferenceType getFirstCommonSuperclass(ReferenceType t) {
         if (this.equals(Type.NULL)) return t;
@@ -270,8 +273,8 @@ public abstract class ReferenceType extends Type {
         t_sups[0] = Repository.lookupClass(other.getClassName());
 
         for (JavaClass t_sup : t_sups) {
-            for (int j = 0; j < this_sups.length; j++) {
-                if (this_sups[j].equals(t_sup)) return new ObjectType(this_sups[j].getClassName());
+            for (JavaClass this_sup : this_sups) {
+                if (this_sup.equals(t_sup)) return new ObjectType(this_sup.getClassName());
             }
         }
 
@@ -291,6 +294,7 @@ public abstract class ReferenceType extends Type {
      * If not all of the two classes' superclasses cannot be found, "null" is returned.
      * See the JVM specification edition 2, "�4.9.2 The Bytecode Verifier".
      *
+     * @param t
      * @deprecated use getFirstCommonSuperclass(ReferenceType t) which has
      *             slightly changed semantics.
      */
@@ -337,8 +341,8 @@ public abstract class ReferenceType extends Type {
         t_sups[0] = Repository.lookupClass(other.getClassName());
 
         for (JavaClass t_sup : t_sups) {
-            for (int j = 0; j < this_sups.length; j++) {
-                if (this_sups[j].equals(t_sup)) return new ObjectType(this_sups[j].getClassName());
+            for (JavaClass this_sup : this_sups) {
+                if (this_sup.equals(t_sup)) return new ObjectType(this_sup.getClassName());
             }
         }
 

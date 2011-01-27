@@ -128,6 +128,7 @@ public class ExecutionVisitor extends EmptyVisitor implements Visitor {
 
     /**
      * Sets the ConstantPoolGen needed for symbolic execution.
+     * @param cpg
      */
     public void setConstantPoolGen(ConstantPoolGen cpg) {
         this.cpg = cpg;
@@ -138,6 +139,7 @@ public class ExecutionVisitor extends EmptyVisitor implements Visitor {
      * the ExecutionVisitor class. Before actively using this
      * instance, <B>SET THE ConstantPoolGen FIRST</B>.
      *
+     * @param f
      * @see #setConstantPoolGen(ConstantPoolGen)
      */
     public void setFrame(Frame f) {
@@ -1276,6 +1278,7 @@ public class ExecutionVisitor extends EmptyVisitor implements Visitor {
 
     /**
      * Symbolically executes the corresponding Java Virtual Machine instruction.
+     * @param o
      */
     public void visitLDC_W(LDC_W o) {
         Constant c = cpg.getConstant(o.getIndex());

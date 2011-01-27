@@ -109,6 +109,7 @@ public class ControlFlowGraph {
         /**
          * Creates an InstructionHandleImpl object from an InstructionHandle.
          * Creation of one per InstructionHandle suffices. Don't create more.
+         * @param inst
          */
         public InstructionContextImpl(InstructionHandle inst) {
             if (inst == null)
@@ -239,6 +240,7 @@ public class ControlFlowGraph {
         /**
          * Does the actual merging (vmspec2, page 146).
          * Returns true IFF this.inFrame was changed in course of merging with inFrame.
+         * @param inFrame
          */
         private boolean mergeInFrames(Frame inFrame) {
             // TODO: Can be performance-improved.
@@ -274,6 +276,7 @@ public class ControlFlowGraph {
          * Extends the StructuralCodeConstraintException ("e") object with an at-the-end-extended message.
          * This extended message will then reflect the execution flow needed to get to the constraint
          * violation that triggered the throwing of the "e" object.
+         * @param e
          */
         private void extendMessageWithFlow(StructuralCodeConstraintException e) {
             String s = "Execution flow:\n";
@@ -412,6 +415,7 @@ public class ControlFlowGraph {
 
     /**
      * A Control Flow Graph.
+     * @param method_gen
      */
     public ControlFlowGraph(MethodGen method_gen) {
         subroutines = new Subroutines(method_gen);
@@ -427,6 +431,7 @@ public class ControlFlowGraph {
 
     /**
      * Returns the InstructionContext of a given instruction.
+     * @param inst
      */
     public InstructionContext contextOf(InstructionHandle inst) {
         InstructionContext ic = instructionContexts.get(inst);
@@ -439,6 +444,7 @@ public class ControlFlowGraph {
     /**
      * Returns the InstructionContext[] of a given InstructionHandle[],
      * in a naturally ordered manner.
+     * @param insts
      */
     public InstructionContext[] contextsOf(InstructionHandle[] insts) {
         InstructionContext[] ret = new InstructionContext[insts.length];
@@ -461,6 +467,7 @@ public class ControlFlowGraph {
     /**
      * Returns true, if and only if the said instruction is not reachable; that means,
      * if it not part of this ControlFlowGraph.
+     * @param i
      */
     public boolean isDead(InstructionHandle i) {
         return instructionContexts.containsKey(i);

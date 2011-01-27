@@ -75,6 +75,7 @@ public class UninitializedObjectType extends ReferenceType implements Constants 
 
     /**
      * Creates a new instance.
+     * @param t
      */
     public UninitializedObjectType(ObjectType t) {
         super(T_UNKNOWN, "<UNINITIALIZED OBJECT OF TYPE '" + t.getClassName() + "'>");

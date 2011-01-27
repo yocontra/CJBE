@@ -32,7 +32,6 @@ public class ByteCodeDetailPane extends AbstractDetailPane {
     private ByteCodeDisplay byteCodeDisplay;
     private CounterDisplay counterDisplay;
     private JScrollPane scrollPane;
-    private JButton btnCopy;
 
     /**
      * Constructor.
@@ -46,7 +45,7 @@ public class ByteCodeDetailPane extends AbstractDetailPane {
     protected void setupComponent() {
 
         setLayout(new BorderLayout());
-        btnCopy = new JButton("Copy to Clipboard");
+        JButton btnCopy = new JButton("Copy to Clipboard");
         btnCopy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 byteCodeDisplay.copyToClipboard();

@@ -73,6 +73,7 @@ public final class ConstantMethodref extends ConstantCP {
 
     /**
      * Initialize from another object.
+     * @param c
      */
     public ConstantMethodref(ConstantMethodref c) {
         super(Constants.CONSTANT_Methodref, c.getClassIndex(), c.getNameAndTypeIndex());

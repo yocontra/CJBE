@@ -95,6 +95,7 @@ public interface Subroutine {
      * that saves iteration over the InstructionHandle objects returned
      * by getInstructions().
      *
+     * @param inst
      * @see #getInstructions()
      */
     public boolean contains(InstructionHandle inst);

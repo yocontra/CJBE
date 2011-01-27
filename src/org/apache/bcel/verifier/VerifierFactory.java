@@ -90,6 +90,7 @@ public class VerifierFactory {
      * Returns the (only) verifier responsible for the class with the given name.
      * Possibly a new Verifier object is transparently created.
      *
+     * @param fully_qualified_classname
      * @return the (only) verifier responsible for the class with the given name.
      */
     public static Verifier getVerifier(String fully_qualified_classname) {
@@ -106,6 +107,7 @@ public class VerifierFactory {
 
     /**
      * Notifies the observers of a newly generated Verifier.
+     * @param fully_qualified_classname
      */
     private static void notify(String fully_qualified_classname) {
         // notify the observers
@@ -129,6 +131,7 @@ public class VerifierFactory {
 
     /**
      * Adds the VerifierFactoryObserver o to the list of observers.
+     * @param o
      */
     public static void attach(VerifierFactoryObserver o) {
         observers.addElement(o);
@@ -136,6 +139,7 @@ public class VerifierFactory {
 
     /**
      * Removes the VerifierFactoryObserver o from the list of observers.
+     * @param o
      */
     public static void detach(VerifierFactoryObserver o) {
         observers.removeElement(o);

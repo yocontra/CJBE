@@ -92,6 +92,7 @@ public abstract class Repository {
      * Lookup class somewhere found on your CLASSPATH, or whereever the
      * repository instance looks for it.
      *
+     * @param class_name
      * @return class object for given fully qualified class name, or null
      *         if the class could not be found or parsed correctly
      */
@@ -211,6 +212,7 @@ public abstract class Repository {
     }
 
     /**
+     * @param super_class
      * @return true, if clazz is an instance of super_class
      */
     public static boolean instanceOf(String clazz, String super_class) {
@@ -232,6 +234,7 @@ public abstract class Repository {
     }
 
     /**
+     * @param inter
      * @return true, if clazz is an implementation of interface inter
      */
     public static boolean implementationOf(JavaClass clazz, JavaClass inter) {

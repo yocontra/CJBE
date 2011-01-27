@@ -65,6 +65,7 @@ public class InvalidMethodException extends RuntimeException {
 
     /**
      * Constructs an InvalidMethodException with the specified detail message.
+     * @param message
      */
     public InvalidMethodException(String message) {
         super(message);
