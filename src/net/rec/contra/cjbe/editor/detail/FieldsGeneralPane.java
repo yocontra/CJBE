@@ -150,7 +150,6 @@ public class FieldsGeneralPane extends AbstractDetailPane implements ActionListe
                         .getParentFrame());
                 er.setVisible(true);
             } else {
-
                 internalFrame.getParentFrame().doReload();
             }
         }

@@ -3,6 +3,13 @@ package net.rec.contra.cjbe.editor.detail.attributes.code;
 import net.rec.contra.cjbe.editor.BrowserInternalFrame;
 import org.gjt.jclasslib.structures.ClassFile;
 import soot.*;
+import soot.grimp.Grimp;
+import soot.grimp.GrimpBody;
+import soot.javaToJimple.AbstractJimpleBodyBuilder;
+import soot.javaToJimple.ClassDeclFinder;
+import soot.javaToJimple.JimpleBodyBuilder;
+import soot.jimple.JimpleMethodSource;
+import soot.jimple.parser.JimpleAST;
 import soot.toolkits.graph.CompleteUnitGraph;
 
 import javax.swing.*;
@@ -30,6 +37,7 @@ public class AnalysisDisplay extends JEditorPane {
             this.klass = tz.loadClassAndSupport(classFile.getThisClassName());
             this.thisMethod = (SootMethod) klass.getMethods().toArray()[methodIndex];
             this.mBody = thisMethod.retrieveActiveBody();
+            //soot.grimp.Grimp gb = new soot.grimp.Grimp.v();
             this.cGraph = new CompleteUnitGraph(mBody);
         } catch (Exception e) {
             e.printStackTrace();

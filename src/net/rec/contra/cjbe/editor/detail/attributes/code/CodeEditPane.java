@@ -101,7 +101,6 @@ public class CodeEditPane extends AbstractDetailPane implements FocusListener {
 
     }
 
-
     protected void setupComponent() {
 
     }

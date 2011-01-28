@@ -35,20 +35,12 @@ public class DiagramPane extends AbstractDetailPane implements FocusListener {
         this.setLayout(new CardLayout());
         for (int i = 0; i < methods.length; i++) {
             String methodIndex = Integer.toString(i);
-            //Integer methodIndex = new Integer(i);
-            for (int j = 0; j < methods[i].getAttributes().length; j++) {
-                if (methods[i].getAttributes()[j] instanceof CodeAttribute) {
-                    byte[] code = ((CodeAttribute) methods[i]
-                            .getAttributes()[j]).getCode();
-                    addEditPane(code, methodIndex, classFile);
-                    break;
-                }
-            }
+            addEditPane(methodIndex);
         }
     }
 
-    private void addEditPane(byte[] code, String methodIndex, ClassFile classFile) {
-        DiagramDisplay editArea = new DiagramDisplay(code, Integer.parseInt(methodIndex), classFile, internalFrame);
+    private void addEditPane(String methodIndex) {
+        DiagramDisplay editArea = new DiagramDisplay(Integer.parseInt(methodIndex), internalFrame);
         //System.out.println(methodIndex);
         //Scrollbar
         JScrollPane scroll = new JScrollPane(editArea);
@@ -77,16 +69,8 @@ public class DiagramPane extends AbstractDetailPane implements FocusListener {
         MethodInfo[] methods = classFile.getMethods();
         for (int i = 0; i < methods.length; i++) {
             String methodIndex = Integer.toString(i);
-            for (int j = 0; j < methods[i].getAttributes().length; j++) {
-                if (methods[i].getAttributes()[j] instanceof CodeAttribute) {
-                    byte[] code = ((CodeAttribute) methods[i]
-                            .getAttributes()[j]).getCode();
-                    addEditPane(code, methodIndex, classFile);
-                    break;
-                }
-            }
             if (editPanes.get(methodIndex) == null) {
-                addEditPane(null, methodIndex, classFile);
+                addEditPane(methodIndex);
             }
             //editPanes.get(methodIndex).setText("dfgh");
         }
