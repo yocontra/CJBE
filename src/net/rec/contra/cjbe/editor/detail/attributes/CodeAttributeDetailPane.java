@@ -48,7 +48,9 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
 
     private ByteCodeDetailPane byteCodePane;
 
-    private BrowserDiagramPane diagramPane;
+    private AnalysisPane analysisPane;
+
+    private DiagramPane diagramPane;
 
     private QuantDetailPane quantPane;
 
@@ -111,7 +113,8 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
         tabbedPane.addTab("Exception table", buildExceptionTablePane());
         tabbedPane.addTab("Misc", buildMiscPane());
         tabbedPane.addTab("Code Editor", buildCodeEditPane());
-        tabbedPane.addTab("Analysis", buildDiagramDisplayPanel());
+        tabbedPane.addTab("Analysis", buildAnalysisPane());
+        tabbedPane.addTab("Diagram", buildDiagramPane());
         return tabbedPane;
     }
 
@@ -119,8 +122,14 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
         byteCodePane = new ByteCodeDetailPane(services);
         return byteCodePane;
     }
-    private JPanel buildDiagramDisplayPanel() {
-        diagramPane = new BrowserDiagramPane(services);
+
+    private JPanel buildAnalysisPane() {
+        analysisPane = new AnalysisPane(services);
+        return analysisPane;
+    }
+
+    private JPanel buildDiagramPane() {
+        diagramPane = new DiagramPane(services);
         return diagramPane;
     }
 
@@ -161,11 +170,7 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
         mainPane = new JPanel();
         // mainPane.setLayout()
         mainPane.setLayout(new BorderLayout());
-        try {
-            codeEditPane = new CodeEditPane(services);
-        } catch (InvalidByteCodeException e) {
-            e.printStackTrace();
-        }
+        codeEditPane = new CodeEditPane(services);
 
         mainPane.add(codeEditPane, "Center");
 
@@ -199,6 +204,7 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
         byteCodePane.show(treePath);
         quantPane.show(treePath);
         codeEditPane.show(treePath);
+        analysisPane.show(treePath);
         diagramPane.show(treePath);
         internalFrame.setReloading(false);
 

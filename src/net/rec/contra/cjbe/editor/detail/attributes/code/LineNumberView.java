@@ -297,6 +297,7 @@ public class LineNumberView extends JComponent {
         /**
          * If the edit was confined to a single line, invalidate that line's
          * height. Otherwise, invalidate them all.
+         *
          * @param evt
          */
         private void update(DocumentEvent evt) {

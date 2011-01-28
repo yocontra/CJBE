@@ -7,7 +7,6 @@ import net.rec.contra.cjbe.editor.AbstractDetailPane;
 import net.rec.contra.cjbe.editor.BrowserInternalFrame;
 import net.rec.contra.cjbe.editor.BrowserServices;
 import net.rec.contra.cjbe.editor.BrowserTreeNode;
-import net.rec.contra.cjbe.editor.codeedit.CodeGenerator;
 import org.gjt.jclasslib.structures.ClassFile;
 import org.gjt.jclasslib.structures.MethodInfo;
 import org.gjt.jclasslib.structures.attributes.CodeAttribute;
@@ -21,43 +20,34 @@ import java.util.HashMap;
 
 // import javax.swing.undo.UndoManager;
 
-public class CodeEditPane extends AbstractDetailPane implements FocusListener {
+public class AnalysisPane extends AbstractDetailPane implements FocusListener {
 
-    /**
-     *
-     */
-    private static final long serialVersionUID = 3376865231556430458L;
-
-    private HashMap<String, CodeEditArea> editPanes = new HashMap<String, CodeEditArea>();
+    private HashMap<String, AnalysisDisplay> editPanes = new HashMap<String, AnalysisDisplay>();
 
 
     private BrowserInternalFrame internalFrame;
 
-    public CodeEditPane(BrowserServices services) {
+    public AnalysisPane(BrowserServices services) {
         super(services);
         internalFrame = (BrowserInternalFrame) services;
         ClassFile classFile = services.getClassFile();
         MethodInfo[] methods = classFile.getMethods();
         this.setLayout(new CardLayout());
-
         for (int i = 0; i < methods.length; i++) {
             String methodIndex = Integer.toString(i);
             //Integer methodIndex = new Integer(i);
             for (int j = 0; j < methods[i].getAttributes().length; j++) {
                 if (methods[i].getAttributes()[j] instanceof CodeAttribute) {
-                    byte[] code = ((CodeAttribute) methods[i]
-                            .getAttributes()[j]).getCode();
-                    addEditPane(methodIndex, code, classFile);
+                    addEditPane(methodIndex, classFile);
                     break;
                 }
             }
         }
-
     }
 
-    private void addEditPane(String methodIndex, byte[] code, ClassFile classFile) {
-        CodeEditArea editArea = new CodeEditArea(code, classFile, internalFrame);
-
+    private void addEditPane(String methodIndex, ClassFile classFile) {
+        AnalysisDisplay editArea = new AnalysisDisplay(Integer.parseInt(methodIndex), classFile, internalFrame);
+        //System.out.println(methodIndex);
         //Scrollbar
         JScrollPane scroll = new JScrollPane(editArea);
         scroll.setRowHeaderView(new LineNumberView(editArea));
@@ -77,25 +67,24 @@ public class CodeEditPane extends AbstractDetailPane implements FocusListener {
         String methodIndex = Integer.toString(((BrowserTreeNode) treePath.getParentPath().getLastPathComponent()).getIndex());
         CardLayout cl = (CardLayout) this.getLayout();
         cl.show(this, methodIndex);
-
     }
 
     private void updateEditPanes() {
         internalFrame = (BrowserInternalFrame) services;
         ClassFile classFile = services.getClassFile();
         MethodInfo[] methods = classFile.getMethods();
-        CodeGenerator cg = new CodeGenerator();
         for (int i = 0; i < methods.length; i++) {
             String methodIndex = Integer.toString(i);
-            //Integer methodIndex = new Integer(i);
             for (int j = 0; j < methods[i].getAttributes().length; j++) {
                 if (methods[i].getAttributes()[j] instanceof CodeAttribute) {
-                    byte[] code = ((CodeAttribute) methods[i]
-                            .getAttributes()[j]).getCode();
-                    addEditPane(methodIndex, code, classFile);
+                    addEditPane(methodIndex, classFile);
                     break;
                 }
             }
+            if (editPanes.get(methodIndex) == null) {
+                addEditPane(methodIndex, classFile);
+            }
+            //editPanes.get(methodIndex).setText("dfgh");
         }
 
 

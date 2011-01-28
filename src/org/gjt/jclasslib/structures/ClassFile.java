@@ -7,7 +7,6 @@
 
 package org.gjt.jclasslib.structures;
 
-import org.gjt.jclasslib.io.Log;
 import org.gjt.jclasslib.structures.constants.ConstantLargeNumeric;
 import org.gjt.jclasslib.structures.constants.ConstantUtf8Info;
 

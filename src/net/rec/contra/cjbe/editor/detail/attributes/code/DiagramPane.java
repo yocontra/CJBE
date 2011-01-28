@@ -20,14 +20,14 @@ import java.util.HashMap;
 
 // import javax.swing.undo.UndoManager;
 
-public class BrowserDiagramPane extends AbstractDetailPane implements FocusListener {
+public class DiagramPane extends AbstractDetailPane implements FocusListener {
 
     private HashMap<String, DiagramDisplay> editPanes = new HashMap<String, DiagramDisplay>();
 
 
     private BrowserInternalFrame internalFrame;
 
-    public BrowserDiagramPane(BrowserServices services) {
+    public DiagramPane(BrowserServices services) {
         super(services);
         internalFrame = (BrowserInternalFrame) services;
         ClassFile classFile = services.getClassFile();
@@ -38,15 +38,17 @@ public class BrowserDiagramPane extends AbstractDetailPane implements FocusListe
             //Integer methodIndex = new Integer(i);
             for (int j = 0; j < methods[i].getAttributes().length; j++) {
                 if (methods[i].getAttributes()[j] instanceof CodeAttribute) {
-                    addEditPane(methodIndex, classFile);
+                    byte[] code = ((CodeAttribute) methods[i]
+                            .getAttributes()[j]).getCode();
+                    addEditPane(code, methodIndex, classFile);
                     break;
                 }
             }
         }
     }
 
-    private void addEditPane(String methodIndex, ClassFile classFile) {
-        DiagramDisplay editArea = new DiagramDisplay(Integer.parseInt(methodIndex), classFile, internalFrame);
+    private void addEditPane(byte[] code, String methodIndex, ClassFile classFile) {
+        DiagramDisplay editArea = new DiagramDisplay(code, Integer.parseInt(methodIndex), classFile, internalFrame);
         //System.out.println(methodIndex);
         //Scrollbar
         JScrollPane scroll = new JScrollPane(editArea);
@@ -77,12 +79,14 @@ public class BrowserDiagramPane extends AbstractDetailPane implements FocusListe
             String methodIndex = Integer.toString(i);
             for (int j = 0; j < methods[i].getAttributes().length; j++) {
                 if (methods[i].getAttributes()[j] instanceof CodeAttribute) {
-                    addEditPane(methodIndex, classFile);
+                    byte[] code = ((CodeAttribute) methods[i]
+                            .getAttributes()[j]).getCode();
+                    addEditPane(code, methodIndex, classFile);
                     break;
                 }
             }
             if (editPanes.get(methodIndex) == null) {
-                addEditPane(methodIndex, classFile);
+                addEditPane(null, methodIndex, classFile);
             }
             //editPanes.get(methodIndex).setText("dfgh");
         }
