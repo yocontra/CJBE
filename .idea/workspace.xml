@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bc4fe1b-ede6-4895-8838-f71b1604eb17" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\CJBE\src\net\rec\contra\cjbe\editor\detail\attributes\code\graph\DirectedGraph.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\CJBE\src\net\rec\contra\cjbe\editor\detail\attributes\code\graph\HashMutableDirectedGraph.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\CJBE\src\net\rec\contra\cjbe\editor\detail\attributes\code\graph\MutableDirectedGraph.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\CJBE\src\net\rec\contra\cjbe\editor\detail\attributes\code\graph\cfg\Block.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\CJBE\src\net\rec\contra\cjbe\editor\detail\attributes\code\graph\cfg\BlockGraph.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\CJBE\src\net\rec\contra\cjbe\editor\detail\attributes\code\graph\cfg\InstructionGraph.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java" />
     </list>
     <ignored path="JBE.iws" />
@@ -67,30 +75,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DiagramDisplay.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DiagramDisplay.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="59" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.33064517">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Block.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/Block.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="23" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
+            <state line="40" column="8" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnalysisPane.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AnalysisPane.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="41" selection-start="1315" selection-end="1315" vertical-scroll-proportion="0.0">
+            <state line="53" column="10" selection-start="1970" selection-end="1970" vertical-scroll-proportion="0.5831063">
               <folding />
             </state>
           </provider>
@@ -99,34 +96,7 @@
       <file leaf-file-name="AnalysisDisplay.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="14" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstructionGraph.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/InstructionGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="188" column="63" selection-start="6964" selection-end="6964" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlockGraph.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/BlockGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="157" column="74" selection-start="5802" selection-end="5802" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HashMutableDirectedGraph.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/HashMutableDirectedGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="50" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
+            <state line="61" column="51" selection-start="2367" selection-end="2367" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -146,14 +116,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/org/apache/bcel/util/BCELifier.java" />
         <option value="$PROJECT_DIR$/src/org/gjt/jclasslib/structures/AttributeInfo.java" />
         <option value="$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/ControlFlowGraph.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/FieldsGeneralPane.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramPane.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/hier/ClassHierarchy.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/Block.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/BlockGraph.java" />
@@ -162,6 +130,8 @@
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/HashMutableDirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/InstructionGraph.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java" />
       </list>
     </option>
   </component>
@@ -217,6 +187,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -235,326 +206,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bcel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bcel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="verifier" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bcel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="verifier" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="structurals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="attributes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="attributes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="attributes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodeEditArea.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="attributes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graph" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="attributes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graph" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane />
       </pane>
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -571,6 +243,24 @@
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -599,24 +289,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -723,7 +395,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1288" height="764" extended-state="6" />
+    <frame x="-4" y="-4" width="1288" height="764" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -734,11 +406,11 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.6720779" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.67363346" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3998378" sideWeight="0.670418" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32927817" sideWeight="0.670418" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32927817" sideWeight="0.65434086" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34565917" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -782,11 +454,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/ClassSaver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="12" selection-start="4307" selection-end="4363" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/verifier/GraphicalVerifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="68" column="13" selection-start="2973" selection-end="2973" vertical-scroll-proportion="-0.08844765" />
@@ -812,69 +479,64 @@
         <state line="15" column="87" selection-start="598" selection-end="598" vertical-scroll-proportion="0.51076925" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/MutableDirectedGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="38" selection-start="105" selection-end="105" vertical-scroll-proportion="0.1401099" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/DirectedGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="33" selection-start="221" selection-end="221" vertical-scroll-proportion="0.42032966" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="41" selection-start="1315" selection-end="1315" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/AddExceptionPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="25" selection-start="3015" selection-end="3015" vertical-scroll-proportion="1.5545927">
-          <folding />
-        </state>
+        <state line="83" column="25" selection-start="3015" selection-end="3015" vertical-scroll-proportion="1.5545927" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/Block.java">
+    <entry file="jar://$PROJECT_DIR$/lib/soot.jar!/soot/coffi/method_info.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="14" column="23" selection-start="486" selection-end="486" vertical-scroll-proportion="0.60382515" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/BlockGraph.java">
+    <entry file="jar://$PROJECT_DIR$/lib/soot.jar!/soot/coffi/CFG.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="74" selection-start="5802" selection-end="5802" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="28" column="67" selection-start="1332" selection-end="1332" vertical-scroll-proportion="1.1586403" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/HashMutableDirectedGraph.java">
+    <entry file="jar://$PROJECT_DIR$/lib/soot.jar!/soot/PatchingChain.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="50" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
+        <state line="79" column="0" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.7824859" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/soot.jar!/soot/dava/DavaBody.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="0" selection-start="3820" selection-end="3820" vertical-scroll-proportion="0.79019076" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/soot.jar!/soot/toolkits/graph/BriefUnitGraph.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.32425067" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDetailPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="13" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="13" selection-start="1340" selection-end="1340" vertical-scroll-proportion="-23.200527" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="8" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="14" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/InstructionGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="63" selection-start="6964" selection-end="6964" vertical-scroll-proportion="0.0">
+        <state line="61" column="51" selection-start="2367" selection-end="2367" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java">
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="59" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.33064517">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="53" column="10" selection-start="1970" selection-end="1970" vertical-scroll-proportion="0.5831063">
+          <folding />
         </state>
       </provider>
     </entry>

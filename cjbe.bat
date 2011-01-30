@@ -4,5 +4,5 @@ echo Code Maintained by Contra
 cd out
 cd production
 cd cjbe
-java net.rec.contra.cjbe.editor.BrowserApplication
+java -cp ".;soot.jar" net.rec.contra.cjbe.editor.BrowserApplication
 pause
