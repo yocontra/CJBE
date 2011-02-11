@@ -241,10 +241,13 @@ public class BCELifier extends org.apache.bcel.classfile.EmptyVisitor {
         StringBuffer buf = new StringBuffer();
         for (int i = 0, pow = 1; i <= Constants.MAX_ACC_FLAG; i++) {
             if ((flags & pow) != 0) {
-                if ((pow == Constants.ACC_SYNCHRONIZED) && for_class)
+                if ((pow == Constants.ACC_SYNCHRONIZED) && for_class) {
                     buf.append("ACC_SUPER | ");
-                else
-                    buf.append("ACC_").append(Constants.ACCESS_NAMES[i].toUpperCase()).append(" | ");
+                } else {
+                    if(i < Constants.ACCESS_NAMES.length){
+                        buf.append("ACC_").append(Constants.ACCESS_NAMES[i].toUpperCase()).append(" | ");
+                    }
+                }
             }
 
             pow <<= 1;
@@ -299,6 +302,7 @@ public class BCELifier extends org.apache.bcel.classfile.EmptyVisitor {
 
     /**
      * Default main method
+     *
      * @param argv
      */
     public static void main(String[] argv) throws Exception {

@@ -98,10 +98,10 @@ final class CodeHTML implements org.apache.bcel.Constants {
      * Disassemble a stream of byte codes and return the
      * string representation.
      *
-     * @param stream data input stream
-     * @return String representation of byte code
+     * @param stream        data input stream
      * @param bytes
      * @param method_number
+     * @return String representation of byte code
      */
     private String codeToHTML(ByteSequence bytes, int method_number)
             throws IOException {
@@ -416,6 +416,7 @@ final class CodeHTML implements org.apache.bcel.Constants {
     /**
      * Find all target addresses in code, so that they can be marked
      * with &lt;A NAME = ...&gt;. Target addresses are kept in an BitSet object.
+     *
      * @param bytes
      * @param method
      * @param code
@@ -544,6 +545,7 @@ final class CodeHTML implements org.apache.bcel.Constants {
 
     /**
      * Write a single method with the byte code associated with it.
+     *
      * @param method
      * @param method_number
      */

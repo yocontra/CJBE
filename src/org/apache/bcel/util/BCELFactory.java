@@ -7,7 +7,6 @@ import org.apache.bcel.generic.*;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
 /* ====================================================================
  * The Apache Software License, Version 1.1

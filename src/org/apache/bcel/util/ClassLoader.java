@@ -174,6 +174,7 @@ public class ClassLoader extends java.lang.ClassLoader {
     /**
      * Override this method if you want to alter a class before it gets actually
      * loaded. Does nothing by default.
+     *
      * @param clazz
      */
     protected JavaClass modifyClass(JavaClass clazz) {

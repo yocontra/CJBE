@@ -82,6 +82,7 @@ public class ClassPath implements Serializable {
 
     /**
      * Search for classes in given path.
+     *
      * @param class_path
      */
     public ClassPath(String class_path) {
@@ -140,7 +141,7 @@ public class ClassPath implements Serializable {
     }
 
     private static void getPathComponents(String path,
-                                                ArrayList<String> list) {
+                                          ArrayList<String> list) {
         if (path != null) {
             StringTokenizer tok = new StringTokenizer(path, File.pathSeparator);
 

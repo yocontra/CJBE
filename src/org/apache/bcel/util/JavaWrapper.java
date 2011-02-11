@@ -134,6 +134,7 @@ public class JavaWrapper {
     /**
      * Default main method used as wrapper, expects the fully qualified class name
      * of the real class as the first argument.
+     *
      * @param argv
      */
     public static void main(String[] argv) throws Exception {

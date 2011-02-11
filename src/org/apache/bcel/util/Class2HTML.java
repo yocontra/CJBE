@@ -182,6 +182,7 @@ public class Class2HTML implements Constants {
     /**
      * Utility method that converts a class reference in the constant pool,
      * i.e., an index to a string.
+     *
      * @param index
      */
     static String referenceClass(int index) {

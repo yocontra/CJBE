@@ -7,7 +7,6 @@ import net.rec.contra.cjbe.editor.AbstractDetailPane;
 import net.rec.contra.cjbe.editor.BrowserInternalFrame;
 import net.rec.contra.cjbe.editor.BrowserServices;
 import net.rec.contra.cjbe.editor.BrowserTreeNode;
-import org.apache.bcel.classfile.LineNumber;
 import org.gjt.jclasslib.structures.ClassFile;
 import org.gjt.jclasslib.structures.MethodInfo;
 import org.gjt.jclasslib.structures.attributes.CodeAttribute;
@@ -47,12 +46,12 @@ public class AnalysisPane extends AbstractDetailPane implements FocusListener {
     }
 
     private void addEditPane(String methodIndex, ClassFile classFile) {
-        AnalysisDisplay editArea = new AnalysisDisplay(Integer.parseInt(methodIndex), classFile, internalFrame);
+        AnalysisDisplay editArea = new AnalysisDisplay(Integer.parseInt(methodIndex), internalFrame);
         //System.out.println(methodIndex);
         //Scrollbar
         JScrollPane scroll = new JScrollPane(editArea);
-        //LineNumberView view = new LineNumberView(editArea);
-        //scroll.setRowHeaderView(view);
+        LineNumberView view = new LineNumberView(editArea);
+        scroll.setRowHeaderView(view);
         scroll.getVerticalScrollBar().setValue(10);
         this.add(scroll, methodIndex);
 

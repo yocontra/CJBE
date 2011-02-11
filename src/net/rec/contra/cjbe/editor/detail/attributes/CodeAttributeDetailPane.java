@@ -15,7 +15,6 @@ import net.rec.contra.cjbe.editor.codeedit.ClassSaver;
 import net.rec.contra.cjbe.editor.codeedit.CodeGenerator;
 import net.rec.contra.cjbe.editor.codeedit.InputFieldException;
 import net.rec.contra.cjbe.editor.detail.attributes.code.*;
-import org.gjt.jclasslib.structures.InvalidByteCodeException;
 import org.gjt.jclasslib.util.GUIHelper;
 import org.gjt.jclasslib.util.ProgressDialog;
 
@@ -50,7 +49,7 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
 
     private AnalysisPane analysisPane;
 
-    private DiagramPane diagramPane;
+    private BCELifyPane BCELifyPane;
 
     private QuantDetailPane quantPane;
 
@@ -110,11 +109,11 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
     private JTabbedPane buildTabbedPane() {
         tabbedPane = new JTabbedPane();
         tabbedPane.addTab("Bytecode", buildByteCodePane());
-        tabbedPane.addTab("Exception table", buildExceptionTablePane());
-        tabbedPane.addTab("Misc", buildMiscPane());
         tabbedPane.addTab("Code Editor", buildCodeEditPane());
+        tabbedPane.addTab("Exception Table", buildExceptionTablePane());
         tabbedPane.addTab("Analysis", buildAnalysisPane());
-        tabbedPane.addTab("Diagram", buildDiagramPane());
+        tabbedPane.addTab("BCEL", buildDiagramPane());
+        tabbedPane.addTab("Misc", buildMiscPane());
         return tabbedPane;
     }
 
@@ -129,8 +128,8 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
     }
 
     private JPanel buildDiagramPane() {
-        diagramPane = new DiagramPane(services);
-        return diagramPane;
+        BCELifyPane = new BCELifyPane(services);
+        return BCELifyPane;
     }
 
     private JPanel buildExceptionTablePane() {
@@ -205,7 +204,7 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
         quantPane.show(treePath);
         codeEditPane.show(treePath);
         analysisPane.show(treePath);
-        diagramPane.show(treePath);
+        BCELifyPane.show(treePath);
         internalFrame.setReloading(false);
 
     }
