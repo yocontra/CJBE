@@ -112,7 +112,7 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
         tabbedPane.addTab("Code Editor", buildCodeEditPane());
         tabbedPane.addTab("Exception Table", buildExceptionTablePane());
         tabbedPane.addTab("Analysis", buildAnalysisPane());
-        tabbedPane.addTab("BCEL", buildDiagramPane());
+        tabbedPane.addTab("BCEL", buildBCELPane());
         tabbedPane.addTab("Misc", buildMiscPane());
         return tabbedPane;
     }
@@ -127,7 +127,7 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
         return analysisPane;
     }
 
-    private JPanel buildDiagramPane() {
+    private JPanel buildBCELPane() {
         BCELifyPane = new BCELifyPane(services);
         return BCELifyPane;
     }

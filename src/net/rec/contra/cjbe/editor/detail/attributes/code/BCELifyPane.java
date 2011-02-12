@@ -7,6 +7,10 @@ import net.rec.contra.cjbe.editor.AbstractDetailPane;
 import net.rec.contra.cjbe.editor.BrowserInternalFrame;
 import net.rec.contra.cjbe.editor.BrowserServices;
 import net.rec.contra.cjbe.editor.BrowserTreeNode;
+import org.apache.bcel.classfile.ClassParser;
+import org.apache.bcel.classfile.JavaClass;
+import org.apache.bcel.generic.ClassGen;
+import org.apache.bcel.util.BCELifier;
 import org.gjt.jclasslib.structures.ClassFile;
 import org.gjt.jclasslib.structures.MethodInfo;
 
@@ -15,6 +19,9 @@ import javax.swing.tree.TreePath;
 import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.HashMap;
 
 // import javax.swing.undo.UndoManager;
@@ -28,23 +35,17 @@ public class BCELifyPane extends AbstractDetailPane implements FocusListener {
 
     public BCELifyPane(BrowserServices services) {
         super(services);
-        internalFrame = (BrowserInternalFrame) services;
-        ClassFile classFile = services.getClassFile();
-        MethodInfo[] methods = classFile.getMethods();
-        this.setLayout(new CardLayout());
-        for (int i = 0; i < methods.length; i++) {
-            String methodIndex = Integer.toString(i);
-            addEditPane(methodIndex);
-        }
+        setLayout(new CardLayout());
+        updateEditPanes();
     }
 
-    private void addEditPane(String methodIndex) {
-        BCELifyDisplay editArea = new BCELifyDisplay(Integer.parseInt(methodIndex), internalFrame);
-        //System.out.println(methodIndex);
-        //Scrollbar
+    private void addEditPane(OutputStream out, String methodIndex) {
+
+        BCELifyDisplay editArea = new BCELifyDisplay(out, Integer.parseInt(methodIndex), internalFrame);
         JScrollPane scroll = new JScrollPane(editArea);
-        scroll.setRowHeaderView(new LineNumberView(editArea));
+        //scroll.setRowHeaderView(new LineNumberView(editArea));
         scroll.getVerticalScrollBar().setValue(10);
+        scroll.getHorizontalScrollBar().setValue(10);
         this.add(scroll, methodIndex);
 
         editPanes.put(methodIndex, editArea);
@@ -66,15 +67,21 @@ public class BCELifyPane extends AbstractDetailPane implements FocusListener {
         internalFrame = (BrowserInternalFrame) services;
         ClassFile classFile = services.getClassFile();
         MethodInfo[] methods = classFile.getMethods();
+        JavaClass javaClass;
+        try {
+            javaClass = new ClassParser(internalFrame.getFileName()).parse();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        ClassGen cg = new ClassGen(javaClass);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        BCELifier v = new BCELifier(javaClass, out);
+        v.start();
         for (int i = 0; i < methods.length; i++) {
             String methodIndex = Integer.toString(i);
-            if (editPanes.get(methodIndex) == null) {
-                addEditPane(methodIndex);
-            }
-            //editPanes.get(methodIndex).setText("dfgh");
+            addEditPane(out, methodIndex);
         }
-
-
     }
 
 

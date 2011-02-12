@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bc4fe1b-ede6-4895-8838-f71b1604eb17" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Tools\CJBE\.idea\libraries\soot.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Tools\CJBE\COPYING.TXT" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Tools\CJBE\lib\soot.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Tools\CJBE\soot.jar" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\Tools\CJBE\src\net\rec\contra\cjbe\editor\detail\attributes\code\DiagramDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\Tools\CJBE\src\net\rec\contra\cjbe\editor\detail\attributes\code\DiagramPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CJBE.iml" afterPath="$PROJECT_DIR$/CJBE.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/BCELFactory.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/BCELFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/BCELifier.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/BCELifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/Class2HTML.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/Class2HTML.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassLoader.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassPath.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/ClassPath.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/CodeHTML.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/CodeHTML.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/JavaWrapper.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/JavaWrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/bcel/util/Repository.java" afterPath="$PROJECT_DIR$/src/org/apache/bcel/util/Repository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java" />
     </list>
     <ignored path="JBE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,13 +70,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BCELifyDisplay.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BCELifyDisplay.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="79" selection-start="684" selection-end="684" vertical-scroll-proportion="0.12073491">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="18" column="61" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CodeEditPane.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="56" selection-start="2166" selection-end="2166" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,7 +91,34 @@
       <file leaf-file-name="CodeAttributeDetailPane.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="43" selection-start="2989" selection-end="2989" vertical-scroll-proportion="0.0">
+            <state line="130" column="50" selection-start="3816" selection-end="3816" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BCELifyPane.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="36" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InnerClassesAttributeDetailPane.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/InnerClassesAttributeDetailPane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="13" selection-start="837" selection-end="837" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WordSearcher.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/WordSearcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="26" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.79614323">
               <folding />
             </state>
           </provider>
@@ -118,9 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramPane.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/hier/ClassHierarchy.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/Block.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/BlockGraph.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/MutableDirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/DirectedGraph.java" />
@@ -133,7 +150,10 @@
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/WordSearcher.java" />
       </list>
     </option>
   </component>
@@ -189,8 +209,10 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
       <pane id="Favorites" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -241,26 +263,102 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="detail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="detail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="attributes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CJBE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="detail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="attributes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -277,6 +375,24 @@
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -305,24 +421,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -435,12 +533,12 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2495935" sideWeight="0.67045456" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.67363346" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.6559486" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3998378" sideWeight="0.670418" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32927817" sideWeight="0.6559486" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -489,26 +587,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/verifier/GraphicalVerifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="13" selection-start="2973" selection-end="2973" vertical-scroll-proportion="-0.08844765" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/verifier/structurals/ControlFlowGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="64" selection-start="7361" selection-end="7361" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="83" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/AddExceptionPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="25" selection-start="3015" selection-end="3015" vertical-scroll-proportion="1.5545927" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDetailPane.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="13" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0" />
@@ -521,66 +599,87 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="116" selection-end="116" vertical-scroll-proportion="0.13492064">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="116" selection-end="116" vertical-scroll-proportion="0.13492064" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="8" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.6028572">
-          <folding />
-        </state>
+        <state line="53" column="8" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.6028572" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/util/BCELifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="248" column="21" selection-start="9577" selection-end="9577" vertical-scroll-proportion="0.862259">
-          <folding />
-        </state>
+        <state line="248" column="21" selection-start="9577" selection-end="9577" vertical-scroll-proportion="0.862259" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="20" selection-start="5848" selection-end="5848" vertical-scroll-proportion="0.90633607">
-          <folding />
-        </state>
+        <state line="195" column="20" selection-start="5848" selection-end="5848" vertical-scroll-proportion="0.90633607" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="41" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.95592284">
-          <folding />
-        </state>
+        <state line="52" column="41" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.95592284" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="8" selection-start="3306" selection-end="3306" vertical-scroll-proportion="0.3043478">
-          <folding />
-        </state>
+        <state line="110" column="8" selection-start="3306" selection-end="3306" vertical-scroll-proportion="0.3043478" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="76" selection-start="4101" selection-end="4101" vertical-scroll-proportion="0.35054347">
+        <state line="33" column="69" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.5407609">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/InnerClassesAttributeDetailPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="13" selection-start="837" selection-end="837" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="56" selection-start="2166" selection-end="2166" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="43" selection-start="2989" selection-end="2989" vertical-scroll-proportion="0.0">
+        <state line="130" column="50" selection-start="3816" selection-end="3816" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="36" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="79" selection-start="684" selection-end="684" vertical-scroll-proportion="0.12073491">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="18" column="61" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_22/src.zip!/javax/swing/text/JTextComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1649" column="0" selection-start="60240" selection-end="60240" vertical-scroll-proportion="0.6314286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/WordSearcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="26" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.79614323">
+          <folding />
         </state>
       </provider>
     </entry>

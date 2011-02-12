@@ -7,7 +7,6 @@ import net.rec.contra.cjbe.editor.AbstractDetailPane;
 import net.rec.contra.cjbe.editor.BrowserInternalFrame;
 import net.rec.contra.cjbe.editor.BrowserServices;
 import net.rec.contra.cjbe.editor.BrowserTreeNode;
-import net.rec.contra.cjbe.editor.codeedit.CodeGenerator;
 import org.gjt.jclasslib.structures.ClassFile;
 import org.gjt.jclasslib.structures.MethodInfo;
 import org.gjt.jclasslib.structures.attributes.CodeAttribute;
@@ -35,24 +34,8 @@ public class CodeEditPane extends AbstractDetailPane implements FocusListener {
 
     public CodeEditPane(BrowserServices services) {
         super(services);
-        internalFrame = (BrowserInternalFrame) services;
-        ClassFile classFile = services.getClassFile();
-        MethodInfo[] methods = classFile.getMethods();
-        this.setLayout(new CardLayout());
-
-        for (int i = 0; i < methods.length; i++) {
-            String methodIndex = Integer.toString(i);
-            //Integer methodIndex = new Integer(i);
-            for (int j = 0; j < methods[i].getAttributes().length; j++) {
-                if (methods[i].getAttributes()[j] instanceof CodeAttribute) {
-                    byte[] code = ((CodeAttribute) methods[i]
-                            .getAttributes()[j]).getCode();
-                    addEditPane(methodIndex, code, classFile);
-                    break;
-                }
-            }
-        }
-
+        setLayout(new CardLayout());
+        updateEditPanes();
     }
 
     private void addEditPane(String methodIndex, byte[] code, ClassFile classFile) {
@@ -84,14 +67,11 @@ public class CodeEditPane extends AbstractDetailPane implements FocusListener {
         internalFrame = (BrowserInternalFrame) services;
         ClassFile classFile = services.getClassFile();
         MethodInfo[] methods = classFile.getMethods();
-        CodeGenerator cg = new CodeGenerator();
         for (int i = 0; i < methods.length; i++) {
             String methodIndex = Integer.toString(i);
-            //Integer methodIndex = new Integer(i);
             for (int j = 0; j < methods[i].getAttributes().length; j++) {
                 if (methods[i].getAttributes()[j] instanceof CodeAttribute) {
-                    byte[] code = ((CodeAttribute) methods[i]
-                            .getAttributes()[j]).getCode();
+                    byte[] code = ((CodeAttribute) methods[i].getAttributes()[j]).getCode();
                     addEditPane(methodIndex, code, classFile);
                     break;
                 }
