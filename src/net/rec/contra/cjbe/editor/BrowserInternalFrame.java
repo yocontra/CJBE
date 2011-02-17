@@ -7,9 +7,12 @@
 
 package net.rec.contra.cjbe.editor;
 
+import jreversepro.parser.ClassParserException;
+import jreversepro.parser.JClassParser;
 import net.rec.contra.cjbe.editor.config.classpath.FindResult;
 import net.rec.contra.cjbe.editor.config.window.BrowserPath;
 import net.rec.contra.cjbe.editor.config.window.WindowState;
+import org.apache.commons.io.IOUtils;
 import org.gjt.jclasslib.io.ClassFileReader;
 import org.gjt.jclasslib.mdi.BasicDesktopManager;
 import org.gjt.jclasslib.mdi.BasicInternalFrame;
@@ -47,6 +50,7 @@ public class BrowserInternalFrame extends BasicInternalFrame
     private String fileName;
     private ClassFile classFile;
     private String backupFile;
+    private JClassParser parser;
 
     // Visual Components
 
@@ -182,6 +186,10 @@ public class BrowserInternalFrame extends BasicInternalFrame
         return fileName;
     }
 
+    public JClassParser getParser() {
+        return parser;
+    }
+
     private void setupInternalFrame(BrowserPath browserPath) {
 
         setTitle(fileName);
@@ -211,12 +219,19 @@ public class BrowserInternalFrame extends BasicInternalFrame
                 JarEntry jarEntry = jarFile.getJarEntry(classFileName);
                 if (jarEntry != null) {
                     classFile = ClassFileReader.readFromInputStream(jarFile.getInputStream(jarEntry));
+                    parser = new JClassParser();
+                    parser.parse(IOUtils.toByteArray(jarFile.getInputStream(jarEntry)));
                 }
             } else {
                 classFile = ClassFileReader.readFromFile(new File(fileName));
+                parser = new JClassParser();
+                parser.parse(new File(fileName));
             }
         } catch (InvalidByteCodeException ex) {
             ex.printStackTrace();
+        } catch (ClassParserException ex) {
+            parser = null;
+            System.out.println("Error decompiling class file. Skipped");
         } catch (IOException ex) {
             ex.printStackTrace();
         }

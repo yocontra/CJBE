@@ -2,11 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bc4fe1b-ede6-4895-8838-f71b1604eb17" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/JAwtFrame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/JCmdMain.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/JMainFrame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/awtui/JClassEditPanel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/awtui/JCustomFileChooser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/awtui/JCustomListPanel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/awtui/JDlgAbout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/awtui/JDlgFont.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/awtui/JErrorDlg.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/awtui/JJavaDocumentEditor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/awtui/MainMenu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/common/AppConstants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/common/Helper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/common/JJvmOpcodes.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/common/JJvmSet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/common/KeyWords.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/ConfirmCloseDialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/DlgClose.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/JClassEditPanel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/JCpDialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/JCustomFileChooser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/JCustomListPanel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/JDlgAbout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/JDlgFont.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/JErrorDlg.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/JJavaDocumentEditor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/JLookFeelMenu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/JPoolTable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/JStatusPanel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/MainMenu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/gui/MyFavTheme.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/parser/ClassParserException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/parser/JAttribute.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/parser/JClassParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/JClassInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/JConstantPool.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/JConstantPoolEntry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/JException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/JField.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/JImport.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/JInstruction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/JLineNumberTable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/JLineOfCode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/JMember.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/JMethod.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JBlockObject.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JCaseBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JCatchBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JDoWhileBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JElseBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JElseIfBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JFinallyBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JForBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JIfBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JMethodBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JSwitchBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JSynchBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/reflect/method/JTryBlock.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/BranchConstants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/JBranchComparator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/JBranchEntry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/JBranchTable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/JCaseComparator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/JCaseEntry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/JCollatingTable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/JDecompiler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/JDisAssembler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/JReverseEngineer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/JSerializer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/JSwitchTable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/revengine/RevEngineException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/runtime/JLocalEntry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/runtime/JOperandStack.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/runtime/JRunTimeContext.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/runtime/JRunTimeFrame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/runtime/JSymbolTable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/runtime/Operand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/runtime/OperandConstants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/tester/TestBase.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/tester/TestContext.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/tester/TestHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/tester/TestMain.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jreversepro/tester/tests/TestSimpleReturns.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java" />
     </list>
     <ignored path="JBE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,28 +153,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BCELifyDisplay.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java">
+      <file leaf-file-name="BrowserInternalFrame.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="61" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CodeEditPane.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="56" selection-start="2166" selection-end="2166" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CodeAttributeDetailPane.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="50" selection-start="3816" selection-end="3816" vertical-scroll-proportion="0.0">
+            <state line="233" column="72" selection-start="7743" selection-end="7743" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,25 +165,16 @@
       <file leaf-file-name="BCELifyPane.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="36" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
+            <state line="41" column="29" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InnerClassesAttributeDetailPane.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/InnerClassesAttributeDetailPane.java">
+      <file leaf-file-name="BCELifyDisplay.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="13" selection-start="837" selection-end="837" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WordSearcher.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/WordSearcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="26" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.79614323">
+            <state line="20" column="12" selection-start="731" selection-end="731" vertical-scroll-proportion="0.51792115">
               <folding />
             </state>
           </provider>
@@ -138,22 +194,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/BlockGraph.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/MutableDirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/DirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/HashMutableDirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/graph/cfg/InstructionGraph.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java" />
         <option value="$PROJECT_DIR$/src/org/apache/bcel/util/BCELifier.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/DiagramDisplay.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/WordSearcher.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java" />
+        <option value="$PROJECT_DIR$/src/jreversepro/parser/JClassParser.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/WordSearcher.java" />
       </list>
     </option>
   </component>
@@ -194,7 +250,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
+    <option name="STATE" value="2" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -213,6 +269,7 @@
         <subPane />
       </pane>
       <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -343,12 +400,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
@@ -527,22 +583,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1288" height="764" extended-state="6" />
-    <editor active="true" />
+    <frame x="-4" y="-4" width="1688" height="1014" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2495935" sideWeight="0.67045456" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32912844" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32683486" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288426" sideWeight="0.2178899" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.6559486" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3998378" sideWeight="0.670418" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32927817" sideWeight="0.6559486" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288426" sideWeight="0.67087156" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34405145" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3440367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -587,98 +643,96 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDetailPane.java">
+    <entry file="file://$PROJECT_DIR$/src/jreversepro/JAwtFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="13" selection-start="1340" selection-end="1340" vertical-scroll-proportion="-23.200527" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="116" selection-end="116" vertical-scroll-proportion="0.13492064" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="8" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.6028572" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/apache/bcel/util/BCELifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="248" column="21" selection-start="9577" selection-end="9577" vertical-scroll-proportion="0.862259" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="20" selection-start="5848" selection-end="5848" vertical-scroll-proportion="0.90633607" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="41" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.95592284" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="8" selection-start="3306" selection-end="3306" vertical-scroll-proportion="0.3043478" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="69" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.5407609">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/InnerClassesAttributeDetailPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="837" selection-end="837" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="66" column="13" selection-start="1955" selection-end="1955" vertical-scroll-proportion="0.94214875" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="56" selection-start="2166" selection-end="2166" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="66" column="56" selection-start="2166" selection-end="2166" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jreversepro/runtime/JRunTimeContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="286" column="57" selection-start="9653" selection-end="9653" vertical-scroll-proportion="0.31903484" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="50" selection-start="3816" selection-end="3816" vertical-scroll-proportion="0.0">
+        <state line="130" column="50" selection-start="3816" selection-end="3816" vertical-scroll-proportion="0.047222223" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/util/FileUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="152" selection-end="152" vertical-scroll-proportion="0.28099173" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="63" selection-start="1932" selection-end="1932" vertical-scroll-proportion="0.4738292" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_22/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="321" column="0" selection-start="12207" selection-end="12207" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jreversepro/reflect/JConstantPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="380" column="0" selection-start="10630" selection-end="10630" vertical-scroll-proportion="0.020118343">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java">
+    <entry file="file://$PROJECT_DIR$/src/jreversepro/parser/JClassParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="36" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="61" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_22/src.zip!/javax/swing/text/JTextComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1649" column="0" selection-start="60240" selection-end="60240" vertical-scroll-proportion="0.6314286">
+        <state line="665" column="47" selection-start="21895" selection-end="21895" vertical-scroll-proportion="0.23853211">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/WordSearcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="26" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.79614323">
+        <state line="59" column="26" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/InnerClassesAttributeDetailPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="13" selection-start="837" selection-end="837" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="55" selection-start="530" selection-end="530" vertical-scroll-proportion="0.37638375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="53" selection-start="2476" selection-end="2476" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="233" column="72" selection-start="7743" selection-end="7743" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="29" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="12" selection-start="731" selection-end="731" vertical-scroll-proportion="0.51792115">
           <folding />
         </state>
       </provider>

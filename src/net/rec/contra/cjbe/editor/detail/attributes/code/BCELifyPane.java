@@ -20,8 +20,6 @@ import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.util.HashMap;
 
 // import javax.swing.undo.UndoManager;
@@ -39,9 +37,9 @@ public class BCELifyPane extends AbstractDetailPane implements FocusListener {
         updateEditPanes();
     }
 
-    private void addEditPane(OutputStream out, String methodIndex) {
+    private void addEditPane(String contents, String methodIndex) {
 
-        BCELifyDisplay editArea = new BCELifyDisplay(out, Integer.parseInt(methodIndex), internalFrame);
+        BCELifyDisplay editArea = new BCELifyDisplay(contents, Integer.parseInt(methodIndex), internalFrame);
         JScrollPane scroll = new JScrollPane(editArea);
         //scroll.setRowHeaderView(new LineNumberView(editArea));
         scroll.getVerticalScrollBar().setValue(10);
@@ -67,20 +65,20 @@ public class BCELifyPane extends AbstractDetailPane implements FocusListener {
         internalFrame = (BrowserInternalFrame) services;
         ClassFile classFile = services.getClassFile();
         MethodInfo[] methods = classFile.getMethods();
-        JavaClass javaClass;
+        String contents;
         try {
-            javaClass = new ClassParser(internalFrame.getFileName()).parse();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
+            JavaClass javaClass = new ClassParser(internalFrame.getFileName()).parse();
+            ClassGen cg = new ClassGen(javaClass);
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            BCELifier v = new BCELifier(javaClass, out);
+            v.start();
+            contents = out.toString();
+        } catch (Exception e) {
+            contents = "Failed to load/bcelify file";
         }
-        ClassGen cg = new ClassGen(javaClass);
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        BCELifier v = new BCELifier(javaClass, out);
-        v.start();
         for (int i = 0; i < methods.length; i++) {
             String methodIndex = Integer.toString(i);
-            addEditPane(out, methodIndex);
+            addEditPane(contents, methodIndex);
         }
     }
 
