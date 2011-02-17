@@ -504,15 +504,15 @@ public class JMethod extends JMember
         result.append("  , Max Stack " + maxStack);
         if (exceptionBlocks != null) {
             Enumeration
-            enum=Collections.enumeration(exceptionBlocks);
+            enume=Collections.enumeration(exceptionBlocks);
             if (
-            enum.hasMoreElements()){
+            enume.hasMoreElements()){
                 result.append("\n\n\t  /**");
                 result.append("\n\t\tFrom  To  Handler\tClass\n");
                 while (
-                enum.hasMoreElements()){
+                enume.hasMoreElements()){
                     JException exc = (JException)
-                    enum.nextElement();
+                    enume.nextElement();
                     result.append(exc.toString());
                 }
                 result.append("\t  **/\n");

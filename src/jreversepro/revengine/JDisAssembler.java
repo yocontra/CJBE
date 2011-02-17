@@ -98,11 +98,11 @@ public class JDisAssembler implements JReverseEngineer, JJvmOpcodes {
                     new JSymbolTable(curMethod, importInfo));
 
             Enumeration
-            enum=Collections.enumeration(byteIns);
+            enume=Collections.enumeration(byteIns);
             while (
-            enum.hasMoreElements()){
+            enume.hasMoreElements()){
                 JInstruction thisIns = (JInstruction)
-                enum.nextElement();
+                enume.nextElement();
                 if (thisIns.opcode == OPCODE_TABLESWITCH) {
                     JSwitchTable switches = new JSwitchTable(
                             curMethod, thisIns, null);

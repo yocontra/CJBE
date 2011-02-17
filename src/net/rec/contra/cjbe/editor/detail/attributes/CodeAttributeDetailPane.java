@@ -111,8 +111,8 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
         tabbedPane.addTab("Bytecode", buildByteCodePane());
         tabbedPane.addTab("Code Editor", buildCodeEditPane());
         tabbedPane.addTab("Exception Table", buildExceptionTablePane());
-        tabbedPane.addTab("Analysis", buildAnalysisPane());
-        tabbedPane.addTab("BCEL", buildBCELPane());
+        //tabbedPane.addTab("Analysis", buildAnalysisPane());
+        //tabbedPane.addTab("BCEL", buildBCELPane());
         tabbedPane.addTab("Misc", buildMiscPane());
         return tabbedPane;
     }
@@ -203,8 +203,8 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
         byteCodePane.show(treePath);
         quantPane.show(treePath);
         codeEditPane.show(treePath);
-        analysisPane.show(treePath);
-        BCELifyPane.show(treePath);
+        //analysisPane.show(treePath);
+        //BCELifyPane.show(treePath);
         internalFrame.setReloading(false);
 
     }

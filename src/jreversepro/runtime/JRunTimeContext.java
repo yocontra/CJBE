@@ -282,13 +282,13 @@ public class JRunTimeContext
                                           JSymbolTable symTable)
             throws RevEngineException {
         Enumeration
-        enum=Collections.enumeration(
+        enume=Collections.enumeration(
                 symTable.defineVariable(
                         ent.getEndBlockPc()));
         while (
-        enum.hasMoreElements()){
+        enume.hasMoreElements()){
             String varDec =
-            enum.nextElement().toString();
+            enume.nextElement().toString();
             //PP *** Need to identify offsets for next line ***
             method.addLineOfCode(new JLineOfCode(
                     -1, -1, -1,

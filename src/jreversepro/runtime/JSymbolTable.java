@@ -241,11 +241,11 @@ public class JSymbolTable implements KeyWords {
     public List defineVariable(int endOfBranch) {
         List result = new Vector();
         Enumeration
-        enum=Collections.enumeration(symbols.values());
+        enume=Collections.enumeration(symbols.values());
         while (
-        enum.hasMoreElements()){
+        enume.hasMoreElements()){
             List list = (List)
-            enum.nextElement();
+            enume.nextElement();
             for (int i = 0; i < list.size(); i++) {
                 JLocalEntry ent = (JLocalEntry) list.get(i);
                 if (!ent.isDeclared()
