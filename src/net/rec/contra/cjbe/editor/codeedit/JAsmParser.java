@@ -171,7 +171,7 @@ public class JAsmParser {
                     //1 = method call
                     //2 = number of arguments
                     //System.out.println(instrElems[1]);
-                    int index = getMethodConstRef(instrElems, cpg, labels);
+                    int index = getInterfaceMethodConstRef(instrElems, cpg, labels);
 
                     String[] margs = getMethodArguments(instrElems, labels);
                     int nargs = 1;
@@ -1434,9 +1434,25 @@ public class JAsmParser {
         }
         return arg;
     }
-
-    private int getMethodConstRef(String[] instrElems, ConstantPoolGen cpg,
-                                  int line) {
+    private int getInterfaceMethodConstRef(String[] instrElems, ConstantPoolGen cpg, int line) {
+        if (instrElems.length < 2) {
+            parseException.addError(JAsmParseException.MISSING_ARGUMENTS,
+                    instrElems[0], line);
+            return 0;
+        }
+        int arg;
+        try {
+            arg = Integer.parseInt(instrElems[1]);
+        } catch (NumberFormatException nfe) {
+            String classN = getClassFromFullMethod(instrElems[1]);
+            String methodN = getMethodFromFullMethod(instrElems[1]);
+            String descr = getDescrFromFullMethod(instrElems[1]);
+            arg = cpg.addMethodref(classN, methodN, descr);
+            cpg.addInterfaceMethodref(classN, methodN, descr);
+        }
+        return arg;
+    }
+    private int getMethodConstRef(String[] instrElems, ConstantPoolGen cpg, int line) {
         if (instrElems.length < 2) {
             parseException.addError(JAsmParseException.MISSING_ARGUMENTS,
                     instrElems[0], line);
