@@ -1434,6 +1434,7 @@ public class JAsmParser {
         }
         return arg;
     }
+
     private int getInterfaceMethodConstRef(String[] instrElems, ConstantPoolGen cpg, int line) {
         if (instrElems.length < 2) {
             parseException.addError(JAsmParseException.MISSING_ARGUMENTS,
@@ -1452,6 +1453,7 @@ public class JAsmParser {
         }
         return arg;
     }
+
     private int getMethodConstRef(String[] instrElems, ConstantPoolGen cpg, int line) {
         if (instrElems.length < 2) {
             parseException.addError(JAsmParseException.MISSING_ARGUMENTS,

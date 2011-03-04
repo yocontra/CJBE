@@ -199,6 +199,8 @@ public class BrowserTreePane extends JPanel {
                 constDescription = constantPoolEntry.getTagVerbose().substring(9) + ": " + constantPoolEntry.getVerbose();
             } catch (InvalidByteCodeException e) {
                 e.printStackTrace();
+            } catch (Exception e) {
+                System.out.println("Constant pool entry " + index + " is corrupt.");
             }
             BrowserTreeNode entryNode =
                     new BrowserTreeNode(getFormattedIndex(index, constantPoolCount) +

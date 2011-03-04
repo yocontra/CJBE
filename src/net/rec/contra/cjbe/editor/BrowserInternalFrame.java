@@ -227,7 +227,7 @@ public class BrowserInternalFrame extends BasicInternalFrame
             }
         } catch (InvalidByteCodeException ex) {
             ex.printStackTrace();
-        //} catch (ClassParserException ex) {
+            //} catch (ClassParserException ex) {
             //parser = null;
             //System.out.println("Error decompiling class file. Skipped");
         } catch (IOException ex) {

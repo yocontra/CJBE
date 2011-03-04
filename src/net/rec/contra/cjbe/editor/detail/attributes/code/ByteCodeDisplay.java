@@ -603,10 +603,12 @@ public class ByteCodeDisplay extends JPanel implements Scrollable {
 
         try {
             String name = classFile.getConstantPoolEntryName(constantPoolIndex);
-            if (name.length() > 0) {
+            if (name != null && name.length() > 0) {
                 appendString(" <" + name + ">", STYLE_SMALL);
+            } else {
+                appendString(" <CONSTANT ENTRY CORRUPT OR NULL>", STYLE_SMALL);
             }
-        } catch (InvalidByteCodeException ignored) {
+        } catch (Exception ignored) {
         }
     }
 
