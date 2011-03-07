@@ -205,6 +205,8 @@ public class ClassSaver implements Runnable {
             Method[] methods = javaClass.getMethods();
 
             MethodGen mg = new MethodGen(methods[methodIndex], className, cpg);
+            mg.removeLineNumbers();
+            mg.removeLocalVariables();
 
             // Note that parsing has a sideeffect, it updates
             // constant pool, to have the required constants ready.
@@ -213,9 +215,9 @@ public class ClassSaver implements Runnable {
 
             InstructionList il = codeParser.parse(jasm, cpg);
             il.setPositions(true);
-            mg.removeLineNumbers();
-            mg.removeLocalVariables();
             mg.setInstructionList(il);
+            mg.setMaxLocals();
+            mg.setMaxStack();
 
             methods[methodIndex] = mg.getMethod();
 
