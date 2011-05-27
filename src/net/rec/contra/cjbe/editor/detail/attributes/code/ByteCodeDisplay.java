@@ -13,7 +13,6 @@ import net.rec.contra.cjbe.editor.ConstantPoolHyperlinkListener;
 import org.gjt.jclasslib.bytecode.*;
 import org.gjt.jclasslib.io.ByteCodeReader;
 import org.gjt.jclasslib.structures.ClassFile;
-import org.gjt.jclasslib.structures.InvalidByteCodeException;
 import org.gjt.jclasslib.structures.attributes.CodeAttribute;
 
 import javax.swing.*;

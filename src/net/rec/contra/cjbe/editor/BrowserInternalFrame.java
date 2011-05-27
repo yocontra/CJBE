@@ -7,7 +7,6 @@
 
 package net.rec.contra.cjbe.editor;
 
-import jreversepro.parser.JClassParser;
 import net.rec.contra.cjbe.editor.config.classpath.FindResult;
 import net.rec.contra.cjbe.editor.config.window.BrowserPath;
 import net.rec.contra.cjbe.editor.config.window.WindowState;
@@ -48,7 +47,6 @@ public class BrowserInternalFrame extends BasicInternalFrame
     private String fileName;
     private ClassFile classFile;
     private String backupFile;
-    private JClassParser parser;
 
     // Visual Components
 
@@ -182,10 +180,6 @@ public class BrowserInternalFrame extends BasicInternalFrame
      */
     public String getFileName() {
         return fileName;
-    }
-
-    public JClassParser getParser() {
-        return parser;
     }
 
     private void setupInternalFrame(BrowserPath browserPath) {

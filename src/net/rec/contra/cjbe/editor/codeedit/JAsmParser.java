@@ -1448,8 +1448,8 @@ public class JAsmParser {
             String classN = getClassFromFullMethod(instrElems[1]);
             String methodN = getMethodFromFullMethod(instrElems[1]);
             String descr = getDescrFromFullMethod(instrElems[1]);
-            arg = cpg.addMethodref(classN, methodN, descr);
-            cpg.addInterfaceMethodref(classN, methodN, descr);
+            //arg = cpg.addMethodref(classN, methodN, descr);
+            arg = cpg.addInterfaceMethodref(classN, methodN, descr);
         }
         return arg;
     }

@@ -47,8 +47,6 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
 
     private ByteCodeDetailPane byteCodePane;
 
-    private AnalysisPane analysisPane;
-
     private BCELifyPane BCELifyPane;
 
     private QuantDetailPane quantPane;
@@ -120,11 +118,6 @@ public class CodeAttributeDetailPane extends AbstractDetailPane implements
     private JPanel buildByteCodePane() {
         byteCodePane = new ByteCodeDetailPane(services);
         return byteCodePane;
-    }
-
-    private JPanel buildAnalysisPane() {
-        analysisPane = new AnalysisPane(services);
-        return analysisPane;
     }
 
     private JPanel buildBCELPane() {

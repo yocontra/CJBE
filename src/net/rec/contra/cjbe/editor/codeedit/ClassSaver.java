@@ -171,7 +171,8 @@ public class ClassSaver implements Runnable {
 
             MethodGen mg = new MethodGen(methods[methodIndex], className, cpg);
 
-            mg.setMaxStack(maxStack);
+            mg.removeLineNumbers();
+            mg.setMaxStack();
 
             mg.setMaxLocals(maxLocals);
             methods[methodIndex] = mg.getMethod();
@@ -205,8 +206,7 @@ public class ClassSaver implements Runnable {
             Method[] methods = javaClass.getMethods();
 
             MethodGen mg = new MethodGen(methods[methodIndex], className, cpg);
-            mg.removeLineNumbers();
-            mg.removeLocalVariables();
+
 
             // Note that parsing has a sideeffect, it updates
             // constant pool, to have the required constants ready.
@@ -216,6 +216,8 @@ public class ClassSaver implements Runnable {
             InstructionList il = codeParser.parse(jasm, cpg);
             il.setPositions(true);
             mg.setInstructionList(il);
+            mg.removeLineNumbers();
+            mg.removeLocalVariables();
             mg.setMaxLocals();
             mg.setMaxStack();
 
@@ -478,12 +480,13 @@ public class ClassSaver implements Runnable {
             ConstantPool constants = javaClass.getConstantPool();
             ConstantPoolGen cpg = new ConstantPoolGen(constants);
 
-            constants = javaClass.getConstantPool();
+            //constants = javaClass.getConstantPool();
 
             MethodGen methodGen = new MethodGen(accessFlags, methodName,
                     methodDescriptor, javaClass.getClassName(),
                     new InstructionList(), cpg);
             methodGen.removeLocalVariables();
+            methodGen.removeLineNumbers();
             methodGen.setMaxLocals();
             methodGen.setMaxStack();
             Method[] oldMethods = javaClass.getMethods();
@@ -538,7 +541,7 @@ public class ClassSaver implements Runnable {
             ConstantPool constants = javaClass.getConstantPool();
             ConstantPoolGen cpg = new ConstantPoolGen(constants);
 
-            constants = javaClass.getConstantPool();
+            //constants = javaClass.getConstantPool();
 
             FieldGen fieldGen = new FieldGen(access, fieldName,
                     fieldDescriptor, cpg);
