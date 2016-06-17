@@ -1,14 +1,14 @@
 package net.rec.contra.cjbe.editor.codeedit;
 
 import net.rec.contra.cjbe.editor.BrowserMDIFrame;
-import org.apache.bcel.Repository;
-import org.apache.bcel.classfile.ClassFormatException;
-import org.apache.bcel.classfile.ClassParser;
-import org.apache.bcel.classfile.JavaClass;
-import org.apache.bcel.classfile.Method;
-import org.apache.bcel.verifier.VerificationResult;
-import org.apache.bcel.verifier.Verifier;
-import org.apache.bcel.verifier.VerifierFactory;
+import org.apache.commons.bcel6.Repository;
+import org.apache.commons.bcel6.classfile.ClassFormatException;
+import org.apache.commons.bcel6.classfile.ClassParser;
+import org.apache.commons.bcel6.classfile.JavaClass;
+import org.apache.commons.bcel6.classfile.Method;
+import org.apache.commons.bcel6.verifier.VerificationResult;
+import org.apache.commons.bcel6.verifier.Verifier;
+import org.apache.commons.bcel6.verifier.VerifierFactory;
 import org.gjt.jclasslib.util.GUIHelper;
 import org.gjt.jclasslib.util.ProgressDialog;
 

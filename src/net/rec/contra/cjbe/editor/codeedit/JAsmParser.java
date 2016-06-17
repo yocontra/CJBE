@@ -3,7 +3,7 @@
  */
 package net.rec.contra.cjbe.editor.codeedit;
 
-import org.apache.bcel.generic.*;
+import org.apache.commons.bcel6.generic.*;
 import org.gjt.jclasslib.bytecode.OpcodesUtil;
 
 import java.util.ArrayList;

@@ -8,7 +8,7 @@ import net.rec.contra.cjbe.editor.BrowserInternalFrame;
 import net.rec.contra.cjbe.editor.BrowserServices;
 import net.rec.contra.cjbe.editor.codeedit.ClassSaver;
 import net.rec.contra.cjbe.editor.detail.attributes.code.ErrorReportWindow;
-import org.apache.bcel.classfile.Method;
+import org.apache.commons.bcel6.classfile.Method;
 import org.gjt.jclasslib.util.GUIHelper;
 import org.gjt.jclasslib.util.ProgressDialog;
 
