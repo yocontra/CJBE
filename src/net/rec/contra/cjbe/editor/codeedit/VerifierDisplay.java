@@ -126,8 +126,8 @@ public class VerifierDisplay extends JDialog {
                 } else {
                     currentStyle = doc.getStyle("red");
                 }
-                doc.insertString(doc.getLength(), "Verifying method: "
-                        + methods[i].getName() + " \n", doc.getStyle("bold"));
+                doc.insertString(doc.getLength(), "\tVerifying method: \""
+                        + methods[i].getName() + "\": ", doc.getStyle("bold"));
                 doc.insertString(doc.getLength(), verificationResult
                         .getMessage()
                         + "\n", currentStyle);
@@ -141,8 +141,8 @@ public class VerifierDisplay extends JDialog {
                 } else {
                     currentStyle = doc.getStyle("red");
                 }
-                doc.insertString(doc.getLength(), "Verifying method: "
-                        + methods[i].getName() + " \n", doc.getStyle("bold"));
+                doc.insertString(doc.getLength(), "\tVerifying method: \""
+                        + methods[i].getName() + "\": ", doc.getStyle("bold"));
                 doc.insertString(doc.getLength(), verificationResult
                         .getMessage()
                         + "\n", currentStyle);
