@@ -14,101 +14,11 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bc4fe1b-ede6-4895-8838-f71b1604eb17" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\JAwtFrame.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\JCmdMain.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\JMainFrame.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\awtui\JClassEditPanel.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\awtui\JCustomFileChooser.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\awtui\JCustomListPanel.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\awtui\JDlgAbout.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\awtui\JDlgFont.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\awtui\JErrorDlg.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\awtui\JJavaDocumentEditor.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\awtui\MainMenu.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\common\AppConstants.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\common\Helper.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\common\JJvmOpcodes.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\common\JJvmSet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\common\KeyWords.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\ConfirmCloseDialog.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\DlgClose.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\JClassEditPanel.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\JCpDialog.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\JCustomFileChooser.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\JCustomListPanel.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\JDlgAbout.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\JDlgFont.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\JErrorDlg.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\JJavaDocumentEditor.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\JLookFeelMenu.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\JPoolTable.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\JStatusPanel.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\MainMenu.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\gui\MyFavTheme.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\parser\ClassParserException.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\parser\JAttribute.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\parser\JClassParser.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\JClassInfo.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\JConstantPool.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\JConstantPoolEntry.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\JException.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\JField.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\JImport.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\JInstruction.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\JLineNumberTable.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\JLineOfCode.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\JMember.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\JMethod.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JBlockObject.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JCaseBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JCatchBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JDoWhileBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JElseBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JElseIfBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JFinallyBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JForBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JIfBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JMethodBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JSwitchBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JSynchBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\reflect\method\JTryBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\BranchConstants.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\JBranchComparator.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\JBranchEntry.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\JBranchTable.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\JCaseComparator.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\JCaseEntry.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\JCollatingTable.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\JDecompiler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\JDisAssembler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\JReverseEngineer.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\JSerializer.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\JSwitchTable.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\revengine\RevEngineException.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\runtime\JLocalEntry.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\runtime\JOperandStack.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\runtime\JRunTimeContext.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\runtime\JRunTimeFrame.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\runtime\JSymbolTable.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\runtime\Operand.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\runtime\OperandConstants.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\tester\TestBase.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\tester\TestContext.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\tester\TestHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\tester\TestMain.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\jreversepro\tester\tests\TestSimpleReturns.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\net\rec\contra\cjbe\editor\detail\attributes\code\AnalysisDisplay.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\CJBE\src\net\rec\contra\cjbe\editor\detail\attributes\code\AnalysisPane.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/ClassSaver.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/ClassSaver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParser.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" afterPath="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
-    </list>
+    <list default="true" id="8bc4fe1b-ede6-4895-8838-f71b1604eb17" name="Default" comment="" />
     <ignored path="JBE.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,16 +31,11 @@
     <rightPanel />
     <splitter proportion="0.5" />
   </component>
-  <component name="CoverageDataManager" choice="3" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-    <option name="REVERSE_PATCH" value="false" />
-  </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any>
+    <breakpoint_any converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -162,63 +67,138 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <breakpoint_rules />
-    <ui_properties />
+    <breakpoint_rules converted="true" />
+    <ui_properties converted="true" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="JBE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="JAsmParser.java" pinned="false" current="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="JAsmParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="24" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
+            <state relative-caret-position="19746">
+              <caret line="1102" column="19" selection-start-line="1102" selection-start-column="19" selection-end-line="1102" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LOOKUPSWITCH.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/LOOKUPSWITCH.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+              <folding>
+                <element signature="e#1418#1419#0" expanded="true" />
+                <element signature="e#1488#1489#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TABLESWITCH.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/TABLESWITCH.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1692">
+              <caret line="115" column="24" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
+              <folding>
+                <element signature="e#1432#1433#0" expanded="true" />
+                <element signature="e#1501#1502#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Select.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/Select.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+              <folding>
+                <element signature="e#2069#2070#0" expanded="true" />
+                <element signature="e#2104#2105#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassSaver.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/ClassSaver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MethodGen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/MethodGen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3582">
+              <caret line="239" column="0" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+              <folding>
+                <element signature="e#16961#17166#0" expanded="true" />
+                <element signature="e#17165#17166#0" expanded="true" />
+                <element signature="e#18260#18261#0" expanded="true" />
+                <element signature="e#18301#18302#0" expanded="true" />
+                <element signature="e#18389#18390#0" expanded="true" />
+                <element signature="e#18428#18429#0" expanded="true" />
+                <element signature="e#20346#20347#0" expanded="true" />
+                <element signature="e#20385#20386#0" expanded="true" />
+                <element signature="e#20479#20480#0" expanded="true" />
+                <element signature="e#20516#20517#0" expanded="true" />
+                <element signature="e#21463#21464#0" expanded="true" />
+                <element signature="e#21505#21506#0" expanded="true" />
+                <element signature="e#21597#21598#0" expanded="true" />
+                <element signature="e#21633#21634#0" expanded="true" />
+                <element signature="e#21718#21719#0" expanded="true" />
+                <element signature="e#21752#21753#0" expanded="true" />
+                <element signature="e#22926#22927#0" expanded="true" />
+                <element signature="e#22963#22964#0" expanded="true" />
+                <element signature="e#23066#23067#0" expanded="true" />
+                <element signature="e#23106#23107#0" expanded="true" />
+                <element signature="e#23200#23201#0" expanded="true" />
+                <element signature="e#23238#23239#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VerifierDisplay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/VerifierDisplay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2034">
+              <caret line="128" column="73" selection-start-line="128" selection-start-column="73" selection-end-line="128" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Type.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/Type.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrowserInternalFrame.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java">
+      <file leaf-file-name="BrowserMDIFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="47" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CodeAttributeDetailPane.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="38" selection-start="3680" selection-end="3680" vertical-scroll-proportion="0.3931624">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConstantMethodrefInfo.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/structures/constants/ConstantMethodrefInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CodeEditArea.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="156" column="73" selection-start="5682" selection-end="5682" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CodeGenerator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/CodeGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="268" column="102" selection-start="11722" selection-end="11722" vertical-scroll-proportion="0.0">
+            <state relative-caret-position="14778">
+              <caret line="874" column="21" selection-start-line="874" selection-start-column="21" selection-end-line="874" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -231,29 +211,25 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
-  <component name="Git.Settings">
-    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
-    <option name="UPDATE_CHANGES_POLICY" value="STASH" />
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
-    <option name="changedFiles">
+    <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/WordSearcher.java" />
-        <option value="$PROJECT_DIR$/src/jreversepro/parser/JClassParser.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java" />
-        <option value="$PROJECT_DIR$/src/jreversepro/runtime/JRunTimeContext.java" />
-        <option value="$PROJECT_DIR$/src/jreversepro/revengine/JDisAssembler.java" />
-        <option value="$PROJECT_DIR$/src/jreversepro/reflect/JMethod.java" />
-        <option value="$PROJECT_DIR$/src/jreversepro/runtime/JSymbolTable.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserTreePane.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDisplay.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/MethodsGeneralPane.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantAddPane.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/ClassSaver.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/FieldsGeneralPane.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java" />
         <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParser.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/AnalysisDisplay.java" />
-        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/LOOKUPSWITCH.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/TABLESWITCH.java" />
+        <option value="$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/VerifierDisplay.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/MethodGen.java" />
       </list>
     </option>
   </component>
@@ -266,6 +242,11 @@
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
     <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="27" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -299,7 +280,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -309,13 +290,11 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="Favorites" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -330,7 +309,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
+              <option name="myItemId" value="CJBE-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -340,11 +319,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
+              <option name="myItemId" value="CJBE-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -354,7 +337,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
+              <option name="myItemId" value="CJBE-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -362,7 +345,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -372,7 +359,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
+              <option name="myItemId" value="CJBE-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -380,11 +367,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
+              <option name="myItemId" value="org" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="detail" />
+              <option name="myItemId" value="commons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcel6" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -394,7 +385,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
+              <option name="myItemId" value="CJBE-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -402,15 +393,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
+              <option name="myItemId" value="org" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="detail" />
+              <option name="myItemId" value="commons" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="attributes" />
+              <option name="myItemId" value="bcel6" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -420,32 +415,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CJBE" />
+              <option name="myItemId" value="CJBE-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="attributes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="Scope" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -462,6 +446,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -480,46 +465,181 @@
     <option name="showLabels" value="true" />
   </component>
   <component name="RunManager" selected="Application.BrowserApplication">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CJBE" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" adl_options="" air_descriptor_path="" air_program_params="" air_publisher_id="" air_root_dir_path="" air_run_mode="AppDescriptor" browser_family="FIREFOX" class_name="" debugger_sdk="Module SDK" html_or_swf_file_path="" launcher_type="OSDefault" main_class_name="" method_name="" module_name="" output_log_level="" package_name="" player_path="FlashPlayer.exe" port="0" run_mode="HtmlOrSwfFile" run_trusted="false" scope="Class" socket_policy_port="0" url_to_launch="http://">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" />
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -544,61 +664,38 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" />
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" />
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
+        <value defaultName="singleModule" />
       </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
       <envs />
-      <patterns />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <properties />
+      <listeners />
+      <method />
     </configuration>
     <configuration default="false" name="BrowserApplication" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" />
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="net.rec.contra.cjbe.editor.BrowserApplication" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -628,172 +725,453 @@
       <Port>5050</Port>
     </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500">
-    <option name="USER" value="" />
-    <option name="PASSWORD" value="" />
-    <option name="LAST_MERGED_REVISION" />
-    <option name="UPDATE_RUN_STATUS" value="false" />
-    <option name="MERGE_DRY_RUN" value="false" />
-    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
-    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
-    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="DETECT_NESTED_COPIES" value="true" />
-    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
-    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
-    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="8bc4fe1b-ede6-4895-8838-f71b1604eb17" name="Default" comment="" />
       <created>1295820777369</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1295820777369</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1288" height="764" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="7" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32475883" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2495935" sideWeight="0.67045456" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912844" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31993568" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288426" sideWeight="0.2178899" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.6559486" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3998378" sideWeight="0.670418" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32927817" sideWeight="0.6575563" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34244373" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935064" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34185302" sideWeight="0.5104167" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32846716" sideWeight="0.6559486" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32916668" sideWeight="0.6575563" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288426" sideWeight="0.2178899" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2495935" sideWeight="0.67045456" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3998378" sideWeight="0.670418" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31948882" sideWeight="0.46666667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34185302" sideWeight="0.48958334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32475883" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
-    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
-    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
-    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
-    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
-    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <MESSAGE value="Added Decompiler. Fixed a glorious amount of bugs." />
     <option name="LAST_COMMIT_MESSAGE" value="Added Decompiler. Fixed a glorious amount of bugs." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
-    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
-    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
-    <option name="ACTIVE_VCS_NAME" />
-    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
-    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
-    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
-    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Added Decompiler. Fixed a glorious amount of bugs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="276" column="134" selection-start="8062" selection-end="8062" vertical-scroll-proportion="-20.055046" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="22" selection-start="822" selection-end="822" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="87" selection-start="2327" selection-end="2327" vertical-scroll-proportion="0.26260257" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/LineNumberTableAttributeDetailPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="42" selection-start="2851" selection-end="2851" vertical-scroll-proportion="0.56154746" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/structures/constants/ConstantMethodrefInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserTreePane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="102" selection-start="7945" selection-end="7945" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="599" column="41" selection-start="20035" selection-end="20035" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/CodeGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="268" column="102" selection-start="11722" selection-end="11722" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/ClassSaver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="543" column="23" selection-start="17916" selection-end="17916" vertical-scroll-proportion="0.33241758">
+        <state relative-caret-position="19746">
+          <caret line="1102" column="19" selection-start-line="1102" selection-start-column="19" selection-end-line="1102" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java">
+    <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/LOOKUPSWITCH.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="73" selection-start="5682" selection-end="5682" vertical-scroll-proportion="0.0" />
+        <state relative-caret-position="378">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+          <folding>
+            <element signature="e#1418#1419#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/TABLESWITCH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1692">
+          <caret line="115" column="24" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
+          <folding>
+            <element signature="e#1432#1433#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/Select.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+          <folding>
+            <element signature="e#2069#2070#0" expanded="true" />
+            <element signature="e#2104#2105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/ClassSaver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/MethodGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3582">
+          <caret line="239" column="0" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+          <folding>
+            <element signature="e#16961#17166#0" expanded="true" />
+            <element signature="e#17165#17166#0" expanded="true" />
+            <element signature="e#18260#18261#0" expanded="true" />
+            <element signature="e#18301#18302#0" expanded="true" />
+            <element signature="e#18389#18390#0" expanded="true" />
+            <element signature="e#18428#18429#0" expanded="true" />
+            <element signature="e#20346#20347#0" expanded="true" />
+            <element signature="e#20385#20386#0" expanded="true" />
+            <element signature="e#20479#20480#0" expanded="true" />
+            <element signature="e#20516#20517#0" expanded="true" />
+            <element signature="e#21463#21464#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21597#21598#0" expanded="true" />
+            <element signature="e#21633#21634#0" expanded="true" />
+            <element signature="e#21718#21719#0" expanded="true" />
+            <element signature="e#21752#21753#0" expanded="true" />
+            <element signature="e#22926#22927#0" expanded="true" />
+            <element signature="e#22963#22964#0" expanded="true" />
+            <element signature="e#23066#23067#0" expanded="true" />
+            <element signature="e#23106#23107#0" expanded="true" />
+            <element signature="e#23200#23201#0" expanded="true" />
+            <element signature="e#23238#23239#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/VerifierDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2034">
+          <caret line="128" column="73" selection-start-line="128" selection-start-column="73" selection-end-line="128" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14778">
+          <caret line="874" column="21" selection-start-line="874" selection-start-column="21" selection-end-line="874" selection-end-column="21" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="24" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
+        <state relative-caret-position="126">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/structures/constants/ConstantMethodrefInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="156" column="73" selection-start-line="156" selection-start-column="73" selection-end-line="156" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/CodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4572">
+          <caret line="268" column="78" selection-start-line="268" selection-start-column="78" selection-end-line="268" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="69" column="87" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/LineNumberTableAttributeDetailPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="86" column="42" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/gjt/jclasslib/structures/constants/ConstantMethodrefInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserTreePane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="207" column="102" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/ByteCodeDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="599" column="41" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/CodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4572">
+          <caret line="268" column="78" selection-start-line="268" selection-start-column="78" selection-end-line="268" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="9" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/constants/ConstantAddPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="216" column="39" selection-start-line="216" selection-start-column="39" selection-end-line="216" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/FieldsGeneralPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserInternalFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="47" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
-          <folding />
+        <state relative-caret-position="18">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/CodeAttributeDetailPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="38" selection-start="3680" selection-end="3680" vertical-scroll-proportion="0.3931624">
+        <state relative-caret-position="1782">
+          <caret line="124" column="27" selection-start-line="124" selection-start-column="27" selection-end-line="124" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/BCELifyPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/MethodsGeneralPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/detail/attributes/code/CodeEditArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="156" column="73" selection-start-line="156" selection-start-column="73" selection-end-line="156" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/BrowserMDIFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14778">
+          <caret line="874" column="21" selection-start-line="874" selection-start-column="21" selection-end-line="874" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/Type.class" />
+    <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/JAsmParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19746">
+          <caret line="1102" column="19" selection-start-line="1102" selection-start-column="19" selection-end-line="1102" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/LOOKUPSWITCH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+          <folding>
+            <element signature="e#1418#1419#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/TABLESWITCH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1692">
+          <caret line="115" column="24" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
+          <folding>
+            <element signature="e#1432#1433#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/Select.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+          <folding>
+            <element signature="e#2069#2070#0" expanded="true" />
+            <element signature="e#2104#2105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/VerifierDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2034">
+          <caret line="128" column="73" selection-start-line="128" selection-start-column="73" selection-end-line="128" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/commons/bcel6/generic/MethodGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3582">
+          <caret line="239" column="0" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+          <folding>
+            <element signature="e#16961#17166#0" expanded="true" />
+            <element signature="e#17165#17166#0" expanded="true" />
+            <element signature="e#18260#18261#0" expanded="true" />
+            <element signature="e#18301#18302#0" expanded="true" />
+            <element signature="e#18389#18390#0" expanded="true" />
+            <element signature="e#18428#18429#0" expanded="true" />
+            <element signature="e#20346#20347#0" expanded="true" />
+            <element signature="e#20385#20386#0" expanded="true" />
+            <element signature="e#20479#20480#0" expanded="true" />
+            <element signature="e#20516#20517#0" expanded="true" />
+            <element signature="e#21463#21464#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21597#21598#0" expanded="true" />
+            <element signature="e#21633#21634#0" expanded="true" />
+            <element signature="e#21718#21719#0" expanded="true" />
+            <element signature="e#21752#21753#0" expanded="true" />
+            <element signature="e#22926#22927#0" expanded="true" />
+            <element signature="e#22963#22964#0" expanded="true" />
+            <element signature="e#23066#23067#0" expanded="true" />
+            <element signature="e#23106#23107#0" expanded="true" />
+            <element signature="e#23200#23201#0" expanded="true" />
+            <element signature="e#23238#23239#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/rec/contra/cjbe/editor/codeedit/ClassSaver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -816,7 +1194,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Android</last-edited>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -840,7 +1218,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.6</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -877,4 +1255,3 @@
     </states>
   </component>
 </project>
-
