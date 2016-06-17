@@ -3,12 +3,12 @@
  */
 package net.rec.contra.cjbe.editor.codeedit;
 
-import org.apache.bcel.Constants;
-import org.apache.bcel.classfile.*;
-import org.apache.bcel.generic.ConstantPoolGen;
-import org.apache.bcel.generic.FieldGen;
-import org.apache.bcel.generic.InstructionList;
-import org.apache.bcel.generic.MethodGen;
+import org.apache.commons.bcel6.Constants;
+import org.apache.commons.bcel6.classfile.*;
+import org.apache.commons.bcel6.generic.ConstantPoolGen;
+import org.apache.commons.bcel6.generic.FieldGen;
+import org.apache.commons.bcel6.generic.InstructionList;
+import org.apache.commons.bcel6.generic.MethodGen;
 
 import java.io.IOException;
 

@@ -7,10 +7,10 @@ import net.rec.contra.cjbe.editor.AbstractDetailPane;
 import net.rec.contra.cjbe.editor.BrowserInternalFrame;
 import net.rec.contra.cjbe.editor.BrowserServices;
 import net.rec.contra.cjbe.editor.BrowserTreeNode;
-import org.apache.bcel.classfile.ClassParser;
-import org.apache.bcel.classfile.JavaClass;
-import org.apache.bcel.generic.ClassGen;
-import org.apache.bcel.util.BCELifier;
+import org.apache.commons.bcel6.classfile.ClassParser;
+import org.apache.commons.bcel6.classfile.JavaClass;
+import org.apache.commons.bcel6.generic.ClassGen;
+import org.apache.commons.bcel6.util.BCELifier;
 import org.gjt.jclasslib.structures.ClassFile;
 import org.gjt.jclasslib.structures.MethodInfo;
 
